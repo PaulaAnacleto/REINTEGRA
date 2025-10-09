@@ -1,0 +1,12 @@
+{
+    "name": "alunosenai/reintegra",
+    "type": "project",
+    "authors": [
+        {
+            "name": "PaulaAnacleto",
+            "email": "paulaanacleto15@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
