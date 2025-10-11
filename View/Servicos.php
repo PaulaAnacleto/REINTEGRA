@@ -1,11 +1,114 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Serviços - REINTEGRA</title>
+    <link rel="stylesheet" href="../Templates/css/servicos.css">
 </head>
 <body>
-    
+    <div class="container">
+        <!-- Header com navegação -->
+        <header class="header">
+            <div class="nav-container">
+                <div class="logo">
+                    <h1 class="brand-title">REINTEGRA</h1>
+                </div>
+                
+            </div>
+        </header>
+
+        <!-- Seção principal de conteúdo -->
+        <main class="main-content">
+            <div class="content-wrapper">
+                <!-- Título da seção -->
+                <div class="section-header">
+                    <button class="back-btn" onclick="history.back()">
+                        <span class="back-icon">←</span>
+                    </button>
+                    <h2 class="section-title">
+                        Confira nossos <span class="highlight">serviços</span>
+                    </h2>
+                </div>
+
+                <!-- Grid de serviços -->
+                <div class="services-grid">
+                    <!-- Teste Vocacional -->
+                    <div class="service-card" data-service="teste-vocacional">
+                        <div class="card-content">
+                            <h3 class="card-title">Teste vocacional</h3>
+                            <p class="card-description">
+                                Entender os objetivos do trabalhador sugerindo uma nova área ou o aperfeiçoamento da área já atuante.
+                            </p>
+                        </div>
+                        <div class="card-hover-overlay">
+                            <span class="card-action">Acessar Teste</span>
+                        </div>
+                    </div>
+
+                    <!-- Cursos -->
+                    <div class="service-card" data-service="cursos">
+                        <div class="card-content">
+                            <h3 class="card-title">Cursos</h3>
+                            <p class="card-description">
+                                Disponibilidade de Cursos online | EaD e presencial como intuito de profissionalizar trabalhadores.
+                            </p>
+                        </div>
+                        <div class="card-hover-overlay">
+                            <span class="card-action">Ver Cursos</span>
+                        </div>
+                    </div>
+
+                    <!-- Tutoriais e Dicas -->
+                    <div class="service-card" data-service="tutoriais">
+                        <div class="card-content">
+                            <h3 class="card-title">Tutoriais e dicas</h3>
+                            <p class="card-description">
+                                Tutoriais como produzir ou refazer um currículo, dicas para entrevistas de emprego, como utilizar aplicativos de networking.
+                            </p>
+                        </div>
+                        <div class="card-hover-overlay">
+                            <span class="card-action">Acessar Dicas</span>
+                        </div>
+                    </div>
+
+                    <!-- Informativo -->
+                    <div class="service-card" data-service="informativo">
+                        <div class="card-content">
+                            <h3 class="card-title">Informativo</h3>
+                            <p class="card-description">
+                                Notícias sobre profissões em ascensão ou em baixa contratação funcionalidades de profissões desconhecidas pelos usuários anúncios de vagas e oportunidades de emprego.
+                            </p>
+                        </div>
+                        <div class="card-hover-overlay">
+                            <span class="card-action">Ver Notícias</span>
+                        </div>
+                    </div>
+
+                    <!-- Vagas -->
+                    <div class="service-card" data-service="vagas">
+                        <div class="card-content">
+                            <h3 class="card-title">Vagas</h3>
+                            <p class="card-description">
+                                Melhores sites para encontrar vagas de emprego!
+                            </p>
+                        </div>
+                        <div class="card-hover-overlay">
+                            <span class="card-action">Buscar Vagas</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <p>&copy; 2024 REINTEGRA. Encontre seu emprego dos sonhos!</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="../Templates/js/servicos.js"></script>
 </body>
 </html>
