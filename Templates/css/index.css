@@ -20,8 +20,8 @@ html {
 .navbar {
   background-image: linear-gradient(
     to right, 
-    rgba(1, 70, 177, 0.15),  /* Cor #0146B1 com 60% de opacidade */
-    rgba(0, 30, 75, 0.15)    /* Cor #001E4B com 60% de opacidade */
+    rgba(1, 70, 177, 0.15),
+    rgba(0, 30, 75, 0.15)   
   );
 }
 
@@ -42,7 +42,6 @@ html {
 }
 
 .nav-btn {
-
     border-radius: 8px;
     padding: 8px 16px !important;
     display: flex;
@@ -87,7 +86,6 @@ html {
     position: relative;
     border-radius: 20px;
     padding: 20px;
-
 }
 
 .hero-image {
@@ -106,12 +104,18 @@ html {
 
 /* Parceria Section */
 .parceria-section {
-    padding: 50px 0;
+    padding: 60px 0;
     background-color: #fff;
 }
 
+.parceria-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #666;
+}
+
 .senai-logo {
-    max-width: 500px;
+    max-width: 1200px;
     opacity: 0.8;
     transition: opacity 0.3s ease;
 }
@@ -123,7 +127,6 @@ html {
 /* Sobre Section */
 .sobre-section {
     padding: 80px 0;
-    background-color: #ffffff;
 }
 
 .section-title {
@@ -146,10 +149,9 @@ html {
     padding: 15px;
     border-radius: 12px;
     border: 2px solid;
-    border-color: #8096a8;
+    border-color: #b8b8b8;
     transition: all 0.3s ease;
 }
-
 
 .feature-icon-box {
     width: 30px;
@@ -171,15 +173,9 @@ html {
     margin: 0;
 }
 
-.sobre-image-container {
-    position: relative;
-    padding: 20px;
-}
-
 .sobre-image-wrapper {
     position: relative;
     border-radius: 12px;
-
     padding: 15px;
 }
 
@@ -261,50 +257,62 @@ html {
     line-height: 1.6;
 }
 
-.btn-enviar-wrapper {
-    position: relative;
-}
-
-.email-input-wrapper {
-    flex: 1;
-}
-
-.email-input {
-    border: none;
-    border-radius: 50px;
-    padding: 15px 25px;
-    font-size: 1rem;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    width: 100%;
-}
-
-.email-input:focus {
-    outline: none;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-}
-
-.btn-enviar {
+.btn-contato {
     background-color: white;
     color: #1976D2;
     border: none;
-    border-radius: 50px;
-    padding: 15px 35px;
-    font-weight: 700;
+    border-radius: 8px;
+    padding: 12px 40px;
+    font-weight: 600;
     font-size: 1rem;
     transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
-.btn-enviar:hover {
-    background-color: #f5f5f5;
-    transform: translateX(5px);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+.btn-contato:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.contato-image-container {
+    position: relative;
+    display: inline-block;
+    border-radius: 20px;
+    padding: 15px;
 }
 
 .contato-image {
-    max-width: 600px;
-    border-radius: 10px;
-    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.2));
+    max-width: 1200px;
+    width: 150%;
+    border-radius: 15px;
+    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
+}
+
+.contato-waves-decoration {
+    position: absolute;
+    left: -40px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.8;
+}
+
+.contato-star-1 {
+    position: absolute;
+    top: 15%;
+    right: 10%;
+    font-size: 1.8rem;
+    color: white;
+    animation: twinkle 2s ease-in-out infinite;
+}
+
+.contato-star-2 {
+    position: absolute;
+    bottom: 20%;
+    left: 5%;
+    font-size: 1.5rem;
+    color: white;
+    animation: twinkle 2s ease-in-out infinite;
+    animation-delay: 1s;
 }
 
 /* Feedbacks Section */
@@ -344,7 +352,7 @@ html {
 }
 
 .feedback-avatar-pink {
-    border: 3px solid #2196F3;
+    border: 3px solid #E91E63;
 }
 
 .feedback-avatar-blue {
@@ -352,7 +360,7 @@ html {
 }
 
 .feedback-avatar-red {
-    border: 3px solid #2196F3;
+    border: 3px solid #F44336;
 }
 
 .feedback-avatar {

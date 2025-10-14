@@ -71,6 +71,7 @@
     <!-- Parceria Section -->
     <section class="parceria-section">
         <div class="container text-center">
+            <h3 class="parceria-title mb-4">Parceria</h3>
             <img src="Img/página inicial/logo senai.png" alt="Logo SENAI" class="img-fluid senai-logo">
         </div>
     </section>
@@ -143,13 +144,22 @@
                 <div class="col-lg-6 mb-4 mb-lg-0">
                     <h2 class="contato-title">Entre em contato</h2>
                     <p class="contato-text mb-4">Tem dúvidas ou precisa de mais informações? Estamos aqui para ajudar! Entre em contato conosco e responderemos o mais rápido possível.</p>
-                    <div class="email-form">
-                        <div class="btn-enviar-wrapper">
-                            <button class="btn btn-enviar" type="button" id="enviarEmail">Contato</button>
+                    <button class="btn btn-contato" type="button" onclick="window.location.href='#cadastro'">Contato</button>
+                </div>
+                <div class="col-lg-6 text-end">
+                    <div class="contato-image-container">
+                        <img src="Img/página inicial/mulher - entre em contato.png" alt="Mulher com laptop" class="img-fluid contato-image">
+                        <div class="contato-waves-decoration">
+                            <svg width="80" height="60" viewBox="0 0 80 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 30 Q 15 20, 25 30 T 45 30 T 65 30 T 85 30" stroke="white" stroke-width="3" fill="none" opacity="0.6"/>
+                                <path d="M5 40 Q 15 30, 25 40 T 45 40 T 65 40 T 85 40" stroke="white" stroke-width="3" fill="none" opacity="0.6"/>
+                                <path d="M5 50 Q 15 40, 25 50 T 45 50 T 65 50 T 85 50" stroke="white" stroke-width="3" fill="none" opacity="0.6"/>
+                            </svg>
                         </div>
+                        <div class="star-decoration contato-star-1">✦</div>
+                        <div class="star-decoration contato-star-2">✦</div>
                     </div>
                 </div>
-                        <img src="Img/página inicial/mulher - entre em contato.png" alt="Mulher com laptop" class="img-fluid contato-image">
             </div>
         </div>
     </section>
