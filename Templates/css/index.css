@@ -65,7 +65,7 @@ html {
     rgba(1, 70, 177, 0.15),  /* Cor #0146B1 com 60% de opacidade */
     rgba(0, 30, 75, 0.15)    /* Cor #001E4B com 60% de opacidade */
   );
-    padding: 140px 0 80px;
+    padding: 50px 0 80px;
 
 }
 
@@ -435,7 +435,7 @@ html {
 
   /* Hero */
   .hero-section {
-    padding: 140px 40px 80px;
+    padding: 80px 10px 10px;
   }
 
   .hero-title {
@@ -462,7 +462,7 @@ html {
 
   .sobre-image {
     width: 80%;
-    margin: 20px auto;
+    margin: 10px auto;
   }
 
   .badge-seguro {
@@ -534,7 +534,7 @@ html {
 
   /* Hero */
   .hero-section {
-    padding: 120px 20px 60px;
+    padding: 50px 20px 60px;
     text-align: center;
   }
 
@@ -549,12 +549,11 @@ html {
 
   .hero-image {
     width: 90%;
-    margin-top: 25px;
   }
 
   /* Parceria */
   .parceria-section img {
-    max-width: 500px;
+    max-width: 200px;
   }
 
   /* Sobre */
@@ -614,8 +613,8 @@ html {
 
   /* Footer */
   .footer-links {
-    flex-direction: column;
-    gap: 10px;
+    flex-direction: row;
+    gap: 1px;
   }
 
   .footer-text {

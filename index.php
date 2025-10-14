@@ -144,7 +144,7 @@
                 <div class="col-lg-6 mb-4 mb-lg-0">
                     <h2 class="contato-title">Entre em contato</h2>
                     <p class="contato-text mb-4">Tem dúvidas ou precisa de mais informações? Estamos aqui para ajudar! Entre em contato conosco e responderemos o mais rápido possível.</p>
-                    <button class="btn btn-contato" type="button" onclick="window.location.href='#cadastro'">Contato</button>
+                    <button class="btn btn-contato" type="button" onclick="window.location.href='#contato'">Contato</button>
                 </div>
                 <div class="col-lg-6 text-end">
                     <div class="contato-image-container">
@@ -165,7 +165,7 @@
     </section>
 
     <!-- Feedbacks Section -->
-    <section id="cadastro" class="feedbacks-section">
+    <section id="feedbacks" class="feedbacks-section">
         <div class="container">
             <h2 class="section-title text-center mb-3">Feedbacks</h2>
             <p class="text-center text-muted mb-5">Veja o que dizem aqueles que já se inscreveram no Reintegra e tiveram suas vidas transformadas!</p>
