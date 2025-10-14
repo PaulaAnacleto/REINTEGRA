@@ -19,7 +19,7 @@
 <body>
     
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white py-3 shadow-sm fixed-top">
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
         <div class="container">
             <a class="navbar-brand" href="#">
                 <div class="logo-box">
@@ -32,28 +32,22 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link nav-btn nav-btn-yellow" href="#inicio">
-                            <span class="nav-text">Serviços</span>
-                            <span class="nav-number">1</span>
-                        </a>
+                        <a class="nav-link" href="#serviços">Serviços</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link nav-btn nav-btn-purple" href="#feedbacks">
-                            <span class="nav-text">Feedback</span>
-                            <span class="nav-number">2</span>
-                        </a>
+                        <a class="nav-link" href="#contato">Feedback</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link nav-btn nav-btn-blue" href="#contato">
-                            <span class="nav-text">Entre</span>
-                            <span class="nav-number">3</span>
-                        </a>
+                        <a class="nav-link" href="#contato">Contato</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link nav-btn nav-btn-pink" href="#cadastro">
-                            <span class="nav-text">Termos de Serviço</span>
-                            <span class="nav-number">4</span>
-                        </a>
+                        <a class="nav-link" href="#sobre">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#inicio">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <img src="Img/página inicial/imagem da casa.png" alt="Perfil" >
                     </li>
                 </ul>
             </div>
@@ -61,17 +55,17 @@
     </nav>
 
     <!-- Hero Section -->
+
     <section id="inicio" class="hero-section">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6 mb-4 mb-lg-0">
                     <h1 class="hero-title">Reintegrando sua vida por completo</h1>
-                    <p class="hero-text">Facilitamos a reintegração de ex-presidiários e pessoas em vulnerabilidade social através de capacitação profissional e oportunidades de trabalho.</p>
+                    <p class="hero-text">Dedicamos no fortalecimento do mercado de trabalho e oportunidades para ex-trabalhadores da Ford e operadores</p>
                 </div>
                 <div class="col-lg-6">
                     <div class="hero-image-container">
-                        <span class="corner-number corner-number-purple">7</span>
-                        <img src="imagemdacasa.png" alt="Casa com painéis solares" class="img-fluid hero-image">
+                        <img src="Img/página inicial/imagem da casa.png" alt="Casa com painéis solares" class="img-fluid hero-image">
                     </div>
                 </div>
             </div>
@@ -82,7 +76,7 @@
     <section class="parceria-section">
         <div class="container text-center">
             <h3 class="parceria-title mb-4">Parceria</h3>
-            <img src="logosenai.png" alt="Logo SENAI" class="img-fluid senai-logo">
+            <img src="Img/página inicial/logo senai.png" alt="Logo SENAI" class="img-fluid senai-logo">
         </div>
     </section>
 
@@ -113,39 +107,38 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6 mb-4 mb-lg-0">
-                    <h2 class="section-title">Sobre o Reintegra</h2>
-                    <p class="section-text mb-4">Facilitamos a reintegração de ex-presidiários e pessoas em vulnerabilidade social para o mercado de trabalho através de capacitação profissional, oferecendo cursos para prepará-los para as demandas do mercado e ajudá-los a construir um futuro melhor.</p>
-                    <p class="section-text mb-4">Também conectamos essas pessoas com empresas que buscam profissionais qualificados, promovendo uma segunda chance e contribuindo para a redução da reincidência criminal.</p>
+                    <h2 class="section-title mb-4">Sobre o Reintegra</h2>
+                    <p class="section-text mb-4">Focamos no fortalecimento do mercado de trabalho e oportunidades profissionais para ex-trabalhadores da Ford e operadores, em função da necessidade de informações sobre a nova modelagem do mercado de trabalho de Camaçari após a saída da empresa (Ford). Bem como, a abertura para novas possibilidades em outras áreas profissionais, através de cursos e aulas, a fim de mitigar os desafios de adaptabilidade enfrentado por estes trabalhadores.</p>
                     
-                    <div class="row g-3">
-                        <div class="col-md-6">
+                    <div class="row mt-4">
+                        <div class="col-md-6 mb-3">
                             <div class="feature-item feature-purple">
                                 <div class="feature-icon-box feature-icon-purple">
-                                    <img src="iconeobjetivo.png" alt="Ícone Objetivo" class="feature-icon">
+                                    <img src="Img/página inicial/icone objetivo.png" alt="Ícone Objetivo" class="feature-icon">
                                 </div>
                                 <h6 class="feature-title">Objetivo</h6>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-6 mb-3">
                             <div class="feature-item feature-orange">
                                 <div class="feature-icon-box feature-icon-orange">
-                                    <img src="iconefidelidade.png" alt="Ícone Fidelidade" class="feature-icon">
+                                    <img src="Img/página inicial/icone fidelidade.png" alt="Ícone Fidelidade" class="feature-icon">
                                 </div>
                                 <h6 class="feature-title">Fidelidade</h6>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-6 mb-3">
                             <div class="feature-item feature-green">
                                 <div class="feature-icon-box feature-icon-green">
-                                    <img src="iconequalidade.png" alt="Ícone Qualidade" class="feature-icon">
+                                    <img src="Img/página inicial/icone qualidade.png" alt="Ícone Qualidade" class="feature-icon">
                                 </div>
                                 <h6 class="feature-title">Qualidade</h6>
                             </div>
                         </div>
-                        <div class="col-md-6">
+                        <div class="col-md-6 mb-3">
                             <div class="feature-item feature-red">
                                 <div class="feature-icon-box feature-icon-red">
-                                    <img src="iconeinovacao.png" alt="Ícone Inovação" class="feature-icon">
+                                    <img src="Img/página inicial/icone inovacao.png" alt="Ícone Inovação" class="feature-icon">
                                 </div>
                                 <h6 class="feature-title">Inovação</h6>
                             </div>
@@ -154,9 +147,8 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="sobre-image-container">
-                        <span class="corner-number corner-number-blue">9</span>
                         <div class="sobre-image-wrapper">
-                            <img src="sobrenós.png" alt="Pessoa de camisa laranja" class="img-fluid sobre-image">
+                            <img src="Img/página inicial/sobre nós.png" alt="Pessoa de camisa laranja" class="img-fluid sobre-image">
                             <div class="badge-seguro">
                                 <span>✓ 100% Seguro</span>
                             </div>
@@ -170,43 +162,42 @@
         </div>
     </section>
 
-    <!-- Feedbacks Section (MOVIDA PARA ANTES DE CONTATO) -->
+    <!-- Feedbacks Section -->
     <section id="feedbacks" class="feedbacks-section">
         <div class="container">
             <h2 class="section-title text-center mb-3">Feedbacks</h2>
             <p class="text-center text-muted mb-5">Veja o que dizem aqueles que já se inscreveram no Reintegra e tiveram suas vidas transformadas!</p>
             
-            <div class="row g-4">
-                <div class="col-lg-4 col-md-6">
+            <div class="row">
+                <div class="col-md-4 mb-4">
                     <div class="feedback-card">
                         <div class="feedback-content">
                             <div class="feedback-avatar-wrapper feedback-avatar-pink">
-                                <span class="corner-number corner-number-pink-small">10</span>
-                                <img src="marianasantos.png" alt="Mariana Santos" class="feedback-avatar">
+                                <img src="Img/página inicial/mariana santos.png" alt="Mariana Santos" class="feedback-avatar">
                             </div>
                             <p class="feedback-text">"Após me inscrever no Reintegra, consegui uma oportunidade de emprego que mudou minha vida. Sou muito grata!"</p>
                             <h6 class="feedback-name">Mariana Santos</h6>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
+                
+                <div class="col-md-4 mb-4">
                     <div class="feedback-card">
                         <div class="feedback-content">
                             <div class="feedback-avatar-wrapper feedback-avatar-blue">
-                                <span class="corner-number corner-number-blue-small">11</span>
-                                <img src="josécarlos.png" alt="José Carlos" class="feedback-avatar">
+                                <img src="Img/página inicial/josé carlos.png" alt="José Carlos" class="feedback-avatar">
                             </div>
                             <p class="feedback-text">"Graças ao curso que fiz, consegui me reintegrar ao mercado de trabalho e hoje tenho uma vida digna."</p>
                             <h6 class="feedback-name">José Carlos</h6>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
+                
+                <div class="col-md-4 mb-4">
                     <div class="feedback-card">
                         <div class="feedback-content">
                             <div class="feedback-avatar-wrapper feedback-avatar-red">
-                                <span class="corner-number corner-number-red-small">12</span>
-                                <img src="carlosmartins.png" alt="Carlos Martins" class="feedback-avatar">
+                                <img src="Img/página inicial/carlos martins.png" alt="Carlos Martins" class="feedback-avatar">
                             </div>
                             <p class="feedback-text">"O Reintegra me deu uma segunda chance. Hoje trabalho com dignidade e tenho orgulho da minha trajetória."</p>
                             <h6 class="feedback-name">Carlos Martins</h6>
@@ -225,12 +216,11 @@
                 <div class="col-lg-6 mb-4 mb-lg-0">
                     <h2 class="contato-title">Entre em contato</h2>
                     <p class="contato-text mb-4">Tem dúvidas ou precisa de mais informações? Estamos aqui para ajudar! Entre em contato conosco e responderemos o mais rápido possível.</p>
-                    <button class="btn btn-contato" type="button" onclick="window.location.href='#cadastro'">Contato</button>
+                    <button class="btn btn-contato" type="button" onclick="window.location.href='#contato'">Contato</button>
                 </div>
                 <div class="col-lg-6 text-end">
                     <div class="contato-image-container">
-                        <span class="corner-number corner-number-orange-small">8</span>
-                        <img src="mulher-entreemcontato.png" alt="Mulher com laptop" class="img-fluid contato-image">
+                        <img src="Img/página inicial/mulher - entre em contato.png.png" alt="Mulher com laptop" class="img-fluid contato-image">
                         <div class="contato-waves-decoration">
                             <svg width="80" height="60" viewBox="0 0 80 60" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M5 30 Q 15 20, 25 30 T 45 30 T 65 30 T 85 30" stroke="white" stroke-width="3" fill="none" opacity="0.6"/>
@@ -266,24 +256,23 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <p class="mb-2">© 2025 Reintegra. Todos os direitos reservados.</p>
-                    <p class="mb-0">
-                        <a href="#" class="footer-link me-3">Política de Privacidade</a>
-                        <a href="#" class="footer-link">Termos de Serviço</a>
-                    </p>
-                </div>
+ <!-- Footer Section -->
+        <footer class="footer">
+           
+            <div class="footer-links">
+                  <p class="footer-text">
+                © 2025 Reintegra. Todos os direitos reservados.
+            </p>
+                <a href="#" class="footer-link">Política de Privacidade</a>
+                <a href="#" class="footer-link">Termos de Serviço</a>
             </div>
-        </div>
-    </footer>
+        </footer>
+    </div>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
     <!-- Custom JS -->
-    <script src="script.js"></script>
+    <script src="../Templates/js/inicial-login.js"></script>
 </body>
-</html>
+</html
