@@ -11,7 +11,7 @@
         <!-- Header -->
         <header class="header">
             <button class="back-button" aria-label="Voltar">
-                <img src="seta.png" alt="Voltar" class="back-icon">
+                <img src="../Img/página de contato/seta.png" alt="Voltar" class="back-icon">
             </button>
             <h1 class="title">
                 Termos de <span class="highlight">Serviço</span>
@@ -104,7 +104,7 @@
                   <p class="footer-text">
                 © 2025 Reintegra. Todos os direitos reservados.
             </p>
-                <a href="#" class="footer-link">Política de Privacidade</a>
+                <a href="../View//Politica-privacidade.php" class="footer-link">Política de Privacidade</a>
             </div>
         </footer>
     </div>
