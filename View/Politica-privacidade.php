@@ -97,7 +97,7 @@
                 © 2025 Reintegra. Todos os direitos reservados.
             </p>
                 
-                <a href="#" class="footer-link">Termos de Serviço</a>
+                <a href="../View/termos-servico.php" class="footer-link">Termos de Serviço</a>
             </div>
         </footer>
     </div>
