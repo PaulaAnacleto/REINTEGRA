@@ -1,0 +1,256 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Navbar Styles */
+.navbar-brand {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+}
+
+.navbar-nav .nav-link {
+    font-weight: 500;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #0d6efd !important;
+}
+
+.navbar-nav .btn-primary {
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.navbar-nav .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(13, 110, 253, 0.3);
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    min-height: 500px;
+}
+
+.hero-section h1 {
+    color: #212529;
+    line-height: 1.2;
+}
+
+.hero-section .lead {
+    color: #6c757d;
+    font-size: 1.1rem;
+}
+
+.hero-section img {
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+/* Parceria Section */
+.parceria-section {
+    padding: 60px 0;
+}
+
+.parceria-section img {
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.parceria-section img:hover {
+    opacity: 1;
+}
+
+/* Sobre Section */
+.sobre-section {
+    padding: 80px 0;
+}
+
+.sobre-section h2 {
+    color: #212529;
+    margin-bottom: 30px;
+}
+
+.sobre-section p {
+    color: #6c757d;
+    line-height: 1.8;
+}
+
+.sobre-section img {
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.sobre-section img:hover {
+    transform: scale(1.05);
+}
+
+.badge-seguro {
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.badge-seguro i {
+    color: #198754;
+}
+
+/* Contato Section */
+.contato-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #0d6efd 0%, #0a58ca 100%);
+    overflow: hidden;
+}
+
+.contato-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('detalhesentreemcontato.png') no-repeat;
+    background-size: contain;
+    background-position: right center;
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+.contato-section h2 {
+    font-size: 2.5rem;
+}
+
+.contato-section .form-control {
+    border: none;
+    border-radius: 50px 0 0 50px;
+    padding-left: 20px;
+}
+
+.contato-section .btn-light {
+    border-radius: 0 50px 50px 0;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.contato-section .btn-light:hover {
+    background-color: #fff;
+    transform: translateX(5px);
+}
+
+.detalhes-decorativos {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 200px;
+    opacity: 0.2;
+    pointer-events: none;
+}
+
+/* Feedbacks Section */
+.feedbacks-section {
+    padding: 80px 0;
+}
+
+.feedbacks-section h2 {
+    color: #212529;
+}
+
+.feedback-card {
+    transition: all 0.3s ease;
+    border-radius: 15px;
+}
+
+.feedback-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
+}
+
+.feedback-card img {
+    border: 3px solid #0d6efd;
+}
+
+.feedback-card .card-text {
+    color: #6c757d;
+    font-style: italic;
+    line-height: 1.6;
+}
+
+/* Footer */
+.footer {
+    background-color: #212529;
+}
+
+.footer a:hover {
+    text-decoration: underline !important;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    
+    .contato-section h2 {
+        font-size: 1.8rem;
+    }
+    
+    .detalhes-decorativos {
+        display: none;
+    }
+}
+
+/* Animations */
+.fade-in {
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Input Focus Effects */
+.form-control:focus {
+    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+    border-color: #86b7fe;
+}
+
+/* Smooth Transitions */
+* {
+    transition: all 0.3s ease;
+}
+
+a, button {
+    transition: all 0.3s ease !important;
+}
+
