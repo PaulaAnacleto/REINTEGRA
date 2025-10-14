@@ -148,7 +148,7 @@
                 </div>
                 <div class="col-lg-6 text-end">
                     <div class="contato-image-container">
-                        <img src="Img/página inicial/mulher - entre em contato.png" alt="Mulher com laptop" class="img-fluid contato-image">
+                        <img src="Img/página inicial/mulher - entre em contato.png.png" alt="Mulher com laptop" class="img-fluid contato-image">
                         <div class="contato-waves-decoration">
                             <svg width="80" height="60" viewBox="0 0 80 60" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M5 30 Q 15 20, 25 30 T 45 30 T 65 30 T 85 30" stroke="white" stroke-width="3" fill="none" opacity="0.6"/>
@@ -211,20 +211,18 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center">
-                    <p class="mb-2">&copy; 2025 Reintegra. Todos os direitos reservados.</p>
-                    <p class="mb-0">
-                        <a href="#" class="footer-link">Política de Privacidade</a>
-                        <span class="mx-2">|</span>
-                        <a href="#" class="footer-link">Termos de Serviço</a>
-                    </p>
-                </div>
+ <!-- Footer Section -->
+        <footer class="footer">
+           
+            <div class="footer-links">
+                  <p class="footer-text">
+                © 2025 Reintegra. Todos os direitos reservados.
+            </p>
+                <a href="#" class="footer-link">Política de Privacidade</a>
+                <a href="#" class="footer-link">Termos de Serviço</a>
             </div>
-        </div>
-    </footer>
+        </footer>
+    </div>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
