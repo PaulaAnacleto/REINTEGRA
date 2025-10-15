@@ -46,11 +46,11 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#inicio">Início</a>
                     </li>
-                    <li class="nav-item">
-                        <img src="Img/página inicial/imagem da casa.png" alt="Perfil" >
-                    </li>
                 </ul>
             </div>
+                <li class="nav-item-img">
+                    <img src="../Img/página de perfil/icone perfil.png" class="img-perfil" alt="Perfil" >
+                </li>
         </div>
     </nav>
 
@@ -65,7 +65,7 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="hero-image-container">
-                        <img src="Img/página inicial/imagem da casa.png" alt="Casa com painéis solares" class="img-fluid hero-image">
+                        <img src="../Img/página inicial/imagem da casa.png" alt="Casa com painéis solares" class="img-fluid hero-image">
                     </div>
                 </div>
             </div>
@@ -76,7 +76,7 @@
     <section class="parceria-section">
         <div class="container text-center">
             <h3 class="parceria-title mb-4">Parceria</h3>
-            <img src="Img/página inicial/logo senai.png" alt="Logo SENAI" class="img-fluid senai-logo">
+            <img src="../Img/página inicial/logo senai.png" alt="Logo SENAI" class="img-fluid senai-logo">
         </div>
     </section>
 
@@ -92,7 +92,7 @@
                 </div>
                 <div class="col-lg-6 text-end">
                     <div class="caminho-image-container">
-                        <img src="homem-servicos.png" alt="Homem feliz" class="img-fluid caminho-image">
+                        <img src="../Img/página inicial pós login/homem.png" alt="Homem feliz" class="img-fluid caminho-image">
                         <div class="star-decoration caminho-star-1">✦</div>
                         <div class="star-decoration caminho-star-2">✦</div>
                         <div class="star-decoration caminho-star-3">✦</div>
@@ -114,7 +114,7 @@
                         <div class="col-md-6 mb-3">
                             <div class="feature-item feature-purple">
                                 <div class="feature-icon-box feature-icon-purple">
-                                    <img src="Img/página inicial/icone objetivo.png" alt="Ícone Objetivo" class="feature-icon">
+                                    <img src="../Img/página inicial/icone objetivo.png" alt="Ícone Objetivo" class="feature-icon">
                                 </div>
                                 <h6 class="feature-title">Objetivo</h6>
                             </div>
@@ -122,7 +122,7 @@
                         <div class="col-md-6 mb-3">
                             <div class="feature-item feature-orange">
                                 <div class="feature-icon-box feature-icon-orange">
-                                    <img src="Img/página inicial/icone fidelidade.png" alt="Ícone Fidelidade" class="feature-icon">
+                                    <img src="../Img/página inicial/icone fidelidade.png" alt="Ícone Fidelidade" class="feature-icon">
                                 </div>
                                 <h6 class="feature-title">Fidelidade</h6>
                             </div>
@@ -130,7 +130,7 @@
                         <div class="col-md-6 mb-3">
                             <div class="feature-item feature-green">
                                 <div class="feature-icon-box feature-icon-green">
-                                    <img src="Img/página inicial/icone qualidade.png" alt="Ícone Qualidade" class="feature-icon">
+                                    <img src="../Img/página inicial/icone qualidade.png" alt="Ícone Qualidade" class="feature-icon">
                                 </div>
                                 <h6 class="feature-title">Qualidade</h6>
                             </div>
@@ -138,7 +138,7 @@
                         <div class="col-md-6 mb-3">
                             <div class="feature-item feature-red">
                                 <div class="feature-icon-box feature-icon-red">
-                                    <img src="Img/página inicial/icone inovacao.png" alt="Ícone Inovação" class="feature-icon">
+                                    <img src="../Img/página inicial/icone inovacao.png" alt="Ícone Inovação" class="feature-icon">
                                 </div>
                                 <h6 class="feature-title">Inovação</h6>
                             </div>
@@ -148,7 +148,7 @@
                 <div class="col-lg-6">
                     <div class="sobre-image-container">
                         <div class="sobre-image-wrapper">
-                            <img src="Img/página inicial/sobre nós.png" alt="Pessoa de camisa laranja" class="img-fluid sobre-image">
+                            <img src="../Img/página inicial/sobre nós.png" alt="Pessoa de camisa laranja" class="img-fluid sobre-image">
                             <div class="badge-seguro">
                                 <span>✓ 100% Seguro</span>
                             </div>
@@ -173,7 +173,7 @@
                     <div class="feedback-card">
                         <div class="feedback-content">
                             <div class="feedback-avatar-wrapper feedback-avatar-pink">
-                                <img src="Img/página inicial/mariana santos.png" alt="Mariana Santos" class="feedback-avatar">
+                                <img src="../Img/página inicial/mariana santos.png" alt="Mariana Santos" class="feedback-avatar">
                             </div>
                             <p class="feedback-text">"Após me inscrever no Reintegra, consegui uma oportunidade de emprego que mudou minha vida. Sou muito grata!"</p>
                             <h6 class="feedback-name">Mariana Santos</h6>
@@ -185,7 +185,7 @@
                     <div class="feedback-card">
                         <div class="feedback-content">
                             <div class="feedback-avatar-wrapper feedback-avatar-blue">
-                                <img src="Img/página inicial/josé carlos.png" alt="José Carlos" class="feedback-avatar">
+                                <img src="../Img/página inicial/josé carlos.png" alt="José Carlos" class="feedback-avatar">
                             </div>
                             <p class="feedback-text">"Graças ao curso que fiz, consegui me reintegrar ao mercado de trabalho e hoje tenho uma vida digna."</p>
                             <h6 class="feedback-name">José Carlos</h6>
@@ -197,7 +197,7 @@
                     <div class="feedback-card">
                         <div class="feedback-content">
                             <div class="feedback-avatar-wrapper feedback-avatar-red">
-                                <img src="Img/página inicial/carlos martins.png" alt="Carlos Martins" class="feedback-avatar">
+                                <img src="../Img/página inicial/carlos martins.png" alt="Carlos Martins" class="feedback-avatar">
                             </div>
                             <p class="feedback-text">"O Reintegra me deu uma segunda chance. Hoje trabalho com dignidade e tenho orgulho da minha trajetória."</p>
                             <h6 class="feedback-name">Carlos Martins</h6>
@@ -220,7 +220,7 @@
                 </div>
                 <div class="col-lg-6 text-end">
                     <div class="contato-image-container">
-                        <img src="Img/página inicial/mulher - entre em contato.png.png" alt="Mulher com laptop" class="img-fluid contato-image">
+                        <img src="../Img/página inicial/mulher - entre em contato.png" alt="Mulher com laptop" class="img-fluid contato-image">
                         <div class="contato-waves-decoration">
                             <svg width="80" height="60" viewBox="0 0 80 60" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M5 30 Q 15 20, 25 30 T 45 30 T 65 30 T 85 30" stroke="white" stroke-width="3" fill="none" opacity="0.6"/>

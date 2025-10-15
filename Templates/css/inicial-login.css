@@ -26,6 +26,10 @@ html {
   );
 }
 
+  .img-perfil{
+      width: 40px;
+}
+
 .logo-box {
     padding: 8px 16px;
     border-radius: 8px;
@@ -625,7 +629,6 @@ html {
 /* Caminho Certo Section */
 .caminho-certo-section {
     padding: 80px 0;
-    background-color: #f5f5f5;
 }
 
 .caminho-title {
@@ -669,14 +672,6 @@ html {
     color: white;
 }
 
-.caminho-image-container {
-    position: relative;
-    display: inline-block;
-    background-color: white;
-    border-radius: 20px;
-    padding: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
 
 .caminho-image {
     max-width: 500px;
