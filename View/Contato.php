@@ -63,7 +63,7 @@
             </div>
         </footer>
     </div>
-
-    <script src="contato.js"></script>
+    
+    <script src="../Templates/js/contato.js"></script>
 </body>
 </html>
