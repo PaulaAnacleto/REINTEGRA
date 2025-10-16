@@ -9,23 +9,16 @@
 <body>
     <div class="container">
         <!-- Header com navegação -->
-        <header class="header">
-            <div class="nav-container">
-                <div class="logo">
-                    <h1 class="brand-title">REINTEGRA</h1>
-                </div>
-                
-            </div>
-        </header>
+       
 
         <!-- Seção principal de conteúdo -->
         <main class="main-content">
             <div class="content-wrapper">
                 <!-- Título da seção -->
                 <div class="section-header">
-                    <button class="back-btn" onclick="history.back()">
-                        <span class="back-icon">←</span>
-                    </button>
+                  <button class="back-button" aria-label="Voltar">
+                <img src="../Img/página de contato/seta.png" alt="Voltar" class="back-icon">
+            </button>
                     <h2 class="section-title">
                         Confira nossos <span class="highlight">serviços</span>
                     </h2>
@@ -102,9 +95,14 @@
         </main>
 
         <!-- Footer -->
-        <footer class="footer">
-            <div class="footer-content">
-                <p>&copy; 2024 REINTEGRA. Encontre seu emprego dos sonhos!</p>
+           <footer class="footer">
+           
+            <div class="footer-links">
+                  <p class="footer-text">
+                © 2025 Reintegra. Todos os direitos reservados.
+            </p>
+                <a href="#" class="footer-link">Política de Privacidade</a>
+                <a href="#" class="footer-link">Termos de Serviço</a>
             </div>
         </footer>
     </div>

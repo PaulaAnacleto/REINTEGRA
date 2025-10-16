@@ -12,6 +12,31 @@ body {
     flex-direction: column;
 }
 
+.back-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+}
+
+.back-button:hover {
+    transform: translateX(-3px);
+}
+
+.back-button:active {
+    transform: translateX(-5px);
+}
+
+.back-icon {
+    width: 32px;
+    height: 32px;
+    display: block;
+}
+
 .container {
     display: flex;
     flex-direction: column;
@@ -70,27 +95,6 @@ body {
     gap: 20px;
 }
 
-.back-btn {
-    background: white;
-    border: 2px solid #e1e5e9;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-size: 1.2rem;
-    color: #666;
-}
-
-.back-btn:hover {
-    border-color: #1e73be;
-    color: #1e73be;
-    transform: translateX(-3px);
-    box-shadow: 0 5px 15px rgba(30, 115, 190, 0.2);
-}
 
 .section-title {
     font-size: 2.5rem;
@@ -188,89 +192,36 @@ body {
 
 /* Footer */
 .footer {
-    background: white;
-    border-top: 1px solid #e1e5e9;
-    padding: 20px;
-    text-align: center;
+    margin-top: auto;
+    padding: 30px 0;
+    border-top: 1px solid #e0e0e0;
+    
 }
 
-.footer-content p {
+.footer-text {
     color: #666;
     font-size: 0.9rem;
+    
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-    .nav-container {
-        padding: 0 15px;
-        height: 60px;
-    }
-    
-    .logo .brand-title {
-        font-size: 1.5rem;
-    }
-    
-    .navigation {
-        gap: 10px;
-    }
-    
-    .nav-link {
-        padding: 6px 12px;
-        font-size: 0.9rem;
-    }
-    
-    .main-content {
-        padding: 20px 15px;
-    }
-    
-    .section-header {
-        margin-bottom: 30px;
-        gap: 15px;
-    }
-    
-    .section-title {
-        font-size: 1.8rem;
-    }
-    
-    .services-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-    
-    .service-card {
-        padding: 25px;
-        min-height: 180px;
-    }
-    
-    .card-title {
-        font-size: 1.2rem;
-    }
-    
-    .card-description {
-        font-size: 0.9rem;
-    }
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
 }
 
-@media (max-width: 480px) {
-    .section-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
-    }
-    
-    .section-title {
-        font-size: 1.5rem;
-    }
-    
-    .service-card {
-        padding: 20px;
-        min-height: 160px;
-    }
-    
-    .services-grid {
-        gap: 15px;
-    }
+.footer-link {
+    color: #666;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
 }
+
+.footer-link:hover {
+    text-decoration: underline;
+}
+
 
 /* Animações */
 @keyframes fadeInUp {
