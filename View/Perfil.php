@@ -97,6 +97,19 @@
         </main>
     </div>
 
+     <!-- Footer Section -->
+        <footer class="footer">
+           
+            <div class="footer-links">
+                  <p class="footer-text">
+                © 2025 Reintegra. Todos os direitos reservados.
+            </p>
+                <a href="#" class="footer-link">Política de Privacidade</a>
+                <a href="#" class="footer-link">Termos de Serviço</a>
+            </div>
+        </footer>
+    </div>
+
     <script src="../Templates/js/perfil.js"></script>
 </body>
 </html>
