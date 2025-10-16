@@ -19,7 +19,8 @@
 
 <nav class="navbar navbar-expand-lg navbar-light">
         <div class="container">
-            <a class="navbar-brand" href="#">
+            <!-- <a class="navbar-brand" href="#"> -->
+                <div class="navbar-left">
                 <div class="logo-box">
                     <span class="logo-text">REINTEGRA</span>
                 </div>
@@ -27,6 +28,8 @@
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
+</div>
+    <div class="navbar-right">   
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
@@ -43,26 +46,27 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#inicio">Início</a>
-                    </li>
+                        </li>
                 </ul>
+                </div>
+            <li class="nav-item-img" style="list-style-type: none;">
+                <img src="../Img/página de perfil/icone perfil.png" class="img-perfil" alt="Perfil" >
+            </li>
             </div>
-                <li class="nav-item-img" style="list-style-type: none;">
-                    <img src="../Img/página de perfil/icone perfil.png" class="img-perfil" alt="Perfil" >
-</li>
         </div>
     </nav>
-
+    <!-- Header -->
+    <header class="header">
+        <div class="btn-retorno">
+            <button class="back-button" aria-label="Voltar">
+                <img src="../Img/página de contato/seta.png" alt="Voltar" class="back-icon">
+            </button>
+        </div>
+    </header>
+    
 <body>
     <div class="inicio">
-        <!-- Header -->
-        <header class="header">
-            <div class="btn-retorno">
-                <button class="back-button" aria-label="Voltar">
-                    <img src="../Img/página de contato/seta.png" alt="Voltar" class="back-icon">
-                </button>
-            </div>
-        </header>
-
+        
         <h1 class="title">NOTÍCIAS</h1>
         <p class="paragrafo">Fique por dentro das últimas novidades e
             <span>tendências do mercado</span> de <span>trabalho</span>!
@@ -120,5 +124,17 @@
     </div>
         </main>
 </body>
+<!-- Footer Section -->
+        <footer class="footer">
+           
+            <div class="footer-links">
+                  <p class="footer-text">
+                © 2025 Reintegra. Todos os direitos reservados.
+            </p>
+                <a href="#" class="footer-link">Política de Privacidade</a>
+                <a href="#" class="footer-link">Termos de Serviço</a>
+            </div>
+        </footer>
+    </div>
 
 </html>
