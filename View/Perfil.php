@@ -22,9 +22,9 @@
             <div class="content-wrapper">
                 <!-- Botão voltar -->
                 <div class="navigation">
-                    <button class="back-btn" onclick="history.back()">
-                        <span class="back-icon">←</span>
-                    </button>
+                    <button class="back-button" aria-label="Voltar">
+                <img src="../Img/página de contato/seta.png" alt="Voltar" class="back-icon">
+            </button>
                     <h2 class="page-title">PÁGINA DE PERFIL</h2>
                 </div>
 
@@ -92,21 +92,7 @@
                     </form>
                 </div>
 
-                <!-- Menu de ações adicionais -->
-                <div class="additional-actions">
-                    <button class="action-card" data-action="change-password">
-                       
-                        <span class="action-text">Alterar Senha</span>
-                    </button>
-                    <button class="action-card" data-action="privacy-settings">
-                       
-                        <span class="action-text">Configurações de Privacidade</span>
-                    </button>
-                    <button class="action-card" data-action="logout">
-                     
-                        <span class="action-text">Sair da Conta</span>
-                    </button>
-                </div>
+               
             </div>
         </main>
     </div>

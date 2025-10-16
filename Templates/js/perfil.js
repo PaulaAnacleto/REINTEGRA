@@ -1,5 +1,20 @@
 // Aguarda o carregamento completo do DOM
 document.addEventListener('DOMContentLoaded', function() {
+
+    //Botão voltar
+     const backButton = document.querySelector('.back-button');
+    
+    if (backButton) {
+        backButton.addEventListener('click', function() {
+            // Verifica se há histórico de navegação
+            if (window.history.length > 1) {
+                window.history.back();
+            } else {
+                // Se não houver histórico, redireciona para a página inicial
+                window.location.href = '../View/inicial-login.php';
+            }
+        });
+    }
     
     // Elementos da página
     const profileForm = document.getElementById('profileForm');

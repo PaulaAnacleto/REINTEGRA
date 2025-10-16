@@ -75,26 +75,29 @@ body {
     gap: 20px;
 }
 
-.back-btn {
-    background: white;
-    border: 2px solid #e1e5e9;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
+.back-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    font-size: 1.2rem;
-    color: #666;
+    transition: transform 0.2s ease;
 }
 
-.back-btn:hover {
-    border-color: #1e73be;
-    color: #1e73be;
+.back-button:hover {
     transform: translateX(-3px);
-    box-shadow: 0 5px 15px rgba(30, 115, 190, 0.2);
+}
+
+.back-button:active {
+    transform: translateX(-5px);
+}
+
+.back-icon {
+    width: 32px;
+    height: 32px;
+    display: block;
 }
 
 .page-title {
