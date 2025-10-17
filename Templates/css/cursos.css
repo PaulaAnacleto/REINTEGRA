@@ -1,0 +1,233 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #ffffff 0%, #a5c7eb 100%);
+  align-items: center;
+}
+
+.title {
+  color: black;
+  font-weight: bold;
+  text-align: center;
+}
+
+span {
+  color: #0146b1;
+}
+
+.paragrafo {
+  font-weight: bold;
+  text-align: center;
+  font-size: 15px;
+  margin-bottom: 7%;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start; /* garante o botão à esquerda */
+  padding-left: 20px; /* afastamento da borda */
+}
+
+/* Navbar Styles */
+.navbar {
+  width: 100%;
+  background: transparent;
+  padding: 20px 60px;
+  box-sizing: border-box;
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ===== Lado direito (links + perfil) ===== */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.back-button:active {
+  transform: translateX(-5px);
+}
+
+.img-perfil {
+  width: 30px;
+  padding: 4px;
+}
+
+#navbarNav {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== Ícone de perfil ===== */
+.perfil-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.logo-box {
+  padding: 8px 16px;
+  border-radius: 8px;
+  justify-content: left;
+}
+
+.logo-text {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #0146b1;
+  letter-spacing: 3px;
+}
+
+.navbar-nav {
+  gap: 15px;
+  list-style-type: none;
+}
+
+.navbar-toggler {
+  padding: var(--bs-navbar-toggler-padding-y) var(--bs-navbar-toggler-padding-x);
+  font-size: var(--bs-navbar-toggler-font-size);
+  line-height: 1;
+  color: var(--bs-navbar-color);
+  background-color: transparent;
+  border: none;
+  border-radius: var(--bs-navbar-toggler-border-radius);
+  transition: var(--bs-navbar-toggler-transition);
+}
+
+.nav-btn {
+  border-radius: 8px;
+  padding: 8px 16px !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  min-width: 140px;
+}
+
+.nav-text {
+  flex: 1;
+}
+
+.btn-retorno {
+  align-items: baseline;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  align-items: last baseline;
+  transition: transform 0.2s ease;
+}
+
+.back-button:hover {
+  transform: translateX(-3px);
+}
+
+.back-icon {
+  width: 32px;
+  height: 32px;
+  display: block;
+}
+
+
+
+
+.conteudo {
+  display: flex;
+  gap: 25px;
+  max-width: 900px;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  justify-items: center;
+}
+
+.card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  width: 270px;
+  height: 205px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+  font-size: 13.5px;
+  margin-bottom: 0%;
+  font-weight: bold;
+  color: #0146b1;
+  text-align: center;
+}
+
+.text-card {
+    font-size: 13px;
+    text-align: center;
+
+}
+
+
+
+
+
+.footer {
+    margin-top: 20px;
+    padding: 30px 0;
+    border-top: 1px solid #e0e0e0;
+    
+}
+
+.footer-text {
+    color: #666;
+    font-size: 0.9rem;
+    
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.footer-link {
+    color: #666;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+}
