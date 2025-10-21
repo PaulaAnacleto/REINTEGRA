@@ -41,50 +41,8 @@ document.addEventListener('DOMContentLoaded', function() {
     let originalData = {};
     let isEditing = false;
 
-    // Função para carregar dados do usuário (simulação)
-    function loadUserData() {
-        // Simular carregamento de dados do localStorage ou API
-        const userData = getUserDataFromStorage() || getDefaultUserData();
-        
-        // Atualizar campos do formulário
-        nomeCompleto.value = userData.nomeCompleto;
-        email.value = userData.email;
-        dataNascimento.value = userData.dataNascimento;
-        cpf.value = userData.cpf;
-        profissao.value = userData.profissao;
-        
-        // Atualizar elementos de exibição
-        userName.textContent = userData.displayName;
-        profileUserName.textContent = userData.displayName;
-        profileUserEmail.textContent = userData.email;
-        
-        // Salvar dados originais
-        originalData = { ...userData };
-        
-        console.log('Dados do usuário carregados:', userData);
-    }
+    
 
-    // Função para obter dados do localStorage
-    function getUserDataFromStorage() {
-        try {
-            const storedData = localStorage.getItem('reintegra_user_data');
-            return storedData ? JSON.parse(storedData) : null;
-        } catch (error) {
-            console.error('Erro ao carregar dados do localStorage:', error);
-            return null;
-        }
-    }
-
-   
-    // Função para salvar dados no localStorage
-    function saveUserDataToStorage(userData) {
-        try {
-            localStorage.setItem('reintegra_user_data', JSON.stringify(userData));
-            console.log('Dados salvos no localStorage:', userData);
-        } catch (error) {
-            console.error('Erro ao salvar dados no localStorage:', error);
-        }
-    }
 
     // Função para validar email
     function validateEmail(email) {
@@ -211,45 +169,7 @@ document.addEventListener('DOMContentLoaded', function() {
         saveBtn.classList.add('loading');
         saveBtn.textContent = 'Salvando...';
 
-        try {
-            // Simular requisição para o servidor
-            await new Promise(resolve => setTimeout(resolve, 2000));
-
-            // Preparar dados atualizados
-            const updatedData = {
-                nomeCompleto: nomeCompleto.value.trim(),
-                displayName: nomeCompleto.value.trim(),
-                email: email.value.trim(),
-                dataNascimento: dataNascimento.value,
-                cpf: cpf.value.trim(),
-                profissao: profissao.value.trim()
-            };
-
-            // Salvar no localStorage
-            saveUserDataToStorage(updatedData);
-
-        
-            // Atualizar elementos de exibição
-            userName.textContent = updatedData.displayName;
-            profileUserName.textContent = updatedData.displayName;
-            profileUserEmail.textContent = updatedData.email;
-
-            // Sair do modo de edição
-            exitEditMode();
-
-            // Mostrar sucesso
-            alert('Perfil atualizado com sucesso!');
-
-            console.log('Dados salvos com sucesso:', updatedData);
-
-        } catch (error) {
-            console.error('Erro ao salvar dados:', error);
-            alert('Erro ao salvar alterações. Tente novamente.');
-        } finally {
-            // Remover loading
-            saveBtn.classList.remove('loading');
-            saveBtn.innerHTML = '<span class="btn-icon"></span>Salvar Alterações';
-        }
+      
     }
 
     // Event Listeners
@@ -271,109 +191,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Botão voltar
-    if (backBtn) {
-        backBtn.addEventListener('click', function() {
-            if (isEditing) {
-                const confirmExit = confirm('Você tem alterações não salvas. Deseja sair mesmo assim?');
-                if (!confirmExit) {
-                    return;
-                }
-            }
-            
-            // Verificar se há histórico para voltar
-            if (window.history.length > 1) {
-                window.history.back();
-            } else {
-                // Se não há histórico, redirecionar para página de serviços
-                window.location.href = 'servicos.html';
-            }
-        });
-    }
-
-    // Cards de ação adicional
-    actionCards.forEach(card => {
-        card.addEventListener('click', function() {
-            const action = this.getAttribute('data-action');
-            handleAdditionalAction(action);
-        });
-    });
-
-    // Função para lidar com ações adicionais
-    function handleAdditionalAction(action) {
-        switch (action) {
-            case 'change-password':
-                handleChangePassword();
-                break;
-            case 'privacy-settings':
-                handlePrivacySettings();
-                break;
-            case 'logout':
-                handleLogout();
-                break;
-            default:
-                console.log('Ação não reconhecida:', action);
-        }
-    }
-
-    // Função para alterar senha
-    function handleChangePassword() {
-        const currentPassword = prompt('Digite sua senha atual:');
-        if (!currentPassword) return;
-
-        const newPassword = prompt('Digite sua nova senha:');
-        if (!newPassword) return;
-
-        const confirmPassword = prompt('Confirme sua nova senha:');
-        if (newPassword !== confirmPassword) {
-            alert('As senhas não coincidem!');
-            return;
-        }
-
-        if (newPassword.length < 6) {
-            alert('A nova senha deve ter pelo menos 6 caracteres!');
-            return;
-        }
-
-        // Simular alteração de senha
-        alert('Senha alterada com sucesso!');
-        console.log('Senha alterada para o usuário:', originalData.email);
-    }
-
-    // Função para configurações de privacidade
-    function handlePrivacySettings() {
-        alert('Configurações de Privacidade\n\n• Controle quem pode ver seu perfil\n• Gerencie suas preferências de notificação\n• Configure a visibilidade dos seus dados\n\n(Esta funcionalidade será implementada em breve)');
-        console.log('Acessando configurações de privacidade');
-    }
-
-    // Função para logout
-    function handleLogout() {
-        const confirmLogout = confirm('Tem certeza que deseja sair da sua conta?');
-        if (confirmLogout) {
-            // Limpar dados de sessão (opcional)
-            // localStorage.removeItem('reintegra_user_session');
-            
-            alert('Você foi desconectado com sucesso!');
-            
-            // Redirecionar para página de login
-            window.location.href = 'login.html';
-            
-            console.log('Usuário desconectado');
-        }
-    }
-
-    // Atualização em tempo real do nome no cabeçalho
-    nomeCompleto.addEventListener('input', function() {
-        if (!isEditing) return;
-        
-        const newName = this.value.trim();
-        if (newName) {
-            const displayName = newName;
-            userName.textContent = displayName;
-            profileUserName.textContent = displayName;
-        }
-    });
-
     // Formatação automática do CPF
     cpf.addEventListener('input', function() {
         if (!isEditing) return;
@@ -385,23 +202,7 @@ document.addEventListener('DOMContentLoaded', function() {
         this.value = value;
     });
 
-    // Efeitos visuais adicionais
-
-    // Animação de entrada
-    function animatePageLoad() {
-        const elements = document.querySelectorAll('.profile-card, .action-card');
-        elements.forEach((element, index) => {
-            element.style.opacity = '0';
-            element.style.transform = 'translateY(30px)';
-            
-            setTimeout(() => {
-                element.style.transition = 'all 0.6s ease-out';
-                element.style.opacity = '1';
-                element.style.transform = 'translateY(0)';
-            }, index * 100);
-        });
-    }
-
+  
     // Executar animação após um pequeno delay
     setTimeout(animatePageLoad, 200);
 
