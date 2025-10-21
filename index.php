@@ -126,9 +126,6 @@
                             <div class="badge-seguro">
                                 <span>✓ 100% Seguro</span>
                             </div>
-                            <div class="star-decoration star-1">✦</div>
-                            <div class="star-decoration star-2">✦</div>
-                            <div class="star-decoration star-3">✦</div>
                         </div>
                     </div>
                 </div>
