@@ -57,11 +57,12 @@
         </div>
     </nav>
 
-
-        <section class="hero-section">
-        <button class="back-button" aria-label="Voltar">
+     <button class="back-button" aria-label="Voltar">
                 <img src="../Img/página de contato/seta.png" alt="Voltar" class="back-icon">
             </button>
+
+        <section class="hero-section">
+       
             <h1 class="hero-title">TUTORIAIS E DICAS</h1>
             <p class="hero-description">
                 Descubra conteúdos práticos e <span class="highlight">objetivos</span> que vão te ajudar a
