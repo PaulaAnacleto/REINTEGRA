@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tutoriais e Dicas - Reintegra</title>
+    <title>Currículo - Reintegra</title>
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -62,54 +62,51 @@
             </button>
 
         <section class="hero-section">
-            <h1 class="hero-title">TUTORIAIS E DICAS</h1>
+            <h1 class="hero-title">CURRÍCULO PROFISSIONAL</h1>
             <p class="hero-description">
-                Descubra conteúdos práticos e <span class="highlight">objetivos</span> que vão te ajudar a
-                <span class="highlight">aprender</span>, evoluir e encarar cada desafio com mais <span class="highlight">confiança</span>.
+                Seja você <span class="highlight">iniciante</span> ou já com experiência, esse é o lugar pra organizar sua trajetória
+                de forma clara e <span class="highlight">objetiva </span>.
             </p> 
         </section>
 
         <section class="content-section">
             <div class="card-item">
                 <div class="card-text">
-                    <h2 class="card-title">Monte seu Currículo</h2>
+                    <h2 class="card-title">Escolha um Formato Claro e Profissional</h2>
                     <ul>
-                        <li>Como criar um currículo profissional</li>
-                        <li>Passo a passo para montar um currículo perfeito</li>
-                        <li>Aprenda a fazer um currículo de sucesso</li>
-                        <li>Dicas essenciais para criar um currículo profissional</li>
+                        <li>Formato tradicional: Coloque as informações em tópicos e de maneira organizada.</li>
+                        <li>Design simples: Evite excessos de cores e fontes. Mantenha uma aparência limpa e fácil de ler.</li> 
                     </ul>
-                    <button class="btn-primary">Começar</button href="../View/Curriculo.php">
                 </div>
                 <div class="card-image">
-                    <img src="../img/página tutoriais e dicas/monte seu curriculo.png" alt="Ilustração de currículo" class="img-fluid">
+                    <img src="../Img/página curriculo/Escolha um Formato Claro e Profissional.png" alt="Ilustração de currículo" class="img-fluid">
                 </div>
             </div>
 
             <div class="card-item reverse">
                 <div class="card-text">
-                    <h2 class="card-title">Domine a Entrevista</h2>
+                    <h2 class="card-title">Informações de Contato</h2>
                     <ul>
-                        <li>Como se preparar antes da entrevista</li>
-                        <li>Aprenda como se comportar durante uma entrevista</li>
-                        <li>Perguntas Frequentes</li>
-                        <li>Após a Entrevista</li>
+                        <li>Nome completo</li>
+                        <li>Telefone</li>
+                        <li>E-mail</li>
+                        <li>LinkedIn</li>
                     </ul>
-                    <button class="btn-primary">Começar</button>
                 </div>
                 <div class="card-image">
-                    <img src="../img/página tutoriais e dicas/domine a entrevista.png" alt="Ilustração de entrevista" class="img-fluid">
+                    <img src="../Img/página curriculo/Informações de Contato.png" alt="Ilustração de entrevista" class="img-fluid">
                 </div>
             </div>
 
             <div class="card-item">
                 <div class="card-text">
-                    <h2 class="card-title">Aproveitando o Poder do Networking</h2>
+                    <h2 class="card-title">Experiência Profissional</h2>
                     <ul>
-                        <li>Escolha os aplicativos certos para seu objetivo</li>
-                        <li>Monte um perfil que fale por você</li>
-                        <li>Conecte-se com propósito</li>
-                        <li>Cultive suas conexões</li>
+                        <li>Liste suas experiências de trabalho em ordem cronológica reversa</li>
+                        <li>Para cada cargo, inclua:</li>
+                        <li>Nome da empresa e período de trabalho.</li>
+                        <li>Descrição do cargo e principais responsabilidades.</li>
+                        <li>Realizações: Cite resultados e conquistas específicas (como aumento de vendas, melhoria de processos, etc.). </li>
                     </ul>
                     <button class="btn-primary">Começar</button>
                 </div>

@@ -70,23 +70,32 @@ background: linear-gradient(135deg, #ffffff 0%, #a5c7eb 100%);
 /* Hero Section */
 .hero-section {
     background: linear-gradient(135deg, #ffffff 0%, #a5c7eb 100%);
-    padding: 120px 120px;
+    padding: 200px 200px;
     text-align: center;
    
 }
 
 .hero-title {
-    font-size: 3rem;
+     font-size: 3rem;
     font-weight: 800;
-    color: #00208A;
+      background-image: linear-gradient(to bottom, rgb(2, 24, 73), rgb(0, 60, 255));
+
+  /* Segundo passo: apagar do fundo tudo que não estiver imediatamente atrás de texto */
+  background-clip: text;
+  -webkit-background-clip: text; /* Alguns navegadores precisam do prefixo */
+  /* Terceiro passo: apagar o texto, deixando apenas o fundo atrás dele */
+  -webkit-text-fill-color: transparent;
+  /* Cor que contraste com o degradê, caso o navegador não suporte background-clip: text */
+  color: black;
     margin-bottom: 20px;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
 
 .hero-description {
+    font-weight: bold;
     font-size: 1.2rem;
-    color: #555;
+    color: #000000;
     max-width: 800px;
     margin: 0 auto;
     line-height: 1.8;
@@ -213,6 +222,7 @@ background: linear-gradient(135deg, #ffffff 0%, #a5c7eb 100%);
     margin-top: auto;
     padding: 30px 0;
     border-top: 1px solid #e0e0e0;
+    background-color: #ffffff;
     
 }
 
