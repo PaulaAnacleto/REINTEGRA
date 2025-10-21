@@ -32,21 +32,26 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#serviços">Serviços</a>
+                        <a class="nav-link" href="../view/Servicos">Serviços</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#contato">Feedback</a>
+                        <a class="nav-link" href="#cadastro">Feedback</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#contato">Contato</a>
+                        <a class="nav-link" href="../View/Contato.php">Contato</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#inicio">Início</a>
+                        <a class="nav-link" href="#sobre">Sobre</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="../View/Inicial-login.php">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="../View/Perfil.php">
                         <button class="btn-perfil" onclick="abrirPerfil()">
                             <img src="../Img/página de perfil/icone perfil.png" class="img-perfil" alt="Perfil">
                         </button>
+                        </a>
                     </li>
                 </ul>
             </div>
