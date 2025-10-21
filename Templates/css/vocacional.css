@@ -1,0 +1,250 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    overflow-x: hidden;
+    background-color: #f5f5f5;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Navbar Styles */
+.navbar {
+  display: flex;
+background: linear-gradient(135deg, #ffffff 0%, #a5c7eb 100%);
+}
+
+.logo-box {
+  padding: 8px 16px;
+  border-radius: 8px;
+}
+
+.logo-text {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #0146b1;
+  letter-spacing: 3px;
+}
+
+.navbar-nav {
+  gap: 15px;
+  align-items: center;
+}
+
+.nav-item .nav-link {
+  font-weight: 500;
+  color: #333;
+}
+
+.nav-item .nav-link:hover {
+  color: #0146b1;
+}
+
+/* Imagem de perfil */
+.btn-perfil {
+  border: none;
+  background: transparent;
+  padding: 0;
+}
+
+.img-perfil {
+  width: 42px;
+  height: 42px;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+}
+
+.img-perfil:hover {
+  transform: scale(1.08);
+}
+
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, #ffffff 0%, #a5c7eb 100%);
+    padding: 200px 200px;
+    text-align: center;
+   
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-weight: 800;
+    background-image: linear-gradient(to bottom, rgb(2, 24, 73), rgb(0, 60, 255));
+
+  /* Segundo passo: apagar do fundo tudo que não estiver imediatamente atrás de texto */
+  background-clip: text;
+  -webkit-background-clip: text; /* Alguns navegadores precisam do prefixo */
+  /* Terceiro passo: apagar o texto, deixando apenas o fundo atrás dele */
+  -webkit-text-fill-color: transparent;
+  /* Cor que contraste com o degradê, caso o navegador não suporte `background-clip: text` */
+  color: black;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.hero-description {
+    font-size: 1.2rem;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+.highlight {
+    color: #0146B1;
+    font-weight: 600;
+}
+
+/* Botão de voltar (seta) */
+.back-button {
+  position: absolute;          /* Posiciona em relação à seção */
+  left: 158px;                  /* Distância da esquerda */
+  background: transparent;     /* Remove fundo branco */
+  border: none;                /* Remove borda */
+  cursor: pointer;             /* Cursor de clique */
+  z-index: 10;                 /* Fica acima do conteúdo */
+  padding: 5px;
+  margin-top: 15px;
+}
+
+.back-icon {
+  width: 38px;                 /* Tamanho da seta */
+  height: 38px;
+  transition: transform 0.2s ease;
+}
+
+.back-icon:hover {
+  transform: scale(1.1);       /* Leve zoom no hover */
+}
+
+/* Content Section */
+
+.card-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    padding: 100px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+
+.card-item.reverse {
+    flex-direction: row-reverse;
+}
+
+.card-text {
+    flex: 1;
+    padding-right: 40px;
+}
+
+.card-item.reverse .card-text {
+    padding-right: 0;
+    padding-left: 40px;
+}
+
+.card-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.card-text ul {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 30px;
+}
+
+.card-text ul li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 10px;
+    color: #666;
+    font-size: 1.05rem;
+}
+
+.card-text ul li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #1a73e8;
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+.btn-primary {
+    background-color: #1a73e8;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:hover {
+    background-color: #0d47a1;
+    transform: translateY(-2px);
+}
+
+.card-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+}
+
+/* Footer Section */
+.footer {
+    margin-top: auto;
+    padding: 30px 0;
+    border-top: 1px solid #e0e0e0;
+    background-color: #ffffff;
+    
+}
+
+.footer-text {
+    color: #666;
+    font-size: 0.9rem;
+    
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.footer-link {
+    color: #666;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+}
