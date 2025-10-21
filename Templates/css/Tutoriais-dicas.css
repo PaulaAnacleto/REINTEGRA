@@ -70,19 +70,25 @@ background: linear-gradient(135deg, #ffffff 0%, #a5c7eb 100%);
 /* Hero Section */
 .hero-section {
     background: linear-gradient(135deg, #ffffff 0%, #a5c7eb 100%);
-    padding: 120px 120px;
+    padding: 200px 200px;
     text-align: center;
    
 }
 
-.hero-title {
+
+  .hero-title {
     font-size: 3rem;
     font-weight: 800;
-    color: #00208A;
+      background-image: linear-gradient(to bottom, rgb(2, 24, 73), rgb(0, 60, 255));
+  background-clip: text;
+  -webkit-background-clip: text; 
+  -webkit-text-fill-color: transparent;
+  color: black;
     margin-bottom: 20px;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
+
 
 .hero-description {
     font-size: 1.2rem;
@@ -213,7 +219,7 @@ background: linear-gradient(135deg, #ffffff 0%, #a5c7eb 100%);
     margin-top: auto;
     padding: 30px 0;
     border-top: 1px solid #e0e0e0;
-    
+    background-color: white;
 }
 
 .footer-text {
