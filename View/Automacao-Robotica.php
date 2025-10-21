@@ -99,7 +99,7 @@
 
         <div class="card">
               <div class="card-header">
-            <img src="../Img/páginas dos cursos/robotica.png" alt="Engrenagens" class="icone">
+            <img src="../Img/páginas dos cursos/robotica.png" alt="Mão de um robô" class="icone">
             <h3>Robótica</h3>
         </div>
             <p class="text-card">Projeto, robôs, atuadores, controle e <span>entre outros...</span></p>
@@ -107,7 +107,7 @@
 
         <div class="card">
               <div class="card-header">
-            <img src="../Img/páginas dos cursos/automacao.png" alt="Engrenagens" class="icone">
+            <img src="../Img/páginas dos cursos/inteligencia-artificial.png" alt="Nuvem tecnológica" class="icone">
             <h3>Inteligência artificial</h3>
         </div>
             <p class="text-card">Algoritmos, dados, redes neurais e <span>entre outros...</span></p>
@@ -115,7 +115,7 @@
 
         <div class="card">
               <div class="card-header">
-            <img src="../Img/páginas dos cursos/automacao.png" alt="Engrenagens" class="icone">
+            <img src="../Img/páginas dos cursos/sensores.png" alt="Sensor" class="icone">
             <h3>Sensores</h3>
             </div>
             <p class="text-card">Detecção, medição, pressão e <span>entre outros...</span></p>
@@ -123,7 +123,7 @@
 
         <div class="card">
             <div class="card-header">
-            <img src="../Img/páginas dos cursos/automacao.png" alt="Engrenagens" class="icone">
+            <img src="../Img/páginas dos cursos/manufatura.png" alt="Lâmpada com engrenagem" class="icone">
             <h3>Manufatura inteligente</h3>
             </div>
             <p class="text-card">IoT, otimização, produção, eficiência e <span>entre outros...</span></p>
@@ -131,7 +131,7 @@
 
         <div class="card">
             <div class="card-header">
-            <img src="../Img/páginas dos cursos/automacao.png" alt="Engrenagens" class="icone">
+            <img src="../Img/páginas dos cursos/industria.png" alt="Indústria" class="icone">
             <h3>Industria 4.0</h3>
             </div>
             <p class="text-card">Ciberfísico, integração, análise em tempo real e <span>entre outros...</span></p>
@@ -139,10 +139,15 @@
 
         <div class="card">
               <div class="card-header">
-            <img src="../Img/páginas dos cursos/automacao.png" alt="Engrenagens" class="icone">
+            <img src="../Img/páginas dos cursos/integracao.png" alt="Duas engrenagens em um ciclo" class="icone">
             <h3>Integração de Máquinas</h3>
             </div>
             <p class="text-card">Comunicação, sincronização, redes industriais e <span>entre outros...</span></p>
+        </div>
+
+        <div class="logo-senai">
+            <h4 class="parceria">Parceria</h4>
+            <img src="../Img/página inicial/logo senai.png" alt="Título da parceria com a logo da empresa SENAI" class="img-logo">
         </div>
     </main>
 
