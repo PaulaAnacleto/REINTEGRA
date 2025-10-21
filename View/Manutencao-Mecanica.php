@@ -91,7 +91,7 @@
         
         <div class="card">
             <div class="card-header">
-            <img src="../Img/páginas dos cursos/manutencao-industrial.png" alt="Homem com capacete de construção" class="icone">
+            <img src="../Img/páginas dos cursos/manutencao-industrial.png" alt="Capacete de segurança e duas engrenagens juntas" class="icone">
             <h3>Manutenção Industrial</h3>
             </div>
             <p class="text-card">Inspeção, prevenção, correção, diagnóstico e <span>entre outros...</span></p>
@@ -107,42 +107,34 @@
 
         <div class="card">
               <div class="card-header">
-            <img src="../Img/páginas dos cursos/inteligencia-artificial.png" alt="Nuvem tecnológica" class="icone">
-            <h3>Inteligência artificial</h3>
+            <img src="../Img/páginas dos cursos/manutencao-preventiva.png" alt="Homem com um capacete de segurança e uma prancheta" class="icone">
+            <h3>Manutenção Preventiva</h3>
         </div>
-            <p class="text-card">Algoritmos, dados, redes neurais e <span>entre outros...</span></p>
-        </div>
-
-        <div class="card">
-              <div class="card-header">
-            <img src="../Img/páginas dos cursos/sensores.png" alt="Sensor" class="icone">
-            <h3>Sensores</h3>
-            </div>
-            <p class="text-card">Detecção, medição, pressão e <span>entre outros...</span></p>
-        </div>
-
-        <div class="card">
-            <div class="card-header">
-            <img src="../Img/páginas dos cursos/manufatura.png" alt="Lâmpada com engrenagem" class="icone">
-            <h3>Manufatura inteligente</h3>
-            </div>
-            <p class="text-card">IoT, otimização, produção, eficiência e <span>entre outros...</span></p>
-        </div>
-
-        <div class="card">
-            <div class="card-header">
-            <img src="../Img/páginas dos cursos/industria.png" alt="Indústria" class="icone">
-            <h3>Industria 4.0</h3>
-            </div>
-            <p class="text-card">Ciberfísico, integração, análise em tempo real e <span>entre outros...</span></p>
+            <p class="text-card">Falhas, conservação, eficiência e <span>entre outros...</span></p>
         </div>
 
         <div class="card">
               <div class="card-header">
-            <img src="../Img/páginas dos cursos/integracao.png" alt="Duas engrenagens em um ciclo" class="icone">
-            <h3>Integração de Máquinas</h3>
+            <img src="../Img/páginas dos cursos/manutencao-preditiva.png" alt="Um circulo com uma chave de fenda e embaixo dela uma chave inglesa em seu centro, ao seu redor ícones que representam comunicação e organização" class="icone">
+            <h3>Manutenção Preditiva</h3>
             </div>
-            <p class="text-card">Comunicação, sincronização, redes industriais e <span>entre outros...</span></p>
+            <p class="text-card">Desempenho, otimização, confiabilidade e <span>entre outros...</span></p>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+            <img src="../Img/páginas dos cursos/engenharia-mecanica.png" alt="Engrenagem" class="icone">
+            <h3>Engenharia Mecânica</h3>
+            </div>
+            <p class="text-card">Projeto, análise, materiais, resistência e <span>entre outros...</span></p>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+            <img src="../Img/páginas dos cursos/projetos-mecanicos.png" alt="Engrenagem e roda" class="icone">
+            <h3>Projetos Mecânicos</h3>
+            </div>
+            <p class="text-card">Desenho, modelagem, CAD e <span>entre outros...</span></p>
         </div>
 
         <div class="logo-senai">
