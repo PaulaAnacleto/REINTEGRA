@@ -41,16 +41,15 @@
                         <a class="nav-link" href="#contato">Contato</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#sobre">Sobre</a>
+                        <a class="nav-link" href="#inicio">Início</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#inicio">Início</a>
+                        <button class="btn-perfil" onclick="abrirPerfil()">
+                            <img src="../Img/página de perfil/icone perfil.png" class="img-perfil" alt="Perfil">
+                        </button>
                     </li>
                 </ul>
             </div>
-                <li class="nav-item-img">
-                    <img src="../Img/página de perfil/icone perfil.png" class="img-perfil" alt="Perfil" >
-                </li>
         </div>
     </nav>
 
@@ -93,9 +92,6 @@
                 <div class="col-lg-6 text-end">
                     <div class="caminho-image-container">
                         <img src="../Img/página inicial pós login/homem.png" alt="Homem feliz" class="img-fluid caminho-image">
-                        <div class="star-decoration caminho-star-1">✦</div>
-                        <div class="star-decoration caminho-star-2">✦</div>
-                        <div class="star-decoration caminho-star-3">✦</div>
                     </div>
                 </div>
             </div>
@@ -152,9 +148,6 @@
                             <div class="badge-seguro">
                                 <span>✓ 100% Seguro</span>
                             </div>
-                            <div class="star-decoration star-1">✦</div>
-                            <div class="star-decoration star-2">✦</div>
-                            <div class="star-decoration star-3">✦</div>
                         </div>
                     </div>
                 </div>

@@ -18,57 +18,58 @@ html {
 
 /* Navbar Styles */
 .navbar {
-    display: flex;
-  background-image: linear-gradient(
-    to right, 
-    rgba(1, 70, 177, 0.15),
-    rgba(0, 30, 75, 0.15)   
-  );
-}
-
-  .img-perfil{
-      width: 40px;
+  display: flex;
+background: linear-gradient(135deg, #ffffff 0%, #a5c7eb 100%);
 }
 
 .logo-box {
-    padding: 8px 16px;
-    border-radius: 8px;
+  padding: 8px 16px;
+  border-radius: 8px;
 }
 
 .logo-text {
-    font-size: 2rem;
-    font-weight: 800;
-    color: #0146B1;
-    letter-spacing: 3px;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #0146b1;
+  letter-spacing: 3px;
 }
 
 .navbar-nav {
-    gap: 10px;
+  gap: 15px;
+  align-items: center;
 }
 
-.nav-btn {
-    border-radius: 8px;
-    padding: 8px 16px !important;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    min-width: 140px;
+.nav-item .nav-link {
+  font-weight: 500;
+  color: #333;
 }
 
-.nav-text {
-    flex: 1;
+.nav-item .nav-link:hover {
+  color: #0146b1;
+}
+
+/* Imagem de perfil */
+.btn-perfil {
+  border: none;
+  background: transparent;
+  padding: 0;
+}
+
+.img-perfil {
+  width: 42px;
+  height: 42px;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+}
+
+.img-perfil:hover {
+  transform: scale(1.08);
 }
 
 /* Hero Section */
 .hero-section {
-      background-image: linear-gradient(
-    to right, 
-    rgba(1, 70, 177, 0.15),  /* Cor #0146B1 com 60% de opacidade */
-    rgba(0, 30, 75, 0.15)    /* Cor #001E4B com 60% de opacidade */
-  );
+background: linear-gradient(135deg, #ffffff 0%, #a5c7eb 100%);
     padding: 50px 0 80px;
 
 }
@@ -208,26 +209,6 @@ html {
     color: #333;
     opacity: 0.8;
     animation: twinkle 2s ease-in-out infinite;
-}
-
-.star-1 {
-    top: 15%;
-    right: 10%;
-    animation-delay: 0s;
-}
-
-.star-2 {
-    bottom: 30%;
-    right: 5%;
-    font-size: 1.5rem;
-    animation-delay: 0.5s;
-}
-
-.star-3 {
-    bottom: 15%;
-    left: 5%;
-    font-size: 1.2rem;
-    animation-delay: 1s;
 }
 
 @keyframes twinkle {
@@ -679,35 +660,6 @@ html {
     border-radius: 15px;
 }
 
-.caminho-star-1 {
-    position: absolute;
-    top: 10%;
-    left: -20px;
-    font-size: 1.8rem;
-    color: #333;
-    animation: twinkle 2s ease-in-out infinite;
-}
-
-.caminho-star-2 {
-    position: absolute;
-    top: 50%;
-    right: -20px;
-    font-size: 1.5rem;
-    color: #333;
-    animation: twinkle 2s ease-in-out infinite;
-    animation-delay: 0.7s;
-}
-
-.caminho-star-3 {
-    position: absolute;
-    bottom: 15%;
-    left: -15px;
-    font-size: 1.3rem;
-    color: #333;
-    animation: twinkle 2s ease-in-out infinite;
-    animation-delay: 1.4s;
-}
-
 /* Feedback Form Section */
 .feedback-form-section {
     padding: 60px 0;
@@ -765,18 +717,205 @@ html {
     transform: rotate(45deg);
 }
 
-/* Responsive Adjustments for New Sections */
-@media (max-width: 768px) {
-    .caminho-title,
-    .caminho-subtitle {
-        font-size: 2rem;
-    }
-    
-    .caminho-image-container {
-        margin-top: 30px;
-    }
-    
-    .feedback-form-container {
-        border-radius: 30px;
-    }
+/* ============================= */
+/* 💻 TABLETS (720px - 1024px)  */
+/* ============================= */
+@media only screen and (min-width: 720px) and (max-width: 1024px) {
+
+  /* Navbar */
+  .logo-text {
+    font-size: 1.8rem;
+  }
+
+  .nav-link {
+    font-size: 1rem;
+  }
+
+  /* Hero */
+  .hero-section {
+    padding: 80px 10px 10px;
+  }
+
+  .hero-title {
+    font-size: 2.8rem;
+  }
+
+  .hero-text {
+    font-size: 1.1rem;
+  }
+
+  .hero-image {
+    width: 100%;
+  }
+
+  /* Sobre */
+  .section-title {
+    font-size: 2.2rem;
+  }
+
+  .sobre-section .row {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .sobre-image {
+    width: 80%;
+    margin: 10px auto;
+  }
+
+  .badge-seguro {
+    top: 70px;
+    left: 10%;
+  }
+
+  /* Contato */
+  .contato-section {
+    flex-direction: column;
+    padding: 80px 30px;
+    text-align: center;
+  }
+
+  .contato-title {
+    font-size: 2.5rem;
+  }
+
+  .btn-contato {
+    margin: 20px auto 0;
+  }
+
+  .contato-image-container {
+    margin-top: 30px;
+  }
+
+  /* Feedbacks */
+  .feedback-card {
+    padding: 25px;
+  }
+
+  .feedback-avatar-wrapper {
+    width: 100px;
+    height: 100px;
+  }
+
+  /* Footer */
+  .footer-links {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+
+/* ============================= */
+/* 📱 CELULARES (320px - 480px) */
+/* ============================= */
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+
+  /* Ajuste geral */
+  body {
+    font-size: 14px;
+  }
+
+  /* Navbar */
+  .logo-text {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+  }
+
+  .navbar-nav {
+    text-align: center;
+    gap: 5px;
+  }
+
+  .nav-link {
+    font-size: 0.9rem;
+  }
+
+  /* Hero */
+  .hero-section {
+    padding: 50px 20px 60px;
+    text-align: center;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+    line-height: 1.3;
+  }
+
+  .hero-text {
+    font-size: 1rem;
+  }
+
+  .hero-image {
+    width: 90%;
+  }
+
+  /* Parceria */
+  .parceria-section img {
+    max-width: 200px;
+  }
+
+  /* Sobre */
+  .sobre-section {
+    text-align: center;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+  }
+
+  .feature-item {
+    justify-content: center;
+  }
+
+  .badge-seguro {
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.9rem;
+    padding: 10px 18px;
+  }
+
+  /* Contato */
+  .contato-section {
+    flex-direction: column;
+    padding: 60px 20px;
+    text-align: center;
+  }
+
+  .contato-title {
+    font-size: 2rem;
+  }
+
+  .btn-contato {
+    width: 80%;
+    margin: 15px auto 0;
+  }
+
+  .contato-image-container {
+    margin-top: 30px;
+  }
+
+  .contato-image {
+    width: 85%;
+  }
+
+  /* Feedbacks */
+  .feedback-card {
+    padding: 20px;
+  }
+
+  .feedback-avatar-wrapper {
+    width: 90px;
+    height: 90px;
+  }
+
+  /* Footer */
+  .footer-links {
+    flex-direction: row;
+    gap: 1px;
+  }
+
+  .footer-text {
+    text-align: center;
+  }
 }
