@@ -78,7 +78,7 @@ background: linear-gradient(135deg, #ffffff 0%, #a5c7eb 100%);
 .hero-title {
     font-size: 3rem;
     font-weight: 800;
-    color: #1a73e8;
+    color: #00208A;
     margin-bottom: 20px;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -93,8 +93,29 @@ background: linear-gradient(135deg, #ffffff 0%, #a5c7eb 100%);
 }
 
 .highlight {
-    color: #1a73e8;
+    color: #0146B1;
     font-weight: 600;
+}
+
+/* Botão de voltar (seta) */
+.back-button {
+  position: absolute;          /* Posiciona em relação à seção */
+  left: 158px;                  /* Distância da esquerda */
+  background: transparent;     /* Remove fundo branco */
+  border: none;                /* Remove borda */
+  cursor: pointer;             /* Cursor de clique */
+  z-index: 10;                 /* Fica acima do conteúdo */
+  padding: 5px;
+}
+
+.back-icon {
+  width: 38px;                 /* Tamanho da seta */
+  height: 38px;
+  transition: transform 0.2s ease;
+}
+
+.back-icon:hover {
+  transform: scale(1.1);       /* Leve zoom no hover */
 }
 
 /* Content Section */
