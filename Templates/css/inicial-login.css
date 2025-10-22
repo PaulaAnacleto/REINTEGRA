@@ -368,7 +368,6 @@ background: linear-gradient(135deg, #ffffff 0%, #a5c7eb 100%);
     font-size: 1.1rem;
 }
 
-/* Footer */
 /* Footer Section */
 .footer {
     margin-top: auto;
@@ -415,7 +414,7 @@ background: linear-gradient(135deg, #ffffff 0%, #a5c7eb 100%);
 
 /* Caminho Certo Section */
 .caminho-certo-section {
-    padding: 80px 0;
+    padding: 40px 0px 40px 0px;
 }
 
 .caminho-title {
@@ -533,13 +532,43 @@ background: linear-gradient(135deg, #ffffff 0%, #a5c7eb 100%);
 /* ============================= */
 @media only screen and (min-width: 720px) and (max-width: 1024px) {
 
-  /* Navbar */
+/* Navbar */
+  .navbar {
+    padding: 0.8rem 2rem;
+  }
+
   .logo-text {
     font-size: 1.8rem;
   }
 
+  /* Alinhamento perfil + hamburguer */
+  .navbar .d-flex.align-items-center {
+    gap: 10px;
+  }
+
+
+  .img-perfil {
+    width: 32px;
+    height: 32px;
+  }
+
+  .navbar-toggler {
+    border: none;
+  }
+
+  .navbar-toggler:focus {
+    box-shadow: none;
+  }
+
+  /* Menu mais elegante */
+  .navbar-nav {
+    text-align: center;
+    gap: 8px;
+  }
+
   .nav-link {
-    font-size: 1rem;
+    font-size: 1.05rem;
+    color: #000;
   }
 
   /* Hero */
@@ -559,6 +588,28 @@ background: linear-gradient(135deg, #ffffff 0%, #a5c7eb 100%);
     width: 100%;
   }
 
+  /*Caminho Certo*/
+
+  .caminho-certo-section {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+  .caminho-title {
+      font-size: 2rem;
+
+  }
+
+  .caminho-subtitle {
+      font-size: 2rem;
+
+  }
+
+  .caminho-text {
+      font-size: 1.4rem;
+
+  }
+
   /* Sobre */
   .section-title {
     font-size: 2.2rem;
@@ -569,10 +620,6 @@ background: linear-gradient(135deg, #ffffff 0%, #a5c7eb 100%);
     text-align: center;
   }
 
-  .sobre-image {
-    width: 80%;
-    margin: 10px auto;
-  }
 
   .badge-seguro {
     top: 70px;
