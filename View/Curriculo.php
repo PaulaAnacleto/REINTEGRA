@@ -151,9 +151,8 @@
                 <img src="../Img/página curriculo/Revisão final.png" alt="Revisão final" class="img-fluid">
             </div>
         </div>
-    </section>
 
-        <h1 class="section-subtitle">CURRÍCULO PROFISSIONAL</h1>
+        <h2 class="subtitle">CURRÍCULO PROFISSIONAL</h2>
 
             <!-- CARD 7 -->
         <div class="card-item">
@@ -164,11 +163,39 @@
                 </ul>
             </div>
             <div class="card-image">
-                <img src="../Img/página curriculo/Revisão final.png" alt="Revisão final" class="img-fluid">
+                <img src="../Img/página curriculo/idiomas.png" alt="Revisão final" class="img-fluid">
+            </div>
+        </div>
+
+            <!-- CARD 8 -->
+        <div class="card-item reverse ">
+            <div class="card-text">
+                <h2 class="card-title">Resumo profissional</h2>
+                <ul>
+                    <li>Um parágrafo curto com seu perfil, experiência e objetivo.</li>
+                </ul>
+            </div>
+            <div class="card-image">
+                <img src="../Img/página curriculo/Resumo profissional.png" alt="Revisão final" class="img-fluid">
+            </div>
+        </div>
+
+    <h2 class="subtitle">DICAS FINAIS</h2>
+
+            <!-- CARD 9 -->
+        <div class="card-item">
+            <div class="card-text">
+                <h2 class="card-title">Dicas</h2>
+                <ul>
+                    <li>Mantenha-o objetivo: Um currículo de uma página é geralmente suficiente, mas pode ser mais longo dependendo da sua experiência.</li>
+                    <li>Atualize regularmente: Mesmo que não esteja procurando emprego, tenha seu currículo sempre atualizado.</li>
+                </ul>
+            </div>
+            <div class="card-image">
+                <img src="../Img/página curriculo/dicas.png" alt="Revisão final" class="img-fluid">
             </div>
         </div>
     </section>
-
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-links">
