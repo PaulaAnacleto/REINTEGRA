@@ -113,6 +113,11 @@ body {
     gap: 30px;
     margin-bottom: 50px;
 }
+.card-link {
+  
+  text-decoration: none; 
+  color: #000000; /* Cor do texto */
+}
 
 /* Service Cards */
 .service-card {
@@ -129,6 +134,8 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+   
+   
 }
 
 .service-card:hover {

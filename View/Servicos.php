@@ -27,8 +27,9 @@
                 <!-- Grid de serviços -->
                 <div class="services-grid">
                     <!-- Teste Vocacional -->
+                      <a href="../View/Vocacional.php" class="card-link">
                     <div class="service-card" data-service="teste-vocacional">
-                        <a href="../View/TesteVocacional.php" class="card-link">
+                       
                         <div class="card-content">
                             <h3 class="card-title">Teste vocacional</h3>
                             <p class="card-description">
@@ -38,10 +39,11 @@
                         <div class="card-hover-overlay">
                             <span class="card-action">Acessar Teste</span>
                         </div>
-                        </a>
                     </div>
+                       </a>
 
                     <!-- Cursos -->
+                       <a href="../View/Cursos.php" class="card-link">
                     <div class="service-card" data-service="cursos">
                         <div class="card-content">
                             <h3 class="card-title">Cursos</h3>
@@ -53,8 +55,10 @@
                             <span class="card-action">Ver Cursos</span>
                         </div>
                     </div>
+                          </a>
 
                     <!-- Tutoriais e Dicas -->
+                       <a href="../View/Tutoriais-Dicas.php" class="card-link">
                     <div class="service-card" data-service="tutoriais">
                         <div class="card-content">
                             <h3 class="card-title">Tutoriais e dicas</h3>
@@ -66,8 +70,10 @@
                             <span class="card-action">Acessar Dicas</span>
                         </div>
                     </div>
+                          </a>
 
                     <!-- Informativo -->
+                       <a href="../View/Informativos.php" class="card-link">
                     <div class="service-card" data-service="informativo">
                         <div class="card-content">
                             <h3 class="card-title">Informativo</h3>
@@ -79,8 +85,10 @@
                             <span class="card-action">Ver Notícias</span>
                         </div>
                     </div>
+                          </a>
 
                     <!-- Vagas -->
+                       <a href="../View/Vagas.php" class="card-link">
                     <div class="service-card" data-service="vagas">
                         <div class="card-content">
                             <h3 class="card-title">Vagas</h3>
@@ -94,6 +102,7 @@
                     </div>
                 </div>
             </div>
+                </a>
         </main>
 
         <!-- Footer -->
@@ -103,8 +112,8 @@
                   <p class="footer-text">
                 © 2025 Reintegra. Todos os direitos reservados.
             </p>
-                <a href="#" class="footer-link">Política de Privacidade</a>
-                <a href="#" class="footer-link">Termos de Serviço</a>
+                <a href="../view/Politica-privacidade.php" class="footer-link">Política de Privacidade</a>
+                <a href="../View/termos-servico.php" class="footer-link">Termos de Serviço</a>
             </div>
         </footer>
     </div>
