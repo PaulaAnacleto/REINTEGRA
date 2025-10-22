@@ -88,8 +88,9 @@
                 </ul>
             </section>
         </main>
-
-        <!-- Footer Section -->
+       
+    </div>
+     <!-- Footer Section -->
         <footer class="footer">
            
             <div class="footer-links">
@@ -100,8 +101,7 @@
                 <a href="../View/termos-servico.php" class="footer-link">Termos de Serviço</a>
             </div>
         </footer>
-    </div>
-    </div>
+    
 
     <script src="../Templates/js/Politica-privacidade.js"></script>
 </body>
