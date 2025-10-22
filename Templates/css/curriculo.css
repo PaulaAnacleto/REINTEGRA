@@ -272,13 +272,43 @@ background: linear-gradient(135deg, #ffffff 0%, #a5c7eb 100%);
 /* ============================= */
 @media only screen and (min-width: 720px) and (max-width: 1024px) {
 
-  /* Navbar */
+/* Navbar */
+  .navbar {
+    padding: 0.8rem 2rem;
+  }
+
   .logo-text {
     font-size: 1.8rem;
   }
 
+  /* Alinhamento perfil + hamburguer */
+  .navbar .d-flex.align-items-center {
+    gap: 10px;
+  }
+
+
+  .img-perfil {
+    width: 32px;
+    height: 32px;
+  }
+
+  .navbar-toggler {
+    border: none;
+  }
+
+  .navbar-toggler:focus {
+    box-shadow: none;
+  }
+
+  /* Menu mais elegante */
+  .navbar-nav {
+    text-align: center;
+    gap: 8px;
+  }
+
   .nav-link {
-    font-size: 1rem;
+    font-size: 1.05rem;
+    color: #000;
   }
 
   /* Hero */
