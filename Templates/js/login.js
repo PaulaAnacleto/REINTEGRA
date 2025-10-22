@@ -101,34 +101,7 @@ document.addEventListener('DOMContentLoaded', function() {
         return isValid;
     }
 
-    // Função para simular autenticação
-    function authenticateUser(credentials) {
-        // Simula uma requisição para o servidor
-        return new Promise((resolve, reject) => {
-            setTimeout(() => {
-                console.log('Tentativa de login:', credentials);
-                
-                // Simula validação de credenciais
-                // Em um sistema real, isso seria feito no backend
-                if (credentials.email === 'admin@reintegra.com' && credentials.senha === '123456') {
-                    resolve({ 
-                        success: true, 
-                        message: 'Login realizado com sucesso!',
-                        user: {
-                            name: 'Administrador',
-                            email: credentials.email
-                        }
-                    });
-                } else {
-                    reject({ 
-                        success: false, 
-                        message: 'Email ou senha incorretos' 
-                    });
-                }
-            }, 1500);
-        });
-    }
-
+   
     // Manipulador do envio do formulário
     form.addEventListener('submit', async function(e) {
         e.preventDefault();
@@ -137,63 +110,12 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        // Desabilitar botão e mostrar loading
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'Entrando...';
-        submitBtn.style.opacity = '0.7';
-
-        try {
-            const credentials = {
-                email: email.value.trim(),
-                senha: senha.value
-            };
-
-            const result = await authenticateUser(credentials);
-            
-            if (result.success) {
-                // Mostrar mensagem de sucesso
-                alert(`Bem-vindo de volta, ${result.user.name}!`);
+        
+           
                 
-                // Simular redirecionamento para dashboard
-                console.log('Redirecionando para o dashboard...');
                 
-                // Em um sistema real, você redirecionaria para a página principal
-                // window.location.href = '/dashboard';
-                
-                // Limpar formulário
-                form.reset();
-                
-                // Remover classes de validação
-                document.querySelectorAll('.input-wrapper').forEach(wrapper => {
-                    wrapper.classList.remove('error', 'success');
-                });
-                
-                // Limpar mensagens de erro
-                document.querySelectorAll('.error-message').forEach(msg => {
-                    msg.textContent = '';
-                    msg.style.display = 'none';
-                });
-            }
-        } catch (error) {
-            // Mostrar erro de autenticação
-            alert(error.message || 'Erro ao fazer login. Verifique suas credenciais.');
-            console.error('Erro de autenticação:', error);
-            
-            // Destacar campos com erro
-            showError(email, '');
-            showError(senha, '');
-        } finally {
-            // Reabilitar botão
-            submitBtn.disabled = false;
-            submitBtn.textContent = 'Entrar';
-            submitBtn.style.opacity = '1';
-        }
-    });
-
-    // Funcionalidade do botão "Saiba mais"
-    learnMoreBtn.addEventListener('click', function() {
-        alert('Descubra oportunidades incríveis de emprego com o REINTEGRA!\n\nNossa plataforma conecta você às melhores vagas do mercado.');
-    });
+      
+    
 
     // Funcionalidade do link "Esqueceu a senha?"
     forgotLink.addEventListener('click', function(e) {
@@ -279,12 +201,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Mostrar credenciais de teste no console para facilitar testes
-    console.log('=== CREDENCIAIS DE TESTE ===');
-    console.log('Email: admin@reintegra.com');
-    console.log('Senha: 123456');
-    console.log('============================');
-
-    console.log('Sistema de login REINTEGRA inicializado com sucesso!');
+   
 });
-
+});

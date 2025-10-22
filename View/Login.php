@@ -13,8 +13,10 @@
             <div class="brand-content">
                 <h1 class="brand-title">REINTEGRA</h1>
                 <p class="brand-subtitle">Encontre seu emprego dos sonhos!</p>
+                <a href="../View/index.php">
                 <button class="learn-more-btn">Saiba mais</button>
             </div>
+            </a>
             <div class="decorative-circle"></div>
         </div>
 
@@ -22,7 +24,7 @@
         <div class="right-section">
             <div class="form-container">
                 <h2 class="form-title">Entrar</h2>
-                <p class="form-subtitle">Não tem uma conta? <a href="Cadastro.html" class="signup-link">Cadastre-se</a></p>
+                <p class="form-subtitle">Não tem uma conta? <a href="../View/Cadastro.php" class="signup-link">Cadastre-se</a></p>
                 
                 <form id="loginForm" class="login-form">
                     <div class="input-group">
