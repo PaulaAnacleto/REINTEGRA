@@ -826,10 +826,15 @@ background: linear-gradient(135deg, #ffffff 0%, #a5c7eb 100%);
   /* Footer */
   .footer-links {
     flex-direction: row;
-    gap: 1px;
+    gap: 0px;
+    line-height: 0.2rem;
+  }
+  .footer-link{
+    font-size: 0.7rem;
   }
 
   .footer-text {
     text-align: center;
+    font-size: 0.7rem;
   }
 }

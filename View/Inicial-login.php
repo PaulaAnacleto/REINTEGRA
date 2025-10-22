@@ -178,6 +178,7 @@
                             </div>
                             <p class="feedback-text">"Após me inscrever no Reintegra, consegui uma oportunidade de emprego que mudou minha vida. Sou muito grata!"</p>
                             <h6 class="feedback-name">Mariana Santos</h6>
+                            <p>Supervisora</p>
                         </div>
                     </div>
                 </div>
@@ -190,6 +191,7 @@
                             </div>
                             <p class="feedback-text">"Graças ao curso que fiz, consegui me reintegrar ao mercado de trabalho e hoje tenho uma vida digna."</p>
                             <h6 class="feedback-name">José Carlos</h6>
+                            <p>Técnico de Manutenção</p>
                         </div>
                     </div>
                 </div>
@@ -202,6 +204,7 @@
                             </div>
                             <p class="feedback-text">"O Reintegra me deu uma segunda chance. Hoje trabalho com dignidade e tenho orgulho da minha trajetória."</p>
                             <h6 class="feedback-name">Carlos Martins</h6>
+                            <p>Operador de Produção</p>
                         </div>
                     </div>
                 </div>
