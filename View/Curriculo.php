@@ -16,36 +16,47 @@
     <link rel="stylesheet" href="../Templates/css/curriculo.css">
 </head>
 
-<!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <div class="logo-box">
-                    <span class="logo-text">REINTEGRA</span>
-                </div>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+    <!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <div class="logo-box">
+        <span class="logo-text">REINTEGRA</span>
+      </div>
+    </a>
 
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="../view/Servicos">Serviços</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#cadastro">Feedback</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../View/Contato.php">Contato</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
-                    <li class="nav-item"><a class="nav-link" href="../View/Inicial-login.php">Início</a></li>
-                    <li class="nav-item">
-                        <a href="../View/Perfil.php">
-                            <button class="btn-perfil">
-                                <img src="../Img/página de perfil/icone perfil.png" class="img-perfil" alt="Perfil">
-                            </button>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <!-- Perfil + botão hamburguer (visível apenas no mobile) -->
+    <div class="d-flex align-items-center">
+      <a href="../View/Perfil.php" class="d-lg-none me-2">
+        <button class="btn-perfil">
+          <img src="../Img/página de perfil/icone perfil.png" class="img-perfil" alt="Perfil">
+        </button>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="../view/Servicos">Serviços</a></li>
+        <li class="nav-item"><a class="nav-link" href="#cadastro">Feedback</a></li>
+        <li class="nav-item"><a class="nav-link" href="../View/Contato.php">Contato</a></li>
+        <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+        <li class="nav-item"><a class="nav-link" href="../View/Inicial-login.php">Início</a></li>
+
+        <!-- Perfil visível apenas no desktop -->
+        <li class="nav-item d-none d-lg-block">
+          <a href="../View/Perfil.php">
+            <button class="btn-perfil">
+              <img src="../Img/página de perfil/icone perfil.png" class="img-perfil" alt="Perfil">
+            </button>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
     <!-- Botão Voltar -->
     <button class="back-button" aria-label="Voltar">
