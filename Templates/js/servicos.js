@@ -18,34 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Configuração de redirecionamentos para cada serviço
-    const serviceRoutes = {
-        'teste-vocacional': {
-            url: 'teste-vocacional.html',
-            title: 'Teste Vocacional',
-            description: 'Redirecionando para o teste vocacional...'
-        },
-        'cursos': {
-            url: 'cursos.html',
-            title: 'Cursos Online',
-            description: 'Redirecionando para a página de cursos...'
-        },
-        'tutoriais': {
-            url: 'tutoriais.html',
-            title: 'Tutoriais e Dicas',
-            description: 'Redirecionando para tutoriais e dicas...'
-        },
-        'informativo': {
-            url: 'informativo.html',
-            title: 'Informativo',
-            description: 'Redirecionando para as notícias...'
-        },
-        'vagas': {
-            url: 'vagas.html',
-            title: 'Vagas de Emprego',
-            description: 'Redirecionando para as vagas disponíveis...'
-        }
-    };
+    
 
     // Função para mostrar loading no card
     function showCardLoading(card) {
@@ -59,14 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
         card.style.pointerEvents = 'auto';
     }
 
-    // Função para simular carregamento e redirecionamento
-    function redirectToService(serviceKey, card) {
-        const route = serviceRoutes[serviceKey];
-        
-        if (!route) {
-            console.error('Serviço não encontrado:', serviceKey);
-            return;
-        }
+  
 
         // Mostrar loading
         showCardLoading(card);
@@ -79,24 +45,9 @@ document.addEventListener('DOMContentLoaded', function() {
             
             if (pageExists) {
                 // Mostrar mensagem de redirecionamento
-                console.log(`${route.description}`);
+                console.log(`${route.description}`)};
                 
-                // Simular redirecionamento
-                // Em um sistema real, você usaria: window.location.href = route.url;
-                alert(`Redirecionando para: ${route.title}\n\nURL: ${route.url}\n\n(Em um sistema real, você seria redirecionado automaticamente)`);
-                
-                // Para demonstração, vamos simular que a página foi "carregada"
-                setTimeout(() => {
-                    hideCardLoading(card);
-                }, 1000);
-            } else {
-                // Simular erro de página não encontrada
-                hideCardLoading(card);
-                alert(`Ops! A página "${route.title}" ainda não está disponível.\n\nTente novamente mais tarde.`);
-            }
-        }, 1500);
-    }
-
+              
     // Adicionar event listeners para cada card de serviço
     serviceCards.forEach(card => {
         const serviceKey = card.getAttribute('data-service');
@@ -283,4 +234,5 @@ document.addEventListener('DOMContentLoaded', function() {
     // Inicialização completa
     console.log('Página de serviços REINTEGRA inicializada com sucesso!');
     console.log('Serviços disponíveis:', Object.keys(serviceRoutes));
+});
 });

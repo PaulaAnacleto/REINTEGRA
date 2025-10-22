@@ -28,6 +28,7 @@
                 <div class="services-grid">
                     <!-- Teste Vocacional -->
                     <div class="service-card" data-service="teste-vocacional">
+                        <a href="../View/TesteVocacional.php" class="card-link">
                         <div class="card-content">
                             <h3 class="card-title">Teste vocacional</h3>
                             <p class="card-description">
@@ -37,6 +38,7 @@
                         <div class="card-hover-overlay">
                             <span class="card-action">Acessar Teste</span>
                         </div>
+                        </a>
                     </div>
 
                     <!-- Cursos -->
