@@ -81,7 +81,7 @@
                     <ul>
                         Um teste simples baseado na teoria de John Holland (modelo RIASEC), que ajuda a descobrir que tipos de carreiras têm mais afinidade com seu perfil.
                     </ul>
-                    <button class="btn-primary">Testar</button>
+                  <a href="https://www.guiadacarreira.com.br/teste-vocacional?utm_source=" target="_blank">  <button class="btn-primary">Testar</button> </a>
                 </div>
                 <div class="card-image">
                     <img src="../img/página tutoriais e dicas/guia da carreira.png" alt="Ilustração de entrevista" class="img-fluid">
@@ -96,7 +96,7 @@
                    Baseado na teoria das Inteligências Múltiplas (Howard Gardner), analisa suas inteligências 
                         e habilidades para sugerir cursos e áreas de atuação com boa afinidade.
                         </ul>
-                    <button class="btn-primary">Testar</button href="../View/Curriculo.php">
+                    <a href="https://querobolsa.com.br/teste-vocacional-gratis?utm_source=" target="_blank"> <button class="btn-primary">Testar</button href="../View/Curriculo.php"> </a>
                 </div>
                 <div class="card-image">
                     <img src="../img/página tutoriais e dicas/quero bolsa.png" alt="Ilustração de currículo" class="img-fluid">
@@ -111,7 +111,7 @@
                         Gratuito, rápido, baseado no modelo RIASEC. Ajuda a identificar seu perfil profissional 
                         (Realista, Investigativo, etc) e mostra caminhos de carreira que combinam com você.
                     </ul>
-                    <button class="btn-primary">Testar</button>
+                  <a href="https://descomplica.com.br/faculdade/teste-vocacional/?utm_source=" target="_blank">   <button class="btn-primary">Testar</button> </a>
                 </div>
                 <div class="card-image">
                     <img src="../img/página tutoriais e dicas/descomplica.png" alt="Ilustração de networking" class="img-fluid">
@@ -126,7 +126,7 @@
                    Um teste internacional em inglês/português que usa forte base científica para
                     sugerir profissões e ambientes de trabalho compatíveis com sua personalidade e interesses.
                         </ul>
-                    <button class="btn-primary">Testar</button href="../View/Curriculo.php">
+                    <a href="https://www.123test.com/pt/teste-vocacional/" target="_blank">   <button class="btn-primary">Testar</button href="../View/Curriculo.php"> </a>
                 </div>
                 <div class="card-image">
                     <img src="../img/página tutoriais e dicas/123test.png" alt="Ilustração de currículo" class="img-fluid">
