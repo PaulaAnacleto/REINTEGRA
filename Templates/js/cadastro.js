@@ -120,12 +120,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Validação quando a senha principal muda (para revalidar confirmação)
-    senha.addEventListener('input', function() {
-        if (confirmarSenha.value) {
-            confirmarSenha.dispatchEvent(new Event('blur'));
-        }
-    });
 
     // Função para validar todo o formulário
     function validateForm() {
@@ -170,17 +164,7 @@ document.addEventListener('DOMContentLoaded', function() {
         return isValid;
     }
 
-    // Função para simular envio do formulário
-    function submitForm(formData) {
-        // Simula uma requisição para o servidor
-        return new Promise((resolve) => {
-            setTimeout(() => {
-                console.log('Dados do formulário:', formData);
-                resolve({ success: true, message: 'Cadastro realizado com sucesso!' });
-            }, 2000);
-        });
-    }
-
+    
     // Manipulador do envio do formulário
     form.addEventListener('submit', async function(e) {
         e.preventDefault();
@@ -189,55 +173,7 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
-        // Desabilitar botão e mostrar loading
-        submitBtn.disabled = true;
-        submitBtn.textContent = 'Cadastrando...';
-        submitBtn.style.opacity = '0.7';
-
-        try {
-            const formData = {
-                nomeCompleto: nomeCompleto.value.trim(),
-                email: email.value.trim(),
-                senha: senha.value
-            };
-
-            const result = await submitForm(formData);
-            
-            if (result.success) {
-                // Mostrar mensagem de sucesso
-                alert('Cadastro realizado com sucesso! Bem-vindo ao REINTEGRA!');
-                
-                // Limpar formulário
-                form.reset();
-                
-                // Remover classes de validação
-                document.querySelectorAll('.input-wrapper').forEach(wrapper => {
-                    wrapper.classList.remove('error', 'success');
-                });
-                
-                 // Limpar mensagens de erro
-            document.querySelectorAll(".error-message").forEach(msg => {
-                msg.textContent = "";
-                msg.style.display = "none";
-            });
-            
-            }
-        } catch (error) {
-            alert('Erro ao realizar cadastro. Tente novamente.');
-            console.error('Erro:', error);
-        } finally {
-            // Reabilitar botão
-            submitBtn.disabled = false;
-            submitBtn.textContent = 'Cadastre-se';
-            submitBtn.style.opacity = '1';
-        }
-    });
-
-    // Funcionalidade do botão "Saiba mais"
-    learnMoreBtn.addEventListener('click', function() {
-        alert('Descubra oportunidades incríveis de emprego com o REINTEGRA!\n\nNossa plataforma conecta você às melhores vagas do mercado.');
-    });
-
+       
     // Efeitos visuais adicionais
     
     // Animação de foco nos inputs
@@ -302,4 +238,4 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('Sistema de cadastro REINTEGRA inicializado com sucesso!');
 });
 
-
+});
