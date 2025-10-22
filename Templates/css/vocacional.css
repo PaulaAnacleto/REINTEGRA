@@ -94,14 +94,16 @@ background: linear-gradient(135deg, #ffffff 0%, #a5c7eb 100%);
 
 .hero-description {
     font-size: 1.2rem;
-    color: #555;
+    color: #000000;
     max-width: 800px;
     margin: 0 auto;
+    font-weight: bold;
     line-height: 1.8;
 }
 
 .highlight {
     color: #0146B1;
+    font-weight: bold;
     font-weight: 600;
 }
 
