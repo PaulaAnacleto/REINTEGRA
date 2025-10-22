@@ -77,7 +77,7 @@ background: linear-gradient(135deg, #ffffff 0%, #a5c7eb 100%);
 
 .hero-title {
     font-size: 3.5rem;
-    font-weight: 900;
+    font-weight: 600;
     color: #212529;
     line-height: 1.2;
     margin-bottom: 1.5rem;
@@ -134,6 +134,7 @@ background: linear-gradient(135deg, #ffffff 0%, #a5c7eb 100%);
 /* Sobre Section */
 .sobre-section {
     padding: 80px 0;
+    background-color: #F3F7FA;
 }
 
 .section-title {
@@ -144,7 +145,7 @@ background: linear-gradient(135deg, #ffffff 0%, #a5c7eb 100%);
 }
 
 .section-text {
-    color: #666;
+    color: #000000;
     line-height: 1.8;
     font-size: 1rem;
 }
@@ -176,7 +177,7 @@ background: linear-gradient(135deg, #ffffff 0%, #a5c7eb 100%);
 
 .feature-title {
     font-weight: 700;
-    color: #333;
+    color: #000000;
     margin: 0;
 }
 
@@ -220,8 +221,8 @@ background: linear-gradient(135deg, #ffffff 0%, #a5c7eb 100%);
 .contato-section {
     display: flex;
     align-items: center;
-    padding: 80px 10px;
-    background: #1976D2;
+    padding: 0px 10px;
+    background: linear-gradient(to bottom, #0038F0 0%, #299DF2 40%);
 }
 
 .contato-title {
@@ -360,7 +361,7 @@ background: linear-gradient(135deg, #ffffff 0%, #a5c7eb 100%);
     margin-top: auto;
     padding: 30px 0;
     border-top: 1px solid #e0e0e0;
-    
+    background-color: #ffffff;
 }
 
 .footer-text {
@@ -418,7 +419,7 @@ background: linear-gradient(135deg, #ffffff 0%, #a5c7eb 100%);
   }
 
   .hero-title {
-    font-size: 2.8rem;
+    font-size: 2.4rem;
   }
 
   .hero-text {
@@ -479,9 +480,18 @@ background: linear-gradient(135deg, #ffffff 0%, #a5c7eb 100%);
   }
 
   /* Footer */
-  .footer-links {
-    justify-content: center;
-    flex-wrap: wrap;
+    .footer-links {
+    flex-direction: row;
+    gap: 10px;
+    line-height: 0.2rem;
+  }
+  .footer-link{
+    font-size: 0.8rem;
+  }
+
+  .footer-text {
+    text-align: center;
+    font-size: 0.8rem;
   }
 }
 
@@ -593,10 +603,15 @@ background: linear-gradient(135deg, #ffffff 0%, #a5c7eb 100%);
   /* Footer */
   .footer-links {
     flex-direction: row;
-    gap: 1px;
+    gap: 0px;
+    line-height: 0.2rem;
+  }
+  .footer-link{
+    font-size: 0.7rem;
   }
 
   .footer-text {
     text-align: center;
+    font-size: 0.7rem;
   }
 }
