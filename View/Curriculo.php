@@ -15,6 +15,7 @@
 
     <link rel="stylesheet" href="../Templates/css/curriculo.css">
 </head>
+<body>
 
     <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
@@ -208,14 +209,22 @@
         </div>
     </section>
     <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-links">
-            <p class="footer-text">© 2025 Reintegra. Todos os direitos reservados.</p>
-            <a href="../View/Politica-Privacidade.php" class="footer-link">Política de Privacidade</a>
-            <a href="../View/Termos-servico.php" class="footer-link">Termos de Serviço</a>
-        </div>
-    </footer>
+ <!-- Footer Section -->
+        <footer class="footer">
+           
+            <div class="footer-links">
+                  <p class="footer-text">
+                © 2025 Reintegra. Todos os direitos reservados.
+            </p>
+                <a href="#" class="footer-link">Política de Privacidade</a>
+                <a href="#" class="footer-link">Termos de Serviço</a>
+            </div>
+        </footer>
+    </div>
 
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
     <!-- JS -->
     <script src="../Templates/js/curriculo.js"></script>
 </body>
