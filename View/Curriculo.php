@@ -15,41 +15,31 @@
 
     <link rel="stylesheet" href="../Templates/css/curriculo.css">
 </head>
-<body>
 
-    <!-- Navbar -->
+<!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
         <div class="container">
             <a class="navbar-brand" href="#">
-            <div class="logo-box">
-                <span class="logo-text">REINTEGRA</span>
-            </div>
+                <div class="logo-box">
+                    <span class="logo-text">REINTEGRA</span>
+                </div>
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
+
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="../view/Servicos">Serviços</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#cadastro">Feedback</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../View/Contato.php">Contato</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#sobre">Sobre</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../View/Inicial-login.php">Início</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="../view/Servicos">Serviços</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#cadastro">Feedback</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../View/Contato.php">Contato</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../View/Inicial-login.php">Início</a></li>
                     <li class="nav-item">
                         <a href="../View/Perfil.php">
-                        <button class="btn-perfil" onclick="abrirPerfil()">
-                            <img src="../Img/página de perfil/icone perfil.png" class="img-perfil" alt="Perfil">
-                        </button>
+                            <button class="btn-perfil">
+                                <img src="../Img/página de perfil/icone perfil.png" class="img-perfil" alt="Perfil">
+                            </button>
                         </a>
                     </li>
                 </ul>
@@ -57,79 +47,138 @@
         </div>
     </nav>
 
-     <button class="back-button" aria-label="Voltar">
-                <img src="../Img/página de contato/seta.png" alt="Voltar" class="back-icon">
-            </button>
+    <!-- Botão Voltar -->
+    <button class="back-button" aria-label="Voltar">
+        <img src="../Img/página de contato/seta.png" alt="Voltar" class="back-icon">
+    </button>
 
-        <section class="hero-section">
-            <h1 class="hero-title">CURRÍCULO PROFISSIONAL</h1>
-            <p class="hero-description">
-                Seja você <span class="highlight">iniciante</span> ou já com experiência, esse é o lugar pra organizar sua trajetória
-                de forma clara e <span class="highlight">objetiva </span>.
-            </p> 
-        </section>
+    <!-- Hero Section -->
+    <section class="hero-section text-center">
+        <h1 class="hero-title">CURRÍCULO PROFISSIONAL</h1>
+        <p class="hero-description">
+            Seja você <span class="highlight">iniciante</span> ou já com experiência, esse é o lugar pra organizar sua trajetória
+            de forma clara e <span class="highlight">objetiva</span>.
+        </p>
+    </section>
 
-        <section class="content-section">
-            <div class="card-item">
-                <div class="card-text">
-                    <h2 class="card-title">Escolha um Formato Claro e Profissional</h2>
-                    <ul>
-                        <li>Formato tradicional: Coloque as informações em tópicos e de maneira organizada.</li>
-                        <li>Design simples: Evite excessos de cores e fontes. Mantenha uma aparência limpa e fácil de ler.</li> 
-                    </ul>
-                </div>
-                <div class="card-image">
-                    <img src="../Img/página curriculo/Escolha um Formato Claro e Profissional.png" alt="Ilustração de currículo" class="img-fluid">
-                </div>
+    <!-- Component: Card Section -->
+    <section class="content-section">
+
+        <!-- CARD 1 -->
+        <div class="card-item">
+            <div class="card-text">
+                <h2 class="card-title">Escolha um Formato Claro e Profissional</h2>
+                <ul>
+                    <li>Formato tradicional: Coloque as informações em tópicos e de maneira organizada.</li>
+                    <li>Design simples: Evite excessos de cores e fontes. Mantenha uma aparência limpa e fácil de ler.</li>
+                </ul>
             </div>
-
-            <div class="card-item reverse">
-                <div class="card-text">
-                    <h2 class="card-title">Informações de Contato</h2>
-                    <ul>
-                        <li>Nome completo</li>
-                        <li>Telefone</li>
-                        <li>E-mail</li>
-                        <li>LinkedIn</li>
-                    </ul>
-                </div>
-                <div class="card-image">
-                    <img src="../Img/página curriculo/Informações de Contato.png" alt="Ilustração de entrevista" class="img-fluid">
-                </div>
+            <div class="card-image">
+                <img src="../Img/página curriculo/Escolha um Formato Claro e Profissional.png" alt="Ilustração de currículo" class="img-fluid">
             </div>
+        </div>
 
-            <div class="card-item">
-                <div class="card-text">
-                    <h2 class="card-title">Experiência Profissional</h2>
-                    <ul>
-                        <li>Liste suas experiências de trabalho em ordem cronológica reversa</li>
-                        <li>Para cada cargo, inclua:</li>
-                        <li>Nome da empresa e período de trabalho.</li>
-                        <li>Descrição do cargo e principais responsabilidades.</li>
-                        <li>Realizações: Cite resultados e conquistas específicas (como aumento de vendas, melhoria de processos, etc.). </li>
-                    </ul>
-                    <button class="btn-primary">Começar</button>
-                </div>
-                <div class="card-image">
-                    <img src="../img/página tutoriais e dicas/Aproveitando o poder do networking.png" alt="Ilustração de networking" class="img-fluid">
-                </div>
+        <!-- CARD 2 -->
+        <div class="card-item reverse">
+            <div class="card-text">
+                <h2 class="card-title">Informações de Contato</h2>
+                <ul>
+                    <li>Nome completo</li>
+                    <li>Telefone</li>
+                    <li>E-mail</li>
+                    <li>LinkedIn</li>
+                </ul>
             </div>
-        </section>
-    </div>
+            <div class="card-image">
+                <img src="../Img/página curriculo/Informações de Contato.png" alt="Informações de contato" class="img-fluid">
+            </div>
+        </div>
 
-    <!-- Footer Section -->
+        <!-- CARD 3 -->
+        <div class="card-item">
+            <div class="card-text">
+                <h2 class="card-title">Experiência Profissional</h2>
+                <ul>
+                    <li>Liste suas experiências de trabalho em ordem cronológica reversa.</li>
+                    <li>Para cada cargo, inclua:</li>
+                    <li>Nome da empresa e período de trabalho.</li>
+                    <li>Descrição do cargo e principais responsabilidades.</li>
+                    <li>Realizações: Cite resultados e conquistas específicas (como aumento de vendas, melhoria de processos, etc.).</li>
+                </ul>
+            </div>
+            <div class="card-image">
+                <img src="../Img/página curriculo/Experiência Profissional.png" alt="Experiência profissional" class="img-fluid">
+            </div>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="card-item reverse">
+            <div class="card-text">
+                <h2 class="card-title">Formação Acadêmica</h2>
+                <ul>
+                    <li>Inclua o nome da instituição, o curso e as datas de início e término.</li>
+                    <li>Inclua especializações e cursos relevantes (idiomas, certificações, etc.).</li>
+                </ul>
+            </div>
+            <div class="card-image">
+                <img src="../Img/página curriculo/Formação Acadêmica.png" alt="Formação acadêmica" class="img-fluid">
+            </div>
+        </div>
+
+        <!-- CARD 5 -->
+        <div class="card-item">
+            <div class="card-text">
+                <h2 class="card-title">Habilidades Técnicas Relevantes</h2>
+                <ul>
+                    <li>Habilidades técnicas: como programação, design gráfico, gestão de projetos, etc.</li>
+                    <li>Habilidades pessoais: comunicação, trabalho em equipe, liderança, entre outras.</li>
+                </ul>
+            </div>
+            <div class="card-image">
+                <img src="../Img/página curriculo/Habilidades técnicas relevantes.png" alt="Habilidades técnicas" class="img-fluid">
+            </div>
+        </div>
+
+        <!-- CARD 6 -->
+        <div class="card-item reverse">
+            <div class="card-text">
+                <h2 class="card-title">Revisão Final</h2>
+                <ul>
+                    <li>Revise o texto para evitar erros de gramática e digitação.</li>
+                </ul>
+            </div>
+            <div class="card-image">
+                <img src="../Img/página curriculo/Revisão final.png" alt="Revisão final" class="img-fluid">
+            </div>
+        </div>
+    </section>
+
+        <h1 class="section-subtitle">CURRÍCULO PROFISSIONAL</h1>
+
+            <!-- CARD 7 -->
+        <div class="card-item">
+            <div class="card-text">
+                <h2 class="card-title">Idiomas</h2>
+                <ul>
+                    <li>Se for relevante para a vaga, adicione os idiomas que você domina, com o nível de proficiência (básico, intermediário, avançado, fluente).</li>
+                </ul>
+            </div>
+            <div class="card-image">
+                <img src="../Img/página curriculo/Revisão final.png" alt="Revisão final" class="img-fluid">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer class="footer">
-           
-           <div class="footer-links">
-                 <p class="footer-text">
-               © 2025 Reintegra. Todos os direitos reservados.
-           </p>
-               <a href="../View/Politica-Privacidade.php" class="footer-link">Política de Privacidade</a>
-               <a href="../View/Termos-servico.php" class="footer-link">Termos de Serviço</a>
-           </div>
-       </footer>
-   </div>
+        <div class="footer-links">
+            <p class="footer-text">© 2025 Reintegra. Todos os direitos reservados.</p>
+            <a href="../View/Politica-Privacidade.php" class="footer-link">Política de Privacidade</a>
+            <a href="../View/Termos-servico.php" class="footer-link">Termos de Serviço</a>
+        </div>
+    </footer>
 
+    <!-- JS -->
     <script src="../Templates/js/curriculo.js"></script>
 </body>
 </html>
