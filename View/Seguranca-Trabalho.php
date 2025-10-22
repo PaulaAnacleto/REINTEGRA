@@ -47,11 +47,11 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#inicio">Início</a>
                     </li>
-                </ul>
-            </div>
-            <li class="nav-item-img" style="list-style-type: none;">
+                    <li class="nav-item-img" style="list-style-type: none;">
                 <img src="../Img/página de perfil/icone perfil.png" class="img-perfil" alt="Perfil">
             </li>
+                </ul>
+            </div>
         </div>
     </div>
 </nav>
