@@ -70,15 +70,13 @@
     <div class="inicio">
         <div class="inicio-inner">
             <div class="texto-inicio">
-                <h1 class="title">Automação e <span>Robótica</span></h1>
-                <p class="paragrafo">Oferecemos um curso <span>completo</span> de Automação
-                    e Robótica, voltado para <br>quem <span>deseja</span> ingressar ou se
-                    atualizar em uma das <span>áreas</span> mais <span>promissoras</span> da tecnologia.
+                <h1 class="title">Segurança do <span>Trabalho</span></h1>
+                <p class="paragrafo">Oferecemos um curso <span>completo</span> de Segurança do Trabalho, voltado para <br>quem quer <span>proteger</span> vidas e garantir um ambiente <span>seguro</span> nas empresas.
                 </p>
             </div>
         </div>
         <div class="image">
-            <img src="../Img/páginas dos cursos/automação e robótica.png" alt="Braço mecânico" class="hero-img">
+            <img src="../Img/Segurança-trabalho/seguranca-capacete.png" alt="Capacete de Segurança" class="hero-img">
         </div>
     </div>
 
@@ -91,58 +89,55 @@
         
         <div class="card">
             <div class="card-header">
-            <img src="../Img/páginas dos cursos/automacao.png" alt="Engrenagens" class="icone">
-            <h3>Automação</h3>
+            <img src="../Img/Segurança-trabalho/Homi.png" alt="Homem capacete" class="icone">
+            <h3>NRs</h3>
             </div>
-            <p class="text-card">Programação, CLPs, sensores, atuadores e <span>entre outros...</span></p>
+            <p class="text-card">Segurança, saúde, prevenção, normas e <span>entre outros...</span></p>
         </div>
 
         <div class="card">
               <div class="card-header">
-            <img src="../Img/páginas dos cursos/robotica.png" alt="Engrenagens" class="icone">
-            <h3>Robótica</h3>
+            <img src="../Img/Segurança-trabalho/laptop-dark.png" alt="Monitor com graficos" class="icone">
+            <h3>Análise de Riscos</h3>
         </div>
-            <p class="text-card">Projeto, robôs, atuadores, controle e <span>entre outros...</span></p>
-        </div>
-
-        <div class="card">
-              <div class="card-header">
-            <img src="../Img/páginas dos cursos/automacao.png" alt="Engrenagens" class="icone">
-            <h3>Inteligência artificial</h3>
-        </div>
-            <p class="text-card">Algoritmos, dados, redes neurais e <span>entre outros...</span></p>
+            <p class="text-card"> Identificação, avaliação, perigos e <span>entre outros...</span></p>
         </div>
 
         <div class="card">
               <div class="card-header">
-            <img src="../Img/páginas dos cursos/automacao.png" alt="Engrenagens" class="icone">
-            <h3>Sensores</h3>
+            <img src="../Img/Segurança-trabalho/image 8.png" alt="CIPA" class="icone">
+            <h3>CIPA</h3>
+        </div>
+            <p class="text-card">Segurança, comissão, riscos  e <span>entre outros...</span></p>
+        </div>
+
+        <div class="card">
+              <div class="card-header">
+            <img src="../Img/Segurança-trabalho/image 9.png" alt="Engrenagens" class="icone">
+            <h3>Gestão de Saúde e Segurança</h3>
             </div>
-            <p class="text-card">Detecção, medição, pressão e <span>entre outros...</span></p>
+            <p class="text-card">Bem-estar, normas, compliance, capacitação e<span>entre outros...</span></p>
         </div>
 
         <div class="card">
             <div class="card-header">
-            <img src="../Img/páginas dos cursos/automacao.png" alt="Engrenagens" class="icone">
-            <h3>Manufatura inteligente</h3>
+            <img src="../Img/Segurança-trabalho/seguranca_1.png" alt="Engrenagens" class="icone">
+            <h3>Prevenção de Acidentes</h3>
             </div>
-            <p class="text-card">IoT, otimização, produção, eficiência e <span>entre outros...</span></p>
+            <p class="text-card">Análise, vigilância, protocolos e<span>entre outros...</span></p>
         </div>
 
         <div class="card">
             <div class="card-header">
-            <img src="../Img/páginas dos cursos/automacao.png" alt="Engrenagens" class="icone">
-            <h3>Industria 4.0</h3>
+            <img src="../Img/Segurança-trabalho/vector.png" alt="Engrenagens" class="icone">
+            <h3>EPIs</h3>
             </div>
-            <p class="text-card">Ciberfísico, integração, análise em tempo real e <span>entre outros...</span></p>
+            <p class="text-card">Equipamentos, saúde, prevenção e <span>entre outros...</span></p>
         </div>
 
-        <div class="card">
-              <div class="card-header">
-            <img src="../Img/páginas dos cursos/automacao.png" alt="Engrenagens" class="icone">
-            <h3>Integração de Máquinas</h3>
-            </div>
-            <p class="text-card">Comunicação, sincronização, redes industriais e <span>entre outros...</span></p>
+        <div class="logo-senai">
+            <h4 class="parceria">Parceria</h4>
+            <img src="../Img/página inicial/logo-senai.png" alt="Título da parceria com a logo da empresa SENAI" class="img-logo">
         </div>
     </main>
 
