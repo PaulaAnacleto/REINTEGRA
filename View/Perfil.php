@@ -12,7 +12,7 @@
         <header class="profile-header">
             <div class="header-content">
                 <h1 class="welcome-message">
-                    Bem vinda, <span id="userName"></span>
+                    Bem vindo(a), <span id="userName"></span>
                 </h1>
             </div>
         </header>
@@ -34,7 +34,7 @@
                     <div class="profile-info">
                         <div class="avatar-section">
                             <div class="avatar">
-                            
+                            <img src="../img/página de perfil/icone perfil.png" alt="">
                             </div>
                             <div class="user-details">
                                 <h3 class="user-name" id="profileUserName">Nome de usuário</h3>
@@ -48,29 +48,29 @@
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="nomeCompleto" class="form-label">Nome completo</label>
-                                <input type="text" id="nomeCompleto" name="nomeCompleto" class="form-input" value="Sophia" readonly>
+                                <input type="text" id="nomeCompleto" name="nomeCompleto" class="form-input" value="Nome" readonly>
                             </div>
                             <div class="form-group">
                                 <label for="email" class="form-label">Email</label>
-                                <input type="email" id="email" name="email" class="form-input" value="analuisadev@gmail.com" readonly>
+                                <input type="email" id="email" name="email" class="form-input" value="example@email.com" readonly>
                             </div>
                         </div>
 
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="dataNascimento" class="form-label">Data de nascimento</label>
-                                <input type="date" id="dataNascimento" name="dataNascimento" class="form-input" value="2000-06-09" readonly>
+                                <input type="date" id="dataNascimento" name="dataNascimento" class="form-input" value="0000-00-00" readonly>
                             </div>
                             <div class="form-group">
                                 <label for="cpf" class="form-label">CPF</label>
-                                <input type="text" id="cpf" name="cpf" class="form-input" value="027.956.948-39" readonly>
+                                <input type="text" id="cpf" name="cpf" class="form-input" value="000.000.000-00" readonly>
                             </div>
                         </div>
 
                         <div class="form-row">
                             <div class="form-group full-width">
                                 <label for="profissao" class="form-label">Profissão</label>
-                                <input type="text" id="profissao" name="profissao" class="form-input" value="Professora" readonly>
+                                <input type="text" id="profissao" name="profissao" class="form-input" value="profissão" readonly>
                             </div>
                         </div>
 
@@ -92,7 +92,6 @@
                     </form>
                 </div>
 
-               
             </div>
         </main>
     </div>

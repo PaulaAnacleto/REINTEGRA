@@ -75,29 +75,26 @@ body {
     gap: 20px;
 }
 
-.back-button {
+
+.navigation button {
     background: none;
     border: none;
     cursor: pointer;
     padding: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding-bottom: 15px;
+    align-items: last baseline;
     transition: transform 0.2s ease;
 }
 
 .back-button:hover {
-    transform: translateX(-3px);
-}
-
-.back-button:active {
-    transform: translateX(-5px);
+  transform: translateX(-3px);
 }
 
 .back-icon {
-    width: 32px;
-    height: 32px;
-    display: block;
+  width: 32px;
+  height: 32px;
+  display: block;
+  margin-top: 10px;
 }
 
 .page-title {
@@ -140,14 +137,10 @@ body {
 .avatar {
     width: 80px;
     height: 80px;
-    background: linear-gradient(135deg, #1e73be 0%, #0f4c8c 100%);
-    border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 2rem;
-    color: white;
-    box-shadow: 0 5px 15px rgba(30, 115, 190, 0.3);
 }
 
 .user-details {
@@ -238,7 +231,7 @@ body {
     gap: 8px;
     padding: 12px 20px;
     border: none;
-    border-radius: 12px;
+    border-radius: 10px;
     font-size: 1rem;
     font-weight: 600;
     cursor: pointer;
@@ -247,17 +240,12 @@ body {
 }
 
 .edit-btn {
-    background: linear-gradient(135deg, #1e73be 0%, #0f4c8c 100%);
+    background:  #1a73e8 100%;
     color: white;
 }
 
-.edit-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(30, 115, 190, 0.3);
-}
-
 .save-btn {
-    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+    background: #1a73e8 100%;
     color: white;
 }
 
@@ -267,7 +255,7 @@ body {
 }
 
 .cancel-btn {
-    background: #6c757d;
+    background: #7c7777;
     color: white;
 }
 
@@ -276,6 +264,7 @@ body {
     transform: translateY(-2px);
 }
 
+<<<<<<< HEAD
 
 /* Cores específicas para cada ação */
 .action-card[data-action="change-password"]:hover .action-icon {
@@ -387,3 +376,5 @@ body {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
+=======
+>>>>>>> 63922bdc844fbd86f6a561fb40573910466bf84b
