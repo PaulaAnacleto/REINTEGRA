@@ -59,13 +59,12 @@
   </div>
 </nav>
 
-    <!-- Botão Voltar -->
+    <!-- Hero Section -->
+    <section class="hero-section text-center">
+        <!-- Botão Voltar -->
     <button class="back-button" aria-label="Voltar">
         <img src="../Img/página de contato/seta.png" alt="Voltar" class="back-icon">
     </button>
-
-    <!-- Hero Section -->
-    <section class="hero-section text-center">
         <h1 class="hero-title">VAGAS</h1>
         <p class="hero-description">
             Encontre os melhores sites para descobrir oportunidades incríveis de emprego aqui!
@@ -88,7 +87,7 @@
                 <a href="https://querobolsa.com.br/teste-vocacional-gratis?utm_source=" target="_blank"> <button class="btn-primary">Vagas</button href="../View/Curriculo.php"> </a>
             </div>
             <div class="card-image">
-                <img src="../Img/página curriculo/Informações de Contato.png" alt="Informações de contato" class="img-fluid">
+                <img src="../Img/página vagas/indeed.png" alt="Informações de contato" class="img-fluid">
             </div>
         </div>
 
@@ -105,7 +104,7 @@
                 <a href="https://querobolsa.com.br/teste-vocacional-gratis?utm_source=" target="_blank"> <button class="btn-primary">Vagas</button href="../View/Curriculo.php"> </a>
             </div>
             <div class="card-image">
-                <img src="../Img/página curriculo/Experiência Profissional.png" alt="Experiência profissional" class="img-fluid">
+                <img src="../Img/página vagas/infojobs.png" alt="Experiência profissional" class="img-fluid">
             </div>
         </div>
 
@@ -122,7 +121,7 @@
                 <a href="https://querobolsa.com.br/teste-vocacional-gratis?utm_source=" target="_blank"> <button class="btn-primary">Vagas</button href="../View/Curriculo.php"> </a>
             </div>
             <div class="card-image">
-                <img src="../Img/página curriculo/Formação Acadêmica.png" alt="Formação acadêmica" class="img-fluid">
+                <img src="../Img/página vagas/catho.png" alt="Formação acadêmica" class="img-fluid">
             </div>
         </div>
 
@@ -139,7 +138,7 @@
                 <a href="https://querobolsa.com.br/teste-vocacional-gratis?utm_source=" target="_blank"> <button class="btn-primary">Vagas</button href="../View/Curriculo.php"> </a>
             </div>
             <div class="card-image">
-                <img src="../Img/página curriculo/Habilidades técnicas relevantes.png" alt="Habilidades técnicas" class="img-fluid">
+                <img src="../Img/página vagas/empregos.png" alt="Habilidades técnicas" class="img-fluid">
             </div>
         </div>
 
@@ -156,7 +155,7 @@
                 <a href="https://querobolsa.com.br/teste-vocacional-gratis?utm_source=" target="_blank"> <button class="btn-primary">Vagas</button href="../View/Curriculo.php"> </a>
             </div>
             <div class="card-image">
-                <img src="../Img/página curriculo/Revisão final.png" alt="Revisão final" class="img-fluid">
+                <img src="../Img/página vagas/trabalho brasil.png" alt="Revisão final" class="img-fluid">
             </div>
         </div>
 
@@ -173,7 +172,7 @@
                 <a href="https://querobolsa.com.br/teste-vocacional-gratis?utm_source=" target="_blank"> <button class="btn-primary">Vagas</button href="../View/Curriculo.php"> </a>
             </div>
             <div class="card-image">
-                <img src="../Img/página curriculo/idiomas.png" alt="Revisão final" class="img-fluid">
+                <img src="../Img/página vagas/glassdoor.png" alt="Revisão final" class="img-fluid">
             </div>
         </div>
     </section>
