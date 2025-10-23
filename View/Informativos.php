@@ -81,7 +81,7 @@
         <li>Estatísticas</li>
         <li>Notícias nacionais</li>
       </ul>
-      <a href="#">Saiba mais</a>
+      <a href="https://exame.com/noticias-sobre/mercado-de-trabalho/">Saiba mais</a>
     </div>
 
     <div class="card">
@@ -91,7 +91,7 @@
         <li>Inovações em empregos</li>
         <li>Futuras demandas</li>
       </ul>
-      <a href="#">Saiba mais</a>
+      <a href="https://forbes.com.br/">Saiba mais</a>
     </div>
 
     <div class="card">
@@ -101,7 +101,7 @@
         <li>Guias de carreira</li>
         <li>Fontes confiáveis</li>
       </ul>
-      <a href="#">Saiba mais</a>
+      <a href="https://www.infomoney.com.br/tudo-sobre/mercado-de-trabalho/">Saiba mais</a>
     </div>
 
     <div class="card">
@@ -111,7 +111,7 @@
         <li>Operador de máquinas de construção civil</li>
         <li>Técnico em segurança do trabalho</li>
       </ul>
-      <a href="#">Saiba mais</a>
+      <a href="https://www.ba.gov.br/trabalho/280/vagas-do-dia-sinebahia">Saiba mais</a>
     </div>
 
     <div class="card">
@@ -121,7 +121,7 @@
         <li>Dados oficiais</li>
         <li>Iniciativas de emprego</li>
       </ul>
-      <a href="#">Saiba mais</a>
+      <a href="https://agenciabrasil.ebc.com.br/">Saiba mais</a>
     </div>
         </main>
 </body>
