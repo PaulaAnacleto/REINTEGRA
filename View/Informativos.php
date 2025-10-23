@@ -30,10 +30,10 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="../view/Servicos">Serviços</a>
+                        <a class="nav-link" href="../view/Servicos.php">Serviços</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#cadastro">Feedback</a>
+                        <a class="nav-link" href="../View/Inicial-login.php">Feedback</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../View/Contato.php">Contato</a>
@@ -81,7 +81,7 @@
         <li>Estatísticas</li>
         <li>Notícias nacionais</li>
       </ul>
-      <a href="https://exame.com/noticias-sobre/mercado-de-trabalho/">Saiba mais</a>
+      <a href="https://exame.com/noticias-sobre/mercado-de-trabalho/" target="_blank">Saiba mais</a>
     </div>
 
     <div class="card">
@@ -91,7 +91,7 @@
         <li>Inovações em empregos</li>
         <li>Futuras demandas</li>
       </ul>
-      <a href="https://forbes.com.br/">Saiba mais</a>
+      <a href="https://forbes.com.br/" target="_blank">Saiba mais</a>
     </div>
 
     <div class="card">
@@ -101,7 +101,7 @@
         <li>Guias de carreira</li>
         <li>Fontes confiáveis</li>
       </ul>
-      <a href="https://www.infomoney.com.br/tudo-sobre/mercado-de-trabalho/">Saiba mais</a>
+      <a href="https://www.infomoney.com.br/tudo-sobre/mercado-de-trabalho/" target="_blank">Saiba mais</a>
     </div>
 
     <div class="card">
@@ -111,7 +111,7 @@
         <li>Operador de máquinas de construção civil</li>
         <li>Técnico em segurança do trabalho</li>
       </ul>
-      <a href="https://www.ba.gov.br/trabalho/280/vagas-do-dia-sinebahia">Saiba mais</a>
+      <a href="https://www.ba.gov.br/trabalho/280/vagas-do-dia-sinebahia" target="_blank">Saiba mais</a>
     </div>
 
     <div class="card">
@@ -121,7 +121,7 @@
         <li>Dados oficiais</li>
         <li>Iniciativas de emprego</li>
       </ul>
-      <a href="https://agenciabrasil.ebc.com.br/">Saiba mais</a>
+      <a href="https://agenciabrasil.ebc.com.br/" target="_blank">Saiba mais</a>
     </div>
         </main>
 </body>
