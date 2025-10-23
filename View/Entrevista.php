@@ -59,20 +59,19 @@
   </div>
 </nav>
 
-    <!-- Botão Voltar -->
+       <!-- Hero Section -->
+    <section class="hero-section text-center">
+        <!-- Botão Voltar -->
     <button class="back-button" aria-label="Voltar">
         <img src="../Img/página de contato/seta.png" alt="Voltar" class="back-icon">
     </button>
-
-    <!-- Hero Section -->
-    <section class="hero-section text-center">
         <h1 class="hero-title">ENTREVISTA DE EMPREGO</h1>
         <p class="hero-description">
             Seja você <span class="highlight">iniciante</span> ou já com uma boa bagagem, aqui é o espaço ideal
             para mostrar <span class="highlight">quem</span> você é <span class="highlight">profissionalmente</span>.
         </p>
     </section>
-
+    
     <!-- Component: Card Section -->
     <section class="content-section">
 
