@@ -110,17 +110,20 @@
         </main>
 
         
- <!-- Footer Section -->
+ 
+    </div>
+    <!-- Footer Section -->
+         <!-- Footer Section -->
         <footer class="footer">
            
             <div class="footer-links">
                   <p class="footer-text">
                 © 2025 Reintegra. Todos os direitos reservados.
             </p>
-                <a href="../View//Politica-privacidade.php" class="footer-link">Política de Privacidade</a>
+                <a href="#" class="footer-link">Política de Privacidade</a>
+
             </div>
         </footer>
-    </div>
 
     <script src="../Templates/js/Termos-servico.js"></script>
 </body>
