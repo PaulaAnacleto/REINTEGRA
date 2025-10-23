@@ -9,7 +9,6 @@ body {
   display: flex;
   flex-direction: column;
   background: linear-gradient(135deg, #ffffff 0%, #a5c7eb 100%);
-  align-items: center;
 }
 
 .title {
@@ -28,66 +27,34 @@ span {
   font-size: 15px;
   margin-bottom: 7%;
 }
-
 header {
   width: 100%;
   display: flex;
   justify-content: flex-start; /* garante o botão à esquerda */
-  padding-left: 20px; /* afastamento da borda */
+  padding-left: 98px; /* afastamento da borda */
 }
 
 /* Navbar Styles */
 .navbar {
-  width: 100%;
-  background: transparent;
-  padding: 20px 60px;
-  box-sizing: border-box;
-}
-
-.navbar .container {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
+  background: transparent !important; /* remove o branco */
+  box-shadow: none !important; /* remove sombra */
+  border: none !important; /* remove qualquer borda */
 }
 
-/* ===== Lado direito (links + perfil) ===== */
-.navbar-right {
-  display: flex;
-  align-items: center;
-  gap: 25px;
+/* Remove o fundo da classe bg-light do Bootstrap */
+.bg-light {
+  background: transparent !important;
+  box-shadow: none !important;
 }
 
-.back-button:active {
-  transform: translateX(-5px);
-}
-
-.img-perfil {
-  width: 30px;
-  padding: 4px;
-}
-
-#navbarNav {
-  display: flex;
-  gap: 20px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-/* ===== Ícone de perfil ===== */
-.perfil-icon {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  cursor: pointer;
+.bg-light {
+    background-color: none;
 }
 
 .logo-box {
   padding: 8px 16px;
   border-radius: 8px;
-  justify-content: left;
 }
 
 .logo-text {
@@ -99,35 +66,41 @@ header {
 
 .navbar-nav {
   gap: 15px;
-  list-style-type: none;
-}
-
-.navbar-toggler {
-  padding: var(--bs-navbar-toggler-padding-y) var(--bs-navbar-toggler-padding-x);
-  font-size: var(--bs-navbar-toggler-font-size);
-  line-height: 1;
-  color: var(--bs-navbar-color);
-  background-color: transparent;
-  border: none;
-  border-radius: var(--bs-navbar-toggler-border-radius);
-  transition: var(--bs-navbar-toggler-transition);
-}
-
-.nav-btn {
-  border-radius: 8px;
-  padding: 8px 16px !important;
-  display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  min-width: 140px;
 }
 
-.nav-text {
-  flex: 1;
+.nav-item .nav-link {
+  font-weight: 500;
+  color: #333;
 }
+
+.nav-item .nav-link:hover {
+  color: #0146b1;
+}
+
+/* Imagem de perfil */
+.btn-perfil {
+  border: none;
+  background: transparent;
+  padding: 0;
+}
+
+.img-perfil {
+  width: 42px;
+  height: 42px;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+}
+
+.img-perfil:hover {
+  transform: scale(1.08);
+}
+
+.back-button:active {
+  transform: translateX(-5px);
+}
+ 
 
 .btn-retorno {
   align-items: baseline;
@@ -158,12 +131,15 @@ header {
 .conteudo {
   display: flex;
   gap: 25px;
-  max-width: 900px;
+  max-width: 1200px;
   width: 100%;
   flex-wrap: wrap;
   justify-content: center;
   justify-items: center;
+  align-items: center;
+  padding-left: 99px; /* afastamento da borda */
 }
+
 
 .card {
   background-color: white;
