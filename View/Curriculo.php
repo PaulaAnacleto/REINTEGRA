@@ -59,17 +59,15 @@
   </div>
 </nav>
 
-    <!-- Botão Voltar -->
+    <!-- Hero Section -->
+    <section class="hero-section text-center">
+        <!-- Botão Voltar -->
     <button class="back-button" aria-label="Voltar">
         <img src="../Img/página de contato/seta.png" alt="Voltar" class="back-icon">
     </button>
-
-    <!-- Hero Section -->
-    <section class="hero-section text-center">
         <h1 class="hero-title">CURRÍCULO PROFISSIONAL</h1>
         <p class="hero-description">
-            Seja você <span class="highlight">iniciante</span> ou já com experiência, esse é o lugar pra organizar sua trajetória
-            de forma clara e <span class="highlight">objetiva</span>.
+            Encontre os melhores sites para descobrir oportunidades incríveis de emprego aqui!
         </p>
     </section>
 
@@ -164,7 +162,7 @@
             </div>
         </div>
 
-        <h2 class="subtitle">CURRÍCULO PROFISSIONAL</h2>
+        <h1 class="hero-title">OPICIONAL</h1>
 
             <!-- CARD 7 -->
         <div class="card-item">
@@ -192,7 +190,7 @@
             </div>
         </div>
 
-    <h2 class="subtitle">DICAS FINAIS</h2>
+    <h1 class="hero-title">DICAS FINAIS</h1>
 
             <!-- CARD 9 -->
         <div class="card-item">
