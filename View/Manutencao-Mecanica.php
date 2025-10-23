@@ -33,7 +33,7 @@
                         <a class="nav-link" href="../view/Servicos">Serviços</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#cadastro">Feedback</a>
+                        <a class="nav-link" href="../View/Inicial-login.php">Feedback</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="../View/Contato.php">Contato</a>
