@@ -1,3 +1,12 @@
+<?php
+// Apenas inicia a sessão e verifica se está logado.
+session_start();
+if (!isset($_SESSION['id_usuario'])) {
+    header("Location: login.php?status=erro_login"); // Ajuste o caminho do login
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -27,6 +36,7 @@
                 <h1 class="welcome-message">
                     Bem vindo(a), <span id="userName"></span>
                 </h1>
+                
             </div>
         </header>
 
@@ -50,8 +60,8 @@
                             <img src="../img/página de perfil/icone perfil.png" alt="">
                             </div>
                             <div class="user-details">
-                                <h3 class="user-name" id="profileUserName">Nome de usuário</h3>
-                                <p class="user-email" id="profileUserEmail">Email</p>
+                                <h3 class="user-name" id="profileUserName"></h3>
+                                <p class="user-email" id="profileUserEmail"></p>
                             </div>
                         </div>
                     </div>
@@ -61,11 +71,11 @@
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="nomeCompleto" class="form-label">Nome completo</label>
-                                <input type="text" id="nomeCompleto" name="nomeCompleto" class="form-input" value="Nome" readonly>
+                                <input type="text" id="nomeCompleto" name="nomeCompleto" class="form-input" value="" readonly>
                             </div>
                             <div class="form-group">
                                 <label for="email" class="form-label">Email</label>
-                                <input type="email" id="email" name="email" class="form-input" value="example@email.com" readonly>
+                                <input type="email" id="email" name="email" class="form-input" value="" readonly>
                             </div>
                         </div>
 
