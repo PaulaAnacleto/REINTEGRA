@@ -13,7 +13,7 @@ describe('Contact Page Navigation Tests', () => {
     
     // 3. Verifica se a URL foi alterada para incluir o caminho de destino
     // O caminho é baseado no 'href' do seu HTML: "../View/Politica-privacidade"
-    cy.url().should('include', '../View/Politica-privacidade');
+    cy.url().should('include', '../View/Politica-privacidade.php');
   });
 
   it('deve navegar para os Termos de Serviço', () => {
@@ -23,6 +23,6 @@ describe('Contact Page Navigation Tests', () => {
     
     // 3. Verifica se a URL foi alterada para incluir o caminho de destino
     // O caminho é baseado no 'href' do seu HTML: "../View/Termos-servico"
-    cy.url().should('include', '../View/Termos-servico');
+    cy.url().should('include', '../View/Termos-servico.php');
   });
 });
