@@ -260,21 +260,18 @@
         <div class="row justify-content-center">
             <div class="col-lg-6 col-md-8">
                 
-                <form action="../Controller/FeedbackController.php" method="POST">
-                    <div class="feedback-form-container">
-                        
-                        <input type="text" 
-                               class="form-control feedback-input" 
-                               placeholder="Adicione um Feedback" 
-                               name="feedback_mensagem" 
-                               required>
-                        
-                        <button class="btn btn-feedback-submit" type="submit">
-                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M2 10L18 2L10 18L8 11L2 10Z" fill="white" stroke="white" stroke-width="2" stroke-linejoin="round"/>
-                            </svg>
-                        </button>
-                    </div>
+                <form id="feedbackForm" class="feedback-form-container">
+                    
+                    <input type="text" class="form-control feedback-input" 
+                           placeholder="Adicione um Feedback" 
+                           name="feedback_mensagem" 
+                           required>
+                    
+                    <button class="btn btn-feedback-submit" type="submit">
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2 10L18 2L10 18L8 11L2 10Z" fill="white" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
                 </form>
 
             </div>
