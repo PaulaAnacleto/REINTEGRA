@@ -45,19 +45,19 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#serviços">Serviços</a>
+                        <a class="nav-link" href="../view/Servicos.php">Serviços</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#contato">Contato</a>
+                        <a class="nav-link" href="../view/Contato.php">Contato</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#sobre">Sobre</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#entrar">Entrar</a>
+                        <a class="nav-link" href="../view/Login.php">Entrar</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link btn btn-primary text-white px-4 ms-2" href="#cadastro">Cadastre-se</a>
+                        <a class="nav-link btn btn-primary text-white px-4 ms-2" href="../view/Cadastro.php">Cadastre-se</a>
                     </li>
                 </ul>
             </div>
