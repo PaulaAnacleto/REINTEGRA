@@ -1,0 +1,380 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f8f9fa;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header com gradiente azul */
+.profile-header {
+    background: linear-gradient(135deg, #1e73be 0%, #0f4c8c 100%);
+    color: white;
+    padding: 30px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.profile-header::before {
+    content: '';
+    position: absolute;
+    bottom: -150px;
+    left: -150px;
+    width: 400px;
+    height: 400px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.welcome-message {
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#userName {
+    font-weight: 700;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 40px 20px;
+}
+
+.content-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Navigation */
+.navigation {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    gap: 20px;
+}
+
+
+.navigation button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    padding-bottom: 15px;
+    align-items: last baseline;
+    transition: transform 0.2s ease;
+}
+
+.back-button:hover {
+  transform: translateX(-3px);
+}
+
+.back-icon {
+  width: 32px;
+  height: 32px;
+  display: block;
+  margin-top: 10px;
+}
+
+.page-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Profile Card */
+.profile-card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    border: 2px solid #e1e5e9;
+    transition: all 0.3s ease;
+}
+
+.profile-card:hover {
+    box-shadow: 0 15px 40px rgba(30, 115, 190, 0.1);
+    border-color: rgba(30, 115, 190, 0.2);
+}
+
+/* Profile Info Section */
+.profile-info {
+    margin-bottom: 40px;
+    padding-bottom: 30px;
+    border-bottom: 2px solid #f8f9fa;
+}
+
+.avatar-section {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.avatar {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+}
+
+.user-details {
+    flex: 1;
+}
+
+.user-name {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.user-email {
+    color: #666;
+    font-size: 1rem;
+}
+
+/* Profile Form */
+.profile-form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #333;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.form-input {
+    padding: 15px;
+    border: 2px solid #e1e5e9;
+    border-radius: 12px;
+    font-size: 1rem;
+    background: #f8f9fa;
+    transition: all 0.3s ease;
+    outline: none;
+    color: #666;
+}
+
+.form-input:focus {
+    border-color: #1e73be;
+    background: white;
+    box-shadow: 0 0 0 3px rgba(30, 115, 190, 0.1);
+    color: #333;
+}
+
+.form-input:not([readonly]):hover {
+    border-color: #1e73be;
+    background: white;
+}
+
+.form-input[readonly] {
+    cursor: default;
+}
+
+/* Form Actions */
+.form-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.action-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.edit-btn {
+    background:  #1a73e8 100%;
+    color: white;
+}
+
+.save-btn {
+    background: #1a73e8 100%;
+    color: white;
+}
+
+.save-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(40, 167, 69, 0.3);
+}
+
+.cancel-btn {
+    background: #7c7777;
+    color: white;
+}
+
+.cancel-btn:hover {
+    background: #5a6268;
+    transform: translateY(-2px);
+}
+
+<<<<<<< HEAD
+
+/* Cores específicas para cada ação */
+.action-card[data-action="change-password"]:hover .action-icon {
+    background: rgba(255, 193, 7, 0.2);
+}
+
+.action-card[data-action="privacy-settings"]:hover .action-icon {
+    background: rgba(23, 162, 184, 0.2);
+}
+
+.action-card[data-action="logout"]:hover .action-icon {
+    background: rgba(220, 53, 69, 0.2);
+}
+
+.action-card[data-action="logout"]:hover {
+    border-color: #dc3545;
+}
+
+
+/* Footer Section */
+.footer {
+    margin-top: auto;
+    padding: 30px 0;
+    border-top: 1px solid #e0e0e0;
+    
+}
+
+.footer-text {
+    color: #666;
+    font-size: 0.9rem;
+    
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.footer-link {
+    color: #666;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+}
+
+/* Animações */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.profile-card {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.additional-actions .action-card {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.additional-actions .action-card:nth-child(1) { animation-delay: 0.1s; }
+.additional-actions .action-card:nth-child(2) { animation-delay: 0.2s; }
+.additional-actions .action-card:nth-child(3) { animation-delay: 0.3s; }
+
+/* Estados de edição */
+.form-input.editing {
+    background: white;
+    border-color: #1e73be;
+    color: #333;
+}
+
+.form-input.editing:focus {
+    box-shadow: 0 0 0 3px rgba(30, 115, 190, 0.2);
+}
+
+/* Loading state */
+.loading {
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border: 2px solid #1e73be;
+    border-top: 2px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    z-index: 1000;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+=======
+>>>>>>> 63922bdc844fbd86f6a561fb40573910466bf84b
