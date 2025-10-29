@@ -6,7 +6,7 @@
     <title>Login - REINTEGRA</title>
     <link rel="stylesheet" href="../Templates/css/login.css">
 </head>
-<body>]
+<body>
 
 
     <div vw class="enabled">
