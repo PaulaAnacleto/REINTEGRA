@@ -21,7 +21,7 @@
         <!-- Content Section -->
         <main class="content">
             <section class="section">
-                <p class="update-date">Última atualização: 14 de outubro de 2025</p>
+                <p class="update-date">Última atualização: 10 de novembro de 2025</p>
                 
                 <h2>1. Introdução</h2>
                 <p>A Reintegra ("nós", "nosso" ou "nossa") está comprometida em proteger a privacidade e segurança dos dados pessoais de nossos usuários. Esta Política de Privacidade descreve como coletamos, usamos, armazenamos e protegemos suas informações pessoais quando você utiliza nossos serviços.</p>
