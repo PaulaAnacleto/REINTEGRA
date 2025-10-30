@@ -16,7 +16,23 @@
     
     <!-- Custom CSS -->
     <link rel="stylesheet" href="../Templates/css/Agendador.css">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?..." rel="stylesheet">
+<link rel="stylesheet" href="../Templates/css/Agendador.css">
+
+<script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.14/index.global.min.js'></script>
+<link href='https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css' rel='stylesheet'>
+
+<style>
+        #calendar-container {
+            max-width: 1100px;
+            margin: 40px auto; /* Adiciona um espaço de 40px em cima e embaixo */
+        }
+    </style>
+
 </head>
+
 <body>
 
 
@@ -56,7 +72,6 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto align-items-lg-center">
         <li class="nav-item"><a class="nav-link" href="../view/Servicos">Serviços</a></li>
-        <li class="nav-item"><a class="nav-link" href="#cadastro">Feedback</a></li>
         <li class="nav-item"><a class="nav-link" href="../View/Contato.php">Contato</a></li>
         <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
         <li class="nav-item"><a class="nav-link" href="../View/Inicial-login.php">Início</a></li>
@@ -78,16 +93,7 @@
     <!-- Hero Section -->
 
     <div class="container my-5">
-  <div class="row">
-    <div class="col-md-8 offset-md-2">
-      <h2 class="mb-4">Próximos Eventos</h2>
-      
-      <ul id="event-list" class="list-group shadow-sm">
-        <li class="list-group-item text-center">Carregando eventos...</li>
-      </ul>
-      
-    </div>
-  </div>
+  <div id="calendar-container"></div>
 </div>
 
 
@@ -117,71 +123,60 @@
 
 
 <script>
-    // --- SUAS INFORMAÇÕES PREENCHIDAS ---
+    // As variáveis são as mesmas
     const API_KEY = 'AIzaSyA8apmAyaF0c5mD2QONxV2PtHA5dJ18l6Y';
     const CALENDAR_ID = 'e9d55ddc0008700992e8636c307d0a940e9c6153ef8b1c59feee97b0530926ec@group.calendar.google.com';
-    // ----------------------------------------
-
-    // Parâmetros para buscar eventos futuros, ordenados por início
     const timeMin = new Date().toISOString(); 
-    const params = `?key=${API_KEY}&timeMin=${timeMin}&orderBy=startTime&singleEvents=true`;
+    const url = `https://www.googleapis.com/calendar/v3/calendars/${CALENDAR_ID}/events?key=${API_KEY}&timeMin=${timeMin}&orderBy=startTime&singleEvents=true`;
 
-    const url = `https://www.googleapis.com/calendar/v3/calendars/${CALENDAR_ID}/events${params}`;
+    // Espera o HTML carregar
+    document.addEventListener('DOMContentLoaded', function() {
+        const calendarEl = document.getElementById('calendar-container');
 
-    /**
-     * Busca os eventos do Google Calendar e os exibe na página.
-     */
-    async function fetchEvents() {
-      // Encontra o elemento da lista no seu HTML (lembre-se de criar este ul)
-      const eventList = document.getElementById('event-list');
-      
-      if (!eventList) {
-        console.error('Elemento #event-list não encontrado na página.');
-        return;
-      }
+        // Inicializa o FullCalendar
+        const calendar = new FullCalendar.Calendar(calendarEl, {
+            // Configurações básicas
+            initialView: 'dayGridMonth', // Visão de Mês
+            locale: 'pt-br', // Traduzir para Português-BR
+            headerToolbar: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'dayGridMonth,timeGridWeek,timeGridDay'
+            },
+            themeSystem: 'bootstrap5', // Usar o visual do Bootstrap 5
 
-      try {
-        const response = await fetch(url);
-        if (!response.ok) {
-          // Se a API retornar um erro (ex: Chave inválida, Calendário não é público)
-          const errorData = await response.json();
-          console.error('Erro da API do Google:', errorData.error.message);
-          throw new Error(`Erro ao buscar eventos (${response.status})`);
-        }
-        
-        const data = await response.json();
-        
-        eventList.innerHTML = ''; // Limpar "Carregando..."
-        
-        if (data.items && data.items.length > 0) {
-          // Loop para cada evento encontrado
-          data.items.forEach(event => {
-            const eventElement = document.createElement('li');
-            
-            // Formata a data para ficar mais legível (ex: 29/10/2025, 11:30:00)
-            const startTime = new Date(event.start.dateTime || event.start.date).toLocaleString('pt-BR');
-            
-            eventElement.textContent = `${startTime} - ${event.summary}`;
-            eventList.appendChild(eventElement);
-          });
-        } else {
-          eventList.textContent = 'Nenhum evento futuro encontrado.';
-        }
+            // O MAIS IMPORTANTE: Buscar os eventos
+            events: async function() {
+                try {
+                    const response = await fetch(url);
+                    if (!response.ok) {
+                        throw new Error('Erro ao buscar eventos da API');
+                    }
+                    const data = await response.json();
+                    
+                    // O FullCalendar precisa de { title, start, end }
+                    // Nós vamos transformar a resposta do Google nesse formato
+                    const aEventosFormatados = data.items.map(event => ({
+                        title: event.summary, // Título do evento
+                        start: event.start.dateTime || event.start.date, // Início
+                        end: event.end.dateTime || event.end.date, // Fim
+                        url: event.htmlLink, // Link para o Google Agenda (clicável!)
+                        description: event.description // Descrição
+                    }));
+                    
+                    return aEventosFormatados; // Retorna os eventos para o calendário
 
-      } catch (error) {
-        console.error('Erro no fetchEvents:', error);
-        if (eventList) {
-          eventList.textContent = 'Não foi possível carregar os eventos. Verifique o console para mais detalhes.';
-        }
-      }
-    }
+                } catch (error) {
+                    console.error("Erro ao buscar eventos: ", error);
+                    return []; // Retorna um array vazio em caso de erro
+                }
+            }
+        });
 
-    // Chamar a função para carregar os eventos quando a página abrir
-    // Adicionamos 'DOMContentLoaded' para garantir que o HTML (incluindo #event-list) 
-    // já foi carregado antes do script rodar.
-    document.addEventListener('DOMContentLoaded', fetchEvents);
+        // "Desenha" o calendário na tela
+        calendar.render();
+    });
 </script>
-
 
 
 </body>
