@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "calendario-476614",
+  "private_key_id": "d98640ddff360aecdc3dd0f3ad7bf69741faf380",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCKmm/wgrpth3fE\nYQhCnZlvQfirOIih1VR4syDUze6F3A1oL1zB7Ax3mYPgL43yhzniijeBJRuUzlXa\nzhSFctpUvkChvwtdmdP/wOJ+wPAplkY+wubY5Eavrh0tg/etfFoggywOJ74rG2DI\nGfNucs1I1b1VvauOdOVokdmvKGw8m9gqVwaPgCax+WQ3+2e98ci/9kSVHuyVhLMu\nvp0vRfD8AMjOtTn019rPLxo2nYiTKEmbpaYHdpRW0HeJsd9qGrJ45izQYQkZmtZ/\nufwYe2KRhb+WSHjbTuN8Pm2atMSG4uBcL/ZOPDqm+BvRefaysEPmyl6IasRmArxQ\nfCvCU3h/AgMBAAECggEALhp75KUfbQJ0KLrb/AifOn5XwGBwNmCXFgUDhTWwww70\n2LR0Zr7lUL0cPCylS0iGzR+LoeYdfAx8S2lkMxWGoUydhA/fsHVUKszWqjH0UOj/\nGa5MClY4WwSQCQ1ODAOCmTD4rQa0P3N+aGEVc6Y1OaZ7MbODBsJEctmc7qIECs6Q\npi4JSdkmbLAb1I41jMviH734TupjTf8AERKNrnDVKiTOqE/WpyES6Lzv7dQHuA74\n1fYZpUVQhFf/xG8xt7oST3Fn5GMQ1UyHLPGw/TYU9IZO4RiDA+50nk6Cx+G2tGY5\nGrmbHb9F7OAm0YHEfzr/0LJE/aDy8PUscmbn6F91NQKBgQDBs6n4IgJ2SGrskvC8\nqWoJouGrv56nm46vZhw2dn+dDx/chUbwqhxdhGV7jRK8xMJIXWGo+GMzHmonz0IO\nPy7Lx021P7/BseBPFjbVVfD3r8/RDAamKKJJRQ51+H5ev7Oq/FTH4ZPeF9GlbdFp\nwEM7b7muHOYjfqLtpj96shT3ywKBgQC3LkObYov+xyIg5nUveZ++vgE/yoTIPU/G\nTmVisCAj2SBl+e8ZlbST9weX8qOuB6OtL1EmzuMF4l4N9c/SxwXgiL5ga9IifE3/\nMe6yuYJajR61GrI6vTnbb25J2DDoEdOEHU3N90oncSyhnucdCdMcp9Kfhb9lwmMY\nt8jo8mxjnQKBgAYWq6UNDJ7DL/k3tTF48chTwlwvrcD+9sE0qHZdyy0YqJu55Lzz\n2+hknPwBNzGPzbuQk91H0XZt4lBWB3GDMulc3mhwFIr2GGLkA9040lY2xIWBp0PZ\nyyAad5XltbMsu20IeXG++XLltMVKama0kGhx3phGeEVtWZm2vBATQO15AoGAU950\nydIG8vHNqG6bvM7c2wI3pDNfNCcOPWdreBHXxVIGSWpzlK08bnquGV3YnzeUMxj0\n+OXEf88y7QVcz86b3D//mjoDjhKHy43bEi1ph3gRVS4R6F72/Ic6YckAK2DuDRE1\nrFXKt+BTZPRSMLNs2zPjdXJRPZAQuyJ6dF16TukCgYEAvYWDuagF2hdEzC2+1orm\nggO56Jz1w8Jkf9v+Xz+q59Zh4VLEa12uxxKZkLL8r8+hEX6WLhgLoyegpSesus15\nQKpCD6H9wlbcWyeRdIrk/PeBiw7+6tffN02TFLGd8nj56tyBHBKmZ+Q8l02jQGTm\npfQ0Q4NeyU/eJOG+Dn4V3ps=\n-----END PRIVATE KEY-----\n",
+  "client_email": "gerenciador-calendario@calendario-476614.iam.gserviceaccount.com",
+  "client_id": "105446170770734948242",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/gerenciador-calendario%40calendario-476614.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
