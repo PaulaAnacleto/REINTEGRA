@@ -5,10 +5,22 @@
 }
 
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh; /* ocupa toda a tela */
   display: flex;
   flex-direction: column;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+  /* GRADIENTE FLUIDO */
   background: linear-gradient(135deg, #ffffff 0%, #a5c7eb 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+
+
+html {
+  height: 100%;
 }
 
 .title {
@@ -27,12 +39,6 @@ body {
   text-align: center;
 }
 
-header {
-  width: 100%;
-  display: flex;
-  justify-content: flex-start; /* garante o botão à esquerda */
-  padding-left: 98px; /* afastamento da borda */
-}
 
 /* Navbar Styles */
 .navbar {
@@ -40,6 +46,13 @@ header {
   background: transparent !important; /* remove o branco */
   box-shadow: none !important; /* remove sombra */
   border: none !important; /* remove qualquer borda */
+}
+
+
+
+ /* --- CONTEÚDO PRINCIPAL --- */
+main {
+  flex: 1; /* empurra o footer pro fim */
 }
 
 .logo-box {
@@ -68,24 +81,28 @@ header {
   color: #0146b1;
 }
 
-/* Imagem de perfil */
-.btn-perfil {
-  border: none;
-  background: transparent;
-  padding: 0;
-}
-
-.img-perfil {
-  width: 42px;
-  height: 42px;
-  object-fit: cover;
-  border-radius: 50%;
-  transition: transform 0.2s ease;
-}
-
-.img-perfil:hover {
+/* Imagem de perfil */ 
+.btn-perfil { 
+  border: none; 
+  background: transparent; 
+  padding: 0; } 
+.img-perfil { 
+  width: 42px; 
+  height: 42px; 
+  object-fit: cover; border-radius: 50%;
+  transition: transform 0.2s ease; 
+  } 
+.img-perfil:hover { 
   transform: scale(1.08);
+ }
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  padding: 20px 5%;
 }
+
 .btn-retorno {
   align-items: baseline;
 }
@@ -125,14 +142,12 @@ span {
 
 .conteudo {
   display: flex;
-  gap: 25px;
-  max-width: 1200px;
-  width: 100%;
   flex-wrap: wrap;
   justify-content: center;
-  justify-items: center;
-  align-items: center;
-  padding-left: 99px; /* afastamento da borda */
+  gap: 30px;
+  padding: 40px 5%;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 
@@ -180,12 +195,13 @@ span {
 
 
 
-
+/* Footer */
 .footer {
-    margin-top: 20px;
-    padding: 30px 0;
-    border-top: 1px solid #e0e0e0;
-    
+  border-top: 1px solid #e0e0e0;
+  text-align: center;
+  padding: 30px 5%;
+  margin-top: auto; /* gruda no fim da tela */
+  background: transparent; /* mantém o gradiente visível atrás */
 }
 
 .footer-text {
@@ -211,3 +227,170 @@ span {
 .footer-link:hover {
     text-decoration: underline;
 }
+
+
+/* Responsividade */
+
+/*computador menor*/
+@media (max-width: 1200px) {
+  .conteudo {
+    gap: 20px;
+  }
+
+}
+
+
+/* tablet */
+@media only screen and (min-width: 521px) and (max-width: 1024px) {
+
+  .title {
+    font-size: 1.6rem;
+  }
+  .paragrafo {
+    font-size: 1.1rem;
+  }
+  .card {
+    width: 90%;
+    max-width: 350px;
+  }
+.footer-text {
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+}
+
+.footer-links {
+  gap: 20px;
+}
+
+.footer-link {
+  font-size: 0.8rem;
+}
+
+/* Navbar */
+  .navbar {
+    padding: 0.8rem 2rem;
+  }
+
+  .logo-text {
+    font-size: 1.8rem;
+  }
+
+  /* Alinhamento perfil + hamburguer */
+  .navbar .d-flex.align-items-center {
+    gap: 10px;
+  }
+
+
+  .img-perfil {
+    width: 32px;
+    height: 32px;
+  }
+
+  .navbar-toggler {
+    border: none;
+  }
+
+  .navbar-toggler:focus {
+    box-shadow: none;
+  }
+
+  /* Menu mais elegante */
+  .navbar-nav {
+    text-align: center;
+    gap: 8px;
+  }
+
+  .nav-link {
+    font-size: 1.05rem;
+    color: #000;
+  }
+
+}
+
+/* celular */
+
+@media only screen and (min-width: 320px) and (max-width: 520px) {
+  .navbar-nav {
+    text-align: center;
+  }
+  .card {
+    width: 100%;
+  }
+
+   .paragrafo {
+    font-size: 0.95rem;
+  }
+
+  .footer-text {
+  font-size: 0.8rem;
+  margin-bottom: 5px;
+}
+
+.footer-links {
+  gap: 20px;
+}
+
+.footer-link {
+  font-size: 0.8rem;
+}
+
+  /* Navbar */
+  .logo-text {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+  }
+
+  .navbar-nav {
+    text-align: center;
+  }
+
+
+  /* Caixa com perfil + hamburguer */
+  .navbar .d-flex.align-items-center {
+    display: flex;
+    align-items: center;
+  
+  }
+
+  .btn-perfil {
+    background: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .img-perfil {
+    width: 28px;
+    height: 28px;
+  }
+
+  .navbar-toggler {
+    border: none;
+    background-color: transparent;
+  }
+
+  .navbar-toggler:focus {
+    box-shadow: none;
+  }
+
+  .navbar-toggler-icon {
+    width: 25px;
+    height: 25px;
+  }
+
+  /* Menu colapsável centralizado */
+  .navbar-nav {
+    text-align: center;
+    gap: 6px;
+    margin-top: 0.5rem;
+  }
+
+  .nav-link {
+    font-size: 1rem;
+    color: #000;
+  }
+
+
+
+} 
