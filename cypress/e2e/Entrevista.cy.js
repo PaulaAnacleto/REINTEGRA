@@ -15,7 +15,7 @@ describe('Página Entrevista - Reintegra', () => {
       cy.get('.nav-link').should('have.length.gte', 4)
       cy.contains('.nav-link', 'Serviços').should('exist')
       cy.contains('.nav-link', 'Contato').should('exist')
-      cy.contains('.nav-link', 'Início').should('exis')
+      cy.contains('.nav-link', 'Início').should('exist')
     })
   })
 
