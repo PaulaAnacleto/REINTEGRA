@@ -17,44 +17,47 @@
 
     <link rel="stylesheet" href="../Templates/css/Empreendedorismo-Inovacao.css">
 </head>
+ <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <div class="logo-box">
-                    <span class="logo-text">REINTEGRA</span>
-                </div>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <div class="logo-box">
+        <span class="logo-text">REINTEGRA</span>
+      </div>
+    </a>
+
+    <!-- Perfil + botão hamburguer (visível apenas no mobile) -->
+    <div class="d-flex align-items-center">
+      <a href="../View/Perfil.php" class="d-lg-none me-2">
+        <button class="btn-perfil">
+          <img src="../Img/página de perfil/icone perfil.png" class="img-perfil" alt="Perfil">
+        </button>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="../view/Servicos">Serviços</a></li>
+        <li class="nav-item"><a class="nav-link" href="#cadastro">Feedback</a></li>
+        <li class="nav-item"><a class="nav-link" href="../View/Contato.php">Contato</a></li>
+        <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+        <li class="nav-item"><a class="nav-link" href="../View/Inicial-login.php">Início</a></li>
+
+        <!-- Perfil visível apenas no desktop -->
+        <li class="nav-item d-none d-lg-block">
+          <a href="../View/Perfil.php">
+            <button class="btn-perfil">
+              <img src="../Img/página de perfil/icone perfil.png" class="img-perfil" alt="Perfil">
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="../view/Servicos">Serviços</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#cadastro">Feedback</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../View/Contato.php">Contato</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#sobre">Sobre</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../View/Inicial-login.php">Início</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="../View/Perfil.php">
-                        <button class="btn-perfil" onclick="abrirPerfil()">
-                            <img src="../Img/página de perfil/icone perfil.png" class="img-perfil" alt="Perfil">
-                        </button>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
 <!-- Header -->
 <header class="header">
@@ -101,7 +104,7 @@
 
         <div class="card">
               <div class="card-header">
-            <img src="../Img/Empreendedorismo_inovaçao/startup.png" alt="PPessoas com lâmpada em cima" class="icone">
+            <img src="../Img/Empreendedorismo_inovaçao/modelo_negocio.png" alt="Pessoas com lâmpada em cima" class="icone">
             <h3>Startups</h3>
         </div>
             <p class="text-card">Modelo, Validação, MVP e <span>entre outros...</span></p>
@@ -109,7 +112,7 @@
 
         <div class="card">
               <div class="card-header">
-            <img src="../Img/Empreendedorismo_inovaçao/estrategia.png" alt="xadrez com ideias" class="icone">
+            <img src="../Img/Empreendedorismo_inovaçao/modelo_negocio.png" alt="xadrez com ideias" class="icone">
             <h3>Planejamento Estratégico</h3>
         </div>
             <p class="text-card">Análise, Objetivos, Estratégias e <span>entre outros...</span></p>
@@ -117,7 +120,7 @@
 
         <div class="card">
               <div class="card-header">
-            <img src="../Img/Empreendedorismo_inovaçao/inovaçao.png" alt="Sensor" class="icone">
+            <img src="../Img/Empreendedorismo_inovaçao/modelo_negocio.png" alt="Sensor" class="icone">
             <h3>Gestão de Inovação</h3>
             </div>
             <p class="text-card">Ideação, Seleção, Prototipagem e <span>entre outros...</span></p>
@@ -125,7 +128,7 @@
 
         <div class="card">
             <div class="card-header">
-            <img src="../Img/Empreendedorismo_inovaçao/marketing_digital.png" alt="Lâmpada com engrenagem" class="icone">
+            <img src="../Img/Empreendedorismo_inovaçao/modelo_negocio.png" alt="Lâmpada com engrenagem" class="icone">
             <h3>Marketing Digital</h3>
             </div>
             <p class="text-card">SEO, E-mail marketing, Análise de desempenho e <span>entre outros...</span></p>
@@ -133,18 +136,18 @@
 
         <div class="card">
             <div class="card-header">
-            <img src="../Img/Empreendedorismo_inovaçao/analise_mercado.png" alt="Indústria" class="icone">
+            <img src="../Img/Empreendedorismo_inovaçao/modelo_negocio.png" alt="Indústria" class="icone">
             <h3>Análise de Mercado.</h3>
             </div>
             <p class="text-card">Concorrência, Tendências, Segmentação e <span>entre outros...</span></p>
         </div>
 
-        <div class="logo-senai">
-            <h4 class="parceria">Parceria</h4>
-            <img src="../Img/página inicial/logo_senai.png" alt="Título da parceria com a logo da empresa SENAI" class="img-logo">
-        </div>
     </main>
-
+    
+    <div class="logo-senai">
+        <h4 class="parceria">Parceria</h4>
+        <img src="../Img/página inicial/logo_senai.png" alt="Título da parceria com a logo da empresa SENAI" class="img-logo">
+    </div>
 
 
 
@@ -163,5 +166,11 @@
     </div>
 
 </body>
+
+ <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- JS -->
+    <script src="../Templates/js/Empreendedorismo-Inovacao.js"></script>
 
 </html>
