@@ -113,9 +113,30 @@
                             <span class="card-action">Buscar Vagas</span>
                         </div>
                     </div>
+                    </a>
+
+                    <!-- Eventos -->
+                       <a href="../View/Vagas.php" class="card-link">
+                    <div class="service-card" data-service="vagas">
+                        <div class="card-content">
+                            <h3 class="card-title">Eventos</h3>
+                            <p class="card-description">
+                                Fique por dentro dos melhores eventos voltados a sua área!
+                            </p>
+                        </div>
+                        <div class="card-hover-overlay">
+                            <span class="card-action">Buscar Evento</span>
+                        </div>
+                    </div>
+                    </a>
                 </div>
             </div>
-                </a>
+                
+
+                </div>
+                
+
+                
         </main>
 
         <!-- Footer -->
