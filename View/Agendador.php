@@ -26,7 +26,7 @@
 
 <style>
         #calendar-container {
-            max-width: 1100px;
+            max-width: 825px;
             margin: 40px auto; /* Adiciona um espaço de 40px em cima e embaixo */
         }
     </style>
