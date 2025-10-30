@@ -281,3 +281,102 @@ body {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
+
+
+
+/*computador menor*/
+@media (max-width: 1200px) {
+  .conteudo {
+    gap: 20px;
+  }
+
+}
+
+
+/* tablet */
+@media only screen and (min-width: 521px) and (max-width: 1024px) {
+
+  .title {
+    font-size: 1.6rem;
+  }
+  .paragrafo {
+    font-size: 0.95rem;
+  }
+  .card {
+    width: 90%;
+    max-width: 350px;
+  }
+.footer-text {
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+}
+
+.footer-links {
+  gap: 20px;
+}
+
+.footer-link {
+  font-size: 0.8rem;
+}
+
+/* Navbar */
+  .navbar {
+    padding: 0.8rem 2rem;
+  }
+
+  .logo-text {
+    font-size: 1.8rem;
+  }
+
+
+
+}
+
+/* celular */
+
+@media only screen and (min-width: 320px) and (max-width: 520px) {
+  .navbar-nav {
+    text-align: center;
+  }
+  .card {
+    width: 100%;
+  }
+
+  .footer-text {
+  font-size: 0.8rem;
+  margin-bottom: 5px;
+}
+
+.footer-links {
+  gap: 20px;
+}
+
+.footer-link {
+  font-size: 0.8rem;
+}
+
+  /* Navbar */
+  .logo-text {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+  }
+
+  .navbar-nav {
+    text-align: center;
+  }
+
+
+
+  /* Menu colapsável centralizado */
+  .navbar-nav {
+    text-align: center;
+    gap: 6px;
+    margin-top: 0.5rem;
+  }
+
+  .nav-link {
+    font-size: 1rem;
+    color: #000;
+  }
+
+} 
