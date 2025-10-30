@@ -100,15 +100,14 @@ if (!isset($_SESSION['id_usuario'])) {
                         <!-- Botões de ação -->
                         <div class="form-actions">
                             <button type="button" id="editBtn" class="action-btn edit-btn">
-
                                 Editar Perfil
                             </button>
+                            
                             <button type="submit" id="saveBtn" class="action-btn save-btn" style="display: none;">
-                             
                                 Salvar Alterações
                             </button>
+                            
                             <button type="button" id="cancelBtn" class="action-btn cancel-btn" style="display: none;">
-                               
                                 Cancelar
                             </button>
                         </div>

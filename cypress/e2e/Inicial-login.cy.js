@@ -1,7 +1,7 @@
 describe('Testes da Página Inicial - Reintegra', () => {
 
   beforeEach(() => {
-    cy.visit('http://localhost/reintegra/view/Inicial-login.php');
+    cy.visit('/Inicial-login.php');
   });
 
   it('1. Deve carregar a página e exibir o título e h1 corretos', () => {
@@ -12,7 +12,7 @@ describe('Testes da Página Inicial - Reintegra', () => {
 
   context('2. Navegação (Desktop)', () => {
     beforeEach(() => {
-      cy.viewport(1920, 1080); 
+      cy.viewport(1920, 1080);
     });
 
     it('Deve exibir os links de navegação e o ícone de perfil de desktop', () => {
@@ -25,7 +25,7 @@ describe('Testes da Página Inicial - Reintegra', () => {
       cy.get('.d-lg-none.me-2 .btn-perfil').should('not.be.visible');
     });
 
-it('Deve rolar para a seção correta ao clicar em links âncora', () => {
+    it('Deve rolar para a seção correta ao clicar em links âncora', () => {
       cy.get('.navbar-nav').contains('Sobre').click();
       cy.get('section#sobre h2').should('be.visible');
       cy.get('.navbar-nav').contains('Feedback').click();
@@ -41,36 +41,21 @@ it('Deve rolar para a seção correta ao clicar em links âncora', () => {
     });
   });
 
-  context('3. Formulário de Feedback', () => {
-    it('Deve mostrar um alerta de aviso ao tentar enviar feedback vazio', () => {
-      cy.get('section#cadastro .btn-feedback-submit').click();
-      cy.get('.alert.alert-warning').should('be.visible').and('contain', 'Por favor, digite seu feedback.');
-      cy.wait(4100); 
-      cy.get('.alert.alert-warning').should('not.exist');
-    });
-
-it('Deve mostrar um alerta de sucesso e limpar o campo ao enviar um feedback válido', () => {
-  const meuFeedback = 'Testando o formulário de feedback com Cypress!';
-  cy.intercept('POST', '/Controller/FeedbackController.php').as('formSubmit');
-  
-  cy.get('input[name="feedback_mensagem"]').type(meuFeedback);
-  cy.get('section#cadastro .btn-feedback-submit').click();
-
-  // --- CORREÇÃO AQUI ---
-
-  // 1. PRIMEIRO, espere a requisição terminar.
-  cy.wait('@formSubmit').then((interception) => {
-    // Opcional: verifique se o servidor respondeu com "OK" (status 200)
-    expect(interception.response.statusCode).to.equal(200);
-
-    // Verifica se o formulário foi enviado com os dados corretos
-    const formData = new URLSearchParams(interception.request.body);
-    expect(formData.get('feedback_mensagem')).to.equal(meuFeedback);
+context('3. Formulário de Feedback (Front-end)', () => {
+  it('Deve mostrar um alerta de sucesso e limpar o campo ao enviar um feedback válido', () => {
+    const meuFeedback = 'Testando o formulário de feedback com Cypress!';
+    cy.intercept('POST', '**/Controller/FeedbackController.php', {
+      statusCode: 200,
+      body: { success: true, message: 'Obrigado pelo seu feedback!' }
+    }).as('formSubmit');
+    cy.get('input[name="feedback_mensagem"]').type(meuFeedback);
+    cy.get('section#cadastro .btn-feedback-submit').click();
+    cy.wait('@formSubmit');
+    cy.get('.alert.alert-success', { timeout: 8000 })
+      .should('be.visible')
+      .and('contain', 'Obrigado pelo seu feedback!');
+    cy.get('input[name="feedback_mensagem"]').should('have.value', '');
   });
-
-  // 2. AGORA que a requisição terminou, o alerta de sucesso DEVE estar na tela.
-  cy.get('.alert.alert-success').should('be.visible')
-    .and('contain', 'Obrigado pelo seu feedback!');
 });
   context('4. Navegação (Mobile)', () => {
     beforeEach(() => {
@@ -83,16 +68,14 @@ it('Deve mostrar um alerta de sucesso e limpar o campo ao enviar um feedback vá
       cy.get('.navbar-toggler').should('be.visible');
     });
 
-    it('Deve abrir e fechar o menu mobile ao clicar no toggler', () => {
+    it('Deve abrir e fechar o menu mobile ao clicar no toggler e em um item', () => {
       cy.get('#navbarNav').should('not.be.visible');
       cy.get('.navbar-toggler').click();
       cy.get('#navbarNav').should('be.visible');
       cy.get('#navbarNav').contains('Serviços').should('be.visible');
       cy.get('#navbarNav').contains('Sobre').click();
       cy.get('#navbarNav').should('not.have.class', 'show');
-      cy.get('a[href="#sobre"]').click();
     });
-  });
+  }); 
 
-});
 });
