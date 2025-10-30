@@ -27,7 +27,6 @@
             <div class="brand-content">
                 <h1 class="brand-title">REINTEGRA</h1>
                 <p class="brand-subtitle">Encontre seu emprego dos sonhos!</p>
-                <a href="../View/index"><button class="learn-more-btn">Saiba mais</button> </a>
             </div>
             <div class="decorative-circle"></div>
         </div>
