@@ -34,7 +34,7 @@
         <!-- Content Section -->
         <main class="content">
             <section class="section">
-                <p class="update-date">Última atualização: 14 de outubro de 2025</p>
+                <p class="update-date">Última atualização: 5 de novembro de 2025</p>
                 
                 <h2>1. Aceitação dos Termos</h2>
                 <p>Ao acessar e utilizar os serviços da Reintegra, você concorda em cumprir e estar vinculado a estes Termos de Serviço. Se você não concorda com qualquer parte destes termos, não deve utilizar nossos serviços.</p>
