@@ -77,7 +77,7 @@
     </button>
         <h1 class="hero-title">VAGAS</h1>
         <p class="hero-description">
-            Encontre os melhores sites para descobrir oportunidades incríveis de emprego aqui!
+            Encontre os <span>melhores</span> sites para descobrir <span>oportunidades</span> incríveis de <span>emprego</span> aqui!
         </p>
     </section>
 
