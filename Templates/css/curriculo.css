@@ -103,6 +103,9 @@ background: linear-gradient(135deg, #ffffff 0%, #a5c7eb 100%);
     color: #0146B1;
     font-weight: 600;
 }
+span{
+  color: #0146B1;
+}
 
 /* Botão de voltar (seta) */
 .back-button {

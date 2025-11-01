@@ -78,7 +78,7 @@
     </button>
         <h1 class="hero-title">CURRÍCULO PROFISSIONAL</h1>
         <p class="hero-description">
-            Encontre os melhores sites para descobrir oportunidades incríveis de emprego aqui!
+            Seja você <span>iniciante</span> ou já com experiência, esse é o lugar pra organizar sua trajetória <span>profissional</span> de forma clara e <span>objetiva</span>.
         </p>
     </section>
 
