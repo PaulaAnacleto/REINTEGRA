@@ -17,6 +17,7 @@
 </head>
 <body>
 
+<<<<<<< HEAD
     <div vw class="enabled">
         <div vw-access-button class="active"></div>
             <div vw-plugin-wrapper>
@@ -27,6 +28,20 @@
     <script>
         new window.VLibras.Widget('https://vlibras.gov.br/app' );
     </script>
+=======
+
+    <div vw class="enabled">
+  <div vw-access-button class="active"></div>
+  <div vw-plugin-wrapper>
+    <div class="vw-plugin-top-wrapper"></div>
+  </div>
+</div>
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+<script>
+  new window.VLibras.Widget('https://vlibras.gov.br/app' );
+</script>
+
+>>>>>>> 1c00bf3a3447c5a46c8ecc387676118257fa4df6
 
     <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
