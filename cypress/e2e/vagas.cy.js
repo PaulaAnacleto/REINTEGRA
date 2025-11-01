@@ -1,66 +1,90 @@
-describe('Testes Front-End da Página de Vagas', () => {
+describe('Testes de Front-End da Página de Vagas', () => {
+
   beforeEach(() => {
-    cy.visit('View/Vagas.php'); 
+    cy.visit('/View/Vagas.php');
   });
 
-  it('Deve carregar o título e o cabeçalho principal', () => {
-    // 1. Verifica o título da aba do navegador
-    cy.title().should('eq', 'Vagas - Reintegra');
+  context('Carregamento e Conteúdo Principal', () => {
+    it('deve carregar o título da página e o título principal (H1)', () => {
+      cy.title().should('eq', 'Vagas - Reintegra');
+      cy.get('.hero-title')
+        .should('be.visible')
+        .and('contain.text', 'VAGAS');
+      cy.get('.hero-description')
+        .should('be.visible')
+        .and('not.be.empty');
+    });
 
-    // 2. Verifica o logo na navbar
-    cy.get('.logo-text').should('contain', 'REINTEGRA');
+    it('deve exibir o logo "REINTEGRA" na navbar', () => {
+      cy.get('.logo-text')
+        .should('be.visible')
+        .and('contain.text', 'REINTEGRA');
+    });
 
-    // 3. Verifica o título principal da seção hero
-    cy.get('.hero-title').should('contain', 'VAGAS');
+    it('deve exibir todos os 6 cards de sites de vagas', () => {
+      cy.get('.content-section .card-item').should('have.length', 6);
+    });
 
-    // 4. Verifica a descrição
-    cy.contains('p', 'Encontre os melhores sites para descobrir oportunidades').should('be.visible');
-  });
-
-  it('Deve exibir todos os 6 cards de vagas', () => {
-    // 1. Verifica se todos os 6 cards estão presentes
-    cy.get('.card-item').should('have.length', 6);
-
-    // 2. Faz uma verificação rápida dos títulos dos cards
-    cy.contains('h2', 'Indeed').should('be.visible');
-    cy.contains('h2', 'Infojobs').should('be.visible');
-    cy.contains('h2', 'Catho').should('be.visible');
-    cy.contains('h2', 'Empregos.com.br').should('be.visible');
-    cy.contains('h2', 'Trabalha Brasil').should('be.visible');
-    cy.contains('h2', 'Glassdoor').should('be.visible');
-  });
-
-  it('Deve verificar o conteúdo e o link do card "Indeed"', () => {
-    // 1. Encontra o card "Indeed"
-    // Usamos .first() por ser o primeiro card após o "CARD 2" (que é o primeiro na lista)
-    // Uma forma mais segura seria usar cy.contains('h2', 'Indeed').closest('.card-item')
-    cy.get('.card-item').first().within(() => {
-      // 2. Verifica os itens da lista
-      cy.get('li').should('have.length', 4);
-      cy.contains('li', 'Possui milhares de vagas').should('be.visible');
-
-      // 3. Verifica o botão
-      cy.get('.btn-primary').should('contain', 'Vagas');
-
-      // 4. Verifica o link (a tag <a>) que envolve o botão
-      cy.get('a')
-        .should('have.attr', 'target', '_blank')
-        .and('have.attr', 'href', 'https://querobolsa.com.br/teste-vocacional-gratis?utm_source=');
+    it('deve exibir o texto de copyright no footer', () => {
+      cy.get('.footer-text')
+        .should('be.visible')
+        .and('contain.text', '© 2025 Reintegra.');
     });
   });
 
-  it('Deve verificar a navegação e o rodapé', () => {
-    // 1. Verifica um link da navbar
-    cy.contains('nav .nav-link', 'Serviços').should('have.attr', 'href', '../view/Servicos');
+  context('Links dos Cards de Vagas', () => {
+    it('deve ter o link correto para o Indeed', () => {
+      cy.contains('.card-title', 'Indeed') 
+        .parents('.card-text') 
+        .find('a') 
+        .should('have.attr', 'href', 'https://br.indeed.com/')
+        .and('have.attr', 'target', '_blank');
+    });
 
-    // 2. Verifica o botão de perfil (versão desktop)
-    cy.get('.nav-item.d-none.d-lg-block a').should('have.attr', 'href', '../View/Perfil.php');
+    it('deve ter o link correto para o Infojobs', () => {
+      cy.contains('.card-title', 'Infojobs')
+        .parents('.card-text')
+        .find('a')
+        .should('have.attr', 'href', 'https://www.infojobs.com.br/')
+        .and('have.attr', 'target', '_blank');
+    });
 
-    // 3. Verifica o texto do rodapé
-    cy.get('.footer-text').should('contain', '© 2025 Reintegra. Todos os direitos reservados.');
+    it('deve ter o link correto para a Catho', () => {
+      cy.contains('.card-title', 'Catho')
+        .parents('.card-text')
+        .find('a')
+        .should('have.attr', 'href', 'https://www.catho.com.br/')
+        .and('have.attr', 'target', '_blank');
+    });
+  });
 
-    // 4. Verifica um link do rodapé
-    cy.contains('.footer-link', 'Política de Privacidade').should('have.attr', 'href', '#');
+  context('Responsividade (Mobile)', () => {
+    beforeEach(() => {
+      cy.viewport('iphone-6');
+    });
+
+    it('deve exibir o ícone de perfil móvel e esconder o de desktop', () => {
+      cy.get('.d-lg-none .btn-perfil').should('be.visible');
+      cy.get('.d-none.d-lg-block .btn-perfil').should('not.be.visible');
+    });
+
+    it('deve exibir o menu de navegação ao clicar no botão "hamburguer"', () => {
+      cy.contains('.nav-link', 'Serviços').should('not.be.visible');
+      cy.get('.navbar-toggler').click();
+      cy.contains('.nav-link', 'Serviços').should('be.visible');
+    });
+  });
+  context('Acessibilidade', () => {
+    it('deve exibir o botão de acesso do VLibras', () => {
+      cy.get('[vw-access-button]').should('be.visible');
+    });
+  });
+  context('Interações do Usuário', () => {
+    it('deve ter um botão "Voltar" visível', () => {
+      cy.get('.back-button')
+        .should('be.visible')
+        .and('have.attr', 'aria-label', 'Voltar');
+    });
   });
 
 });
