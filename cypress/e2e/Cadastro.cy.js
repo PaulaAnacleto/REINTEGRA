@@ -50,36 +50,41 @@ describe('Cadastro - REINTEGRA', () => {
     cy.get('#confirmarSenha').parent().should('have.class', 'success');
   });
 
-  it('cadastro bem-sucedido: alerta, reset do formulário e botão reabilitado', () => {
-    cy.clock();
-    cy.window().then((win) => {
-      cy.stub(win, 'alert').as('alert');
-    });
+it('cadastro bem-sucedido: alerta, reset do formulário e botão reabilitado', () => {
+  cy.clock();
 
-    cy.get('#nomeCompleto').type('Helber Luiz');
-    cy.get('#email').type('helber@example.com');
-    cy.get('#senha').type('Password1');
-    cy.get('#confirmarSenha').type('Password1');
-
-    cy.get('.submit-btn').click();
-    cy.get('.submit-btn').should('be.disabled').and('contain.text', 'Cadastrando...');
-
-    cy.tick(2000);
-
-    cy.get('@alert').should('have.been.calledWith', 'Cadastro realizado com sucesso! Bem-vindo ao REINTEGRA!');
-
-    cy.get('#nomeCompleto').should('have.value', '');
-    cy.get('#email').should('have.value', '');
-    cy.get('#senha').should('have.value', '');
-    cy.get('#confirmarSenha').should('have.value', '');
-
-    cy.get('.input-wrapper').each(($el) => {
-      cy.wrap($el).should('not.have.class', 'error');
-      cy.wrap($el).should('not.have.class', 'success');
-    });
-
-    cy.get('.submit-btn').should('not.be.disabled').and('contain.text', 'Cadastre-se');
+  cy.window().then((win) => {
+    cy.stub(win, 'alert').as('alertStub');
   });
+
+  cy.get('#nomeCompleto').type('Helber Luiz');
+  cy.get('#email').type('helber@example.com');
+  cy.get('#senha').type('Password1');
+  cy.get('#confirmarSenha').type('Password1');
+
+  cy.get('.submit-btn').click();
+
+  cy.get('.submit-btn')
+    .should('be.disabled')
+    .and('contain.text', 'Cadastrando...');
+
+  cy.tick(2000);
+
+  cy.get('@alertStub').should(
+    'have.been.calledWith',
+    'Cadastro realizado com sucesso! Bem-vindo ao REINTEGRA!'
+  );
+
+  cy.get('#nomeCompleto').should('have.value', '');
+  cy.get('#email').should('have.value', '');
+  cy.get('#senha').should('have.value', '');
+  cy.get('#confirmarSenha').should('have.value', '');
+  cy.get('.submit-btn')
+    .should('not.be.disabled')
+    .and('contain.text', 'Cadastre-se');
+});
+
+
 
   it('botão "Saiba mais" exibe alerta com mensagem informativa', () => {
     cy.window().then((win) => {

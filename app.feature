@@ -55,3 +55,61 @@ Feature: Testes da Página Inicial - Reintegra
     Então o menu deve estar visível
     Quando eu clicar no item "Sobre"
     Então o menu mobile deve ser fechado
+
+Funcionalidade: Cadastro de Usuário - REINTEGRA
+  Como um novo usuário,
+  Eu quero me cadastrar na plataforma
+  Para ter acesso aos serviços.
+
+  Contexto: O usuário está na página de cadastro
+    Dado que eu estou na página de cadastro
+    E eu preparei um mock para os alertas do navegador
+
+  Cenário: Tentativa de cadastro com campos obrigatórios vazios
+    Quando eu clico no botão "Cadastre-se"
+    E eu toco e saio do campo "Nome completo"
+    Então eu devo ver a mensagem de erro "Nome completo é obrigatório" para o campo "Nome completo"
+    Quando eu toco e saio do campo "Email"
+    Então eu devo ver a mensagem de erro "Email é obrigatório" para o campo "Email"
+    Quando eu toco e saio do campo "Senha"
+    Então eu devo ver a mensagem de erro "Senha é obrigatória" para o campo "Senha"
+    Quando eu toco e saio do campo "Confirmação de senha"
+    Então eu devo ver a mensagem de erro "Confirmação de senha é obrigatória" para o campo "Confirmação de senha"
+
+  Esquema do Cenário: Validação de campos individuais com dados inválidos
+    Quando eu preencho o campo <campo> com <valor> e saio
+    Então eu devo ver a mensagem de erro <mensagem> para o campo <campo>
+
+    Exemplos:
+      | campo                 | valor             | mensagem                                                                                  |
+      | "Nome completo"       | "Helber"          | "Digite seu nome completo (nome e sobrenome)"                                             |
+      | "Email"               | "email-invalido"  | "Digite um email válido"                                                                  |
+      | "Senha"               | "Pass123"         | "Senha deve ter pelo menos 8 caracteres, incluindo maiúscula, minúscula e número"       |
+      | "Confirmação de senha"| "Password2"       | "As senhas não coincidem"                                                                 |
+
+  Esquema do Cenário: Validação de campos individuais com dados válidos
+    Quando eu preencho o campo "Senha" com "Password1"
+    E eu preencho o campo <campo> com <valor> e saio
+    Então o campo <campo> deve ser marcado como "success"
+
+    Exemplos:
+      | campo                 | valor                |
+      | "Nome completo"       | "Helber Luiz"        |
+      | "Email"               | "helber@example.com" |
+      | "Senha"               | "Password1"          |
+      | "Confirmação de senha"| "Password1"          |
+
+  Cenário: Cadastro bem-sucedido
+    Dado que eu uso o relógio simulado do Cypress
+    Quando eu preencho o formulário de cadastro com dados válidos
+    E eu clico no botão "Cadastre-se"
+    Então o botão "Cadastre-se" deve estar desabilitado e mostrar "Cadastrando..."
+    Quando eu avanço o relógio em 2 segundos
+    Então eu devo ver o alerta "Cadastro realizado com sucesso! Bem-vindo ao REINTEGRA!"
+    E o formulário deve ser limpo
+    E os campos não devem ter marcas de "success" ou "error"
+    And o botão "Cadastre-se" deve estar habilitado e mostrar "Cadastre-se"
+
+  Cenário: Botão "Saiba mais"
+    Quando eu clico no botão "Saiba mais"
+    Então eu devo ver um alerta contendo "Descubra oportunidades incríveis de emprego com o REINTEGRA"
