@@ -30,58 +30,57 @@
 
     <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
-        <div class="container">
-            <a class="navbar-brand" href="#">
-                <div class="logo-box">
-                    <span class="logo-text">REINTEGRA</span>
-                </div>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="../view/Servicos">Serviços</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#cadastro">Feedback</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../View/Contato.php">Contato</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#sobre">Sobre</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../View/Inicial-login.php">Início</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="../View/Perfil.php">
-                        <button class="btn-perfil" onclick="abrirPerfil()">
-                            <img src="../Img/página de perfil/icone perfil.png" class="img-perfil" alt="Perfil">
-                        </button>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <div class="logo-box">
+        <span class="logo-text">REINTEGRA</span>
+      </div>
+    </a>
 
-     <button class="back-button" aria-label="Voltar">
-                <img src="../Img/página de contato/seta.png" alt="Voltar" class="back-icon">
-            </button>
+    <!-- Perfil + botão hamburguer (visível apenas no mobile) -->
+    <div class="d-flex align-items-center">
+      <a href="../View/Perfil.php" class="d-lg-none me-2">
+        <button class="btn-perfil">
+          <img src="../Img/página de perfil/icone perfil.png" class="img-perfil" alt="Perfil">
+        </button>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
 
-        <section class="hero-section">
-       
-            <h1 class="hero-title">NETWORKING</h1>
-            <p class="hero-description">
-                Networking vai <span class="highlight">além</span> dos eventos prensenciais. Hoje, apps são ferramentas
-                <span class="highlight">poderosas</span>para criar conexões, aprender e <span class="highlight">encontrar</span> oportunidades. Saiba como úsa-los ao seu favor!
-            </p>
-            
-            
-        </section>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="../view/Servicos">Serviços</a></li>
+        <li class="nav-item"><a class="nav-link" href="#cadastro">Feedback</a></li>
+        <li class="nav-item"><a class="nav-link" href="../View/Contato.php">Contato</a></li>
+        <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+        <li class="nav-item"><a class="nav-link" href="../View/Inicial-login.php">Início</a></li>
+
+        <!-- Perfil visível apenas no desktop -->
+        <li class="nav-item d-none d-lg-block">
+          <a href="../View/Perfil.php">
+            <button class="btn-perfil">
+              <img src="../Img/página de perfil/icone perfil.png" class="img-perfil" alt="Perfil">
+            </button>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+     <!-- Hero Section -->
+    <section class="hero-section text-center">
+        <!-- Botão Voltar -->
+    <button class="back-button" aria-label="Voltar">
+        <img src="../Img/página de contato/seta.png" alt="Voltar" class="back-icon">
+    </button>
+        <h1 class="hero-title">NETWORKING</h1>
+        <p class="hero-description">
+            Networking vai <span class="highlight">além</span> dos eventos presenciais. Hoje, apps são ferramentas <span class="highlight">poderosas</span> pra criar conexões, aprender e <span class="highlight">encontrar</span> oportunidades. Saiba como usá-los a seu favor!
+        </p>
+    </section>
 
         <section class="content-section">
             <div class="card-item">
