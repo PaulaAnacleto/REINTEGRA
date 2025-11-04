@@ -1,19 +1,18 @@
 <?php
-// Em REINTEGRA/Model/TesteVocacionalModel.php
 
 class TesteVocacionalModel {
 
-    // --- CONFIGURAÇÃO DA IA ---
+    private const HF_TOKEN = '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';
+    
     // 
-    // 1. ⚠️ IMPORTANTE: COLE A SUA CHAVE (TOKEN) DO HUGGING FACE AQUI
+    // ***** A CORREÇÃO ESTÁ AQUI *****
     // 
-    private const HF_TOKEN = 'COLE_AQUI_SEU_TOKEN_hf_XXXXXXXXXXXXXXXX';
-
-    // 2. O modelo de IA que vamos usar (um modelo popular em Português)
-    private const HF_API_URL = 'https://api-inference.huggingface.co/models/pierreguillou/gpt2-small-portuguese';
+    // Atualizámos a URL base da API conforme a mensagem de erro
+    private const HF_API_URL = 'https://router.huggingface.co/hf-inference-instead/models/pierreguillou/gpt2-small-portuguese';
 
     /**
      * Função principal que tenta buscar a dica na IA e usa o fallback se falhar.
+     * (Código de diagnóstico removido)
      */
     public function getDica($area_principal, $pontuacao) {
         try {
@@ -24,22 +23,28 @@ class TesteVocacionalModel {
             // 2. Tentar chamar a IA
             $dicaAI = $this->getDicaRealAI($prompt);
             
+            // 3. Se a IA devolver uma dica, mostra-a
             if (!empty($dicaAI)) {
                 return $dicaAI;
             }
-        } catch (Exception $e) {
-            // Se a API da IA falhar (timeout, erro, etc.), não faz nada.
-            // O código continuará e usará o fallback.
+
+        } catch (Throwable $e) {
+            // Se a chamada falhar (explodir), não faz nada.
+            // O código de fallback abaixo será executado.
         }
 
-        // 3. Fallback: Se a IA falhar ou retornar vazio, usa a dica antiga
+        // 4. Fallback: Se a IA falhar, usa a dica antiga
         return $this->getDicaFallback($area_principal);
     }
 
+
     /**
-     * (NOVO) Tenta contactar a API da IA real.
+     * (Corrigido) Tenta contactar a API da IA real.
+     * (Código de diagnóstico removido)
      */
     private function getDicaRealAI($prompt) {
+        
+        // Verificação correta (não falhar se o token for o placeholder)
         if (self::HF_TOKEN === 'COLE_AQUI_SEU_TOKEN_hf_XXXXXXXXXXXXXXXX') {
             return null; // Não tenta se o token não foi configurado
         }
@@ -51,27 +56,31 @@ class TesteVocacionalModel {
             'Content-Type: application/json',
         ];
 
-        $ch = curl_init(self::HF_API_URL);
+        $ch = curl_init(self::HF_API_URL); // USA A NOVA URL CORRIGIDA
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_POST, true);
         curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
         curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10); // Timeout de 10 seg
-        curl_setopt($ch, CURLOPT_TIMEOUT, 30); // Timeout total de 30 seg
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10); 
+        curl_setopt($ch, CURLOPT_TIMEOUT, 90); // 90 segundos de timeout
+
+        // Manter o SSL desabilitado para testes locais
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
 
         $response = curl_exec($ch);
         $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
         curl_close($ch);
 
-        if ($http_code != 200) {
-            return null; // Falha na API
+        // Se a chamada falhar OU o código não for 200 OK
+        if ($response === false || $http_code != 200) {
+            // Falha silenciosamente e deixa o fallback (plano B) assumir
+            return null; 
         }
 
         $data = json_decode($response, true);
         
-        // A resposta da IA vem dentro de [0]['generated_text']
         if (isset($data[0]['generated_text'])) {
-            // Limpa o prompt da resposta (a IA costuma repetir a pergunta)
             $dicaLimpa = str_replace($prompt, '', $data[0]['generated_text']);
             return trim($dicaLimpa);
         }
@@ -79,9 +88,6 @@ class TesteVocacionalModel {
         return null;
     }
 
-    /**
-     * (ANTIGO getDica) Sistema de dicas pré-definidas (Fallback)
-     */
     private function getDicaFallback($area_principal) {
         $dicas = [
             'tecnologia' => 'Aprenda programação através de plataformas como Codecademy ou freeCodeCamp. Crie projetos pessoais para seu portfólio!',
@@ -95,16 +101,10 @@ class TesteVocacionalModel {
         return $dicas[$area_principal] ?? 'Continue explorando suas aptidões e interesses!';
     }
 
-
-    /*
-    |--------------------------------------------------------------------------
-    | DADOS DO TESTE (Perguntas e Áreas)
-    |--------------------------------------------------------------------------
-    | Aqui estão as perguntas JÁ REBALANCEADAS e as suas áreas.
-    */
     
     public function getPerguntas() {
-        $perguntas = [
+        // (O seu array de perguntas rebalanceadas vai aqui)
+        $perguntas = [ //
             [
                 'id' => 1,
                 'texto' => 'Qual atividade você mais gosta de fazer?',
@@ -260,8 +260,9 @@ class TesteVocacionalModel {
     }
     
     public function getAreas() {
-        $areas_vocacionais = [
-            'tecnologia' => [
+        // (O seu array de áreas vai aqui)
+        $areas_vocacionais = [ //
+            'tecnologia' => [ //
                 'nome' => 'Tecnologia & Inovação',
                 'descricao' => 'Para quem gosta de resolver problemas com lógica, programação e inovação digital.',
                 'cor' => '#0ea5e9',
@@ -272,7 +273,7 @@ class TesteVocacionalModel {
                     ['nome' => 'Arquiteto de Sistemas', 'descricao' => 'Projeta soluções tecnológicas complexas e escaláveis.', 'competencias' => ['Visão estratégica', 'Design de sistemas', 'Liderança técnica']]
                 ]
             ],
-            'saude' => [
+            'saude' => [ //
                 'nome' => 'Saúde & Bem-estar',
                 'descricao' => 'Para quem quer cuidar da saúde e bem-estar das pessoas.',
                 'cor' => '#10b981',
@@ -283,7 +284,7 @@ class TesteVocacionalModel {
                     ['nome' => 'Farmacêutico', 'descricao' => 'Trabalha com medicamentos e saúde pública.', 'competencias' => ['Conhecimento químico', 'Atenção ao detalhe', 'Responsabilidade']]
                 ]
             ],
-            'humanas' => [
+            'humanas' => [ //
                 'nome' => 'Humanas & Sociais',
                 'descricao' => 'Para quem gosta de trabalhar com pessoas, sociedade, educação e cultura.',
                 'cor' => '#a855f7',
@@ -294,7 +295,7 @@ class TesteVocacionalModel {
                     ['nome' => 'Historiador', 'descricao' => 'Pesquisa e preserva o conhecimento histórico.', 'competencias' => ['Pesquisa', 'Análise crítica', 'Escrita', 'Atenção ao detalhe']]
                 ]
             ],
-            'criativa' => [
+            'criativa' => [ //
                 'nome' => 'Criativa & Artes',
                 'descricao' => 'Para quem quer expressar criatividade e trabalhar com artes e design.',
                 'cor' => '#f97316',
@@ -305,7 +306,7 @@ class TesteVocacionalModel {
                     ['nome' => 'Arquiteto', 'descricao' => 'Projeta espaços e edifícios funcionais e esteticamente agradáveis.', 'competencias' => ['Criatividade', 'Conhecimento técnico', 'Visão espacial', 'Liderança']]
                 ]
             ],
-            'negocios' => [
+            'negocios' => [ //
                 'nome' => 'Negócios & Administração',
                 'descricao' => 'Para quem gosta de liderança, estratégia e desenvolvimento empresarial.',
                 'cor' => '#eab308',
@@ -316,7 +317,7 @@ class TesteVocacionalModel {
                     ['nome' => 'Consultor Empresarial', 'descricao' => 'Assessora empresas em estratégia e otimização de processos.', 'competencias' => ['Análise', 'Comunicação', 'Experiência empresarial', 'Pensamento crítico']]
                 ]
             ],
-            'ciencias' => [
+            'ciencias' => [ //
                 'nome' => 'Ciências & Pesquisa',
                 'descricao' => 'Para quem gosta de investigar, pesquisar e descobrir novos conhecimentos.',
                 'cor' => '#14b8a6',
