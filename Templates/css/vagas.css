@@ -375,9 +375,9 @@ display: flex;
 
 
 /* ============================= */
-/* 📱 CELULARES (320px - 480px) */
+/* 📱 CELULARES (320px - 520px) */
 /* ============================= */
-@media only screen and (min-width: 320px) and (max-width: 480px) {
+@media only screen and (min-width: 320px) and (max-width: 520px) {
 
   /* Ajuste geral */
   body {
