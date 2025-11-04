@@ -5,7 +5,8 @@
 }
 
 body {
-  min-height: 100vh; /* ocupa toda a tela */
+  min-height: 100vh;
+  /* ocupa toda a tela */
   display: flex;
   flex-direction: column;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -30,7 +31,8 @@ html {
 
   /* Segundo passo: apagar do fundo tudo que não estiver imediatamente atrás de texto */
   background-clip: text;
-  -webkit-background-clip: text; /* Alguns navegadores precisam do prefixo */
+  -webkit-background-clip: text;
+  /* Alguns navegadores precisam do prefixo */
   /* Terceiro passo: apagar o texto, deixando apenas o fundo atrás dele */
   -webkit-text-fill-color: transparent;
   /* Cor que contraste com o degradê, caso o navegador não suporte `background-clip: text` */
@@ -43,16 +45,20 @@ html {
 /* Navbar Styles */
 .navbar {
   display: flex;
-  background: transparent !important; /* remove o branco */
-  box-shadow: none !important; /* remove sombra */
-  border: none !important; /* remove qualquer borda */
+  background: transparent !important;
+  /* remove o branco */
+  box-shadow: none !important;
+  /* remove sombra */
+  border: none !important;
+  /* remove qualquer borda */
 }
 
 
 
- /* --- CONTEÚDO PRINCIPAL --- */
+/* --- CONTEÚDO PRINCIPAL --- */
 main {
-  flex: 1; /* empurra o footer pro fim */
+  flex: 1;
+  /* empurra o footer pro fim */
 }
 
 .logo-box {
@@ -81,20 +87,24 @@ main {
   color: #0146b1;
 }
 
-/* Imagem de perfil */ 
-.btn-perfil { 
-  border: none; 
-  background: transparent; 
-  padding: 0; } 
-.img-perfil { 
-  width: 42px; 
-  height: 42px; 
-  object-fit: cover; border-radius: 50%;
-  transition: transform 0.2s ease; 
-  } 
-.img-perfil:hover { 
+/* Imagem de perfil */
+.btn-perfil {
+  border: none;
+  background: transparent;
+  padding: 0;
+}
+
+.img-perfil {
+  width: 42px;
+  height: 42px;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+}
+
+.img-perfil:hover {
   transform: scale(1.08);
- }
+}
 
 /* Header */
 .header {
@@ -144,24 +154,26 @@ span {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 30px;
-  padding: 40px 5%;
-  max-width: 1400px;
+  gap: 25px;
+  max-width: 1200px;
   margin: 0 auto;
+  padding: 20px;
 }
-
 
 .card {
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   padding: 25px;
-  width: 270px;
-  height: 210px;
+  flex: 1 1 calc(33.333% - 40px);
+  /* 3 por linha no desktop */
+  max-width: 320px;
+  height: 180px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-align: justify;
 }
 
 .card:hover {
@@ -200,33 +212,37 @@ span {
   border-top: 1px solid #e0e0e0;
   text-align: center;
   padding: 30px 5%;
-  margin-top: auto; /* gruda no fim da tela */
-  background: transparent; /* mantém o gradiente visível atrás */
+  margin-top: auto;
+  /* gruda no fim da tela */
+  background: transparent;
+  /* mantém o gradiente visível atrás */
 }
 
 .footer-text {
-    color: #666;
-    font-size: 0.9rem;
-    
+  color: #666;
+  font-size: 0.9rem;
+
 }
 
 .footer-links {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
 }
 
 .footer-link {
-    color: #666;
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: color 0.2s ease;
+  color: #666;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
 }
 
 .footer-link:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
+
+
 
 
 /* Responsividade */
@@ -241,32 +257,44 @@ span {
 
 
 /* tablet */
-@media only screen and (min-width: 521px) and (max-width: 1024px) {
+@media only screen and (min-width: 743px) and (max-width: 1024px) {
 
   .title {
     font-size: 1.6rem;
   }
+
   .paragrafo {
     font-size: 1.1rem;
   }
+
   .card {
-    width: 90%;
+    flex: 1 1 calc(50% - 30px);
+    /* 2 por linha */
     max-width: 350px;
   }
-.footer-text {
-  font-size: 0.8rem;
-  margin-bottom: 10px;
-}
 
-.footer-links {
-  gap: 20px;
-}
+  .hero-img {
+    max-width: 140px;
+  }
 
-.footer-link {
-  font-size: 0.8rem;
-}
+  .img-logo {
+    max-width: 1200px;
+    /* aumenta apenas no desktop */
+  }
 
-/* Navbar */
+  .footer-text {
+    font-size: 0.8rem;
+  }
+
+  .footer-link {
+    font-size: 0.8rem;
+  }
+
+  .footer-links {
+    gap: 20px;
+  }
+
+  /* Navbar */
   .navbar {
     padding: 0.8rem 2rem;
   }
@@ -279,7 +307,6 @@ span {
   .navbar .d-flex.align-items-center {
     gap: 10px;
   }
-
 
   .img-perfil {
     width: 32px;
@@ -304,7 +331,92 @@ span {
     font-size: 1.05rem;
     color: #000;
   }
+}
 
+
+/* Entre tablet e celular */
+
+/* Tablet */
+@media only screen and (min-width: 521px) and (max-width: 742px) {
+
+  .text-card {
+    font-size: 13px;
+  }
+
+  .paragrafo {
+    font-size: 1rem;
+  }
+
+  .inicio {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .card h3 {
+    font-size: 14px;
+  }
+
+  .card {
+    flex: 1 1 100%;
+    /* 1 por linha */
+    max-width: 320px;
+  }
+
+  .img-logo {
+    max-width: 600px;
+  }
+
+  .footer-text {
+    font-size: 0.72rem;
+
+  }
+
+  .footer-links {
+    gap: 10px;
+  }
+
+  .footer-link {
+    font-size: 0.72rem;
+  }
+
+
+  /* Navbar */
+  .navbar {
+    padding: 0.8rem 2rem;
+  }
+
+  .logo-text {
+    font-size: 1.8rem;
+  }
+
+  /* Alinhamento perfil + hamburguer */
+  .navbar .d-flex.align-items-center {
+    gap: 10px;
+  }
+
+  .img-perfil {
+    width: 32px;
+    height: 32px;
+  }
+
+  .navbar-toggler {
+    border: none;
+  }
+
+  .navbar-toggler:focus {
+    box-shadow: none;
+  }
+
+  /* Menu mais elegante */
+  .navbar-nav {
+    text-align: center;
+    gap: 8px;
+  }
+
+  .nav-link {
+    font-size: 1.05rem;
+    color: #000;
+  }
 }
 
 /* celular */
@@ -313,26 +425,35 @@ span {
   .navbar-nav {
     text-align: center;
   }
+
   .card {
-    width: 100%;
+    flex: 1 1 100%;
+    /* 1 por linha */
+    max-width: 305px;
   }
 
-   .paragrafo {
+
+  .inicio {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .paragrafo {
     font-size: 0.95rem;
   }
 
   .footer-text {
-  font-size: 0.8rem;
-  margin-bottom: 5px;
-}
+    font-size: 0.7rem;
+  }
 
-.footer-links {
-  gap: 20px;
-}
+  .footer-links {
+    gap: 10px;
+    display: block;
+  }
 
-.footer-link {
-  font-size: 0.8rem;
-}
+  .footer-link {
+    font-size: 0.7rem;
+  }
 
   /* Navbar */
   .logo-text {
@@ -349,7 +470,7 @@ span {
   .navbar .d-flex.align-items-center {
     display: flex;
     align-items: center;
-  
+
   }
 
   .btn-perfil {
@@ -393,4 +514,4 @@ span {
 
 
 
-} 
+}
