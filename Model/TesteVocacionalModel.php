@@ -1,125 +1,228 @@
 <?php
+// Em REINTEGRA/Model/TesteVocacionalModel.php
+
 class TesteVocacionalModel {
-    public function getPerguntasEAreas() {
+
+    // --- CONFIGURAÇÃO DA IA ---
+    // 
+    // 1. ⚠️ IMPORTANTE: COLE A SUA CHAVE (TOKEN) DO HUGGING FACE AQUI
+    // 
+    private const HF_TOKEN = 'COLE_AQUI_SEU_TOKEN_hf_XXXXXXXXXXXXXXXX';
+
+    // 2. O modelo de IA que vamos usar (um modelo popular em Português)
+    private const HF_API_URL = 'https://api-inference.huggingface.co/models/pierreguillou/gpt2-small-portuguese';
+
+    /**
+     * Função principal que tenta buscar a dica na IA e usa o fallback se falhar.
+     */
+    public function getDica($area_principal, $pontuacao) {
+        try {
+            // 1. Criar o prompt (a pergunta) para a IA
+            $nome_area = $this->getAreas()[$area_principal]['nome'] ?? $area_principal;
+            $prompt = "Você é um conselheiro vocacional. Um estudante fez um teste e a sua área principal foi '$nome_area' com $pontuacao pontos. Dê uma dica curta, prática e inspiradora (em português do Brasil) para ele começar a explorar esta área.";
+
+            // 2. Tentar chamar a IA
+            $dicaAI = $this->getDicaRealAI($prompt);
+            
+            if (!empty($dicaAI)) {
+                return $dicaAI;
+            }
+        } catch (Exception $e) {
+            // Se a API da IA falhar (timeout, erro, etc.), não faz nada.
+            // O código continuará e usará o fallback.
+        }
+
+        // 3. Fallback: Se a IA falhar ou retornar vazio, usa a dica antiga
+        return $this->getDicaFallback($area_principal);
+    }
+
+    /**
+     * (NOVO) Tenta contactar a API da IA real.
+     */
+    private function getDicaRealAI($prompt) {
+        if (self::HF_TOKEN === 'COLE_AQUI_SEU_TOKEN_hf_XXXXXXXXXXXXXXXX') {
+            return null; // Não tenta se o token não foi configurado
+        }
+
+        $payload = json_encode(['inputs' => $prompt, 'options' => ['wait_for_model' => true]]);
+
+        $headers = [
+            'Authorization: Bearer ' . self::HF_TOKEN,
+            'Content-Type: application/json',
+        ];
+
+        $ch = curl_init(self::HF_API_URL);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_POST, true);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
+        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10); // Timeout de 10 seg
+        curl_setopt($ch, CURLOPT_TIMEOUT, 30); // Timeout total de 30 seg
+
+        $response = curl_exec($ch);
+        $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+        curl_close($ch);
+
+        if ($http_code != 200) {
+            return null; // Falha na API
+        }
+
+        $data = json_decode($response, true);
+        
+        // A resposta da IA vem dentro de [0]['generated_text']
+        if (isset($data[0]['generated_text'])) {
+            // Limpa o prompt da resposta (a IA costuma repetir a pergunta)
+            $dicaLimpa = str_replace($prompt, '', $data[0]['generated_text']);
+            return trim($dicaLimpa);
+        }
+
+        return null;
+    }
+
+    /**
+     * (ANTIGO getDica) Sistema de dicas pré-definidas (Fallback)
+     */
+    private function getDicaFallback($area_principal) {
+        $dicas = [
+            'tecnologia' => 'Aprenda programação através de plataformas como Codecademy ou freeCodeCamp. Crie projetos pessoais para seu portfólio!',
+            'saude' => 'Explore voluntariados em hospitais ou clínicas. Mantenha-se atualizado com cursos de primeiros socorros e bem-estar.',
+            'humanas' => 'Desenvolva habilidades de comunicação e liderança. Participe de grupos de discussão, voluntariados sociais e projetos comunitários.',
+            'criativa' => 'Pratique constantemente sua arte. Crie um portfólio online e compartilhe seu trabalho em redes sociais e plataformas criativas.',
+            'negocios' => 'Estude administração e empreendedorismo. Acompanhe tendências de mercado e networking profissional.',
+            'ciencias' => 'Aprofunde seus conhecimentos em laboratórios e pesquisa. Considere programas de iniciação científica.'
+        ];
+        
+        return $dicas[$area_principal] ?? 'Continue explorando suas aptidões e interesses!';
+    }
+
+
+    /*
+    |--------------------------------------------------------------------------
+    | DADOS DO TESTE (Perguntas e Áreas)
+    |--------------------------------------------------------------------------
+    | Aqui estão as perguntas JÁ REBALANCEADAS e as suas áreas.
+    */
+    
+    public function getPerguntas() {
         $perguntas = [
             [
                 'id' => 1,
                 'texto' => 'Qual atividade você mais gosta de fazer?',
                 'respostas' => [
                     ['id' => 1, 'texto' => 'Resolver problemas com lógica e programação', 'areas' => ['tecnologia' => 3, 'ciencias' => 1]],
-                    ['id' => 2, 'texto' => 'Cuidar da saúde e bem-estar físico', 'areas' => ['saude' => 3, 'ciencias' => 1]],
+                    ['id' => 2, 'texto' => 'Investigar, fazer experimentos e descobrir', 'areas' => ['ciencias' => 3, 'saude' => 1]],
                     ['id' => 3, 'texto' => 'Criar coisas novas e artísticas', 'areas' => ['criativa' => 3, 'tecnologia' => 1]],
-                    ['id' => 4, 'texto' => 'Gerenciar projetos e negócios', 'areas' => ['negocios' => 3, 'humanas' => 1]]
+                    ['id' => 4, 'texto' => 'Compreender a sociedade, história ou leis', 'areas' => ['humanas' => 3, 'negocios' => 1]]
                 ]
             ],
             [
                 'id' => 2,
                 'texto' => 'Como você prefere trabalhar?',
                 'respostas' => [
-                    ['id' => 5, 'texto' => 'Colaborando e discutindo ideias com equipe', 'areas' => ['humanas' => 3, 'negocios' => 1]],
-                    ['id' => 6, 'texto' => 'De forma independente e focada', 'areas' => ['tecnologia' => 2, 'criativa' => 1]],
-                    ['id' => 7, 'texto' => 'Ajudando pessoas a se recuperarem ou melhorarem', 'areas' => ['saude' => 3, 'ciencias' => 1]],
-                    ['id' => 8, 'texto' => 'Analisando dados e números', 'areas' => ['ciencias' => 2, 'negocios' => 1]]
+                    ['id' => 5, 'texto' => 'Colaborando e discutindo ideias com a equipe', 'areas' => ['humanas' => 3, 'negocios' => 1]],
+                    ['id' => 6, 'texto' => 'Focado e imerso em um desafio técnico', 'areas' => ['tecnologia' => 3, 'ciencias' => 1]],
+                    ['id' => 7, 'texto' => 'Ajudando pessoas a se recuperarem ou melhorarem', 'areas' => ['saude' => 3, 'humanas' => 1]],
+                    ['id' => 8, 'texto' => 'Gerenciando recursos e planeando estratégias', 'areas' => ['negocios' => 3, 'tecnologia' => 1]]
                 ]
             ],
             [
                 'id' => 3,
                 'texto' => 'Qual assunto mais te interessa?',
                 'respostas' => [
-                    ['id' => 9, 'texto' => 'Tecnologia e inovação', 'areas' => ['tecnologia' => 3, 'ciencias' => 1]],
-                    ['id' => 10, 'texto' => 'Medicina, enfermagem e tratamentos', 'areas' => ['saude' => 3, 'ciencias' => 1]],
-                    ['id' => 11, 'texto' => 'Arte, design e cultura', 'areas' => ['criativa' => 3, 'humanas' => 1]],
-                    ['id' => 12, 'texto' => 'Economia e administração', 'areas' => ['negocios' => 3, 'ciencias' => 1]]
+                    ['id' => 9, 'texto' => 'Inovação digital e novas tecnologias', 'areas' => ['tecnologia' => 3, 'ciencias' => 1]],
+                    ['id' => 10, 'texto' => 'O corpo humano, saúde e bem-estar', 'areas' => ['saude' => 3, 'ciencias' => 1]],
+                    ['id' => 11, 'texto' => 'Arte, design, música e cultura', 'areas' => ['criativa' => 3, 'humanas' => 1]],
+                    ['id' => 12, 'texto' => 'Economia, gestão e empreendedorismo', 'areas' => ['negocios' => 3, 'humanas' => 1]]
                 ]
             ],
             [
                 'id' => 4,
                 'texto' => 'Qual é seu maior ponto forte?',
                 'respostas' => [
-                    ['id' => 13, 'texto' => 'Pensamento analítico e técnico', 'areas' => ['tecnologia' => 2, 'ciencias' => 2]],
-                    ['id' => 14, 'texto' => 'Empatia e compreensão das pessoas', 'areas' => ['humanas' => 3, 'saude' => 1]],
-                    ['id' => 15, 'texto' => 'Criatividade e inovação', 'areas' => ['criativa' => 3, 'tecnologia' => 1]],
-                    ['id' => 16, 'texto' => 'Liderança e organização', 'areas' => ['negocios' => 3, 'humanas' => 1]]
+                    ['id' => 13, 'texto' => 'Meu pensamento analítico e lógico', 'areas' => ['ciencias' => 3, 'tecnologia' => 2]],
+                    ['id' => 14, 'texto' => 'Minha empatia e habilidade de comunicação', 'areas' => ['humanas' => 3, 'saude' => 1]],
+                    ['id' => 15, 'texto' => 'Minha criatividade e visão original', 'areas' => ['criativa' => 3, 'negocios' => 1]],
+                    ['id' => 16, 'texto' => 'Minha liderança e capacidade de organização', 'areas' => ['negocios' => 3, 'humanas' => 1]]
                 ]
             ],
             [
                 'id' => 5,
                 'texto' => 'O que mais te motiva no trabalho?',
                 'respostas' => [
-                    ['id' => 17, 'texto' => 'Resolver desafios complexos', 'areas' => ['tecnologia' => 2, 'ciencias' => 2]],
-                    ['id' => 18, 'texto' => 'Salvar vidas e melhorar a saúde das pessoas', 'areas' => ['saude' => 3, 'ciencias' => 1]],
-                    ['id' => 19, 'texto' => 'Expressar criatividade', 'areas' => ['criativa' => 3, 'humanas' => 1]],
-                    ['id' => 20, 'texto' => 'Crescimento e sucesso financeiro', 'areas' => ['negocios' => 3, 'ciencias' => 1]]
+                    ['id' => 17, 'texto' => 'Resolver desafios complexos e otimizar sistemas', 'areas' => ['tecnologia' => 3, 'ciencias' => 1]],
+                    ['id' => 18, 'texto' => 'Cuidar de pessoas e ter um impacto direto na vida delas', 'areas' => ['saude' => 3, 'humanas' => 1]],
+                    ['id' => 19, 'texto' => 'Expressar minha visão e criar algo único', 'areas' => ['criativa' => 3, 'humanas' => 1]],
+                    ['id' => 20, 'texto' => 'Descobrir algo novo que ninguém sabia antes', 'areas' => ['ciencias' => 3, 'tecnologia' => 1]]
                 ]
             ],
             [
                 'id' => 6,
                 'texto' => 'Como você se vê em 10 anos?',
                 'respostas' => [
-                    ['id' => 21, 'texto' => 'Especialista em minha área técnica', 'areas' => ['tecnologia' => 3, 'ciencias' => 1]],
-                    ['id' => 22, 'texto' => 'Profissional respeitado na saúde', 'areas' => ['saude' => 3, 'ciencias' => 1]],
-                    ['id' => 23, 'texto' => 'Criador reconhecido em meu campo', 'areas' => ['criativa' => 3, 'tecnologia' => 1]],
-                    ['id' => 24, 'texto' => 'Líder em uma empresa ou projeto', 'areas' => ['negocios' => 3, 'humanas' => 2]]
+                    ['id' => 21, 'texto' => 'Especialista em minha área técnica ou científica', 'areas' => ['tecnologia' => 2, 'ciencias' => 2]],
+                    ['id' => 22, 'texto' => 'Profissional respeitado na área da saúde', 'areas' => ['saude' => 3, 'ciencias' => 1]],
+                    ['id' => 23, 'texto' => 'Criador reconhecido ou diretor de arte', 'areas' => ['criativa' => 3, 'negocios' => 1]],
+                    ['id' => 24, 'texto' => 'Líder de uma equipa, ONG ou do meu próprio negócio', 'areas' => ['negocios' => 3, 'humanas' => 2]]
                 ]
             ],
             [
                 'id' => 7,
                 'texto' => 'Qual ambiente de trabalho você prefere?',
                 'respostas' => [
-                    ['id' => 25, 'texto' => 'Escritório moderno com tecnologia', 'areas' => ['tecnologia' => 2, 'negocios' => 1]],
-                    ['id' => 26, 'texto' => 'Hospital, clínica ou ambiente médico', 'areas' => ['saude' => 3, 'ciencias' => 1]],
-                    ['id' => 27, 'texto' => 'Estúdio ou espaço criativo', 'areas' => ['criativa' => 3, 'humanas' => 1]],
-                    ['id' => 28, 'texto' => 'Escritório corporativo', 'areas' => ['negocios' => 2, 'humanas' => 1]]
+                    ['id' => 25, 'texto' => 'Escritório moderno, startup ou empresa de tecnologia', 'areas' => ['tecnologia' => 3, 'negocios' => 1]],
+                    ['id' => 26, 'texto' => 'Hospital, clínica ou consultório', 'areas' => ['saude' => 3, 'humanas' => 1]],
+                    ['id' => 27, 'texto' => 'Estúdio, agência de design ou redação', 'areas' => ['criativa' => 3, 'humanas' => 1]],
+                    ['id' => 28, 'texto' => 'Laboratório ou universidade (pesquisa)', 'areas' => ['ciencias' => 3, 'saude' => 1]]
                 ]
             ],
             [
                 'id' => 8,
                 'texto' => 'Qual tipo de estudo mais te atrai?',
                 'respostas' => [
-                    ['id' => 29, 'texto' => 'Programação e desenvolvimento', 'areas' => ['tecnologia' => 3, 'ciencias' => 1]],
-                    ['id' => 30, 'texto' => 'Medicina, enfermagem ou farmácia', 'areas' => ['saude' => 3, 'ciencias' => 2]],
-                    ['id' => 31, 'texto' => 'Educação, história ou filosofia', 'areas' => ['humanas' => 3, 'ciencias' => 1]],
-                    ['id' => 32, 'texto' => 'Administração ou economia', 'areas' => ['negocios' => 3, 'ciencias' => 1]]
+                    ['id' => 29, 'texto' => 'Biologia, química ou física', 'areas' => ['ciencias' => 3, 'saude' => 1]],
+                    ['id' => 30, 'texto' => 'Medicina, enfermagem ou psicologia', 'areas' => ['saude' => 3, 'humanas' => 1]],
+                    ['id' => 31, 'texto' => 'Direito, história ou filosofia', 'areas' => ['humanas' => 3, 'negocios' => 1]],
+                    ['id' => 32, 'texto' => 'Administração, finanças ou economia', 'areas' => ['negocios' => 3, 'ciencias' => 1]]
                 ]
             ],
             [
                 'id' => 9,
-                'texto' => 'Como você lida com mudanças?',
+                'texto' => 'Como você lida com problemas?',
                 'respostas' => [
-                    ['id' => 33, 'texto' => 'Adoro aprender coisas novas', 'areas' => ['tecnologia' => 2, 'ciencias' => 2]],
-                    ['id' => 34, 'texto' => 'Prefiro estabilidade e rotina', 'areas' => ['saude' => 2, 'negocios' => 1]],
-                    ['id' => 35, 'texto' => 'Vejo como oportunidade de inovar', 'areas' => ['criativa' => 2, 'tecnologia' => 1]],
-                    ['id' => 36, 'texto' => 'Adapto-me e busco oportunidades', 'areas' => ['negocios' => 2, 'humanas' => 2]]
+                    ['id' => 33, 'texto' => 'Divido em partes menores e analiso com lógica', 'areas' => ['tecnologia' => 3, 'ciencias' => 1]],
+                    ['id' => 34, 'texto' => 'Tento entender o lado humano e encontrar um consenso', 'areas' => ['humanas' => 3, 'saude' => 1]],
+                    ['id' => 35, 'texto' => 'Busco uma solução criativa e fora do padrão', 'areas' => ['criativa' => 3, 'tecnologia' => 1]],
+                    ['id' => 36, 'texto' => 'Analiso os riscos e crio um plano estratégico', 'areas' => ['negocios' => 3, 'humanas' => 1]]
                 ]
             ],
             [
                 'id' => 10,
-                'texto' => 'Qual seria seu maior satisfação profissional?',
+                'texto' => 'Qual seria sua maior satisfação profissional?',
                 'respostas' => [
-                    ['id' => 37, 'texto' => 'Criar tecnologias que mudam o mundo', 'areas' => ['tecnologia' => 3, 'ciencias' => 1]],
-                    ['id' => 38, 'texto' => 'Salvar vidas e melhorar a saúde', 'areas' => ['saude' => 3, 'ciencias' => 1]],
-                    ['id' => 39, 'texto' => 'Transformar a educação e a sociedade', 'areas' => ['humanas' => 3, 'ciencias' => 1]],
-                    ['id' => 40, 'texto' => 'Construir um negócio bem-sucedido', 'areas' => ['negocios' => 3, 'ciencias' => 1]]
+                    ['id' => 37, 'texto' => 'Criar uma tecnologia que mude o mundo', 'areas' => ['tecnologia' => 3, 'negocios' => 1]],
+                    ['id' => 38, 'texto' => 'Salvar uma vida ou melhorar a saúde de alguém', 'areas' => ['saude' => 3, 'humanas' => 1]],
+                    ['id' => 39, 'texto' => 'Defender uma causa ou ensinar algo valioso', 'areas' => ['humanas' => 3, 'criativa' => 1]],
+                    ['id' => 40, 'texto' => 'Construir um negócio bem-sucedido a partir do zero', 'areas' => ['negocios' => 3, 'tecnologia' => 1]]
                 ]
             ],
             [
                 'id' => 11,
                 'texto' => 'Qual tipo de impacto social você quer ter?',
                 'respostas' => [
-                    ['id' => 41, 'texto' => 'Transformar a sociedade através da educação', 'areas' => ['humanas' => 3, 'ciencias' => 1]],
-                    ['id' => 42, 'texto' => 'Melhorar a qualidade de vida através da saúde', 'areas' => ['saude' => 3, 'humanas' => 1]],
-                    ['id' => 43, 'texto' => 'Contribuir para avanços científicos', 'areas' => ['ciencias' => 3, 'tecnologia' => 1]],
-                    ['id' => 44, 'texto' => 'Criar soluções inovadoras', 'areas' => ['tecnologia' => 3, 'criativa' => 1]]
+                    ['id' => 41, 'texto' => 'Transformar a sociedade através da educação ou justiça', 'areas' => ['humanas' => 3, 'negocios' => 1]],
+                    ['id' => 42, 'texto' => 'Melhorar a qualidade de vida através da saúde', 'areas' => ['saude' => 3, 'ciencias' => 1]],
+                    ['id' => 43, 'texto' => 'Contribuir para avanços científicos e descobertas', 'areas' => ['ciencias' => 3, 'tecnologia' => 1]],
+                    ['id' => 44, 'texto' => 'Inspirar pessoas através da arte e da cultura', 'areas' => ['criativa' => 3, 'humanas' => 1]]
                 ]
             ],
             [
                 'id' => 12,
-                'texto' => 'Como você se relaciona com outras pessoas?',
+                'texto' => 'No seu tempo livre, você prefere...',
                 'respostas' => [
-                    ['id' => 45, 'texto' => 'Sou muito social e gosto de networking', 'areas' => ['humanas' => 3, 'negocios' => 1]],
-                    ['id' => 46, 'texto' => 'Prefiro trabalhar com poucas pessoas próximas', 'areas' => ['criativa' => 2, 'tecnologia' => 1]],
-                    ['id' => 47, 'texto' => 'Gosto de ouvir e orientar outras pessoas', 'areas' => ['humanas' => 3, 'saude' => 1]],
-                    ['id' => 48, 'texto' => 'Sou mais reservado e introspectivo', 'areas' => ['ciencias' => 2, 'criativa' => 1]]
+                    ['id' => 45, 'texto' => 'Aprender uma nova habilidade (ex: programar, investir)', 'areas' => ['tecnologia' => 2, 'negocios' => 2]],
+                    ['id' => 46, 'texto' => 'Ir a museus, concertos ou desenhar', 'areas' => ['criativa' => 3, 'humanas' => 1]],
+                    ['id' => 47, 'texto' => 'Ler sobre ciência ou assistir documentários', 'areas' => ['ciencias' => 3, 'tecnologia' => 1]],
+                    ['id' => 48, 'texto' => 'Conversar, debater ideias e entender pessoas', 'areas' => ['humanas' => 3, 'negocios' => 1]]
                 ]
             ],
             [
@@ -128,32 +231,35 @@ class TesteVocacionalModel {
                 'respostas' => [
                     ['id' => 49, 'texto' => 'Educação e acesso ao conhecimento', 'areas' => ['humanas' => 3, 'ciencias' => 1]],
                     ['id' => 50, 'texto' => 'Saúde pública e bem-estar', 'areas' => ['saude' => 3, 'humanas' => 1]],
-                    ['id' => 51, 'texto' => 'Inclusão social e direitos humanos', 'areas' => ['humanas' => 3, 'saude' => 1]],
-                    ['id' => 52, 'texto' => 'Sustentabilidade e meio ambiente', 'areas' => ['ciencias' => 3, 'humanas' => 1]]
+                    ['id' => 51, 'texto' => 'Sustentabilidade e combate às mudanças climáticas', 'areas' => ['ciencias' => 3, 'humanas' => 1]],
+                    ['id' => 52, 'texto' => 'Inovação tecnológica para inclusão social', 'areas' => ['tecnologia' => 3, 'humanas' => 1]]
                 ]
             ],
             [
                 'id' => 14,
                 'texto' => 'O que você acha mais importante em uma carreira?',
                 'respostas' => [
-                    ['id' => 53, 'texto' => 'Fazer diferença na vida das pessoas', 'areas' => ['humanas' => 3, 'saude' => 1]],
-                    ['id' => 54, 'texto' => 'Ganhar bem e ter estabilidade financeira', 'areas' => ['negocios' => 3, 'ciencias' => 1]],
-                    ['id' => 55, 'texto' => 'Inovar e criar coisas novas', 'areas' => ['tecnologia' => 3, 'criativa' => 1]],
-                    ['id' => 56, 'texto' => 'Ter liberdade criativa e expressão', 'areas' => ['criativa' => 3, 'humanas' => 1]]
+                    ['id' => 53, 'texto' => 'Ter um propósito e fazer diferença na vida das pessoas', 'areas' => ['humanas' => 3, 'saude' => 2]],
+                    ['id' => 54, 'texto' => 'Crescimento financeiro e estabilidade', 'areas' => ['negocios' => 3, 'tecnologia' => 1]],
+                    ['id' => 55, 'texto' => 'Desafios intelectuais e inovação constante', 'areas' => ['tecnologia' => 2, 'ciencias' => 2]],
+                    ['id' => 56, 'texto' => 'Ter liberdade criativa e de expressão', 'areas' => ['criativa' => 3, 'humanas' => 1]]
                 ]
             ],
             [
                 'id' => 15,
                 'texto' => 'Qual tipo de problema você gosta de resolver?',
                 'respostas' => [
-                    ['id' => 57, 'texto' => 'Problemas técnicos e tecnológicos', 'areas' => ['tecnologia' => 3, 'ciencias' => 1]],
-                    ['id' => 58, 'texto' => 'Problemas sociais e humanos', 'areas' => ['humanas' => 3, 'saude' => 1]],
-                    ['id' => 59, 'texto' => 'Problemas de saúde e bem-estar', 'areas' => ['saude' => 3, 'ciencias' => 1]],
-                    ['id' => 60, 'texto' => 'Problemas de gestão e estratégia', 'areas' => ['negocios' => 3, 'humanas' => 1]]
+                    ['id' => 57, 'texto' => 'Problemas científicos ou de investigação', 'areas' => ['ciencias' => 3, 'saude' => 1]],
+                    ['id' => 58, 'texto' => 'Problemas sociais, éticos ou humanos', 'areas' => ['humanas' => 3, 'negocios' => 1]],
+                    ['id' => 59, 'texto' => 'Problemas estéticos ou de comunicação visual', 'areas' => ['criativa' => 3, 'negocios' => 1]],
+                    ['id' => 60, 'texto' => 'Problemas de gestão, estratégia e otimização', 'areas' => ['negocios' => 3, 'tecnologia' => 1]]
                 ]
             ]
         ];
-
+        return $perguntas;
+    }
+    
+    public function getAreas() {
         $areas_vocacionais = [
             'tecnologia' => [
                 'nome' => 'Tecnologia & Inovação',
@@ -222,34 +328,7 @@ class TesteVocacionalModel {
                 ]
             ]
         ];
-
-        return ['perguntas' => $perguntas, 'areas' => $areas];
-    }
-
-    public function getDicaIA($area, $score) {
-if (isset($_GET['ia'])) {
-    header('Content-Type: application/json');
-    
-    $area_principal = $_GET['area'] ?? 'tecnologia';
-    $pontuacao = $_GET['score'] ?? 0;
-    
-    $dicas = [
-        'tecnologia' => 'Aprenda programação através de plataformas como Codecademy ou freeCodeCamp. Crie projetos pessoais para seu portfólio!',
-        'saude' => 'Explore voluntariados em hospitais ou clínicas. Mantenha-se atualizado com cursos de primeiros socorros e bem-estar.',
-        'humanas' => 'Desenvolva habilidades de comunicação e liderança. Participe de grupos de discussão, voluntariados sociais e projetos comunitários.',
-        'criativa' => 'Pratique constantemente sua arte. Crie um portfólio online e compartilhe seu trabalho em redes sociais e plataformas criativas.',
-        'negocios' => 'Estude administração e empreendedorismo. Acompanhe tendências de mercado e networking profissional.',
-        'ciencias' => 'Aprofunde seus conhecimentos em laboratórios e pesquisa. Considere programas de iniciação científica.'
-    ];
-    
-    $dica = $dicas[$area_principal] ?? 'Continue explorando suas aptidões e interesses!';
-    
-    echo json_encode([
-        'sucesso' => true,
-        'dica' => $dica,
-        'area' => $area_principal
-    ]);
-    exit;
-}
+        return $areas_vocacionais;
     }
 }
+?>

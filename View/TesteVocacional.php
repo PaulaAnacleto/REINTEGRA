@@ -1,23 +1,10 @@
-<?php
-require_once __DIR__ . '/../controller/TesteVocacionalController.php';
-
-$controller = new TesteVocacionalController();
-
-if (isset($_GET['action']) && $_GET['action'] === 'dados') {
-    $controller->dados();
-} else {
-    $controller->index();
-}
-
-?>
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teste Vocacional Interativo</title>
-    <link rel="stylesheet" href="/Templates/css/teste-vocacional.css">
+    <link rel="stylesheet" href="../Templates/css/teste-vocacional.css">
 </head>
 <body>
     <div id="app">
@@ -165,6 +152,6 @@ if (isset($_GET['action']) && $_GET['action'] === 'dados') {
         </div>
     </div>
 
-    <script src="/Templates/js/teste-vocacional.js"></script>
+    <script src="../Templates/js/teste-vocacional.js"></script>
 </body>
 </html>

@@ -1,26 +1,34 @@
 <?php
-require_once __DIR__ . '/../model/TesteVocacionalModel.php';
+require_once '../Model/TesteVocacionalModel.php'; 
 
-class TesteVocacionalController {
-    private $model;
+$model = new TesteVocacionalModel();
 
-    public function __construct() {
-        $this->model = new TesteVocacionalModel();
-    }
-
-    public function index() {
-        require_once __DIR__ . '/../view/TesteVocacional.php';
-    }
-
-    public function dados() {
-        header('Content-Type: application/json; charset=utf-8');
-
-        if (isset($_GET['ia'])) {
-            $area = htmlspecialchars($_GET['ia']);
-            $score = (int)($_GET['score'] ?? 0);
-            echo json_encode($this->model->getDicaIA($area, $score), JSON_UNESCAPED_UNICODE);
-        } else {
-            echo json_encode($this->model->getPerguntasEAreas(), JSON_UNESCAPED_UNICODE);
-        }
-    }
+if (isset($_GET['ajax'])) {
+    header('Content-Type: application/json');
+    
+    $perguntas = $model->getPerguntas();
+    $areas = $model->getAreas();
+    
+    echo json_encode([
+        'perguntas' => $perguntas,
+        'areas' => $areas
+    ]);
+    exit;
 }
+
+if (isset($_GET['ia'])) {
+    header('Content-Type: application/json');
+    
+    $area_principal = $_GET['area'] ?? 'tecnologia';
+    $pontuacao = $_GET['score'] ?? 0; 
+    
+    $dica = $model->getDica($area_principal, $pontuacao); 
+    
+    echo json_encode([
+        'sucesso' => true,
+        'dica' => $dica,
+        'area' => $area_principal
+    ]);
+    exit;
+}
+?>

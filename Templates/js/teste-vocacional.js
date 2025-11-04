@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // Carregar dados do PHP
 function carregarDados() {
-    fetch('dados.php?ajax=1')
+    fetch('../Controller/TesteVocacionalController.php?ajax=1')
         .then(response => response.json())
         .then(data => {
             perguntas = data.perguntas;
@@ -296,7 +296,7 @@ function exibirCarreiras(topAreaData) {
 
 // Carregar Dica de IA
 function carregarDicaIA(area, score) {
-    fetch(`dados.php?ia=1&area=${area}&score=${score}`)
+    fetch(`../Controller/TesteVocacionalController.php?ia=1&area=${area}&score=${score}`)
         .then(response => response.json())
         .then(data => {
             if (data.sucesso) {
