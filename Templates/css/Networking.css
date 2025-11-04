@@ -517,6 +517,7 @@ background: linear-gradient(135deg, #ffffff 0%, #a5c7eb 100%);
 
   .card-image {
     margin-top: 25px;
+    max-width: 60%;
   }
 
   .img-fluid {
