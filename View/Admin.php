@@ -7,10 +7,10 @@ ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
 // 1. Incluir o autoload (essencial)
-require_once __DIR__ . '/vendor/autoload.php';
+require_once __DIR__ . '/../vendor/autoload.php';
 
 // 2. Definir os caminhos e IDs (constantes)
-define('SERVICE_ACCOUNT_FILE', __DIR__ . '/calendario-476614-d98640ddff36.json');
+define('SERVICE_ACCOUNT_FILE', __DIR__ . '/../calendario-476614-d98640ddff36.json');
 define('CALENDAR_ID', 'e9d55ddc0008700992e8636c307d0a940e9c6153ef8b1c59feee97b0530926ec@group.calendar.google.com');
 
 $acao = $_GET['action'] ?? 'listar'; // Ação padrão: 'listar'
@@ -207,7 +207,7 @@ try {
                     <a href="Admin.php?action=editar&id=<?php echo $event->getId(); ?>" class="btn btn-sm btn-outline-secondary me-2">
                           <i class="bi bi-pencil"></i>
                     </a>
-                        <a href="Admin.php?action=excluir&id=<?php echo $event->getId(); ?>" class="btn btn-sm btn-outline-danger" onclick="return confirm('Tem certeza?');">
+                        <a href="Admin.php?action=excluir&id=<?php echo $event->getId(); ?>" class="btn btn-sm btn-outline-danger" onclick="return confirm('Tem certeza que você deseja exluir?');">
                           <i class="bi bi-trash"></i>
                   </a>
                     </td>
