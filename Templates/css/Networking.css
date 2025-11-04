@@ -109,7 +109,7 @@ background: linear-gradient(135deg, #ffffff 0%, #a5c7eb 100%);
 /* Botão de voltar (seta) */
 .back-button {
   position: absolute;          /* Posiciona em relação à seção */
-  left: 158px;                  /* Distância da esquerda */
+  left: 120px;                 /* Distância da esquerda */
   background: transparent;     /* Remove fundo branco */
   border: none;                /* Remove borda */
   cursor: pointer;             /* Cursor de clique */
