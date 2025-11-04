@@ -2,22 +2,36 @@
 <html lang="pt-br">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Informativos</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Informativos</title>
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="../Templates/css/informativos.css">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="../Templates/css/informativos.css">
 </head>
 
-   <!-- Navbar -->
+
+<div vw class="enabled">
+  <div vw-access-button class="active"></div>
+  <div vw-plugin-wrapper>
+    <div class="vw-plugin-top-wrapper"></div>
+  </div>
+</div>
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+<script>
+  new window.VLibras.Widget('https://vlibras.gov.br/app');
+</script>
+
+
+<!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
   <div class="container">
     <a class="navbar-brand" href="#">
@@ -61,22 +75,22 @@
 
 <!-- Header -->
 <header class="header">
-    <div class="btn-retorno">
-        <button class="back-button" aria-label="Voltar">
-            <img src="../Img/página de contato/seta.png" alt="Voltar" class="back-icon">
-        </button>
-    </div>
+  <div class="btn-retorno">
+    <button class="back-button" aria-label="Voltar">
+      <img src="../Img/página de contato/seta.png" alt="Voltar" class="back-icon">
+    </button>
+  </div>
 </header>
-    
+
 <body>
-    <div class="inicio">
-        
-        <h1 class="title">NOTÍCIAS</h1>
-        <p class="paragrafo">Fique por dentro das últimas novidades e
-            <span>tendências do mercado</span> de <span>trabalho</span>!
-        </p>
-    </div>
-        <main class="conteudo">
+  <div class="inicio">
+
+    <h1 class="title">NOTÍCIAS</h1>
+    <p class="paragrafo">Fique por dentro das últimas novidades e
+      <span>tendências do mercado</span> de <span>trabalho</span>!
+    </p>
+  </div>
+  <main class="conteudo">
     <div class="card">
       <h3>Exame – seção<br>Mercado de Trabalho</h3>
       <ul>
@@ -126,26 +140,26 @@
       </ul>
       <a href="https://agenciabrasil.ebc.com.br/" target="_blank">Saiba mais</a>
     </div>
-        </main>
+  </main>
 </body>
 <!-- Footer Section -->
-        <footer class="footer">
-           
-            <div class="footer-links">
-                  <p class="footer-text">
-                © 2025 Reintegra. Todos os direitos reservados.
-            </p>
-                <a href="#" class="footer-link">Política de Privacidade</a>
-                <a href="#" class="footer-link">Termos de Serviço</a>
-            </div>
-        </footer>
-    </div>
+<footer class="footer">
 
- <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- JS -->
-    <script src="../Templates/js/informativos.js"></script>
+  <div class="footer-links">
+    <p class="footer-text">
+      © 2025 Reintegra. Todos os direitos reservados.
+    </p>
+    <a href="#" class="footer-link">Política de Privacidade</a>
+    <a href="#" class="footer-link">Termos de Serviço</a>
+  </div>
+</footer>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- JS -->
+<script src="../Templates/js/informativos.js"></script>
 
 
 </html>
