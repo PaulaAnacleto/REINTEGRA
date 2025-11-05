@@ -3,15 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teste Vocacional Interativo | REINTEGRA</title>
-        <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
+    <title>Teste Vocacional Interativo</title>
     <link rel="stylesheet" href="../Templates/css/teste-vocacional.css">
 </head>
 <body>
@@ -22,17 +14,11 @@
                 <div class="container">
                     <div class="header-content">
                         <div class="logo">
-                            <h1>REINTEGRA</h1>
-                                <div class="d-flex align-items-center">
-                                <a href="../View/Perfil.php" class="d-lg-none me-2">
-                                <button class="btn-perfil">
-                                    <img src="../Img/página de perfil/icone perfil.png" class="img-perfil" alt="Perfil">
-                                </button>
-                                </a>
-                                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                                <span class="navbar-toggler-icon"></span>
-                                </button>
-                                </div>
+                            <span class="compass-icon">🧭</span>
+                            <div>
+                                <h1>Teste Vocacional</h1>
+                                <p>Descubra sua carreira ideal</p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -43,7 +29,7 @@
                     <div class="card hero-card">
                         <div class="hero-section">
                             <h2>Qual é sua vocação?</h2>
-                            <p>Responda a 13 perguntas simples e descubra as carreiras que mais se alinham aos seus interesses e talentos.</p>
+                            <p>Responda a 13 perguntas simples e descubra as carreiras que melhor se alinham com seus interesses, aptidões e valores.</p>
                         </div>
 
                         <div class="features-grid">
@@ -81,7 +67,7 @@
                     <div class="header-content">
                         <h1>Teste Vocacional</h1>
                         <div class="progress-info">
-                            <span id="question-counter">Pergunta 1 de 13</span>
+                            <span id="question-counter">Pergunta 1 de 15</span>
                         </div>
                     </div>
                     <div class="progress-bar">
@@ -101,7 +87,7 @@
 
                         <div class="navigation">
                             <button class="btn btn-outline" id="btn-previous" onclick="perguntaAnterior()" disabled>← Anterior</button>
-                            <span id="question-display">1 / 13</span>
+                            <span id="question-display">1 / 15</span>
                         </div>
                     </div>
                 </div>
@@ -137,13 +123,8 @@
                         <div id="chart-container" class="chart-container"></div>
                     </div>
 
-                    <!-- Dica da IA (Gemini) -->
-                    <div id="ia-dica-container" class="card ia-dica">
-                        <h3>💬 Dica Personalizada da IA</h3>
-                        <div id="ia-dica-text">
-                            <p>Gerando sua dica personalizada...</p>
-                        </div>
-                    </div>
+                    <!-- Dica de IA -->
+                    <div id="ia-dica-container"></div>
 
                     <!-- Top 3 Áreas -->
                     <div class="card">
@@ -161,20 +142,18 @@
                     <div class="card cta-card">
                         <h3>Próximos Passos</h3>
                         <p>Pesquise mais sobre essas carreiras, converse com profissionais da área e explore oportunidades de estágio ou cursos relacionados.</p>
-                        <div class="cta-buttons">
-                            <button class="btn btn-primary" onclick="fazerTesteNovamente()">Fazer Teste Novamente</button>
-                            <button class="btn btn-outline" onclick="voltarHome()">Voltar ao Início</button>
+                        <div style="display: flex; gap: 12px; margin-top: 20px;">
+                            <button class="btn btn-primary" onclick="fazerTesteNovamente()" style="flex: 1;">Fazer Teste Novamente</button>
+                            <button class="btn btn-outline" onclick="voltarHome()" style="flex: 1;">Voltar ao Início</button>
                         </div>
                     </div>
                 </div>
             </main>
         </div>
     </div>
-    
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="../Templates/js/teste-vocacional.js"></script>
+
+   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../Templates/js/teste-vocacional.js"></script>
+
 </body>
 </html>
-
