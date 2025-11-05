@@ -35,6 +35,8 @@ body {
     padding: 0 20px;
 }
 
+
+
 /* Header */
 .header {
     border-bottom: 1px solid var(--border);
@@ -155,6 +157,16 @@ body {
     font-size: 18px;
     color: var(--text-secondary);
     line-height: 1.6;
+}
+
+#chart-container {
+  width: 100%;
+  height: 400px;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.1);
+  margin-top: 20px;
 }
 
 /* Features Grid */

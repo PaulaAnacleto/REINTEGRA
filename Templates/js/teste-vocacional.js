@@ -1,4 +1,3 @@
-// Variáveis Globais
 let perguntas = [];
 let areas = {};
 let perguntaAtual = 0;
@@ -17,7 +16,6 @@ function carregarDados() {
             perguntas = data.perguntas;
             areas = data.areas;
             
-            // Inicializar pontuações
             Object.keys(areas).forEach(area => {
                 pontuacoes[area] = 0;
             });
@@ -240,6 +238,86 @@ function exibirGraficoInterativo(areasOrdenadas) {
     chartContainer.appendChild(svg);
 }
 
+let chartInstance = null;
+
+function exibirGraficoInterativo(areasOrdenadas) {
+    const container = document.getElementById('chart-container');
+    container.innerHTML = '<canvas id="graficoPontuacao"></canvas>';
+
+    const ctx = document.getElementById('graficoPontuacao').getContext('2d');
+
+    const labels = areasOrdenadas.map(([area]) => areas[area].nome);
+    const data = areasOrdenadas.map(([_, score]) => score);
+
+    if (chartInstance) chartInstance.destroy();
+
+    chartInstance = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: labels,
+            datasets: [{
+                label: 'Pontuação por Área',
+                data: data,
+                backgroundColor: [
+                    '#3b82f6', '#10b981', '#f59e0b', '#8b5cf6', '#ef4444', '#0ea5e9'
+                ],
+                borderRadius: 12,
+                borderWidth: 1.5,
+                borderColor: '#1e293b'
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    labels: { color: '#e2e8f0', font: { size: 14 } },
+                    display: false
+                },
+                tooltip: {
+                    backgroundColor: '#1e293b',
+                    titleColor: '#fff',
+                    bodyColor: '#cbd5e1',
+                    borderColor: '#3b82f6',
+                    borderWidth: 1,
+                    cornerRadius: 8,
+                    displayColors: false
+                },
+                title: {
+                    display: true,
+                    text: 'Distribuição de Pontuação por Área',
+                    color: '#f8fafc',
+                    font: { size: 18, weight: 'bold' },
+                    padding: { top: 10, bottom: 30 }
+                }
+            },
+            scales: {
+                x: {
+                    ticks: { color: '#cbd5e1', font: { size: 12 } },
+                    grid: { color: 'rgba(255,255,255,0.05)' }
+                },
+                y: {
+                    ticks: { color: '#94a3b8', font: { size: 12 } },
+                    grid: { color: 'rgba(255,255,255,0.08)' },
+                    beginAtZero: true
+                }
+            },
+            animation: {
+                duration: 1200,
+                easing: 'easeOutQuart'
+            },
+            onClick: (e, elements) => {
+                if (elements.length > 0) {
+                    const index = elements[0].index;
+                    const areaClicada = labels[index];
+                    alert(`🔎 Você clicou em ${areaClicada}`);
+                }
+            }
+        }
+    });
+}
+
+
 // Exibir Top 3 Áreas
 function exibirTop3Areas(areasOrdenadas) {
     const container = document.getElementById('top-areas-container');
@@ -249,7 +327,7 @@ function exibirTop3Areas(areasOrdenadas) {
     
     top3.forEach(([areaKey, score], index) => {
         const area = areas[areaKey];
-        const percentual = (score / 30) * 100; // Máximo teórico é 30 pontos
+        const percentual = (score / 30) * 100; 
         
         const cardHTML = `
             <div class="area-card">
