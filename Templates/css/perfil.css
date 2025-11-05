@@ -264,7 +264,6 @@ body {
     transform: translateY(-2px);
 }
 
-<<<<<<< HEAD
 
 /* Cores específicas para cada ação */
 .action-card[data-action="change-password"]:hover .action-icon {
@@ -376,5 +375,129 @@ body {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
-=======
->>>>>>> 63922bdc844fbd86f6a561fb40573910466bf84b
+
+
+
+
+
+
+
+
+/* Responsividade */
+
+
+/* tablet */
+@media only screen and (min-width: 520px) and (max-width: 1024px) {
+
+  .title {
+    font-size: 2rem;
+  }
+ 
+ 
+.footer-text {
+  font-size: 0.8rem;
+  margin-bottom: 10px;
+}
+
+.footer-links {
+  gap: 20px;
+}
+
+.footer-link {
+  font-size: 0.8rem;
+}
+}
+
+
+/* celular */
+
+@media only screen and (min-width: 320px) and (max-width: 520px) {
+
+.avatar img{
+    width: 50px;
+}
+
+.avatar-section{
+    justify-content: center;
+}
+
+.user-details h3{
+    font-size: 1.2rem;
+}
+
+.user-details p{
+    font-size: 0.9rem;
+}
+
+
+.profile-info{
+   padding-bottom: 0px;
+}
+
+.profile-form{
+    gap:2px
+}
+
+.form-row{
+display: grid;
+grid-template-columns: 1fr; 
+justify-content: center;
+gap: 2px;
+}
+
+.form-label{
+ font-size: 0.8rem;
+}
+
+.form-input{
+max-height:50%;
+font-size: 0.9rem;
+}
+
+.profile-card{
+   max-height: 60%;
+   margin: auto;
+}
+
+.form-actions button{
+    max-width: 90%;
+    font-size: 0.9rem;
+}
+
+.navigation{
+    margin-bottom: 10px;
+    gap: 6px;
+}
+
+
+ .page-title {
+    font-size: 1.1rem;
+  }
+
+  .back-icon{
+    width: 28px;
+    height: 28px;
+  }
+    
+
+  .header-content h1{
+    font-size: 1.4rem;
+  }
+
+  .main-content{
+    padding-top: 20px;
+  }
+
+  .footer-text {
+  font-size: 0.8rem;
+  margin-bottom: 5px;
+}
+
+.footer-links {
+  gap: 20px;
+}
+
+.footer-link {
+  font-size: 0.8rem;
+}
+}
