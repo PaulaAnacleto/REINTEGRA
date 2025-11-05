@@ -54,16 +54,16 @@
 
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto align-items-lg-center">
-        <li class="nav-item"><a class="nav-link" href="../view/Servicos">Serviços</a></li>
-        <li class="nav-item"><a class="nav-link" href="#cadastro">Feedback</a></li>
+        <li class="nav-item"><a class="nav-link" href="../View/Servicos.php">Serviços</a></li>
+        <li class="nav-item"><a class="nav-link" href="../View/Inicial-login.php">Feedback</a></li>
         <li class="nav-item"><a class="nav-link" href="../View/Contato.php">Contato</a></li>
-        <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+        <li class="nav-item"><a class="nav-link" href="../View/Inicial-login.php">Sobre</a></li>
         <li class="nav-item"><a class="nav-link" href="../View/Inicial-login.php">Início</a></li>
 
         <!-- Perfil visível apenas no desktop -->
         <li class="nav-item d-none d-lg-block">
           <a href="../View/Perfil.php">
-            <button class="btn-perfil">
+            <button class="btn-perfil" id="perfil">
               <img src="../Img/página de perfil/icone perfil.png" class="img-perfil" alt="Perfil">
             </button>
           </a>
@@ -149,8 +149,8 @@
     <p class="footer-text">
       © 2025 Reintegra. Todos os direitos reservados.
     </p>
-    <a href="#" class="footer-link">Política de Privacidade</a>
-    <a href="#" class="footer-link">Termos de Serviço</a>
+    <a href="../View/Politica-privacidade.php" class="footer-link">Política de Privacidade</a>
+    <a href="../View/termos-servico.php" class="footer-link">Termos de Serviço</a>
   </div>
 </footer>
 </div>

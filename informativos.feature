@@ -97,11 +97,11 @@ E clico no botão "Políticas de Privacidade" do footer
 Então eu devo ser redirecionado a página Políticas de Privacidade
 
 
-Scenario: Acessar página Termos de Serviço
+Scenario: Acessar página Termos de Serviços
 Dado que eu acesso a página de informativos
 Quando a página é carregada
 E clico no botão "Termos de Serviço" do footer
-Então eu devo ser redirecionado a página Termos de Serviço
+Então eu devo ser redirecionado a página Termos de Serviços
 
 
 Scenario: Verificar se o widget VLibras é carregado corretamente
