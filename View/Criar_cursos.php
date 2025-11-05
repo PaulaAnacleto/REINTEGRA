@@ -37,6 +37,30 @@ $mensagem_erro = $view_data['erro'] ?? '';
 </head>
 <body class="admin-page">
 
+
+
+
+  <div class="btn-retorno">
+    <button class="back-button" aria-label="Voltar">
+      <img src="../Img/página de contato/seta.png" alt="Voltar" class="back-icon">
+    </button>
+  </div>
+
+
+
+    <div vw class="enabled">
+  <div vw-access-button class="active"></div>
+  <div vw-plugin-wrapper>
+    <div class="vw-plugin-top-wrapper"></div>
+  </div>
+</div>
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+<script>
+  new window.VLibras.Widget('https://vlibras.gov.br/app' );
+</script>
+
+
+
  <div class="container my-5">
   <div class="row g-5">
       <!-- Coluna dos Formulários -->
@@ -94,7 +118,11 @@ $mensagem_erro = $view_data['erro'] ?? '';
       <!-- Coluna da Lista de Cursos -->
    <div class="col-md-7">
     <h2 class="mb-4">Cursos Cadastrados</h2>
-        
+    
+    <a href="Cursos.php" target="_blank" class="btn btn-outline-primary btn-sm">
+                    <i class="bi bi-eye-fill me-1"></i> Visualizar Página Pública
+                </a>
+
         <!-- Mensagens de Sucesso ou Erro -->
                 <?php if ($mensagem_sucesso): ?>
                     <div class="alert alert-success"><?php echo $mensagem_sucesso; ?></div>
@@ -150,5 +178,7 @@ $mensagem_erro = $view_data['erro'] ?? '';
 
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <!-- O <script type="module"> gigante do Firestore foi REMOVIDO -->
+<script src="../Templates/js/Criar_cursos.js"></script>
+
 </body>
 </html>

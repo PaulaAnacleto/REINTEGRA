@@ -114,6 +114,20 @@ $cursos = $controller->getCursosPublico();
 </header>
 
 <body>
+
+
+    <div vw class="enabled">
+  <div vw-access-button class="active"></div>
+  <div vw-plugin-wrapper>
+    <div class="vw-plugin-top-wrapper"></div>
+  </div>
+</div>
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+<script>
+  new window.VLibras.Widget('https://vlibras.gov.br/app' );
+</script>
+
+
   <div class="inicio">
     <h1 class="title">Confira os <span>cursos disponíveis</span></h1>
     <p class="paragrafo">Invista no seu futuro profissional,
