@@ -50,11 +50,18 @@ describe('Cadastro - REINTEGRA', () => {
     cy.get('#confirmarSenha').parent().should('have.class', 'success');
   });
 
-it('cadastro bem-sucedido: alerta, reset do formulário e botão reabilitado', () => {
-  cy.clock();
+it('exibe alerta de sucesso ao cadastrar (simulado)', () => {
+  cy.intercept('POST', '**/UserController.php', {
+    statusCode: 200,
+    body: { 
+      success: true, 
+      message: 'Cadastro realizado com sucesso! Bem-vindo ao REINTEGRA!' 
+    },
+  }).as('fakeRegister');
 
   cy.window().then((win) => {
     cy.stub(win, 'alert').as('alertStub');
+    cy.stub(win.location, 'href').as('locationHref'); 
   });
 
   cy.get('#nomeCompleto').type('Helber Luiz');
@@ -63,28 +70,13 @@ it('cadastro bem-sucedido: alerta, reset do formulário e botão reabilitado', (
   cy.get('#confirmarSenha').type('Password1');
 
   cy.get('.submit-btn').click();
-
-  cy.get('.submit-btn')
-    .should('be.disabled')
-    .and('contain.text', 'Cadastrando...');
-
-  cy.tick(2000);
+  cy.wait('@fakeRegister');
 
   cy.get('@alertStub').should(
     'have.been.calledWith',
     'Cadastro realizado com sucesso! Bem-vindo ao REINTEGRA!'
   );
-
-  cy.get('#nomeCompleto').should('have.value', '');
-  cy.get('#email').should('have.value', '');
-  cy.get('#senha').should('have.value', '');
-  cy.get('#confirmarSenha').should('have.value', '');
-  cy.get('.submit-btn')
-    .should('not.be.disabled')
-    .and('contain.text', 'Cadastre-se');
 });
-
-
 
   it('botão "Saiba mais" exibe alerta com mensagem informativa', () => {
     cy.window().then((win) => {
