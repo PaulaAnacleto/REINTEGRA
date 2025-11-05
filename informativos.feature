@@ -103,7 +103,7 @@ Quando a página é carregada
 E clico no botão "Termos de Serviço" do footer
 Então eu devo ser redirecionado a página Termos de Serviço
 
-s
+
 Scenario: Verificar se o widget VLibras é carregado corretamente
 Dado que eu acesso a página inicial
 Quando a página é carregada
