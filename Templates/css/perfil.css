@@ -387,12 +387,8 @@ body {
 
 
 /* tablet */
-@media only screen and (min-width: 520px) and (max-width: 1024px) {
+@media only screen and (min-width: 521px) and (max-width: 1024px) {
 
-  .title {
-    font-size: 2rem;
-  }
- 
  
 .footer-text {
   font-size: 0.8rem;
@@ -407,6 +403,7 @@ body {
   font-size: 0.8rem;
 }
 }
+
 
 
 /* celular */
