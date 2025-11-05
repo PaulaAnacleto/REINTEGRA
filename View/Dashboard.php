@@ -68,7 +68,7 @@
                     </div>
                     <h2 class="card-title">Criar Cursos</h2>
                     <p class="card-description">Crie e organize cursos para os usuários.</p>
-                    <a href="../View/" class="btn btn-primary btn-colaborador">Acessar</a>
+                    <a href="../View/Criar_cursos.php" class="btn btn-primary btn-colaborador">Acessar</a>
                 </div>
             </div>
         </div>
