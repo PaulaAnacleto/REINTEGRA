@@ -116,23 +116,28 @@ main {
   flex: 1; /* empurra o footer pro fim */
 }
 
-/* Cards */
+/* 4. Layout dos Cards (Grid Flexível) */
 .conteudo {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 30px;
-  padding: 40px 5%;
-  max-width: 1400px;
-  margin: 0 auto;
+    display: grid; /* Usa CSS Grid para o layout */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 300px min, flexível */
+    gap: 30px; /* Espaçamento entre os cards */
+    max-width: 1200px; /* Largura máxima do container dos cards */
+    margin: 50px auto; /* Centraliza e adiciona espaço */
+    padding: 0 20px; /* Espaçamento nas laterais */
+}
+
+.card-link {
+    text-decoration: none; /* Remove sublinhado do link */
+    color: inherit; /* Herda a cor do texto */
 }
 
 .card {
-  background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  padding: 25px;
-  flex: 1 1 calc(33.333% - 40px);
+    background-color: white;
+    border-radius: 10px; /* Cantos mais arredondados */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 1); /* Sombra mais suave e aparente */
+    padding: 25px;
+    text-align: center;
+    flex: 1 1 calc(33.333% - 40px);
   /* 3 por linha no desktop */
   max-width: 320px;
   height: 180px;
@@ -143,23 +148,24 @@ main {
 }
 
 .card:hover {
-  transform: translateY(-5px);
+     transform: translateY(-5px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 .card h3 {
-  font-size: 15px;
+    font-size: 22px;
   font-weight: bold;
   color: #0146b1;
   text-align: center;
-  margin-bottom: 10px;
+  
 }
 
-.text-card {
-  font-size: 14px;
+.card .text-card {
+   font-size: 17px;
   text-align: center;
   color: #333;
 }
+
 
 /* Footer */
 .footer {
