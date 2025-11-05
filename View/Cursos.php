@@ -23,7 +23,7 @@ $cursos = $controller->getCursosPublico();
 
 <!-- Navbar -->
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm" id="navbar">
 
   <div class="container">
 
@@ -67,13 +67,13 @@ $cursos = $controller->getCursosPublico();
 
       <ul class="navbar-nav ms-auto align-items-lg-center">
 
-        <li class="nav-item"><a class="nav-link" href="../view/Servicos">Serviços</a></li>
+        <li class="nav-item"><a class="nav-link" href="../View/Servicos.php">Serviços</a></li>
 
-        <li class="nav-item"><a class="nav-link" href="#cadastro">Feedback</a></li>
+        <li class="nav-item"><a class="nav-link" href="../View/Inicial-login.php">Feedback</a></li>
 
         <li class="nav-item"><a class="nav-link" href="../View/Contato.php">Contato</a></li>
 
-        <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+        <li class="nav-item"><a class="nav-link" href="../View/Inicial-login.php">Sobre</a></li>
 
         <li class="nav-item"><a class="nav-link" href="../View/Inicial-login.php">Início</a></li>
 
@@ -85,7 +85,7 @@ $cursos = $controller->getCursosPublico();
 
           <a href="../View/Perfil.php">
 
-            <button class="btn-perfil">
+            <button class="btn-perfil" id="perfil">
 
               <img src="../Img/página de perfil/icone perfil.png" class="img-perfil" alt="Perfil">
 
@@ -138,10 +138,7 @@ $cursos = $controller->getCursosPublico();
   </div>
 
   <main class="conteudo">
-    
-        <!-- ============================================== -->
-        <!-- LOOP DE CARDS DINÂMICOS - COMEÇO -->
-        <!-- ============================================== -->
+
         
         <?php if (empty($cursos)): ?>
             <div class="card">
@@ -150,7 +147,7 @@ $cursos = $controller->getCursosPublico();
         <?php else: ?>
             <?php foreach ($cursos as $curso): ?>
                 <!-- Cada card agora é um link que usa a coluna 'Links' -->
-                <a href="<?php echo htmlspecialchars($curso['Links']); ?>" target="_blank" class="card-link">
+                <a href="<?php echo htmlspecialchars($curso['Links']); ?>" target="_blank" class="card-link" id="linkcard">
                     <div class="card">
                         <h3><?php echo htmlspecialchars($curso['Titulo']); ?></h3>
                         <p class="text-card"><?php echo htmlspecialchars($curso['Descricao_cur']); ?></p>
@@ -159,9 +156,8 @@ $cursos = $controller->getCursosPublico();
             <?php endforeach; ?>
         <?php endif; ?>
         
-        <!-- ============================================== -->
+
         <!-- LOOP DE CARDS DINÂMICOS - FIM -->
-        <!-- ============================================== -->
 
   </main>
 
@@ -171,8 +167,8 @@ $cursos = $controller->getCursosPublico();
       <p class="footer-text">
         © 2025 Reintegra. Todos os direitos reservados.
       </p>
-      <a href="#" class="footer-link">Política de Privacidade</a>
-      <a href="#" class="footer-link">Termos de Serviço</a>
+      <a href="http://localhost/Reintegra/View/Politica-privacidade.php" class="footer-link">Política de Privacidade</a>
+      <a href="http://localhost/Reintegra/View/termos-servico.php" class="footer-link">Termos de Serviço</a>
     </div>
   </footer>
 
