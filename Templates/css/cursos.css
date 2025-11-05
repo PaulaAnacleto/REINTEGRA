@@ -132,8 +132,10 @@ main {
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   padding: 25px;
-  width: 280px;
-  min-height: 220px;
+  flex: 1 1 calc(33.333% - 40px);
+  /* 3 por linha no desktop */
+  max-width: 320px;
+  height: 180px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -164,14 +166,16 @@ main {
   border-top: 1px solid #e0e0e0;
   text-align: center;
   padding: 30px 5%;
-  margin-top: auto; /* gruda no fim da tela */
-  background: transparent; /* mantém o gradiente visível atrás */
+  margin-top: auto;
+  /* gruda no fim da tela */
+  background: transparent;
+  /* mantém o gradiente visível atrás */
 }
 
 .footer-text {
   color: #666;
   font-size: 0.9rem;
-  margin-bottom: 10px;
+
 }
 
 .footer-links {
@@ -203,8 +207,8 @@ main {
 }
 
 
-/* tablet */
-@media only screen and (min-width: 521px) and (max-width: 1024px) {
+@media only screen and (min-width: 743px) and (max-width: 1024px) {
+
 
   .title {
     font-size: 1.6rem;
@@ -213,21 +217,95 @@ main {
     font-size: 0.95rem;
   }
   .card {
-    width: 90%;
+    flex: 1 1 calc(50% - 30px);
+    /* 2 por linha */
     max-width: 350px;
   }
-.footer-text {
-  font-size: 0.8rem;
-  margin-bottom: 10px;
+  .footer-text {
+    font-size: 0.8rem;
+  }
+
+  .footer-link {
+    font-size: 0.8rem;
+  }
+
+  .footer-links {
+    gap: 20px;
+  }
+
+
+
+/* Navbar */
+  .navbar {
+    padding: 0.8rem 2rem;
+  }
+
+  .logo-text {
+    font-size: 1.8rem;
+  }
+
+  /* Alinhamento perfil + hamburguer */
+  .navbar .d-flex.align-items-center {
+    gap: 10px;
+  }
+
+
+  .img-perfil {
+    width: 32px;
+    height: 32px;
+  }
+
+  .navbar-toggler {
+    border: none;
+  }
+
+  .navbar-toggler:focus {
+    box-shadow: none;
+  }
+
+  /* Menu mais elegante */
+  .navbar-nav {
+    text-align: center;
+    gap: 8px;
+  }
+
+  .nav-link {
+    font-size: 1.05rem;
+    color: #000;
+  }
+
 }
 
-.footer-links {
-  gap: 20px;
-}
 
-.footer-link {
-  font-size: 0.8rem;
-}
+
+/* tablet */
+@media only screen and  (min-width: 521px) and (max-width: 742px) {
+
+  .title {
+    font-size: 1.6rem;
+  }
+  .paragrafo {
+    font-size: 0.95rem;
+  }
+  .card {
+    flex: 1 1 100%;
+    /* 1 por linha */
+    max-width: 320px;
+  }
+  .footer-text {
+    font-size: 0.72rem;
+
+  }
+
+  .footer-links {
+    gap: 10px;
+  }
+
+  .footer-link {
+    font-size: 0.72rem;
+  }
+
+
 
 /* Navbar */
   .navbar {
@@ -277,21 +355,23 @@ main {
     text-align: center;
   }
   .card {
-    width: 100%;
+    flex: 1 1 100%;
+    /* 1 por linha */
+    max-width: 305px;
   }
 
   .footer-text {
-  font-size: 0.8rem;
-  margin-bottom: 5px;
-}
+    font-size: 0.7rem;
+  }
 
-.footer-links {
-  gap: 20px;
-}
+  .footer-links {
+    gap: 10px;
+    display: block;
+  }
 
-.footer-link {
-  font-size: 0.8rem;
-}
+  .footer-link {
+    font-size: 0.7rem;
+  }
 
   /* Navbar */
   .logo-text {
