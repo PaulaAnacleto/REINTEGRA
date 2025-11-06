@@ -1,7 +1,7 @@
 describe('Testes da Página Inicial - Reintegra', () => {
 
   beforeEach(() => {
-    cy.visit('/Inicial-login.php');
+    cy.visit('http://localhost/REINTEGRA/View/Inicial-login.php');
   });
 
   it('1. Deve carregar a página e exibir o título e h1 corretos', () => {
