@@ -4,11 +4,13 @@ require_once __DIR__ . '/../Controller/Cursos_controller.php';
 
 // 2. Inicializa o Controller e processa ações (Criar, Atualizar, Excluir)
 $controller = new CursosController();
-$view_data = $controller->handleAdminRequest();
+// Inicia $dados_view como um array vazio por segurança
+$dados_view = ['acao' => 'listar', 'curso' => null];
+$dados_view = array_merge($dados_view, $controller->handleAdminRequest());
 
 // 3. Define o modo do formulário (Criar ou Editar)
-$modo_edicao = ($view_data['acao'] == 'editar');
-$curso_atual = $view_data['curso'] ?? null; // Dados para preencher o form se estiver editando
+$modo_edicao = ($dados_view['acao'] == 'editar');
+$curso_atual = $dados_view['curso'] ?? null; // Dados para preencher o form se estiver editando
 
 // 4. Busca a lista de cursos para exibir na tabela
 // (Usamos um novo controller para não misturar com a lógica de ação)
@@ -22,7 +24,7 @@ if (isset($_GET['sucesso'])) {
     if ($_GET['sucesso'] == 'atualizado') $mensagem_sucesso = 'Curso atualizado com sucesso!';
     if ($_GET['sucesso'] == 'excluido') $mensagem_sucesso = 'Curso excluído com sucesso!';
 }
-$mensagem_erro = $view_data['erro'] ?? '';
+$mensagem_erro = $dados_view['erro'] ?? '';
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -38,31 +40,14 @@ $mensagem_erro = $view_data['erro'] ?? '';
 <body class="admin-page">
 
 
-
-
-  <div class="btn-retorno">
+ <div class="btn-retorno">
     <button class="back-button" aria-label="Voltar">
       <img src="../Img/página de contato/seta.png" alt="Voltar" class="back-icon">
     </button>
   </div>
 
-
-
-    <div vw class="enabled">
-  <div vw-access-button class="active"></div>
-  <div vw-plugin-wrapper>
-    <div class="vw-plugin-top-wrapper"></div>
-  </div>
-</div>
-<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-<script>
-  new window.VLibras.Widget('https://vlibras.gov.br/app' );
-</script>
-
-
-
  <div class="container my-5">
-  <div class="row g-5">
+  <div class="row g-5">  
       <!-- Coluna dos Formulários -->
    <div class="col-md-5">
     <div class="card shadow-sm">
@@ -117,13 +102,23 @@ $mensagem_erro = $view_data['erro'] ?? '';
 
       <!-- Coluna da Lista de Cursos -->
    <div class="col-md-7">
-    <h2 class="mb-4">Cursos Cadastrados</h2>
-    
-    <a href="Cursos.php" target="_blank" class="btn btn-outline-primary btn-sm">
+
+            <!-- ============================================== -->
+            <!-- BOTÃO ADICIONADO AQUI -->
+            <!-- ============================================== -->
+            <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="mb-0">Cursos Cadastrados</h2>
+                <!-- Este botão abre a página Cursos.php em uma nova aba -->
+                <a href="Cursos.php" target="_blank" class="btn btn-outline-primary btn-sm">
                     <i class="bi bi-eye-fill me-1"></i> Visualizar Página Pública
                 </a>
+            </div>
+            <!-- ============================================== -->
+            <!-- FIM DA ADIÇÃO -->
+            <!-- ============================================== -->
 
-        <!-- Mensagens de Sucesso ou Erro -->
+        
+        <!-- Mensagens de Sucesso ou Erro (controladas via PHP) -->
                 <?php if ($mensagem_sucesso): ?>
                     <div class="alert alert-success"><?php echo $mensagem_sucesso; ?></div>
                 <?php endif; ?>
@@ -177,8 +172,5 @@ $mensagem_erro = $view_data['erro'] ?? '';
  </div>
 
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- O <script type="module"> gigante do Firestore foi REMOVIDO -->
-<script src="../Templates/js/Criar_cursos.js"></script>
-
 </body>
 </html>

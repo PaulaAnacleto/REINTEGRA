@@ -46,11 +46,9 @@ body {
 }
 
 
-
-
 .back-button {
   margin-top:2.5rem ;
-  margin-left: 19rem;
+  margin-left: 10%;
   background: none;
   border: none;
   cursor: pointer;
@@ -64,8 +62,8 @@ body {
 .back-icon {
   width: 32px;
   height: 32px;
-}
 
+}
 
 .courses-title {
     font-weight: 700;
@@ -112,4 +110,22 @@ body {
     font-size: 0.95rem;
     color: #444;
     line-height: 1.6;
+}
+
+
+
+
+
+
+
+
+
+
+@media only screen and (min-width: 320px) and (max-width: 520px) {
+
+ .back-icon{
+    width: 28px;
+    height: 28px;
+ }
+
 }

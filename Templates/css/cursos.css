@@ -116,36 +116,33 @@ main {
   flex: 1; /* empurra o footer pro fim */
 }
 
-/* 4. Layout dos Cards (Grid Flexível) */
 .conteudo {
-    display: grid; /* Usa CSS Grid para o layout */
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* 300px min, flexível */
-    gap: 30px; /* Espaçamento entre os cards */
-    max-width: 1200px; /* Largura máxima do container dos cards */
-    margin: 50px auto; /* Centraliza e adiciona espaço */
-    padding: 0 20px; /* Espaçamento nas laterais */
-}
-
-.card-link {
-    text-decoration: none; /* Remove sublinhado do link */
-    color: inherit; /* Herda a cor do texto */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 }
 
 .card {
-    background-color: white;
-    border-radius: 10px; /* Cantos mais arredondados */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 1); /* Sombra mais suave e aparente */
-    padding: 25px;
-    text-align: center;
-    flex: 1 1 calc(33.333% - 40px);
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  flex: 1 1 calc(33.333% - 40px);
   /* 3 por linha no desktop */
-  max-width: 320px;
+  width: 300px;;
   height: 180px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-align: justify;
+
 }
+
 
 .card:hover {
      transform: translateY(-5px);
@@ -202,105 +199,27 @@ main {
   text-decoration: underline;
 }
 
-/* Responsividade */
 
-/*computador menor*/
-@media (max-width: 1200px) {
-  .conteudo {
-    gap: 20px;
+
+
+
+@media only screen and (min-width: 520px) and (max-width: 1024px) {
+
+.conteudo{
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* 300px min, flexível */}
+
+  .navbar-nav {
+    text-align: center;
   }
-
-}
-
-
-@media only screen and (min-width: 743px) and (max-width: 1024px) {
-
-
-  .title {
-    font-size: 1.6rem;
-  }
-  .paragrafo {
-    font-size: 0.95rem;
-  }
+  
   .card {
-    flex: 1 1 calc(50% - 30px);
-    /* 2 por linha */
+    flex: 1 1 calc(50%-50%);
+    /* 1 por linha */
     max-width: 350px;
   }
+
   .footer-text {
-    font-size: 0.8rem;
-  }
-
-  .footer-link {
-    font-size: 0.8rem;
-  }
-
-  .footer-links {
-    gap: 20px;
-  }
-
-
-
-/* Navbar */
-  .navbar {
-    padding: 0.8rem 2rem;
-  }
-
-  .logo-text {
-    font-size: 1.8rem;
-  }
-
-  /* Alinhamento perfil + hamburguer */
-  .navbar .d-flex.align-items-center {
-    gap: 10px;
-  }
-
-
-  .img-perfil {
-    width: 32px;
-    height: 32px;
-  }
-
-  .navbar-toggler {
-    border: none;
-  }
-
-  .navbar-toggler:focus {
-    box-shadow: none;
-  }
-
-  /* Menu mais elegante */
-  .navbar-nav {
-    text-align: center;
-    gap: 8px;
-  }
-
-  .nav-link {
-    font-size: 1.05rem;
-    color: #000;
-  }
-
-}
-
-
-
-/* tablet */
-@media only screen and  (min-width: 521px) and (max-width: 742px) {
-
-  .title {
-    font-size: 1.6rem;
-  }
-  .paragrafo {
-    font-size: 0.95rem;
-  }
-  .card {
-    flex: 1 1 100%;
-    /* 1 por linha */
-    max-width: 320px;
-  }
-  .footer-text {
-    font-size: 0.72rem;
-
+    font-size: 0.7rem;
   }
 
   .footer-links {
@@ -308,58 +227,83 @@ main {
   }
 
   .footer-link {
-    font-size: 0.72rem;
+    font-size: 0.7rem;
   }
 
-
-
-/* Navbar */
-  .navbar {
-    padding: 0.8rem 2rem;
-  }
-
+  /* Navbar */
   .logo-text {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
   }
 
-  /* Alinhamento perfil + hamburguer */
+  .navbar-nav {
+    text-align: center;
+  }
+
+
+  /* Caixa com perfil + hamburguer */
   .navbar .d-flex.align-items-center {
-    gap: 10px;
+    display: flex;
+    align-items: center;
+  
   }
 
+  .btn-perfil {
+    background: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
   .img-perfil {
-    width: 32px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
   }
 
   .navbar-toggler {
     border: none;
+    background-color: transparent;
   }
 
   .navbar-toggler:focus {
     box-shadow: none;
   }
 
-  /* Menu mais elegante */
+  .navbar-toggler-icon {
+    width: 25px;
+    height: 25px;
+  }
+
+  /* Menu colapsável centralizado */
   .navbar-nav {
     text-align: center;
-    gap: 8px;
+    gap: 6px;
+    margin-top: 0.5rem;
   }
 
   .nav-link {
-    font-size: 1.05rem;
+    font-size: 1rem;
     color: #000;
   }
 
+
 }
+
 
 /* celular */
 
 @media only screen and (min-width: 320px) and (max-width: 520px) {
+
+.conteudo{
+  grid-template-columns: none;
+}
+
+
   .navbar-nav {
     text-align: center;
   }
+
   .card {
     flex: 1 1 100%;
     /* 1 por linha */
