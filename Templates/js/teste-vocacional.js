@@ -1,65 +1,62 @@
+// ================================
+// VARIÁVEIS GLOBAIS
+// ================================
 let perguntas = [];
 let areas = {};
 let perguntaAtual = 0;
 let pontuacoes = {};
 
-// Inicializar dados
+// ================================
+// INICIALIZAÇÃO
+// ================================
 document.addEventListener('DOMContentLoaded', function() {
     carregarDados();
 });
 
-// Carregar dados do PHP
+// ================================
+// CARREGAR DADOS DO CONTROLLER
+// ================================
 function carregarDados() {
     fetch('../Controller/TesteVocacionalController.php?ajax=1')
         .then(response => response.json())
         .then(data => {
+            if (!data.perguntas || !data.areas) {
+                throw new Error("Dados inválidos recebidos do servidor.");
+            }
+
             perguntas = data.perguntas;
             areas = data.areas;
-            
-            Object.keys(areas).forEach(area => {
-                pontuacoes[area] = 0;
-            });
+            pontuacoes = {};
+
+            Object.keys(areas).forEach(area => pontuacoes[area] = 0);
         })
-        .catch(error => {
-            console.error('Erro ao carregar dados:', error);
-        });
+        .catch(error => console.error('Erro ao carregar dados:', error));
 }
 
-// Iniciar Teste
+// ================================
+// INICIAR TESTE
+// ================================
 function iniciarTeste() {
     perguntaAtual = 0;
-    Object.keys(pontuacoes).forEach(area => {
-        pontuacoes[area] = 0;
-    });
-    
+    Object.keys(pontuacoes).forEach(area => pontuacoes[area] = 0);
     mostrarPagina('test-page');
     exibirPergunta();
 }
 
-// Exibir Pergunta
+// ================================
+// EXIBIR PERGUNTA ATUAL
+// ================================
 function exibirPergunta() {
-    if (perguntaAtual >= perguntas.length) {
-        exibirResultados();
-        return;
-    }
+    if (perguntaAtual >= perguntas.length) return exibirResultados();
 
     const pergunta = perguntas[perguntaAtual];
-    
-    // Atualizar contador
-    document.getElementById('question-counter').textContent = `Pergunta ${perguntaAtual + 1} de ${perguntas.length}`;
-    document.getElementById('question-display').textContent = `${perguntaAtual + 1} / ${perguntas.length}`;
-    
-    // Atualizar barra de progresso
-    const progresso = ((perguntaAtual + 1) / perguntas.length) * 100;
-    document.getElementById('progress-fill').style.width = progresso + '%';
-    
-    // Exibir pergunta
+    document.getElementById('question-counter').textContent =
+        `Pergunta ${perguntaAtual + 1} de ${perguntas.length}`;
     document.getElementById('question-text').textContent = pergunta.texto;
-    
-    // Exibir respostas
+
     const answersContainer = document.getElementById('answers-container');
     answersContainer.innerHTML = '';
-    
+
     pergunta.respostas.forEach(resposta => {
         const btn = document.createElement('button');
         btn.className = 'answer-btn';
@@ -67,348 +64,96 @@ function exibirPergunta() {
         btn.onclick = () => selecionarResposta(resposta);
         answersContainer.appendChild(btn);
     });
-    
-    // Atualizar botão anterior
-    document.getElementById('btn-previous').disabled = perguntaAtual === 0;
+
+    atualizarProgresso();
 }
 
-// Selecionar Resposta
+// ================================
+// SELECIONAR RESPOSTA
+// ================================
 function selecionarResposta(resposta) {
-    // Adicionar pontos
     Object.entries(resposta.areas).forEach(([area, pontos]) => {
         pontuacoes[area] += pontos;
     });
-    
-    // Próxima pergunta
+
     perguntaAtual++;
     exibirPergunta();
 }
 
-// Pergunta Anterior
-function perguntaAnterior() {
-    if (perguntaAtual > 0) {
-        perguntaAtual--;
-        exibirPergunta();
-    }
-}
-
-// Exibir Resultados
+// ================================
+// EXIBIR RESULTADOS
+// ================================
 function exibirResultados() {
-    // Ordenar áreas por pontuação
     const areasOrdenadas = Object.entries(pontuacoes)
         .sort(([, a], [, b]) => b - a);
-    
+
     const topArea = areasOrdenadas[0][0];
     const topAreaData = areas[topArea];
-    
-    // Exibir área principal
+
     document.getElementById('top-area-name').textContent = topAreaData.nome;
     document.getElementById('top-area-description').textContent = topAreaData.descricao;
-    
-    // Exibir gráfico interativo
-    exibirGraficoInterativo(areasOrdenadas);
-    
-    // Exibir top 3 áreas
-    exibirTop3Areas(areasOrdenadas);
-    
-    // Exibir carreiras
-    exibirCarreiras(topAreaData);
-    
-    // Carregar dica de IA
+
+    // Exibir as 3 melhores áreas
+    const topAreasContainer = document.getElementById('top-areas-container');
+    topAreasContainer.innerHTML = '';
+    areasOrdenadas.slice(0, 3).forEach(([area, score]) => {
+        const div = document.createElement('div');
+        div.className = 'area-card';
+        div.innerHTML = `<h4>${areas[area].nome}</h4><p>${score} pontos</p>`;
+        topAreasContainer.appendChild(div);
+    });
+
+    // Chama a IA para gerar dica personalizada
     carregarDicaIA(topArea, areasOrdenadas[0][1]);
-    
-    // Mostrar página de resultados
+
     mostrarPagina('results-page');
 }
 
-// Exibir Gráfico Interativo com Barras Verticais
-function exibirGraficoInterativo(areasOrdenadas) {
-    const chartContainer = document.getElementById('chart-container');
-    chartContainer.innerHTML = '';
-    
-    const maxScore = Math.max(...areasOrdenadas.map(([, score]) => score)) || 1;
-    
-    // Criar SVG para gráfico
-    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-    svg.setAttribute('viewBox', '0 0 800 400');
-    svg.setAttribute('class', 'chart-svg');
-    svg.style.width = '100%';
-    svg.style.height = 'auto';
-    
-    const padding = 60;
-    const chartWidth = 800 - padding * 2;
-    const chartHeight = 400 - padding * 2;
-    const barWidth = chartWidth / areasOrdenadas.length;
-    
-    // Desenhar grid horizontal
-    for (let i = 0; i <= 5; i++) {
-        const y = padding + (chartHeight / 5) * i;
-        const line = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-        line.setAttribute('x1', padding);
-        line.setAttribute('y1', y);
-        line.setAttribute('x2', 800 - padding);
-        line.setAttribute('y2', y);
-        line.setAttribute('stroke', '#475569');
-        line.setAttribute('stroke-dasharray', '5,5');
-        line.setAttribute('opacity', '0.5');
-        svg.appendChild(line);
-        
-        // Labels do eixo Y
-        const label = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-        label.setAttribute('x', padding - 10);
-        label.setAttribute('y', y + 5);
-        label.setAttribute('text-anchor', 'end');
-        label.setAttribute('fill', '#cbd5e1');
-        label.setAttribute('font-size', '12');
-        label.textContent = Math.round((maxScore / 5) * (5 - i));
-        svg.appendChild(label);
-    }
-    
-    // Desenhar barras
-    areasOrdenadas.forEach(([areaKey, score], index) => {
-        const area = areas[areaKey];
-        const barHeight = (score / maxScore) * chartHeight;
-        const x = padding + index * barWidth + barWidth * 0.1;
-        const y = padding + chartHeight - barHeight;
-        
-        // Barra
-        const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
-        rect.setAttribute('x', x);
-        rect.setAttribute('y', y);
-        rect.setAttribute('width', barWidth * 0.8);
-        rect.setAttribute('height', barHeight);
-        rect.setAttribute('fill', area.cor);
-        rect.setAttribute('class', 'chart-bar');
-        rect.setAttribute('rx', '4');
-        
-        // Efeito hover
-        rect.addEventListener('mouseenter', function() {
-            this.setAttribute('opacity', '0.8');
-            this.style.filter = 'brightness(1.2)';
-        });
-        rect.addEventListener('mouseleave', function() {
-            this.setAttribute('opacity', '1');
-            this.style.filter = 'brightness(1)';
-        });
-        
-        svg.appendChild(rect);
-        
-        // Valor na barra
-        const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-        text.setAttribute('x', x + barWidth * 0.4);
-        text.setAttribute('y', y - 10);
-        text.setAttribute('text-anchor', 'middle');
-        text.setAttribute('fill', '#f1f5f9');
-        text.setAttribute('font-size', '14');
-        text.setAttribute('font-weight', 'bold');
-        text.textContent = score;
-        svg.appendChild(text);
-        
-        // Label do eixo X
-        const label = document.createElementNS('http://www.w3.org/2000/svg', 'text');
-        label.setAttribute('x', x + barWidth * 0.4);
-        label.setAttribute('y', padding + chartHeight + 25);
-        label.setAttribute('text-anchor', 'middle');
-        label.setAttribute('fill', '#cbd5e1');
-        label.setAttribute('font-size', '12');
-        label.textContent = area.nome.split(' &')[0];
-        svg.appendChild(label);
-    });
-    
-    // Eixo X
-    const axisX = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-    axisX.setAttribute('x1', padding);
-    axisX.setAttribute('y1', padding + chartHeight);
-    axisX.setAttribute('x2', 800 - padding);
-    axisX.setAttribute('y2', padding + chartHeight);
-    axisX.setAttribute('stroke', '#cbd5e1');
-    axisX.setAttribute('stroke-width', '2');
-    svg.appendChild(axisX);
-    
-    // Eixo Y
-    const axisY = document.createElementNS('http://www.w3.org/2000/svg', 'line');
-    axisY.setAttribute('x1', padding);
-    axisY.setAttribute('y1', padding);
-    axisY.setAttribute('x2', padding);
-    axisY.setAttribute('y2', padding + chartHeight);
-    axisY.setAttribute('stroke', '#cbd5e1');
-    axisY.setAttribute('stroke-width', '2');
-    svg.appendChild(axisY);
-    
-    chartContainer.appendChild(svg);
-}
-
-let chartInstance = null;
-
-function exibirGraficoInterativo(areasOrdenadas) {
-    const container = document.getElementById('chart-container');
-    container.innerHTML = '<canvas id="graficoPontuacao"></canvas>';
-
-    const ctx = document.getElementById('graficoPontuacao').getContext('2d');
-
-    const labels = areasOrdenadas.map(([area]) => areas[area].nome);
-    const data = areasOrdenadas.map(([_, score]) => score);
-
-    if (chartInstance) chartInstance.destroy();
-
-    chartInstance = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: labels,
-            datasets: [{
-                label: 'Pontuação por Área',
-                data: data,
-                backgroundColor: [
-                    '#3b82f6', '#10b981', '#f59e0b', '#8b5cf6', '#ef4444', '#0ea5e9'
-                ],
-                borderRadius: 12,
-                borderWidth: 1.5,
-                borderColor: '#1e293b'
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: {
-                legend: {
-                    labels: { color: '#e2e8f0', font: { size: 14 } },
-                    display: false
-                },
-                tooltip: {
-                    backgroundColor: '#1e293b',
-                    titleColor: '#fff',
-                    bodyColor: '#cbd5e1',
-                    borderColor: '#3b82f6',
-                    borderWidth: 1,
-                    cornerRadius: 8,
-                    displayColors: false
-                },
-                title: {
-                    display: true,
-                    text: 'Distribuição de Pontuação por Área',
-                    color: '#f8fafc',
-                    font: { size: 18, weight: 'bold' },
-                    padding: { top: 10, bottom: 30 }
-                }
-            },
-            scales: {
-                x: {
-                    ticks: { color: '#cbd5e1', font: { size: 12 } },
-                    grid: { color: 'rgba(255,255,255,0.05)' }
-                },
-                y: {
-                    ticks: { color: '#94a3b8', font: { size: 12 } },
-                    grid: { color: 'rgba(255,255,255,0.08)' },
-                    beginAtZero: true
-                }
-            },
-            animation: {
-                duration: 1200,
-                easing: 'easeOutQuart'
-            },
-            onClick: (e, elements) => {
-                if (elements.length > 0) {
-                    const index = elements[0].index;
-                    const areaClicada = labels[index];
-                    alert(`🔎 Você clicou em ${areaClicada}`);
-                }
-            }
-        }
-    });
-}
-
-
-// Exibir Top 3 Áreas
-function exibirTop3Areas(areasOrdenadas) {
-    const container = document.getElementById('top-areas-container');
-    container.innerHTML = '';
-    
-    const top3 = areasOrdenadas.slice(0, 3);
-    
-    top3.forEach(([areaKey, score], index) => {
-        const area = areas[areaKey];
-        const percentual = (score / 30) * 100; 
-        
-        const cardHTML = `
-            <div class="area-card">
-                <div class="area-header">
-                    <h4>${area.nome}</h4>
-                    <span class="area-rank">#${index + 1}</span>
-                </div>
-                <div class="area-score">
-                    <span>Pontuação</span>
-                    <span>${score}</span>
-                </div>
-                <div class="area-score-bar">
-                    <div class="area-score-fill" style="width: ${percentual}%; background-color: ${area.cor}"></div>
-                </div>
-            </div>
-        `;
-        container.innerHTML += cardHTML;
-    });
-}
-
-// Exibir Carreiras
-function exibirCarreiras(topAreaData) {
-    const container = document.getElementById('careers-container');
-    container.innerHTML = '';
-    
-    topAreaData.carreiras.forEach(carreira => {
-        const skillsHTML = carreira.competencias
-            .map(skill => `<span class="skill-tag">${skill}</span>`)
-            .join('');
-        
-        const cardHTML = `
-            <div class="career-card">
-                <h4>${carreira.nome}</h4>
-                <p>${carreira.descricao}</p>
-                <div class="skills-label">Competências</div>
-                <div class="skills-container">
-                    ${skillsHTML}
-                </div>
-            </div>
-        `;
-        container.innerHTML += cardHTML;
-    });
-}
-
-// Carregar Dica de IA
+// ================================
+// CARREGAR DICA PERSONALIZADA (GEMINI via PHP)
+// ================================
 function carregarDicaIA(area, score) {
-    fetch(`../Controller/TesteVocacionalController.php?ia=1&area=${area}&score=${score}`)
+    const dicaContainer = document.getElementById('ia-dica-text');
+    dicaContainer.innerHTML = "<p>🤖 Gerando dica personalizada...</p>";
+
+    fetch(`../Controller/TesteVocacionalController.php?ia=1&area=${encodeURIComponent(area)}&score=${score}`)
         .then(response => response.json())
         .then(data => {
-            if (data.sucesso) {
-                const dicaContainer = document.getElementById('ia-dica-container');
-                if (dicaContainer) {
-                    dicaContainer.innerHTML = `
-                        <div class="ia-dica-card">
-                            <div class="ia-header">
-                                <span class="ia-icon">🤖</span>
-                                <h3>Dica de IA</h3>
-                            </div>
-                            <p>${data.dica}</p>
-                        </div>
-                    `;
-                }
+            if (data.sucesso && data.dica) {
+                dicaContainer.innerHTML = `<p>${data.dica}</p>`;
+            } else {
+                dicaContainer.innerHTML = "<p>Não foi possível gerar a dica personalizada no momento.</p>";
             }
         })
-        .catch(error => console.error('Erro ao carregar dica de IA:', error));
+        .catch(error => {
+            console.error('Erro IA:', error);
+            dicaContainer.innerHTML = "<p>Erro ao conectar com a IA.</p>";
+        });
 }
 
-// Mostrar Página
-function mostrarPagina(pageId) {
-    document.querySelectorAll('.page').forEach(page => {
-        page.classList.remove('active');
-    });
-    document.getElementById(pageId).classList.add('active');
+// ================================
+// CONTROLE DE NAVEGAÇÃO
+// ================================
+function mostrarPagina(id) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
 }
 
-// Voltar Home
+// ================================
+// VOLTAR PARA HOME / REINICIAR
+// ================================
 function voltarHome() {
     mostrarPagina('home-page');
 }
 
-// Fazer Teste Novamente
 function fazerTesteNovamente() {
     iniciarTeste();
+}
+
+// ================================
+// ATUALIZAR BARRA DE PROGRESSO
+// ================================
+function atualizarProgresso() {
+    const progresso = ((perguntaAtual) / perguntas.length) * 100;
+    document.getElementById('progress-fill').style.width = `${progresso}%`;
 }

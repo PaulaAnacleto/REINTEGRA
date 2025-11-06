@@ -1,6 +1,6 @@
 <?php
 // ✅ Coloque sua chave real
-$apiKey = "AIzaSyBfx8Md_szeGCxTkAD-jD2RhF4jgFiQbx8";
+$apiKey = "AIzaSyC_lhZBLNgSM_rEn_Flt2b1NTKD9cAkmQQ";
 
 // ✅ URL da API Gemini (modelo atualizado)
 $url = "https://generativelanguage.googleapis.com/v1/models/gemini-2.5-flash:generateContent?key=" . $apiKey;

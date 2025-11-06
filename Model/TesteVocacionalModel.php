@@ -2,18 +2,26 @@
 
 class TesteVocacionalModel {
 
+    // ***** 1. SUA CHAVE DA GOOGLE AI STUDIO *****
     private const GOOGLE_API_KEY = 'AIzaSyBfx8Md_szeGCxTkAD-jD2RhF4jgFiQbx8';
 
+    // ***** 2. URL CORRETA DO ENDPOINT GEMINI (v1beta) *****
+    // O modelo ativo é gemini-1.5-flash (ou gemini-1.5-pro, se quiser mais qualidade)
     private const GOOGLE_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=';
 
+    /**
+     * Função principal que tenta buscar a dica na IA e usa o fallback se falhar.
+     */
     public function getDica($area_principal, $pontuacao) {
         try {
             $nome_area = $this->getAreas()[$area_principal]['nome'] ?? $area_principal;
             $prompt = "Você é um conselheiro vocacional. Um estudante fez um teste e sua área principal foi '$nome_area' com $pontuacao pontos. 
             Dê uma dica curta, prática e inspiradora (em português do Brasil) para ele começar a explorar essa área.";
 
+            // 1. Tenta chamar a IA
             $dicaAI = $this->getDicaRealGoogleAI($prompt);
 
+            // 2. Se a IA devolver uma resposta válida
             if (!empty($dicaAI)) {
                 return $dicaAI;
             }
@@ -21,16 +29,23 @@ class TesteVocacionalModel {
         } catch (Throwable $e) {
             error_log('❌ Erro ao gerar dica: ' . $e->getMessage());
         }
+
+        // 3. Fallback se a IA falhar
         return $this->getDicaFallback($area_principal);
     }
 
+    /**
+     *  (NOVO) Faz a chamada real à API Gemini
+     */
     private function getDicaRealGoogleAI($prompt) {
 
+        // 🔒 Verifica chave
         if (empty(self::GOOGLE_API_KEY)) {
             error_log('⚠️ Chave da Google AI não configurada.');
             return null;
         }
 
+        // 🔧 Monta payload no formato correto do Gemini
         $payload = json_encode([
             'contents' => [[
                 'parts' => [['text' => $prompt]]
@@ -43,6 +58,7 @@ class TesteVocacionalModel {
 
         $url = self::GOOGLE_API_URL . self::GOOGLE_API_KEY;
 
+        // 🔌 Inicializa CURL
         $ch = curl_init($url);
         curl_setopt_array($ch, [
             CURLOPT_RETURNTRANSFER => true,
@@ -74,28 +90,35 @@ class TesteVocacionalModel {
 
         $data = json_decode($response, true);
 
+        // 🔍 Valida estrutura de retorno
         if (!isset($data['candidates'][0]['content']['parts'][0]['text'])) {
             error_log('⚠️ Estrutura inesperada: ' . print_r($data, true));
             return null;
         }
 
+        // ✅ Retorna dica gerada
         return trim($data['candidates'][0]['content']['parts'][0]['text']);
     }
 
+    /**
+     *  Dica padrão (fallback)
+     */
     private function getDicaFallback($area_principal) {
         $dicas = [
-            'tecnologia' => 'Aprenda programação em plataformas como Alura, Codecademy ou freeCodeCamp. Crie projetos pessoais!',
-            'saude' => 'Busque experiências de voluntariado em hospitais ou cursos de primeiros socorros.',
-            'humanas' => 'Desenvolva sua comunicação e participe de debates e projetos sociais.',
-            'criativa' => 'Crie sempre! Monte um portfólio e compartilhe seu trabalho online.',
-            'negocios' => 'Estude finanças, marketing e liderança. Pratique em pequenos projetos.',
-            'ciencias' => 'Explore pesquisas, laboratórios e artigos científicos para ampliar sua visão.'
+            'tecnologia' => 'Aprenda programação através de plataformas como Codecademy ou freeCodeCamp. Crie projetos pessoais para seu portfólio!',
+            'saude' => 'Explore voluntariados em hospitais ou clínicas. Mantenha-se atualizado com cursos de primeiros socorros e bem-estar.',
+            'humanas' => 'Desenvolva habilidades de comunicação e liderança. Participe de grupos de discussão, voluntariados sociais e projetos comunitários.',
+            'criativa' => 'Pratique constantemente sua arte. Crie um portfólio online e compartilhe seu trabalho em redes sociais e plataformas criativas.',
+            'negocios' => 'Estude administração e empreendedorismo. Acompanhe tendências de mercado e networking profissional.',
+            'ciencias' => 'Aprofunde seus conhecimentos em laboratórios e pesquisa. Considere programas de iniciação científica.'
         ];
-
+        
         return $dicas[$area_principal] ?? 'Continue explorando suas aptidões e interesses!';
     }
 
+    
     public function getPerguntas() {
+        // (O seu array de perguntas rebalanceadas vai aqui)
         $perguntas = [ //
             [
                 'id' => 1,
@@ -252,8 +275,9 @@ class TesteVocacionalModel {
     }
     
     public function getAreas() {
-        $areas_vocacionais = [ 
-            'tecnologia' => [ 
+        // (O seu array de áreas vai aqui)
+        $areas_vocacionais = [ //
+            'tecnologia' => [ //
                 'nome' => 'Tecnologia & Inovação',
                 'descricao' => 'Para quem gosta de resolver problemas com lógica, programação e inovação digital.',
                 'cor' => '#0ea5e9',
@@ -264,7 +288,7 @@ class TesteVocacionalModel {
                     ['nome' => 'Arquiteto de Sistemas', 'descricao' => 'Projeta soluções tecnológicas complexas e escaláveis.', 'competencias' => ['Visão estratégica', 'Design de sistemas', 'Liderança técnica']]
                 ]
             ],
-            'saude' => [ 
+            'saude' => [ //
                 'nome' => 'Saúde & Bem-estar',
                 'descricao' => 'Para quem quer cuidar da saúde e bem-estar das pessoas.',
                 'cor' => '#10b981',
@@ -275,7 +299,7 @@ class TesteVocacionalModel {
                     ['nome' => 'Farmacêutico', 'descricao' => 'Trabalha com medicamentos e saúde pública.', 'competencias' => ['Conhecimento químico', 'Atenção ao detalhe', 'Responsabilidade']]
                 ]
             ],
-            'humanas' => [ 
+            'humanas' => [ //
                 'nome' => 'Humanas & Sociais',
                 'descricao' => 'Para quem gosta de trabalhar com pessoas, sociedade, educação e cultura.',
                 'cor' => '#a855f7',
@@ -286,7 +310,7 @@ class TesteVocacionalModel {
                     ['nome' => 'Historiador', 'descricao' => 'Pesquisa e preserva o conhecimento histórico.', 'competencias' => ['Pesquisa', 'Análise crítica', 'Escrita', 'Atenção ao detalhe']]
                 ]
             ],
-            'criativa' => [ 
+            'criativa' => [ //
                 'nome' => 'Criativa & Artes',
                 'descricao' => 'Para quem quer expressar criatividade e trabalhar com artes e design.',
                 'cor' => '#f97316',
@@ -297,7 +321,7 @@ class TesteVocacionalModel {
                     ['nome' => 'Arquiteto', 'descricao' => 'Projeta espaços e edifícios funcionais e esteticamente agradáveis.', 'competencias' => ['Criatividade', 'Conhecimento técnico', 'Visão espacial', 'Liderança']]
                 ]
             ],
-            'negocios' => [ 
+            'negocios' => [ //
                 'nome' => 'Negócios & Administração',
                 'descricao' => 'Para quem gosta de liderança, estratégia e desenvolvimento empresarial.',
                 'cor' => '#eab308',
@@ -308,7 +332,7 @@ class TesteVocacionalModel {
                     ['nome' => 'Consultor Empresarial', 'descricao' => 'Assessora empresas em estratégia e otimização de processos.', 'competencias' => ['Análise', 'Comunicação', 'Experiência empresarial', 'Pensamento crítico']]
                 ]
             ],
-            'ciencias' => [ 
+            'ciencias' => [ //
                 'nome' => 'Ciências & Pesquisa',
                 'descricao' => 'Para quem gosta de investigar, pesquisar e descobrir novos conhecimentos.',
                 'cor' => '#14b8a6',
