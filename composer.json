@@ -8,5 +8,12 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {}
+    "autoload": {
+        "classmap": [
+            "Controller/"
+        ]
+    },
+    "require-dev": {
+        "phpunit/phpunit": "12"
+    }
 }
