@@ -1,8 +1,3 @@
-# ==============================================
-# AJUSTE DE DETECÇÃO DE LINGUAGENS DO GITHUB
-# Objetivo: 40.5% CSS | 28.1% JS | 32.4% PHP
-# ==============================================
-
 # Força todos os arquivos .css a contarem como CSS
 *.css linguist-language=CSS
 
@@ -13,9 +8,8 @@
 *.php linguist-language=PHP
 
 # Garante que diretórios específicos sejam classificados corretamente
-assets/css/** linguist-language=CSS
-assets/js/** linguist-language=JavaScript
-public/** linguist-language=PHP
+Templates/css/** linguist-language=CSS
+Templates/js/** linguist-language=JavaScript
 model/** linguist-language=PHP
 controller/** linguist-language=PHP
 view/** linguist-language=PHP
