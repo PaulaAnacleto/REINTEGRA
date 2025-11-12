@@ -5,14 +5,14 @@
 }
 
 :root {
-    --primary: #01398F;
-    --primary-dark: #01398F;
+    --primary: #0ea5e9;
+    --primary-dark: #0284c7;
     --secondary: #64748b;
     --background: #0f172a;
     --surface: #1e293b;
     --surface-light: #334155;
     --text-primary: #f1f5f9;
-    --text-secondary: #f1f5f9;
+    --text-secondary: #cbd5e1;
     --border: #475569;
     --success: #10b981;
     --warning: #f59e0b;
@@ -20,7 +20,7 @@
 
 html, body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    background: linear-gradient(135deg, #ffffff 0%, #a5c7eb 100%);
+    background: linear-gradient(135deg, var(--background) 0%, #1a2332 100%);
     color: var(--text-primary);
     min-height: 100vh;
 }
@@ -34,8 +34,6 @@ body {
     margin: 0 auto;
     padding: 0 20px;
 }
-
-
 
 /* Header */
 .header {
@@ -159,16 +157,6 @@ body {
     line-height: 1.6;
 }
 
-#chart-container {
-  width: 100%;
-  height: 400px;
-  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-  border-radius: 16px;
-  padding: 20px;
-  box-shadow: 0 0 20px rgba(59, 130, 246, 0.1);
-  margin-top: 20px;
-}
-
 /* Features Grid */
 .features-grid {
     display: grid;
@@ -220,7 +208,7 @@ body {
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, var(--primary) 0%, #0575E6 100%);
+    background: linear-gradient(135deg, var(--primary) 0%, #06b6d4 100%);
     color: white;
     width: 100%;
     padding: 16px 24px;
@@ -334,7 +322,7 @@ body {
 
 /* Results Page */
 .top-result-card {
-   background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    background: linear-gradient(135deg, rgba(14, 165, 233, 0.2) 0%, rgba(6, 182, 212, 0.2) 100%);
     border: 1px solid rgba(14, 165, 233, 0.3);
     border-radius: 16px;
     padding: 32px;
@@ -541,9 +529,9 @@ body {
 }
 
 .skill-tag {
-   background: linear-gradient(135deg, #0f172a 0%, #1e293b 20%);
+    background: rgba(14, 165, 233, 0.2);
     border: 1px solid rgba(14, 165, 233, 0.3);
-    color: #cacaca;
+    color: #0ea5e9;
     padding: 4px 10px;
     border-radius: 20px;
     font-size: 11px;
@@ -640,7 +628,7 @@ body {
 
 /* IA Dica Card */
 .ia-dica-card {
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    background: linear-gradient(135deg, rgba(14, 165, 233, 0.15) 0%, rgba(6, 182, 212, 0.15) 100%);
     border: 1px solid rgba(14, 165, 233, 0.3);
     border-radius: 12px;
     padding: 20px;
