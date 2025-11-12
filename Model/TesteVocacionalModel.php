@@ -2,12 +2,11 @@
 
 class TesteVocacionalModel {
 
-    // 
-    // ***** 1. COLE A SUA CHAVE DA GOOGLE AI STUDIO AQUI *****
-    // 
-    private const GOOGLE_API_KEY = 'COLE_AQUI_SUA_CHAVE_AIzaSy...';
-    
-    // A URL da API do Google Gemini (vamos usar o modelo Flash, que é rápido)
+    // ***** 1. SUA CHAVE DA GOOGLE AI STUDIO *****
+    private const GOOGLE_API_KEY = 'AIzaSyBfx8Md_szeGCxTkAD-jD2RhF4jgFiQbx8';
+
+    // ***** 2. URL CORRETA DO ENDPOINT GEMINI (v1beta) *****
+    // O modelo ativo é gemini-1.5-flash (ou gemini-1.5-pro, se quiser mais qualidade)
     private const GOOGLE_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=';
 
     /**
@@ -15,90 +14,96 @@ class TesteVocacionalModel {
      */
     public function getDica($area_principal, $pontuacao) {
         try {
-            // 1. Criar o prompt (a pergunta) para a IA
             $nome_area = $this->getAreas()[$area_principal]['nome'] ?? $area_principal;
-            $prompt = "Você é um conselheiro vocacional. Um estudante fez um teste e a sua área principal foi '$nome_area' com $pontuacao pontos. Dê uma dica curta, prática e inspiradora (em português do Brasil) para ele começar a explorar esta área.";
+            $prompt = "Você é um conselheiro vocacional. Um estudante fez um teste e sua área principal foi '$nome_area' com $pontuacao pontos. 
+            Dê uma dica curta, prática e inspiradora (em português do Brasil) para ele começar a explorar essa área.";
 
-            // 2. Tentar chamar a IA (agora chama a função do Google)
+            // 1. Tenta chamar a IA
             $dicaAI = $this->getDicaRealGoogleAI($prompt);
-            
-            // 3. Se a IA devolver uma dica, mostra-a
+
+            // 2. Se a IA devolver uma resposta válida
             if (!empty($dicaAI)) {
                 return $dicaAI;
             }
 
         } catch (Throwable $e) {
-            // Se a chamada falhar (explodir), não faz nada.
-            // O código de fallback abaixo será executado.
+            error_log('❌ Erro ao gerar dica: ' . $e->getMessage());
         }
 
-        // 4. Fallback: Se a IA falhar, usa a dica antiga
+        // 3. Fallback se a IA falhar
         return $this->getDicaFallback($area_principal);
     }
 
-
     /**
-     * (NOVO) Tenta contactar a API da IA real do Google.
+     *  (NOVO) Faz a chamada real à API Gemini
      */
     private function getDicaRealGoogleAI($prompt) {
-        
-        // Verificação (não falhar se o token for o placeholder)
-        if (self::GOOGLE_API_KEY === 'COLE_AQUI_SUA_CHAVE_AIzaSy...') {
-            return null; // Não tenta se a chave não foi configurada
+
+        // 🔒 Verifica chave
+        if (empty(self::GOOGLE_API_KEY)) {
+            error_log('⚠️ Chave da Google AI não configurada.');
+            return null;
         }
 
-        // O payload (formato de dados) do Google é diferente
+        // 🔧 Monta payload no formato correto do Gemini
         $payload = json_encode([
-            'contents' => [
-                [
-                    'parts' => [
-                        ['text' => $prompt]
-                    ]
-                ]
-            ]
+            'contents' => [[
+                'parts' => [['text' => $prompt]]
+            ]]
         ]);
 
         $headers = [
             'Content-Type: application/json',
         ];
 
-        // A URL final inclui a chave
         $url = self::GOOGLE_API_URL . self::GOOGLE_API_KEY;
 
-        $ch = curl_init($url); 
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_POST, true);
-        curl_setopt($ch, CURLOPT_POSTFIELDS, $payload);
-        curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-        curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 10); 
-        curl_setopt($ch, CURLOPT_TIMEOUT, 90); // 90 segundos de timeout
-
-        // Manter o SSL desabilitado para testes locais
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
+        // 🔌 Inicializa CURL
+        $ch = curl_init($url);
+        curl_setopt_array($ch, [
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_POST => true,
+            CURLOPT_POSTFIELDS => $payload,
+            CURLOPT_HTTPHEADER => $headers,
+            CURLOPT_CONNECTTIMEOUT => 10,
+            CURLOPT_TIMEOUT => 30,
+            CURLOPT_SSL_VERIFYPEER => false,
+            CURLOPT_SSL_VERIFYHOST => false
+        ]);
 
         $response = curl_exec($ch);
         $http_code = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+
+        if ($response === false) {
+            $error = curl_error($ch);
+            curl_close($ch);
+            error_log("❌ Erro CURL: $error");
+            return null;
+        }
+
         curl_close($ch);
 
-        // Se a chamada falhar OU o código não for 200 OK
-        if ($response === false || $http_code != 200) {
-            // Falha silenciosamente e deixa o fallback (plano B) assumir
-            return null; 
+        if ($http_code != 200) {
+            error_log("❌ Erro HTTP $http_code | Resposta: $response");
+            return null;
         }
 
         $data = json_decode($response, true);
-        
-        // A resposta do Google vem num caminho diferente
-        if (isset($data['candidates'][0]['content']['parts'][0]['text'])) {
-            $dicaLimpa = $data['candidates'][0]['content']['parts'][0]['text'];
-            return trim($dicaLimpa);
+
+        // 🔍 Valida estrutura de retorno
+        if (!isset($data['candidates'][0]['content']['parts'][0]['text'])) {
+            error_log('⚠️ Estrutura inesperada: ' . print_r($data, true));
+            return null;
         }
 
-        return null;
+        // ✅ Retorna dica gerada
+        return trim($data['candidates'][0]['content']['parts'][0]['text']);
     }
 
-    private function getDicaFallback($area_principal) {
+    /**
+     *  Dica padrão (fallback)
+     */
+   private function getDicaFallback($area_principal) {
         $dicas = [
             'tecnologia' => 'Aprenda programação através de plataformas como Codecademy ou freeCodeCamp. Crie projetos pessoais para seu portfólio!',
             'saude' => 'Explore voluntariados em hospitais ou clínicas. Mantenha-se atualizado com cursos de primeiros socorros e bem-estar.',
@@ -112,7 +117,7 @@ class TesteVocacionalModel {
     }
 
     
-public function getPerguntas() {
+    public function getPerguntas() {
         // (O seu array de perguntas rebalanceadas vai aqui)
         $perguntas = [ //
             [
@@ -271,7 +276,7 @@ public function getPerguntas() {
     
     public function getAreas() {
         // (O seu array de áreas vai aqui)
-                $areas_vocacionais = [ //
+        $areas_vocacionais = [ //
             'tecnologia' => [ //
                 'nome' => 'Tecnologia & Inovação',
                 'descricao' => 'Para quem gosta de resolver problemas com lógica, programação e inovação digital.',
@@ -342,5 +347,5 @@ public function getPerguntas() {
         return $areas_vocacionais;
     }
 }
-?>
+
 ?>
