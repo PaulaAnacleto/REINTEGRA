@@ -20,7 +20,7 @@
 
 html, body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    background: linear-gradient(135deg, var(--background) 0%, #1a2332 100%);
+    background: linear-gradient(135deg, #ffffff 0%, #a5c7eb 100%);
     color: var(--text-primary);
     min-height: 100vh;
 }
@@ -37,8 +37,8 @@ body {
 
 /* Header */
 .header {
-    border-bottom: 1px solid var(--border);
-    background: rgba(15, 23, 42, 0.8);
+    
+    background: linear-gradient(135deg, #ffffff 0%, #a5c7eb 100%);
     backdrop-filter: blur(10px);
     position: sticky;
     top: 0;
@@ -53,6 +53,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    color: #0146b1;
 }
 
 .logo {
@@ -80,7 +81,7 @@ body {
 
 .progress-info {
     font-size: 14px;
-    color: var(--text-secondary);
+    color: #0146b1;
 }
 
 .progress-bar {
@@ -366,6 +367,69 @@ body {
   padding: 20px;
   box-shadow: 0 0 20px rgba(59, 130, 246, 0.1);
   margin-top: 20px;
+}
+
+.back-button {
+display: flex;
+  position: relative; /* fica dentro da navbar */
+  left: 22rem;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.3s ease;
+  z-index: 1000;
+}
+
+/* Navbar Styles */
+.navbar {
+  display: flex;
+background: linear-gradient(135deg, #ffffff 0%, #a5c7eb 100%);
+}
+
+.logo-box {
+  padding: 8px 16px;
+  border-radius: 8px;
+}
+
+.logo-text {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #0146b1;
+  letter-spacing: 3px;
+}
+
+.navbar-nav {
+  gap: 15px;
+  align-items: center;
+}
+
+.nav-item .nav-link {
+  font-weight: 500;
+  color: #333;
+}
+
+.nav-item .nav-link:hover {
+  color: #0146b1;
+}
+
+/* Imagem de perfil */
+.btn-perfil {
+  border: none;
+  background: transparent;
+  padding: 0;
+}
+
+.img-perfil {
+  width: 42px;
+  height: 42px;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+}
+
+.img-perfil:hover {
+  transform: scale(1.08);
 }
 
 /* Chart */

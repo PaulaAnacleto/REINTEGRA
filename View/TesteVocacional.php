@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Teste Vocacional Interativo | REINTEGRA</title>
+        <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../Templates/css/teste-vocacional.css">
 </head>
 <body>
@@ -11,20 +18,52 @@
         <!-- Página Inicial -->
         <div id="home-page" class="page active">
             <header class="header">
-                <div class="container">
-                    <div class="header-content">
-                        <div class="logo">
-                            <span class="compass-icon">🧭</span>
-                            <div>
-                                <h1>Teste Vocacional</h1>
-                                <p>Descubra sua carreira ideal</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <div class="logo-box">
+        <span class="logo-text">REINTEGRA</span>
+      </div>
+    </a>
+
+    <!-- Perfil + botão hamburguer (visível apenas no mobile) -->
+    <div class="d-flex align-items-center">
+      <a href="../View/Perfil.php" class="d-lg-none me-2">
+        <button class="btn-perfil">
+          <img src="../Img/página de perfil/icone perfil.png" class="img-perfil" alt="Perfil">
+        </button>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item"><a class="nav-link" href="../view/Servicos">Serviços</a></li>
+        <li class="nav-item"><a class="nav-link" href="#cadastro">Feedback</a></li>
+        <li class="nav-item"><a class="nav-link" href="../View/Contato.php">Contato</a></li>
+        <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+        <li class="nav-item"><a class="nav-link" href="../View/Inicial-login.php">Início</a></li>
+
+        <!-- Perfil visível apenas no desktop -->
+        <li class="nav-item d-none d-lg-block">
+          <a href="../View/Perfil.php">
+            <button class="btn-perfil">
+              <img src="../Img/página de perfil/icone perfil.png" class="img-perfil" alt="Perfil">
+            </button>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
             </header>
 
             <main class="main-content">
+                <button class="back-button" aria-label="Voltar">
+                    <img src="../Img/página de contato/seta.png" alt="Voltar" class="back-icon">
+                </button>
                 <div class="container">
                     <div class="card hero-card">
                         <div class="hero-section">
@@ -67,7 +106,7 @@
                     <div class="header-content">
                         <h1>Teste Vocacional</h1>
                         <div class="progress-info">
-                            <span id="question-counter">Pergunta 1 de 13</span>
+                            <span id="question-counter">Pergunta 1 de 15</span>
                         </div>
                     </div>
                     <div class="progress-bar">
@@ -87,7 +126,7 @@
 
                         <div class="navigation">
                             <button class="btn btn-outline" id="btn-previous" onclick="perguntaAnterior()" disabled>← Anterior</button>
-                            <span id="question-display">1 / 13</span>
+                            <span id="question-display">1 / 15</span>
                         </div>
                     </div>
                 </div>
@@ -156,8 +195,10 @@
             </main>
         </div>
     </div>
-    
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+        <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- Script principal -->
     <script src="../Templates/js/teste-vocacional.js"></script>
 </body>
