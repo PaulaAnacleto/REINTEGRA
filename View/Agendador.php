@@ -51,7 +51,7 @@
     <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
   <div class="container">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="../View/Inicial-login.php">
       <div class="logo-box">
         <span class="logo-text">REINTEGRA</span>
       </div>
