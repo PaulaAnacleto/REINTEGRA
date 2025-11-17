@@ -37,7 +37,6 @@ body {
 
 /* Header */
 .header {
-    
     background: linear-gradient(135deg, #ffffff 0%, #a5c7eb 100%);
     backdrop-filter: blur(10px);
     position: sticky;
@@ -46,7 +45,6 @@ body {
 }
 
 .header .container {
-    padding: 20px;
     justify-content: space-between;
 }
 
@@ -760,11 +758,12 @@ background: linear-gradient(135deg, #ffffff 0%, #a5c7eb 100%);
   /* Isso força o grid a ter 1 coluna, sem largura mínima de 280px */
   grid-template-columns: 1fr;
 }
+
 }
 
 /* Adicione/modifique este bloco no seu teste-vocacional.css */
 
-@media (max-width: 320px) {
+@media (max-width: 340px) {
   /* Título do card de Distribuição de Pontuação */
   .chart-card h3 {
     font-size: 18px; /* Diminui um pouco o tamanho do título do card */
@@ -782,4 +781,68 @@ background: linear-gradient(135deg, #ffffff 0%, #a5c7eb 100%);
   body {
     font-size: 14px; /* Opcional: ajustar a fonte base para telas muito pequenas */
   }
+    .back-button {
+    display: flex;
+    position: relative; /* fica dentro da navbar */
+    top: -2rem;
+    left: 0.1rem;
+  }
+   /* Navbar */
+  .logo-text {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+  }
+
+  .navbar-nav {
+    text-align: center;
+  }
+
+
+  /* Caixa com perfil + hamburguer */
+  .navbar .d-flex.align-items-center {
+    display: flex;
+    align-items: center;
+  
+  }
+
+  .btn-perfil {
+    background: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .img-perfil {
+    width: 28px;
+    height: 28px;
+  }
+
+  .navbar-toggler {
+    border: none;
+    background-color: transparent;
+  }
+
+  .navbar-toggler:focus {
+    box-shadow: none;
+  }
+
+  .navbar-toggler-icon {
+    width: 25px;
+    height: 25px;
+  }
+
+  /* Menu colapsável centralizado */
+  .navbar-nav {
+    text-align: center;
+    gap: 6px;
+    margin-top: 0.5rem;
+  }
+
+  .nav-link {
+    font-size: 1rem;
+    color: #000;
+  }
+
 }
+
