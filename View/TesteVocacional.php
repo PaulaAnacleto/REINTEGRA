@@ -59,7 +59,6 @@
   </div>
 </nav>
             </header>
-
             <main class="main-content">
                 <button class="back-button" aria-label="Voltar">
                     <img src="../Img/página de contato/seta.png" alt="Voltar" class="back-icon">
@@ -137,8 +136,10 @@
         <div id="results-page" class="page">
             <header class="header">
                 <div class="container">
-                    <button class="btn-back" onclick="voltarHome()">← Voltar</button>
-                    <h1>Seus Resultados</h1>
+                    <button class="back-button-result" aria-label="Voltar" onclick="voltarHome()">
+                        <img src="../Img/página de contato/seta.png" alt="Voltar" class="back-icon">
+                    </button>
+                    <h1 class="result">Seus Resultados</h1>
                 </div>
             </header>
 
@@ -157,13 +158,12 @@
                     </div>
 
                     <!-- Gráfico de Pontuação -->
-                    <div class="card chart-card">
-                        <h3>Distribuição de Pontuação</h3>
+                    <div class="chart-card">
                         <div id="chart-container" class="chart-container"></div>
                     </div>
 
                     <!-- Dica da IA (Gemini) -->
-                    <div id="ia-dica-container" class="card ia-dica">
+                    <div id="ia-dica-container" class=" ia-dica">
                         <h3>💬 Dica Personalizada da IA</h3>
                         <div id="ia-dica-text">
                             <p>Gerando sua dica personalizada...</p>
