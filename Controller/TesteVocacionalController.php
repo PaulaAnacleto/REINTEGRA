@@ -1,37 +1,40 @@
 <?php
+// 1. O ÚNICO arquivo que você precisa é o Model
 require_once '../Model/TesteVocacionalModel.php';
-require_once '../Config/geminiConfig.php';
 
+// 2. Instancie o Model
 $model = new TesteVocacionalModel();
 
+// Rota para buscar os dados do teste (Perguntas e Áreas)
 if (isset($_GET['ajax'])) {
-    header('Content-Type: application/json');
-    echo json_encode([
-        'perguntas' => $model->getPerguntas(),
-        'areas' => $model->getAreas()
-    ]);
-    exit;
+  header('Content-Type: application/json');
+  echo json_encode([
+    'perguntas' => $model->getPerguntas(),
+    'areas' => $model->getAreas()
+  ]);
+  exit;
 }
 
+// Rota para buscar a Dica da IA
 if (isset($_GET['ia'])) {
-    header('Content-Type: application/json');
+  header('Content-Type: application/json');
 
-    $area = $_GET['area'] ?? 'tecnologia';
-    $score = $_GET['score'] ?? 0;
+  $area = $_GET['area'] ?? 'tecnologia';
+  $score = (int)($_GET['score'] ?? 0); // Converte para inteiro
 
-    // Prompt para IA
-    $prompt = "Sou um estudante que se destacou na área de {$area} com pontuação {$score}. 
-    Gere uma dica motivacional personalizada sobre como essa área pode se tornar uma carreira de sucesso, 
-    em até 100 palavras.";
+  // 3. CHAME O MÉTODO CORRETO (DO MODEL)
+  // Esta função getDica() já tem o fallback, já tem o cURL... tem tudo.
+  $dicaGerada = $model->getDica($area, $score);
 
-    $respostaIA = gerarDicaIA($prompt);
-
-    echo json_encode([
-        'sucesso' => true,
-        'dica' => $respostaIA,
-        'area' => $area
-    ]);
-    exit;
+  echo json_encode([
+    'sucesso' => true,
+    'dica' => $dicaGerada, // Envia a dica (seja da IA ou o fallback)
+    'area' => $area
+  ]);
+  exit;
 }
+
+// Se nenhuma rota for encontrada, apenas saia
+exit;
 ?>
 
