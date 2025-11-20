@@ -142,6 +142,9 @@ body {
 }
 
 
+
+
+
 .input-wrapper input {
     width: 100%;
     padding: 15px 15px 15px 50px;
@@ -186,6 +189,58 @@ body {
     transform: translateY(0);
 }
 
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    
+    .left-section {
+        flex: 0 0 40%;
+        min-height: 40vh;
+    }
+    
+    .brand-content {
+        padding: 0 30px;
+        text-align: center;
+    }
+    
+    .brand-title {
+        font-size: 2.5rem;
+    }
+    
+    .brand-subtitle {
+        font-size: 1rem;
+    }
+    
+    .right-section {
+        flex: 1;
+        padding: 20px;
+    }
+    
+    .form-container {
+        padding: 30px 25px;
+        max-width: none;
+    }
+    
+    .decorative-circle {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-container {
+        padding: 25px 20px;
+    }
+    
+    .brand-title {
+        font-size: 2rem;
+    }
+    
+    .form-title {
+        font-size: 1.5rem;
+    }
+}
 
 /* Animações */
 @keyframes fadeInUp {
@@ -228,4 +283,3 @@ body {
 .input-wrapper.error .error-message {
     display: block;
 }
-
