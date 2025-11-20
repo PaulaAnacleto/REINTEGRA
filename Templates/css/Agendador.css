@@ -1,0 +1,603 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    overflow-x: hidden;
+    background-color: #f5f5f5;
+    width: 100%;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Navbar Styles */
+.navbar {
+  display: flex;
+background: linear-gradient(135deg, #ffffff 0%, #a5c7eb 100%);
+}
+
+.logo-box {
+  padding: 8px 16px;
+  border-radius: 8px;
+}
+
+.logo-text {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #0146b1;
+  letter-spacing: 3px;
+}
+
+.navbar-nav {
+  gap: 15px;
+  align-items: center;
+}
+
+.nav-item .nav-link {
+  font-weight: 500;
+  color: #333;
+}
+
+.nav-item .nav-link:hover {
+  color: #0146b1;
+}
+
+/* Imagem de perfil */
+.btn-perfil {
+  border: none;
+  background: transparent;
+  padding: 0;
+}
+
+.img-perfil {
+  width: 42px;
+  height: 42px;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+}
+
+.img-perfil:hover {
+  transform: scale(1.08);
+}
+
+/* Hero Section */
+.hero-section {
+background: linear-gradient(135deg, #ffffff 0%, #a5c7eb 100%);
+    padding: 50px 0 80px;
+
+}
+
+.hero-title {
+    font-size: 3.5rem;
+  font-weight: bold;
+    color: #212529;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+.hero-text {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.8;
+}
+
+.hero-image-container {
+    position: relative;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+.hero-image {
+    border-radius: 12px;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+
+/* Caminho Certo */
+.caminho-certo-section{
+  background-color: #ffffff;
+}
+
+/* Parceria Section */
+.parceria-section {
+    padding: 60px 0;
+    background-color: #fff;
+}
+
+.parceria-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #666;
+}
+
+.senai-logo {
+    max-width: 1200px;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.senai-logo:hover {
+    opacity: 1;
+}
+
+/* Sobre Section */
+.sobre-section {
+    padding: 80px 0;
+    background-color: #F3F7FA;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #212529;
+    margin-bottom: 1.5rem;
+}
+
+.section-text {
+    color: #666;
+    line-height: 1.8;
+    font-size: 1rem;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    border-radius: 12px;
+    border: 2px solid;
+    border-color: #b8b8b8;
+    transition: all 0.3s ease;
+}
+
+.feature-icon-box {
+    width: 30px;
+    height: 45px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.feature-icon {
+    width: 35px;
+    height: 35px;
+}
+
+.feature-title {
+    font-weight: 700;
+    color: #333;
+    margin: 0;
+}
+
+.sobre-image-wrapper {
+    position: relative;
+    border-radius: 12px;
+    padding: 15px;
+}
+
+.sobre-image {
+    border-radius: 8px;
+    width: 100%;
+}
+
+.badge-seguro {
+    position: absolute;
+    top: 90px;
+    left: -10px;
+    background-color: white;
+    padding: 15px 28px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    font-weight: 700;
+    color: #000000;
+    font-size: 1.1rem;
+}
+
+.star-decoration {
+    position: absolute;
+    font-size: 2rem;
+    color: #333;
+    opacity: 0.8;
+    animation: twinkle 2s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+    0%, 100% {
+        opacity: 0.8;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.2);
+    }
+}
+
+/* Contato Section */
+.contato-section {
+    display: flex;
+    align-items: center;
+    padding: 0px 10px;
+    background: linear-gradient(to bottom, #0038F0 0%, #299DF2 40%);
+}
+
+.contato-title {
+    font-size: 3rem;
+    font-weight: 900;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.contato-text {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.95);
+    line-height: 1.6;
+}
+
+.btn-contato {
+    background-color: white;
+    color: #1976D2;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 40px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.btn-contato:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.contato-image-container {
+    position: relative;
+    display: inline-block;
+    border-radius: 20px;
+    padding: 15px;
+}
+
+.contato-image {
+    max-width: 650px;
+    width: 100%;
+    border-radius: 15px;
+    filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
+}
+
+.contato-waves-decoration {
+    position: absolute;
+    left: -40px;
+    top: 50%;
+    transform: translateY(-50%);
+    opacity: 0.8;
+}
+
+.contato-star-1 {
+    position: absolute;
+    top: 15%;
+    right: 10%;
+    font-size: 1.8rem;
+    color: white;
+    animation: twinkle 2s ease-in-out infinite;
+}
+
+.contato-star-2 {
+    position: absolute;
+    bottom: 20%;
+    left: 5%;
+    font-size: 1.5rem;
+    color: white;
+    animation: twinkle 2s ease-in-out infinite;
+    animation-delay: 1s;
+}
+
+/* Feedbacks Section */
+.feedbacks-section {
+    padding: 80px 0;
+    background-color: #fff;
+}
+
+.feedback-card {
+    background-color: #f8f9fa;
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+    height: 100%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.feedback-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.feedback-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.feedback-avatar-wrapper {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    padding: 8px;
+    margin-bottom: 20px;
+}
+
+
+.feedback-avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.feedback-text {
+    color: #666;
+    font-style: italic;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+}
+
+.feedback-name {
+    font-weight: 700;
+    color: #333;
+    margin: 0;
+    font-size: 1.1rem;
+}
+
+/* Footer Section */
+.footer {
+    margin-top: auto;
+    padding: 30px 0;
+    border-top: 1px solid #e0e0e0;
+    background-color: #ffffff;
+    
+}
+
+.footer-text {
+    color: #666;
+    font-size: 0.9rem;
+    
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.footer-link {
+    color: #666;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Caminho Certo Section */
+.caminho-certo-section {
+    padding: 40px 0px 40px 0px;
+}
+
+.caminho-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #212529;
+    line-height: 1.2;
+    margin-bottom: 0.5rem;
+}
+
+.caminho-subtitle {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #212529;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+.caminho-text {
+    font-size: 1.1rem;
+    color: #666;
+    line-height: 1.8;
+}
+
+.btn-servicos {
+    background-color: #0146B1;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 40px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(25, 118, 210, 0.3);
+}
+
+.btn-servicos:hover {
+    background-color: #0146B1;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(25, 118, 210, 0.4);
+    color: white;
+}
+
+.text-primary{
+  color: #0146b1 !important;
+}
+
+
+.caminho-image {
+    max-width: 500px;
+    width: 100%;
+    border-radius: 15px;
+}
+
+/* Feedback Form Section */
+.feedback-form-section {
+    padding: 60px 0;
+    background-color: #fff;
+    border-top: 1px solid #e0e0e0;
+}
+
+.feedback-form-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: #f8f9fa;
+    border-radius: 50px;
+    padding: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.feedback-input {
+    border: none;
+    background: transparent;
+    padding: 12px 25px;
+    font-size: 1rem;
+    flex: 1;
+}
+
+.feedback-input:focus {
+    outline: none;
+    box-shadow: none;
+    background: transparent;
+}
+
+.feedback-input::placeholder {
+    color: #999;
+}
+
+.btn-feedback-submit {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn-feedback-submit:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+.btn-feedback-submit svg {
+    transform: rotate(45deg);
+}
+
+
+
+
+/* ============================= */
+/* 5. TABLETS (Copiado do seu padrão) */
+/* ============================= */
+@media only screen and (min-width: 720px) and (max-width: 1024px) {
+    /* Navbar (do padrão) */
+    .navbar { padding: 0.8rem 2rem; }
+    .logo-text { font-size: 1.8rem; }
+    .navbar .d-flex.align-items-center { gap: 10px; }
+    .img-perfil { width: 32px; height: 32px; }
+    .navbar-toggler { border: none; }
+    .navbar-toggler:focus { box-shadow: none; }
+    .navbar-nav { text-align: center; gap: 8px; }
+    .nav-link { font-size: 1.05rem; }
+
+    /* Footer (do padrão) */
+    .footer-links { justify-content: center; }
+
+    /* --- Calendário (NOVO) --- */
+    #calendar-container {
+        max-width: 95%; /* Ocupa mais espaço no tablet */
+        margin: 30px auto;
+    }
+}
+
+/* ============================= */
+/* 6. CELULARES (Copiado do seu padrão) */
+/* ============================= */
+@media only screen and (min-width: 320px) and (max-width: 480px) {
+    /* Navbar (do padrão) */
+    .logo-text { font-size: 1.5rem; }
+    .navbar-nav { text-align: center; }
+    
+    .img-perfil { width: 28px; height: 28px; }
+    .navbar-toggler { border: none; background-color: transparent; }
+    .navbar-toggler:focus { box-shadow: none; }
+    .navbar-toggler-icon { width: 25px; height: 25px; }
+    .navbar-nav { gap: 6px; margin-top: 0.5rem; }
+    .nav-link { font-size: 1rem; }
+    
+    /* Footer (do padrão) */
+    .footer{margin-top: 2rem;}
+    .footer-links { flex-direction: row; gap: px; line-height: 3rem; }
+    .footer-link{ font-size: 0.8rem; }
+    .footer-text { font-size: 0.8rem; }
+
+    /* --- Calendário (NOVO) --- */
+    #calendar-container {
+        max-width: 100%;
+        margin: 10px auto;
+        padding: 0 10px; /* Mais justo no celular */
+    }
+
+    /* Ajustes finos no FullCalendar para celular */
+    .fc-header-toolbar.fc-toolbar {
+        flex-direction: column; /* Coloca a toolbar em pilha */
+        gap: 10px;
+    }
+    .fc-toolbar-chunk {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .fc-toolbar-title {
+        font-size: 1.3rem !important; /* Força um título menor */
+    }
+    .fc .fc-button {
+        padding: 0.4em 0.5em; /* Botões menores */
+        font-size: 0.9em;
+    }
+}
+
+  
