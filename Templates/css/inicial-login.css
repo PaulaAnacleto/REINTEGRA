@@ -815,17 +815,17 @@ background: linear-gradient(135deg, #ffffff 0%, #a5c7eb 100%);
 
   /* Feedbacks */
   .feedback-card {
-    padding: 20px;
+    padding: 10px;
   }
 
   .feedback-avatar-wrapper {
-    width: 90px;
-    height: 90px;
+    width: 60px;
+    height: 60px;
   }
 
   /* Footer */
   .footer-links {
-    flex-direction: row;
+    flex-direction: column-reverse;
     gap: 0px;
     line-height: 0.2rem;
   }
