@@ -1,0 +1,649 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* garante que imagens não saiam fora do container */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  /* impede scroll lateral causado por elementos largos */
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+  /* GRADIENTE FLUIDO */
+  background: linear-gradient(135deg, #ffffff 0%, #a5c7eb 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+
+
+/* importantes para permitir shrink/expand corretos em flex */
+.inicio,
+.texto-inicio,
+.image,
+.logo-senai {
+  min-width: 0;
+  /* evita que um filho "empurre" e force a logo encolher */
+  box-sizing: border-box;
+}
+
+/* ---------- TEXTOS ---------- */
+
+.title {
+  color: black;
+  font-weight: bold;
+  text-align: justify;
+}
+
+span {
+  color: #0146b1;
+}
+
+.paragrafo {
+  font-weight: bold;
+  text-align: justify;
+  font-size: 15px;
+  margin-bottom: 7%;
+}
+
+/* ---------- SEÇÃO INICIAL ---------- */
+
+.inicio {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 40px 5%;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.texto-inicio {
+  flex: 1 1 450px;
+  padding: 0;
+}
+
+.image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-img {
+  width: 200px;
+  height: auto;
+}
+
+/* ---------- NAVBAR (original mantido) ---------- */
+
+.navbar {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.logo-text {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #0146b1;
+  letter-spacing: 3px;
+}
+
+.navbar-nav {
+  gap: 15px;
+}
+
+.nav-link {
+  color: #333 !important;
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  color: #0146b1 !important;
+}
+
+/* Imagem de perfil */
+.btn-perfil {
+  border: none;
+  background: transparent;
+  padding: 0;
+}
+
+.img-perfil {
+  width: 42px;
+  height: 42px;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+}
+
+.img-perfil:hover {
+  transform: scale(1.08);
+}
+
+/* ---------- HEADER ---------- */
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 20px 5%;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.back-button:hover {
+  transform: translateX(-3px);
+}
+
+.back-icon {
+  width: 32px;
+  height: 32px;
+}
+
+/* ---------- CONTEÚDO / CARDS ---------- */
+
+h2 {
+  font-weight: bold;
+}
+
+.conteudo {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  flex: 1 1 calc(33.333% - 40px);
+  /* 3 por linha no desktop */
+  max-width: 320px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-align: center;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+  font-size: 12.5px;
+  margin-bottom: 0%;
+  font-weight: bold;
+  text-align: center;
+}
+
+.text-card {
+  font-size: 12px;
+  text-align: center;
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  background-color: white;
+}
+
+/* ---------- RODAPÉ ---------- */
+
+.footer {
+  border-top: 1px solid #e0e0e0;
+  text-align: center;
+  padding: 30px 5%;
+  margin-top: auto;
+  background: transparent;
+}
+
+.footer-text {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.footer-link {
+  color: #666;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+/* ---------- OUTROS ---------- */
+
+.texto-motivador {
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 2%;
+}
+
+.icone {
+  height: 22px;
+  width: 22px;
+}
+
+.logo-senai {
+  width: 100%;
+  padding: 18px 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 18px 0;
+  box-sizing: border-box;
+  background: transparent;
+}
+
+.img-logo {
+  width: 95% !important;
+  /* ocupa quase toda a largura do container */
+  max-width: 1100px !important;
+  /* limite grande no desktop */
+  height: auto !important;
+  display: block !important;
+  margin: 0 auto !important;
+  object-fit: contain !important;
+}
+
+.parceria {
+  color: #6e7175;
+  text-align: center;
+  margin-bottom: 1%;
+}
+
+/* ---------- RESPONSIVIDADE ---------- */
+
+/* Computador menor */
+@media only screen and (min-width: 1025px) and (max-width: 1200px) {
+  .conteudo {
+    gap: 20px;
+  }
+
+  .hero-img {
+    width: 180px;
+    height: auto;
+  }
+}
+
+/* Tablet */
+@media only screen and (min-width: 743px) and (max-width: 1024px) {
+  .title {
+    font-size: 1.6rem;
+  }
+
+  .paragrafo {
+    font-size: 0.87rem;
+  }
+
+  .card {
+    flex: 1 1 calc(50% - 30px);
+    /* 2 por linha */
+    max-width: 350px;
+  }
+
+  .hero-img {
+    max-width: 140px;
+  }
+
+  .img-logo {
+    max-width: 1200px;
+    /* aumenta apenas no desktop */
+  }
+
+  .footer-text {
+    font-size: 0.8rem;
+  }
+
+  .footer-link {
+    font-size: 0.8rem;
+  }
+
+  .footer-links {
+    gap: 20px;
+  }
+
+  /* Navbar */
+  .navbar {
+    padding: 0.8rem 2rem;
+  }
+
+  .logo-text {
+    font-size: 1.8rem;
+  }
+
+  /* Alinhamento perfil + hamburguer */
+  .navbar .d-flex.align-items-center {
+    gap: 10px;
+  }
+
+  .img-perfil {
+    width: 32px;
+    height: 32px;
+  }
+
+  .navbar-toggler {
+    border: none;
+  }
+
+  .navbar-toggler:focus {
+    box-shadow: none;
+  }
+
+  /* Menu mais elegante */
+  .navbar-nav {
+    text-align: center;
+    gap: 8px;
+  }
+
+  .nav-link {
+    font-size: 1.05rem;
+    color: #000;
+  }
+}
+
+/* Entre tablet e celular */
+
+/* Tablet */
+@media only screen and (min-width: 521px) and (max-width: 742px) {
+  .inicio {
+    flex-direction: column;
+    text-align: center;
+    gap: 25px;
+    padding: 20px;
+  }
+
+  .texto-inicio {
+    flex: 1 1 100%;
+    padding: 0;
+    text-align: center;
+  }
+
+  .title,
+  .paragrafo,
+  .text-card,
+  .texto-motivador h2,
+  .texto-motivador p {
+    text-align: center;
+  }
+
+  .text-card {
+    font-size: 13px;
+  }
+
+  .card h3 {
+    font-size: 14px;
+  }
+
+  .image {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero-img {
+    max-width: 120px;
+    height: auto;
+  }
+
+  .conteudo {
+    padding: 15px;
+    gap: 20px;
+  }
+
+  .card {
+    flex: 1 1 100%;
+    /* 1 por linha */
+    max-width: 320px;
+  }
+
+  .img-logo {
+    max-width: 600px;
+  }
+
+  .footer-text {
+    font-size: 0.72rem;
+
+  }
+
+  .footer-links {
+    gap: 10px;
+  }
+
+  .footer-link {
+    font-size: 0.72rem;
+  }
+
+
+  /* Navbar */
+  .navbar {
+    padding: 0.8rem 2rem;
+  }
+
+  .logo-text {
+    font-size: 1.8rem;
+  }
+
+  /* Alinhamento perfil + hamburguer */
+  .navbar .d-flex.align-items-center {
+    gap: 10px;
+  }
+
+  .img-perfil {
+    width: 32px;
+    height: 32px;
+  }
+
+  .navbar-toggler {
+    border: none;
+  }
+
+  .navbar-toggler:focus {
+    box-shadow: none;
+  }
+
+  /* Menu mais elegante */
+  .navbar-nav {
+    text-align: center;
+    gap: 8px;
+  }
+
+  .nav-link {
+    font-size: 1.05rem;
+    color: #000;
+  }
+
+  .h4,
+  h4 {
+    font-size: 1.3rem;
+    padding-bottom: 3%;
+  }
+  .logo-senai {
+    padding: 25px 5%;
+    text-align: center;
+  }
+
+  .img-logo {
+    width: 95vw !important;         /* ocupa quase toda a largura da tela */
+    max-width: none !important;     /* remove limite de tamanho */
+    height: auto !important;
+    display: block !important;
+    margin: 0 auto !important;
+    transform: scale(1.3);          /* aumenta visualmente sem distorcer */
+  }
+
+}
+
+/* Celular */
+@media only screen and (min-width: 320px) and (max-width: 520px) {
+  .inicio {
+    flex-direction: column;
+    text-align: center;
+    gap: 25px;
+    padding: 20px;
+  }
+
+  .texto-inicio {
+    flex: 1 1 100%;
+    padding: 0;
+    text-align: center;
+  }
+
+  .title,
+  .paragrafo,
+  .text-card,
+  .texto-motivador h2,
+  .texto-motivador p {
+    text-align: center;
+  }
+
+  .paragrafo {
+    font-size: 0.78rem;
+  }
+
+  .image {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero-img {
+    max-width: 120px;
+    height: auto;
+  }
+
+  .conteudo {
+    padding: 15px;
+    gap: 20px;
+  }
+
+  .card {
+    flex: 1 1 100%;
+    /* 1 por linha */
+    max-width: 320px;
+  }
+
+  .h4,
+  h4 {
+    font-size: 1.3rem;
+    padding-bottom: 3%;
+  }
+  .logo-senai {
+    padding: 25px 5%;
+    text-align: center;
+  }
+
+  .img-logo {
+    width: 95vw !important;         /* ocupa quase toda a largura da tela */
+    max-width: none !important;     /* remove limite de tamanho */
+    height: auto !important;
+    display: block !important;
+    margin: 0 auto !important;
+    transform: scale(1.8);          /* aumenta visualmente sem distorcer */
+  }
+
+  .footer-text {
+    font-size: 0.7rem;
+  }
+
+  .footer-links {
+    gap: 10px;
+    display: block;
+  }
+
+  .footer-link {
+    font-size: 0.7rem;
+  }
+
+  /* Centralização total de textos e imagens */
+  .navbar-nav {
+    text-align: center;
+  }
+
+  .logo-text {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+  }
+
+  .btn-perfil {
+    background: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .img-perfil {
+    width: 28px;
+    height: 28px;
+  }
+
+  .navbar-toggler {
+    border: none;
+    background-color: transparent;
+  }
+
+  .navbar-toggler:focus {
+    box-shadow: none;
+  }
+
+  .navbar-toggler-icon {
+    width: 25px;
+    height: 25px;
+  }
+
+  .navbar-nav {
+    text-align: center;
+    gap: 6px;
+    margin-top: 0.5rem;
+  }
+
+  .nav-link {
+    font-size: 1rem;
+    color: #000;
+  }
+}
