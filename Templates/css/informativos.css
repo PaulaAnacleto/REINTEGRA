@@ -1,0 +1,213 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #ffffff 0%, #a5c7eb 100%);
+}
+
+.title {
+  /* color: linear-gradient(135deg, #1e73be 0%, #0f4c8c 100%); */
+  /* Primeiro passo: definir um degradê como fundo */
+  background-image: linear-gradient(to bottom, rgb(2, 24, 73), rgb(0, 60, 255));
+
+  /* Segundo passo: apagar do fundo tudo que não estiver imediatamente atrás de texto */
+  background-clip: text;
+  -webkit-background-clip: text; /* Alguns navegadores precisam do prefixo */
+  /* Terceiro passo: apagar o texto, deixando apenas o fundo atrás dele */
+  -webkit-text-fill-color: transparent;
+  /* Cor que contraste com o degradê, caso o navegador não suporte `background-clip: text` */
+  color: black;
+  font-weight: bold;
+  text-align: center;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start; /* garante o botão à esquerda */
+  padding-left: 98px; /* afastamento da borda */
+}
+
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  background: transparent !important; /* remove o branco */
+  box-shadow: none !important; /* remove sombra */
+  border: none !important; /* remove qualquer borda */
+}
+
+.logo-box {
+  padding: 8px 16px;
+  border-radius: 8px;
+}
+
+.logo-text {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #0146b1;
+  letter-spacing: 3px;
+}
+
+.navbar-nav {
+  gap: 15px;
+  align-items: center;
+}
+
+.nav-item .nav-link {
+  font-weight: 500;
+  color: #333;
+}
+
+.nav-item .nav-link:hover {
+  color: #0146b1;
+}
+
+/* Imagem de perfil */
+.btn-perfil {
+  border: none;
+  background: transparent;
+  padding: 0;
+}
+
+.img-perfil {
+  width: 42px;
+  height: 42px;
+  object-fit: cover;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+}
+
+.img-perfil:hover {
+  transform: scale(1.08);
+}
+.btn-retorno {
+  align-items: baseline;
+}
+
+.back-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  padding-top: 0%;
+  padding-bottom: 28px;
+  align-items: last baseline;
+  transition: transform 0.2s ease;
+}
+
+.back-button:hover {
+  transform: translateX(-3px);
+}
+
+.back-icon {
+  width: 32px;
+  height: 32px;
+  display: block;
+}
+
+
+.paragrafo {
+  font-weight: bold;
+  text-align: center;
+  font-size: 19px;
+  margin-bottom: 7%;
+}
+
+span {
+  color: #0146b1;
+}
+
+.conteudo {
+  display: flex;
+  gap: 25px;
+  max-width: 1200px;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  padding-left: 99px; /* afastamento da borda */
+}
+
+
+.card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 25px;
+  width: 270px;
+  height: 210px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+  font-size: 13.5px;
+  margin-bottom: 0%;
+  font-weight: bold;
+  text-align: justify;
+}
+
+.card ul {
+  list-style-type: disc;
+  padding-left: 18px;
+  font-size: 13px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.card a {
+  text-decoration: none;
+  color: #0056d2;
+  font-weight: bold;
+}
+
+
+
+
+
+
+
+.footer {
+    margin-top: 20px;
+    padding: 30px 0;
+    border-top: 1px solid #e0e0e0;
+    
+}
+
+.footer-text {
+    color: #666;
+    font-size: 0.9rem;
+    
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.footer-link {
+    color: #666;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+}
