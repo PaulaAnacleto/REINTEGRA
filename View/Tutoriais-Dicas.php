@@ -52,9 +52,9 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto align-items-lg-center">
         <li class="nav-item"><a class="nav-link" href="../View/Servicos.php">Serviços</a></li>
-        <li class="nav-item"><a class="nav-link" href="#cadastro">Feedback</a></li>
+        <li class="nav-item"><a class="nav-link" href="../View/Inicial-login.php">Feedback</a></li>
         <li class="nav-item"><a class="nav-link" href="../View/Contato.php">Contato</a></li>
-        <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+        <li class="nav-item"><a class="nav-link" href="../View/Inicial-login.php">Sobre</a></li>
         <li class="nav-item"><a class="nav-link" href="../View/Inicial-login.php">Início</a></li>
 
         <!-- Perfil visível apenas no desktop -->
@@ -94,7 +94,7 @@
                         <li>Aprenda a fazer um currículo de sucesso</li>
                         <li>Dicas essenciais para criar um currículo profissional</li>
                     </ul>
-                    <button class="btn-primary">Começar</button href="../View/Curriculo.php">
+                    <a href="../View/Curriculo.php"><button class="btn-primary">Começar</button></a>
                 </div>
                 <div class="card-image">
                     <img src="../img/página tutoriais e dicas/monte seu curriculo.png" alt="Ilustração de currículo" class="img-fluid">
@@ -110,7 +110,7 @@
                         <li>Perguntas Frequentes</li>
                         <li>Após a Entrevista</li>
                     </ul>
-                    <button class="btn-primary">Começar</button>
+                     <a href="../View/Entrevista.php"><button class="btn-primary">Começar</button></a>
                 </div>
                 <div class="card-image">
                     <img src="../img/página tutoriais e dicas/domine a entrevista.png" alt="Ilustração de entrevista" class="img-fluid">
@@ -126,7 +126,7 @@
                         <li>Conecte-se com propósito</li>
                         <li>Cultive suas conexões</li>
                     </ul>
-                    <button class="btn-primary">Começar</button>
+                     <a href="../View/Networking.php"><button class="btn-primary">Começar</button></a>
                 </div>
                 <div class="card-image">
                     <img src="../img/página tutoriais e dicas/Aproveitando o poder do networking.png" alt="Ilustração de networking" class="img-fluid">
@@ -143,7 +143,7 @@
                © 2025 Reintegra. Todos os direitos reservados.
            </p>
                <a href="../View/Politica-Privacidade.php" class="footer-link">Política de Privacidade</a>
-               <a href="../View/Termos-servico.php" class="footer-link">Termos de Serviço</a>
+               <a href="../View/termos-servico.php" class="footer-link">Termos de Serviço</a>
            </div>
        </footer>
    </div>
