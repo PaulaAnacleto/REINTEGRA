@@ -40,7 +40,7 @@
                 <!-- Grid de serviços -->
                 <div class="services-grid">
                     <!-- Teste Vocacional -->
-                      <a href="../View/Vocacional.php" class="card-link">
+                      <a href="../View/TesteVocacional.php" class="card-link">
                     <div class="service-card" data-service="teste-vocacional">
                        
                         <div class="card-content">
@@ -116,7 +116,7 @@
                     </a>
 
                     <!-- Eventos -->
-                       <a href="../View/Vagas.php" class="card-link">
+                       <a href="../View/Agendador.php" class="card-link">
                     <div class="service-card" data-service="vagas">
                         <div class="card-content">
                             <h3 class="card-title">Eventos</h3>
