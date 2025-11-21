@@ -61,7 +61,7 @@
             </header>
 
             <main class="main-content">
-                <button class="back-button" aria-label="Voltar" id="voltar">
+                <button class="back-button" aria-label="Voltar">
                     <img src="../Img/página de contato/seta.png" alt="Voltar" class="back-icon">
                 </button>
                 <div class="container">
