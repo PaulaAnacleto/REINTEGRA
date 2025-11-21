@@ -19,7 +19,7 @@ body {
 /* Seção esquerda - Branding */
 .left-section {
     flex: 1;
-    background: linear-gradient(135deg, #1e73be 0%, #0f4c8c 100%);
+    background: linear-gradient(135deg, #0575E6 30%, #02298A 100%, #021B79 100%);
     position: relative;
     display: flex;
     align-items: center;
@@ -116,7 +116,19 @@ body {
     text-align: left;
 }
 
-.cadastro-form {
+.signup-link {
+    color: #1e73be;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.signup-link:hover {
+    color: #0f4c8c;
+    text-decoration: underline;
+}
+
+.login-form {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -144,7 +156,6 @@ body {
 
 
 
-
 .input-wrapper input {
     width: 100%;
     padding: 15px 15px 15px 50px;
@@ -168,7 +179,7 @@ body {
 }
 
 .submit-btn {
-    background: linear-gradient(135deg, #1e73be 0%, #0f4c8c 100%);
+    background: linear-gradient(135deg, #0575E6 30%, #02298A 100%, #021B79 100%);
     color: white;
     border: none;
     padding: 15px;
@@ -189,97 +200,115 @@ body {
     transform: translateY(0);
 }
 
+.forgot-password {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.forgot-link {
+    color: #666;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.forgot-link:hover {
+    color: #1e73be;
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
 /* Responsividade */
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
+
+/* tablet */
+@media only screen and (min-width: 520px) and (max-width: 1024px) {
+
+
+    .brand-content{
+        justify-content: left;
+        margin-left: auto;
+        margin-right: auto;
     }
-    
-    .left-section {
-        flex: 0 0 40%;
-        min-height: 40vh;
+
+ .right-section{
+       padding-top: 0rem; 
     }
-    
-    .brand-content {
-        padding: 0 30px;
-        text-align: center;
-    }
-    
-    .brand-title {
-        font-size: 2.5rem;
-    }
-    
-    .brand-subtitle {
-        font-size: 1rem;
-    }
-    
-    .right-section {
-        flex: 1;
-        padding: 20px;
-    }
-    
-    .form-container {
-        padding: 30px 25px;
-        max-width: none;
-    }
-    
-    .decorative-circle {
-        display: none;
-    }
+
+.container{
+    flex-direction: column;
+    background: linear-gradient(135deg, #0575E6 30%, #02298A 100%, #021B79 100%);
 }
 
-@media (max-width: 480px) {
-    .form-container {
-        padding: 25px 20px;
-    }
+.left-section{
+    background: none;
+}
+
+.right-section{
+    background: none;
+}
+
+  .brand-title {
+    font-size: 3rem;
+    padding-top: 10rem;
+    padding-right: 6rem;
+    margin-bottom: 0rem;
+  }
+   .brand-subtitle{
+   margin-bottom: 1rem;
+  }
+}
+
+/* celular */
+
+@media only screen and (min-width: 320px) and (max-width: 520px) {
+
+
+     .brand-content{
+        justify-content: left;
+        margin-left: auto;
+        margin-right: auto;
     
-    .brand-title {
-        font-size: 2rem;
     }
-    
-    .form-title {
-        font-size: 1.5rem;
+
+    .right-section{
+       padding-top: 0rem; 
     }
+
+.left-section{
+    background: none;
 }
 
-/* Animações */
-@keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.right-section{
+    background: none;
 }
 
-.form-container {
-    animation: fadeInUp 0.6s ease-out;
+    .container{
+    flex-direction: column;
+    background: linear-gradient(135deg, #0575E6 30%, #02298A 100%, #021B79 100%);
 }
 
-.brand-content {
-    animation: fadeInUp 0.8s ease-out;
-}
+  .brand-title {
+    font-size: 2.5rem;
+    padding-top: 12rem;
+    margin-bottom: 0rem
+  }
 
-/* Estados de validação */
-.input-wrapper.error input {
-    border-color: #dc3545;
-    background: #fff5f5;
-}
+   .brand-subtitle{
+    font-size: 1rem;
+   
+    margin-bottom: 0rem;
 
-.input-wrapper.success input {
-    border-color: #28a745;
-    background: #f8fff8;
-}
+  }
 
+}
 .error-message {
     color: #dc3545;
     font-size: 0.85rem;
     margin-top: 5px;
     display: none;
-}
-
-.input-wrapper.error .error-message {
-    display: block;
 }

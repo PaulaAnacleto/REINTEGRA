@@ -8,13 +8,25 @@
 
 </head>
 <body>
+
+
+    <div vw class="enabled">
+  <div vw-access-button class="active"></div>
+  <div vw-plugin-wrapper>
+    <div class="vw-plugin-top-wrapper"></div>
+  </div>
+</div>
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+<script>
+  new window.VLibras.Widget('https://vlibras.gov.br/app' );
+</script>
+
     <div class="container">
         <!-- Seção esquerda com branding -->
         <div class="left-section">
             <div class="brand-content">
                 <h1 class="brand-title">REINTEGRA</h1>
                 <p class="brand-subtitle">Encontre seu emprego dos sonhos!</p>
-                <button class="learn-more-btn">Saiba mais</button>
             </div>
             <div class="decorative-circle"></div>
         </div>

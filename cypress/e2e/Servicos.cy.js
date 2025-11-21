@@ -18,7 +18,7 @@ describe('Página de Serviços - Reintegra', () => {
     };
 
     beforeEach(() => {
-        cy.visit('http://localhost/Reintegra/view/Servicos.php'); 
+        cy.visit('http://localhost/Reintegra/View/Servicos.php'); 
     });
 
     // Teste 1: Verificar a presença dos elementos principais

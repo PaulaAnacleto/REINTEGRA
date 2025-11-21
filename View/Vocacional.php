@@ -51,7 +51,7 @@
 
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto align-items-lg-center">
-        <li class="nav-item"><a class="nav-link" href="../view/Servicos">Serviços</a></li>
+        <li class="nav-item"><a class="nav-link" href="../View/Servicos.php">Serviços</a></li>
         <li class="nav-item"><a class="nav-link" href="#cadastro">Feedback</a></li>
         <li class="nav-item"><a class="nav-link" href="../View/Contato.php">Contato</a></li>
         <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
@@ -96,7 +96,7 @@
                   <a href="https://www.guiadacarreira.com.br/teste-vocacional?utm_source=" target="_blank">  <button class="btn-primary">Testar</button> </a>
                 </div>
                 <div class="card-image">
-                    <img src="../img/página tutoriais e dicas/guia da carreira.png" alt="Ilustração de entrevista" class="img-fluid">
+                    <img src="../img/teste vocacional/guia da carreira.png" alt="Ilustração de entrevista" class="img-fluid">
                 </div>
             </div>
 
@@ -111,7 +111,7 @@
                     <a href="https://querobolsa.com.br/teste-vocacional-gratis?utm_source=" target="_blank"> <button class="btn-primary">Testar</button href="../View/Curriculo.php"> </a>
                 </div>
                 <div class="card-image">
-                    <img src="../img/página tutoriais e dicas/quero bolsa.png" alt="Ilustração de currículo" class="img-fluid">
+                    <img src="../img/teste vocacional/quero bolsa.png" alt="Ilustração de currículo" class="img-fluid">
                 </div>
             </div>
 
@@ -126,7 +126,7 @@
                   <a href="https://descomplica.com.br/faculdade/teste-vocacional/?utm_source=" target="_blank">   <button class="btn-primary">Testar</button> </a>
                 </div>
                 <div class="card-image">
-                    <img src="../img/página tutoriais e dicas/descomplica.png" alt="Ilustração de networking" class="img-fluid">
+                    <img src="../img/teste vocacional/descomplica.png" alt="Ilustração de networking" class="img-fluid">
                 </div>
             </div>
 
@@ -141,7 +141,7 @@
                     <a href="https://www.123test.com/pt/teste-vocacional/" target="_blank">   <button class="btn-primary">Testar</button href="../View/Curriculo.php"> </a>
                 </div>
                 <div class="card-image">
-                    <img src="../img/página tutoriais e dicas/123test.png" alt="Ilustração de currículo" class="img-fluid">
+                    <img src="../img/teste vocacional/123test.png" alt="Ilustração de currículo" class="img-fluid">
                 </div>
             </div>
         </section>

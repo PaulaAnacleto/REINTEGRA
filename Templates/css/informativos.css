@@ -5,10 +5,23 @@
 }
 
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  /* ocupa toda a tela */
   display: flex;
   flex-direction: column;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+  /* GRADIENTE FLUIDO */
   background: linear-gradient(135deg, #ffffff 0%, #a5c7eb 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+
+
+html {
+  height: 100%;
 }
 
 .title {
@@ -18,7 +31,8 @@ body {
 
   /* Segundo passo: apagar do fundo tudo que não estiver imediatamente atrás de texto */
   background-clip: text;
-  -webkit-background-clip: text; /* Alguns navegadores precisam do prefixo */
+  -webkit-background-clip: text;
+  /* Alguns navegadores precisam do prefixo */
   /* Terceiro passo: apagar o texto, deixando apenas o fundo atrás dele */
   -webkit-text-fill-color: transparent;
   /* Cor que contraste com o degradê, caso o navegador não suporte `background-clip: text` */
@@ -27,19 +41,24 @@ body {
   text-align: center;
 }
 
-header {
-  width: 100%;
-  display: flex;
-  justify-content: flex-start; /* garante o botão à esquerda */
-  padding-left: 98px; /* afastamento da borda */
-}
 
 /* Navbar Styles */
 .navbar {
   display: flex;
-  background: transparent !important; /* remove o branco */
-  box-shadow: none !important; /* remove sombra */
-  border: none !important; /* remove qualquer borda */
+  background: transparent !important;
+  /* remove o branco */
+  box-shadow: none !important;
+  /* remove sombra */
+  border: none !important;
+  /* remove qualquer borda */
+}
+
+
+
+/* --- CONTEÚDO PRINCIPAL --- */
+main {
+  flex: 1;
+  /* empurra o footer pro fim */
 }
 
 .logo-box {
@@ -86,6 +105,14 @@ header {
 .img-perfil:hover {
   transform: scale(1.08);
 }
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  padding: 20px 5%;
+}
+
 .btn-retorno {
   align-items: baseline;
 }
@@ -125,28 +152,28 @@ span {
 
 .conteudo {
   display: flex;
-  gap: 25px;
-  max-width: 1200px;
-  width: 100%;
   flex-wrap: wrap;
   justify-content: center;
-  justify-items: center;
-  align-items: center;
-  padding-left: 99px; /* afastamento da borda */
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
 }
-
 
 .card {
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   padding: 25px;
-  width: 270px;
-  height: 210px;
+  flex: 1 1 calc(33.333% - 40px);
+  /* 3 por linha no desktop */
+  max-width: 320px;
+  height: 180px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-align: justify;
 }
 
 .card:hover {
@@ -180,34 +207,311 @@ span {
 
 
 
-
+/* Footer */
 .footer {
-    margin-top: 20px;
-    padding: 30px 0;
-    border-top: 1px solid #e0e0e0;
-    
+  border-top: 1px solid #e0e0e0;
+  text-align: center;
+  padding: 30px 5%;
+  margin-top: auto;
+  /* gruda no fim da tela */
+  background: transparent;
+  /* mantém o gradiente visível atrás */
 }
 
 .footer-text {
-    color: #666;
-    font-size: 0.9rem;
-    
+  color: #666;
+  font-size: 0.9rem;
+
 }
 
 .footer-links {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
 }
 
 .footer-link {
-    color: #666;
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: color 0.2s ease;
+  color: #666;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s ease;
 }
 
 .footer-link:hover {
-    text-decoration: underline;
+  text-decoration: underline;
+}
+
+
+
+
+/* Responsividade */
+
+/*computador menor*/
+@media (max-width: 1200px) {
+  .conteudo {
+    gap: 20px;
+  }
+
+}
+
+
+/* tablet */
+@media only screen and (min-width: 743px) and (max-width: 1024px) {
+
+  .title {
+    font-size: 1.6rem;
+  }
+
+  .paragrafo {
+    font-size: 1.1rem;
+  }
+
+  .card {
+    flex: 1 1 calc(50% - 30px);
+    /* 2 por linha */
+    max-width: 350px;
+  }
+
+  .hero-img {
+    max-width: 140px;
+  }
+
+  .img-logo {
+    max-width: 1200px;
+    /* aumenta apenas no desktop */
+  }
+
+  .footer-text {
+    font-size: 0.8rem;
+  }
+
+  .footer-link {
+    font-size: 0.8rem;
+  }
+
+  .footer-links {
+    gap: 20px;
+  }
+
+  /* Navbar */
+  .navbar {
+    padding: 0.8rem 2rem;
+  }
+
+  .logo-text {
+    font-size: 1.8rem;
+  }
+
+  /* Alinhamento perfil + hamburguer */
+  .navbar .d-flex.align-items-center {
+    gap: 10px;
+  }
+
+  .img-perfil {
+    width: 32px;
+    height: 32px;
+  }
+
+  .navbar-toggler {
+    border: none;
+  }
+
+  .navbar-toggler:focus {
+    box-shadow: none;
+  }
+
+  /* Menu mais elegante */
+  .navbar-nav {
+    text-align: center;
+    gap: 8px;
+  }
+
+  .nav-link {
+    font-size: 1.05rem;
+    color: #000;
+  }
+}
+
+
+/* Entre tablet e celular */
+
+/* Tablet */
+@media only screen and (min-width: 521px) and (max-width: 742px) {
+
+  .text-card {
+    font-size: 13px;
+  }
+
+  .paragrafo {
+    font-size: 1rem;
+  }
+
+  .inicio {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .card h3 {
+    font-size: 14px;
+  }
+
+  .card {
+    flex: 1 1 100%;
+    /* 1 por linha */
+    max-width: 320px;
+  }
+
+  .img-logo {
+    max-width: 600px;
+  }
+
+  .footer-text {
+    font-size: 0.72rem;
+
+  }
+
+  .footer-links {
+    gap: 10px;
+  }
+
+  .footer-link {
+    font-size: 0.72rem;
+  }
+
+
+  /* Navbar */
+  .navbar {
+    padding: 0.8rem 2rem;
+  }
+
+  .logo-text {
+    font-size: 1.8rem;
+  }
+
+  /* Alinhamento perfil + hamburguer */
+  .navbar .d-flex.align-items-center {
+    gap: 10px;
+  }
+
+  .img-perfil {
+    width: 32px;
+    height: 32px;
+  }
+
+  .navbar-toggler {
+    border: none;
+  }
+
+  .navbar-toggler:focus {
+    box-shadow: none;
+  }
+
+  /* Menu mais elegante */
+  .navbar-nav {
+    text-align: center;
+    gap: 8px;
+  }
+
+  .nav-link {
+    font-size: 1.05rem;
+    color: #000;
+  }
+}
+
+/* celular */
+
+@media only screen and (min-width: 320px) and (max-width: 520px) {
+  .navbar-nav {
+    text-align: center;
+  }
+
+  .card {
+    flex: 1 1 100%;
+    /* 1 por linha */
+    max-width: 305px;
+  }
+
+
+  .inicio {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .paragrafo {
+    font-size: 0.95rem;
+  }
+
+  .footer-text {
+    font-size: 0.7rem;
+  }
+
+  .footer-links {
+    gap: 10px;
+    display: block;
+  }
+
+  .footer-link {
+    font-size: 0.7rem;
+  }
+
+  /* Navbar */
+  .logo-text {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+  }
+
+  .navbar-nav {
+    text-align: center;
+  }
+
+
+  /* Caixa com perfil + hamburguer */
+  .navbar .d-flex.align-items-center {
+    display: flex;
+    align-items: center;
+
+  }
+
+  .btn-perfil {
+    background: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .img-perfil {
+    width: 28px;
+    height: 28px;
+  }
+
+  .navbar-toggler {
+    border: none;
+    background-color: transparent;
+  }
+
+  .navbar-toggler:focus {
+    box-shadow: none;
+  }
+
+  .navbar-toggler-icon {
+    width: 25px;
+    height: 25px;
+  }
+
+  /* Menu colapsável centralizado */
+  .navbar-nav {
+    text-align: center;
+    gap: 6px;
+    margin-top: 0.5rem;
+  }
+
+  .nav-link {
+    font-size: 1rem;
+    color: #000;
+  }
+
+
+
 }

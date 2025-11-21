@@ -16,16 +16,6 @@
     <link rel="stylesheet" href="../Templates/css/vagas.css">
 </head>
 <body>
-    <div vw class="enabled">
-        <div vw-access-button class="active"></div>
-            <div vw-plugin-wrapper>
-                <div class="vw-plugin-top-wrapper"></div>
-        </div>
-    </div>
-    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
-    <script>
-        new window.VLibras.Widget('https://vlibras.gov.br/app' );
-    </script>
 
     <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
@@ -77,10 +67,9 @@
     </button>
         <h1 class="hero-title">VAGAS</h1>
         <p class="hero-description">
-            Encontre os <span>melhores</span> sites para descobrir <span>oportunidades</span> incríveis de <span>emprego</span> aqui!
+            Encontre os melhores sites para descobrir oportunidades incríveis de emprego aqui!
         </p>
     </section>
-
 
     <!-- Component: Card Section -->
     <section class="content-section">
@@ -95,10 +84,10 @@
                     <li>Filtros inteligentes para encontrar oportunidades por área e localização.</li>
                     <li>Clique e encontre sua vaga!</li>
                 </ul>
-                <a href="https://br.indeed.com/" target="_blank"> <button class="btn-primary">Vagas</button href="../View/Curriculo.php"> </a>
+                <a href="https://querobolsa.com.br/teste-vocacional-gratis?utm_source=" target="_blank"> <button class="btn-primary">Vagas</button href="../View/Curriculo.php"> </a>
             </div>
             <div class="card-image">
-                <img src="../Img/página curriculo/Informações de Contato.png" alt="Informações de contato" class="img-fluid">
+                <img src="../Img/página vagas/indeed.png" alt="Informações de contato" class="img-fluid">
             </div>
         </div>
 
@@ -112,10 +101,10 @@
                     <li>Vagas para todos os níveis — do primeiro emprego à liderança.</li>
                     <li>Clique e encontre sua vaga!</li>
                 </ul>
-                <a href="https://www.infojobs.com.br/" target="_blank"> <button class="btn-primary">Vagas</button href="../View/Curriculo.php"> </a>
+                <a href="https://querobolsa.com.br/teste-vocacional-gratis?utm_source=" target="_blank"> <button class="btn-primary">Vagas</button href="../View/Curriculo.php"> </a>
             </div>
             <div class="card-image">
-                <img src="../Img/página curriculo/Experiência Profissional.png" alt="Experiência profissional" class="img-fluid">
+                <img src="../Img/página vagas/infojobs.png" alt="Experiência profissional" class="img-fluid">
             </div>
         </div>
 
@@ -129,10 +118,10 @@
                     <li>Vagas para todos os níveis — do primeiro emprego à liderança.</li>
                     <li>Clique e encontre sua vaga!</li>
                 </ul>
-                <a href="https://www.catho.com.br/" target="_blank"> <button class="btn-primary">Vagas</button href="../View/Curriculo.php"> </a>
+                <a href="https://querobolsa.com.br/teste-vocacional-gratis?utm_source=" target="_blank"> <button class="btn-primary">Vagas</button href="../View/Curriculo.php"> </a>
             </div>
             <div class="card-image">
-                <img src="../Img/página curriculo/Formação Acadêmica.png" alt="Formação acadêmica" class="img-fluid">
+                <img src="../Img/página vagas/catho.png" alt="Formação acadêmica" class="img-fluid">
             </div>
         </div>
 
@@ -146,10 +135,10 @@
                     <li>Ambiente seguro para cadastro de currículo.</li>
                     <li>Clique e encontre sua vaga! </li>
                 </ul>
-                <a href="https://www.empregos.com.br/" target="_blank"> <button class="btn-primary">Vagas</button href="../View/Curriculo.php"> </a>
+                <a href="https://querobolsa.com.br/teste-vocacional-gratis?utm_source=" target="_blank"> <button class="btn-primary">Vagas</button href="../View/Curriculo.php"> </a>
             </div>
             <div class="card-image">
-                <img src="../Img/página curriculo/Habilidades técnicas relevantes.png" alt="Habilidades técnicas" class="img-fluid">
+                <img src="../Img/página vagas/empregos.png" alt="Habilidades técnicas" class="img-fluid">
             </div>
         </div>
 
@@ -163,10 +152,10 @@
                     <li>Permite acompanhar candidaturas em tempo real.</li>
                     <li>Clique e encontre sua vaga!</li>
                 </ul>
-                <a href="https://www.trabalhabrasil.com.br/" target="_blank"> <button class="btn-primary">Vagas</button href="../View/Curriculo.php"> </a>
+                <a href="https://querobolsa.com.br/teste-vocacional-gratis?utm_source=" target="_blank"> <button class="btn-primary">Vagas</button href="../View/Curriculo.php"> </a>
             </div>
             <div class="card-image">
-                <img src="../Img/página curriculo/Revisão final.png" alt="Revisão final" class="img-fluid">
+                <img src="../Img/página vagas/trabalho brasil.png" alt="Revisão final" class="img-fluid">
             </div>
         </div>
 
@@ -180,10 +169,10 @@
                     <li>Transparência para escolher onde trabalhar.</li>
                     <li>Clique e encontre sua vaga!</li>
                 </ul>
-                <a href="https://www.glassdoor.com.br/index.htm" target="_blank"> <button class="btn-primary">Vagas</button href="../View/Curriculo.php"> </a>
+                <a href="https://querobolsa.com.br/teste-vocacional-gratis?utm_source=" target="_blank"> <button class="btn-primary">Vagas</button href="../View/Curriculo.php"> </a>
             </div>
             <div class="card-image">
-                <img src="../Img/página curriculo/idiomas.png" alt="Revisão final" class="img-fluid">
+                <img src="../Img/página vagas/glassdoor.png" alt="Revisão final" class="img-fluid">
             </div>
         </div>
     </section>

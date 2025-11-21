@@ -24,83 +24,50 @@ $cursos = $controller->getCursosPublico();
 <!-- Navbar -->
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm" id="navbar">
-
   <div class="container">
-
     <a class="navbar-brand" href="#">
-
       <div class="logo-box">
-
         <span class="logo-text">REINTEGRA</span>
-
       </div>
-
     </a>
 
 
 
     <!-- Perfil + botão hamburguer (visível apenas no mobile) -->
-
     <div class="d-flex align-items-center">
-
       <a href="../View/Perfil.php" class="d-lg-none me-2">
-
         <button class="btn-perfil">
-
           <img src="../Img/página de perfil/icone perfil.png" class="img-perfil" alt="Perfil">
-
         </button>
-
       </a>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-
         <span class="navbar-toggler-icon"></span>
-
       </button>
-
     </div>
 
 
 
     <div class="collapse navbar-collapse" id="navbarNav">
-
       <ul class="navbar-nav ms-auto align-items-lg-center">
-
         <li class="nav-item"><a class="nav-link" href="../View/Servicos.php">Serviços</a></li>
-
         <li class="nav-item"><a class="nav-link" href="../View/Inicial-login.php">Feedback</a></li>
-
         <li class="nav-item"><a class="nav-link" href="../View/Contato.php">Contato</a></li>
-
         <li class="nav-item"><a class="nav-link" href="../View/Inicial-login.php">Sobre</a></li>
-
         <li class="nav-item"><a class="nav-link" href="../View/Inicial-login.php">Início</a></li>
-
-
 
         <!-- Perfil visível apenas no desktop -->
 
         <li class="nav-item d-none d-lg-block">
-
           <a href="../View/Perfil.php">
-
             <button class="btn-perfil" id="perfil">
-
               <img src="../Img/página de perfil/icone perfil.png" class="img-perfil" alt="Perfil">
-
             </button>
-
           </a>
-
         </li>
-
       </ul>
-
     </div>
-
   </div>
-
 </nav>
 
 
@@ -112,7 +79,6 @@ $cursos = $controller->getCursosPublico();
     </button>
   </div>
 </header>
-
 <body>
 
 
@@ -167,8 +133,8 @@ $cursos = $controller->getCursosPublico();
       <p class="footer-text">
         © 2025 Reintegra. Todos os direitos reservados.
       </p>
-      <a href="http://localhost/Reintegra/View/Politica-privacidade.php" class="footer-link">Política de Privacidade</a>
-      <a href="http://localhost/Reintegra/View/termos-servico.php" class="footer-link">Termos de Serviço</a>
+          <a href="View/Politica-privacidade.php" class="footer-link">Política de Privacidade</a>
+          <a href="View/termos-servico.php" class="footer-link">Termos de Serviço</a>
     </div>
   </footer>
 

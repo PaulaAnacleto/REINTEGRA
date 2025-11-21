@@ -51,7 +51,7 @@
 
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto align-items-lg-center">
-        <li class="nav-item"><a class="nav-link" href="../view/Servicos">Serviços</a></li>
+        <li class="nav-item"><a class="nav-link" href="../View/Servicos.php">Serviços</a></li>
         <li class="nav-item"><a class="nav-link" href="#cadastro">Feedback</a></li>
         <li class="nav-item"><a class="nav-link" href="../View/Contato.php">Contato</a></li>
         <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
