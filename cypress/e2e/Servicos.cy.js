@@ -1,10 +1,8 @@
 /// <reference types="cypress" />
 
 describe('Página de Serviços - Reintegra', () => {
-    // **CORREÇÃO PARA IGNORAR ERROS DE APLICAÇÃO:**
     Cypress.on('uncaught:exception', (err, runnable) => {
-        // Retorna false para impedir que o Cypress falhe o teste
-        // devido a um erro de aplicação (como o "card is not defined").
+    
         return false;
     });
 
@@ -14,7 +12,7 @@ describe('Página de Serviços - Reintegra', () => {
         'tutoriais': '../View/Tutoriais-Dicas.php',
         'informativo': '../View/Informativos.php',
         'vagas': '../View/Vagas.php',
-        'eventos': '../View/Vagas.php' // O HTML indica 'Vagas.php' para Eventos
+        'eventos': '../View/Agendador.php' 
     };
 
     beforeEach(() => {
@@ -35,9 +33,7 @@ describe('Página de Serviços - Reintegra', () => {
             { title: 'Tutoriais e dicas', dataService: 'tutoriais', href: '../View/Tutoriais-Dicas.php' },
             { title: 'Informativo', dataService: 'informativo', href: '../View/Informativos.php' },
             { title: 'Vagas', dataService: 'vagas', href: '../View/Vagas.php' },
-            // O card "Eventos" tem data-service="vagas" no seu HTML,
-            // então localizamos pelo título para garantir que ele existe.
-            { title: 'Eventos', dataService: 'vagas', href: '../View/Vagas.php' } 
+            { title: 'Eventos', dataService: 'vagas', href: '../View/Agendador.php' } 
         ];
 
         cy.get('.services-grid').should('be.visible');
@@ -75,8 +71,7 @@ describe('Página de Serviços - Reintegra', () => {
         // Simula o hover
         cy.get(`[data-service="${serviceKey}"]`).trigger('mouseover');
 
-        // CORREÇÃO: Verifica se o elemento existe e contém o texto.
-        // Isso contorna o problema de visibilidade causado pela opacidade 0 no CSS.
+       
         cy.get(`[data-service="${serviceKey}"] .card-hover-overlay`)
             .should('exist') // Verifica se o elemento está no DOM
             .and('contain', expectedActionText); // Verifica se o conteúdo está correto

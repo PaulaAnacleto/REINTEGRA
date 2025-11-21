@@ -1,6 +1,5 @@
 <?php
 
-// Sobe um nível (de Controller/) para a raiz (Reintegra/) e entra no Model/
 require_once __DIR__ . '/../Model/Cursos_model.php';
 
 class CursosController {

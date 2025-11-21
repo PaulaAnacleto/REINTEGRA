@@ -9,7 +9,7 @@ describe('Página de Perfil (Perfil.php) – Testes E2E', () => {
   const userPassword = 'Lima1122@';
 
   beforeEach(() => {
-    // Faz login programaticamente (sessão cacheada)
+ 
     cy.session([userEmail, userPassword], () => {
       cy.visit(loginPage);
       cy.get('#email').type(userEmail);
@@ -18,24 +18,24 @@ describe('Página de Perfil (Perfil.php) – Testes E2E', () => {
       cy.url().should('include', homePage);
     });
 
-    // Intercepta as requisições do perfil
+
     cy.intercept('GET', '**/Controller/UserController.php').as('getUser');
     cy.intercept('POST', '**/Controller/UserController.php').as('updateUser');
 
-    // Visita a página de perfil
+   
     cy.visit(profilePage);
 
-    // Espera o carregamento dos dados
+   
     cy.wait('@getUser');
 
-    // Dublar alert() e confirm() da página ativa
+  
     cy.window().then((win) => {
       cy.stub(win, 'alert').as('alertStub');
       cy.stub(win, 'confirm').returns(true);
     });
   });
 
-  // ---------------------------------------------------------------------
+ 
   it('Deve carregar e exibir os dados do usuário', () => {
     // Verifica se os campos foram preenchidos com dados reais do BD
     cy.get('#nomeCompleto').should('not.have.value', '');
@@ -47,12 +47,12 @@ describe('Página de Perfil (Perfil.php) – Testes E2E', () => {
     cy.get('#nomeCompleto').should('have.attr', 'readonly');
   });
 
-  // ---------------------------------------------------------------------
+ 
   it('Deve entrar no modo de edição e cancelar', () => {
 cy.get('#nomeCompleto')
   .invoke('val')
   .then((originalName) => {
-    // Faz a edição
+
     cy.get('#editBtn').click();
     cy.get('#nomeCompleto').clear().type('Teste Cancelar');
     cy.get('#cancelBtn').click();
@@ -62,7 +62,7 @@ cy.get('#nomeCompleto')
   });
   });
 
-  // ---------------------------------------------------------------------
+ 
   it('Deve validar CPF inválido antes de salvar', () => {
     cy.get('#editBtn').click();
     cy.get('#cpf').clear().type('123456'); // formato incorreto
@@ -72,7 +72,7 @@ cy.get('#nomeCompleto')
       .should('have.been.calledWithMatch', /CPF deve estar no formato/);
   });
 
-  // ---------------------------------------------------------------------
+ 
   it('Deve salvar as alterações com sucesso', () => {
     const novaProfissao = `Tester ${Math.floor(Math.random() * 100)}`;
 
@@ -95,13 +95,12 @@ cy.get('#nomeCompleto')
     cy.get('#profissao').should('have.value', novaProfissao);
   });
 
-  // ---------------------------------------------------------------------
+ 
   it('Botão voltar deve redirecionar corretamente', () => {
     cy.visit(profilePage);
     cy.get('.back-button').click();
 
     cy.url().then((url) => {
-      // Se há histórico, pode voltar, senão redireciona
       if (window.history.length > 1) {
         cy.go('back');
       } else {
