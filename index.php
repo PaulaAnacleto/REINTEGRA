@@ -45,7 +45,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="View/Servicos.php">Serviços</a>
+                        <a class="nav-link" href="View/Cadastro.php">Serviços</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="View/Contato.php">Contato</a>

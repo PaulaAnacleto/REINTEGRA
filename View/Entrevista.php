@@ -74,7 +74,7 @@
        <!-- Hero Section -->
     <section class="hero-section text-center">
         <!-- Botão Voltar -->
-    <button class="back-button" aria-label="Voltar">
+   <button class="back-button" aria-label="Voltar">
         <img src="../Img/página de contato/seta.png" alt="Voltar" class="back-icon">
     </button>
         <h1 class="hero-title">ENTREVISTA DE EMPREGO</h1>
@@ -161,8 +161,8 @@
                   <p class="footer-text">
                 © 2025 Reintegra. Todos os direitos reservados.
             </p>
-                <a href="View/Politica-privacidade.php" class="footer-link">Política de Privacidade</a>
-                <a href="View/termos-servico.php" class="footer-link">Termos de Serviço</a>
+                <a href="../View/Politica-Privacidade.php" class="footer-link">Política de Privacidade</a>
+               <a href="../View/termos-servico.php" class="footer-link">Termos de Serviço</a>
             </div>
         </footer>
     </div>

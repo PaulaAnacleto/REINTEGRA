@@ -105,9 +105,10 @@ background: linear-gradient(135deg, #ffffff 0%, #a5c7eb 100%);
 
 /* Botão de voltar (seta) */
 .back-button {
-  position: absolute; /* fica dentro da navbar */
-  top: 22%;
-  left: 1.5rem;
+display: flex;
+  position: relative; 
+  top: -10rem;
+  left: -2.5rem;
   transform: translateY(-50%);
   background: transparent;
   border: none;
