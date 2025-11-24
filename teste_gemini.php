@@ -1,11 +1,10 @@
 <?php
-// ✅ Chave da API (mantenha em local seguro, nunca em repositório público)
 $apiKey = "AIzaSyBfx8Md_szeGCxTkAD-jD2RhF4jgFiQbx8"; 
 
-// ✅ URL da API Gemini
+// URL da API Gemini
 $url = "https://generativelanguage.googleapis.com/v1/models/gemini-2.0-flash:generateContent?key=" . $apiKey;
 
-// ✅ Corpo da requisição
+// Corpo da requisição
 $data = [
     "contents" => [[
         "role" => "user",
@@ -15,7 +14,7 @@ $data = [
     ]]
 ];
 
-// ✅ Função para enviar a requisição
+// Função para enviar a requisição
 function chamarGemini($url, $data, $tentativas = 3) {
     $tentativa = 0;
     do {
@@ -40,7 +39,7 @@ function chamarGemini($url, $data, $tentativas = 3) {
         $decoded = json_decode($response, true);
         curl_close($ch);
 
-        // ✅ Trata erros da API (como 503)
+        // Trata erros da API (como 503)
         if (isset($decoded["error"])) {
             $code = $decoded["error"]["code"];
             $msg = $decoded["error"]["message"];
@@ -61,10 +60,10 @@ function chamarGemini($url, $data, $tentativas = 3) {
     return null;
 }
 
-// ✅ Executa a chamada
+
 $resposta = chamarGemini($url, $data);
 
-// ✅ Mostra a resposta
+
 if ($resposta) {
     echo "<pre>";
     print_r($resposta);

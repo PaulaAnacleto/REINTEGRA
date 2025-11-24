@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -105,8 +104,8 @@
                   <p class="footer-text">
                 © 2025 Reintegra. Todos os direitos reservados.
             </p>
-                <a href="../View/Politca-privacidade" class="footer-link">Política de Privacidade</a>
-                <a href="../View/Termos-servico" class="footer-link">Termos de Serviço</a>
+                <a href="../View/Politica-privacidade.php" class="footer-link">Política de Privacidade</a>
+                <a href="../View/termos-servico.php" class="footer-link">Termos de Serviço</a>
             </div>
         </footer>
     </div>
@@ -181,4 +180,3 @@
 
 </body>
 </html
-

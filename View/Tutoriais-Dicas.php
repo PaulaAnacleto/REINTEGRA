@@ -81,7 +81,7 @@
             <p class="hero-description">
                 Descubra conteúdos práticos e <span class="highlight">objetivos</span> que vão te ajudar a
                 <span class="highlight">aprender</span>, evoluir e encarar cada desafio com mais <span class="highlight">confiança</span>.
-            </p>
+           </p>
     </section>
 
         <section class="content-section">

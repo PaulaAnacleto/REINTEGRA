@@ -23,6 +23,7 @@
     <a class="navbar-brand" href="#">
       <div class="logo-box">
         <span class="logo-text">REINTEGRA</span>
+        <a href="index.php"></a>
       </div>
     </a>
 
@@ -41,9 +42,9 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto align-items-lg-center">
         <li class="nav-item"><a class="nav-link" href="../View/Servicos.php">Serviços</a></li>
-        <li class="nav-item"><a class="nav-link" href="#cadastro">Feedback</a></li>
+        <li class="nav-item"><a class="nav-link" href="../View/Inicial-login.php">Feedback</a></li>
         <li class="nav-item"><a class="nav-link" href="../View/Contato.php">Contato</a></li>
-        <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+        <li class="nav-item"><a class="nav-link" href="../View/Inicial-login.php">Sobre</a></li>
         <li class="nav-item"><a class="nav-link" href="../View/Inicial-login.php">Início</a></li>
 
         <!-- Perfil visível apenas no desktop -->
@@ -203,4 +204,3 @@
     <script src="../Templates/js/teste-vocacional.js"></script>
 </body>
 </html>
-

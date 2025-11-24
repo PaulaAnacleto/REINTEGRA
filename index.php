@@ -45,7 +45,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#ser">Serviços</a>
+                        <a class="nav-link" href="View/Cadastro.php">Serviços</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="View/Contato.php">Contato</a>
@@ -154,7 +154,7 @@
                 <div class="col-lg-6 mb-4 mb-lg-0">
                     <h2 class="contato-title">Entre em contato</h2>
                     <p class="contato-text mb-4">Tem dúvidas ou precisa de mais informações? Estamos aqui para ajudar! Entre em contato conosco e responderemos o mais rápido possível.</p>
-                    <button class="btn btn-contato" type="button" onclick="window.location.href='#contato'">Contato</button>
+                    <button class="btn btn-contato" type="button" onclick="window.location.href='View/Contato.php'">Contato</button>
                 </div>
                 <div class="col-lg-6 text-end">
                     <div class="contato-image-container">

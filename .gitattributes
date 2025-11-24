@@ -1,19 +1,10 @@
-# Força todos os arquivos .css a contarem como CSS
 *.css linguist-language=CSS
-
-# Força todos os arquivos .js a contarem como JavaScript
 *.js linguist-language=JavaScript
-
-# Força todos os arquivos .php a contarem como PHP
 *.php linguist-language=PHP
-
-# Garante que diretórios específicos sejam classificados corretamente
 Templates/css/** linguist-language=CSS
 Templates/js/** linguist-language=JavaScript
 model/** linguist-language=PHP
 controller/** linguist-language=PHP
 view/** linguist-language=PHP
-
-# Ignora dependências para não distorcer estatísticas
 vendor/** linguist-vendored=true
 node_modules/** linguist-vendored=true

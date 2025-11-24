@@ -9,8 +9,8 @@ $dados_view = ['acao' => 'listar', 'curso' => null];
 $dados_view = array_merge($dados_view, $controller->handleAdminRequest());
 
 // 3. Define o modo do formulário (Criar ou Editar)
-$modo_edicao = ($dados_view['acao'] == 'editar');
-$curso_atual = $dados_view['curso'] ?? null; // Dados para preencher o form se estiver editando
+$modo_edicao = $dados_view['acao'] == 'editar';
+$curso_atual = is_array($dados_view['curso']) ? $dados_view['curso'] : null; // Dados para preencher o form se estiver editando
 
 // 4. Busca a lista de cursos para exibir na tabela
 // (Usamos um novo controller para não misturar com a lógica de ação)
@@ -63,7 +63,7 @@ $mensagem_erro = $dados_view['erro'] ?? '';
                 <!-- Define a ação (criar ou atualizar) -->
                 <?php if ($modo_edicao): ?>
                     <input type="hidden" name="action" value="atualizar">
-                    <input type="hidden" name="course_id" value="<?php echo $curso_atual['idcurso']; ?>">
+                    <input type="hidden" name="course_id" value="<?php echo htmlspecialchars($curso_atual['idcurso'] ?? ''); ?>">
                 <?php else: ?>
                     <input type="hidden" name="action" value="criar">
                 <?php endif; ?>
@@ -72,18 +72,18 @@ $mensagem_erro = $dados_view['erro'] ?? '';
         <label for="titulo" class="form-label">Título do Curso</label>
                 <!-- Preenche o valor se estiver editando -->
         <input type="text" class="form-control" id="titulo" name="titulo" 
-                       value="<?php echo htmlspecialchars($curso_atual['Titulo'] ?? ''); ?>" required>
+                       value="<?php echo htmlspecialchars($curso_atual['titulo'] ?? $curso_atual['Titulo'] ?? ''); ?>" required>
        </div>
        <div class="mb-3">
         <label for="link_externo" class="form-label">Link Externo (URL)</label>
         <input type="url" class="form-control" id="link_externo" name="link_externo" 
                        placeholder="https://www.empresa.com/curso" 
-                       value="<?php echo htmlspecialchars($curso_atual['Links'] ?? ''); ?>" required>
+                       value="<?php echo htmlspecialchars($curso_atual['links'] ?? $curso_atual['Links'] ?? ''); ?>" required>
        </div>
        <div class="mb-3">
         <label for="descricao" class="form-label">Descrição Curta</label>
         <textarea class="form-control" id="descricao" name="descricao" rows="4" 
-                          placeholder="Ex: Modelos de Negócios..."><?php echo htmlspecialchars($curso_atual['Descricao_cur'] ?? ''); ?></textarea>
+                          placeholder="Ex: Modelos de Negócios..."><?php echo htmlspecialchars($curso_atual['Descricao_cur'] ?? $curso_atual['descricao'] ?? ''); ?></textarea>
        </div>
        <div class="d-grid gap-2">
                 <!-- Texto do botão muda dinamicamente -->
@@ -144,19 +144,32 @@ $mensagem_erro = $dados_view['erro'] ?? '';
          </tr>
                 <?php else: ?>
                     <?php foreach ($cursos_cadastrados as $curso): ?>
+                        <?php
+                            // Normaliza chaves que podem variar entre 'Links'/'links', 'Titulo'/'titulo', 'Descricao_cur'/'descricao'
+                            $link_raw = $curso['Links'] ?? $curso['links'] ?? '';
+                            $link = htmlspecialchars($link_raw ?: '#', ENT_QUOTES, 'UTF-8');
+
+                            $title = htmlspecialchars($curso['Titulo'] ?? $curso['titulo'] ?? 'Título não informado', ENT_QUOTES, 'UTF-8');
+                            $description = htmlspecialchars($curso['Descricao_cur'] ?? $curso['descricao'] ?? '', ENT_QUOTES, 'UTF-8');
+
+                            // Gera um texto curto para exibir no link (será escapado ao imprimir)
+                            $shortLink = $link_raw ?: '#';
+                            if (mb_strlen($shortLink) > 50) {
+                                $shortLink = mb_substr($shortLink, 0, 47) . '...';
+                            }
+                        ?>
                         <tr>
-                            <td class="p-3"><strong><?php echo htmlspecialchars($curso['Titulo']); ?></strong></td>
+                            <td class="p-3"><strong><?php echo htmlspecialchars($title); ?></strong></td>
                             <td class="p-3">
-                                <?php $shortLink = strlen($curso['Links']) > 30 ? substr($curso['Links'], 0, 30) . '...' : $curso['Links']; ?>
-                                <a href="<?php echo htmlspecialchars($curso['Links']); ?>" target="_blank"><?php echo htmlspecialchars($shortLink); ?></a>
+                                <a href="<?php echo htmlspecialchars($link); ?>" target="_blank"><?php echo htmlspecialchars($shortLink); ?></a>
                             </td>
                             <td class="text-end p-3">
                                 <!-- Botão Editar -->
-                                <a href="Criar_cursos.php?action=editar&id=<?php echo $curso['idcurso']; ?>" class="btn btn-sm btn-outline-secondary me-2">
+                                <a href="Criar_cursos.php?action=editar&id=<?php echo htmlspecialchars($curso['idcurso'] ?? ''); ?>" class="btn btn-sm btn-outline-secondary me-2">
                                     <i class="bi bi-pencil"></i>
                                 </a>
                                 <!-- Botão Excluir -->
-                                <a href="Criar_cursos.php?action=excluir&id=<?php echo $curso['idcurso']; ?>" class="btn btn-sm btn-outline-danger" onclick="return confirm('Tem certeza?');">
+                                <a href="Criar_cursos.php?action=excluir&id=<?php echo htmlspecialchars($curso['idcurso'] ?? ''); ?>" class="btn btn-sm btn-outline-danger" onclick="return confirm('Tem certeza?');">
                                     <i class="bi bi-trash"></i>
                                 </a>
                             </td>

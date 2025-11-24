@@ -2,8 +2,8 @@
 
 class ConexaoCursos {
     private static $host = 'localhost';      // Ou 127.0.0.1
-    private static $dbname = 'cursos';       // Seu schema (vi na imagem)
-    private static $user = 'root';           // Usuário padrão do XAMPP/MySQL
+    private static $dbname = 'curso';     
+    private static $user = 'root';           
     private static $pass = '';              // Senha padrão (vazia)
     private static $port = 3306;             // Porta Padrão do MySQL
 
