@@ -45,7 +45,7 @@ class TesteVocacionalModel {
             return null;
         }
 
-        // 🔧 Monta payload no formato correto do Gemini
+        //  Monta payload no formato correto do Gemini
         $payload = json_encode([
             'contents' => [[
                 'parts' => [['text' => $prompt]]
@@ -90,19 +90,17 @@ class TesteVocacionalModel {
 
         $data = json_decode($response, true);
 
-        // 🔍 Valida estrutura de retorno
+        //  Valida estrutura de retorno
         if (!isset($data['candidates'][0]['content']['parts'][0]['text'])) {
             error_log('⚠️ Estrutura inesperada: ' . print_r($data, true));
             return null;
         }
 
-        // ✅ Retorna dica gerada
+        // Retorna dica gerada
         return trim($data['candidates'][0]['content']['parts'][0]['text']);
     }
 
-    /**
-     *  Dica padrão (fallback)
-     */
+ 
    private function getDicaFallback($area_principal) {
         $dicas = [
             'tecnologia' => 'Aprenda programação através de plataformas como Codecademy ou freeCodeCamp. Crie projetos pessoais para seu portfólio!',
@@ -118,8 +116,8 @@ class TesteVocacionalModel {
 
     
     public function getPerguntas() {
-        // (O seu array de perguntas rebalanceadas vai aqui)
-        $perguntas = [ //
+ 
+        $perguntas = [ 
             [
                 'id' => 1,
                 'texto' => 'Qual atividade você mais gosta de fazer?',
@@ -275,9 +273,8 @@ class TesteVocacionalModel {
     }
     
     public function getAreas() {
-        // (O seu array de áreas vai aqui)
-        $areas_vocacionais = [ //
-            'tecnologia' => [ //
+        $areas_vocacionais = [ 
+            'tecnologia' => [ 
                 'nome' => 'Tecnologia & Inovação',
                 'descricao' => 'Para quem gosta de resolver problemas com lógica, programação e inovação digital.',
                 'cor' => '#0ea5e9',

@@ -1,5 +1,5 @@
 <?php
-// Inclui o arquivo de configuração uma única vez
+
 require_once __DIR__ . '/../Config/configuration.php';
 
 class Connection {

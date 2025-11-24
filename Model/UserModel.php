@@ -9,10 +9,7 @@ class UserModel {
         $this->conn = Connection::getDb();
     }
 
-    /**
-     * FUNÇÃO DE CADASTRO
-     * Insere um novo usuário no banco de dados.
-     */
+
     public function register($nome, $email, $senhaHash) {
         try {
             $sql = "INSERT INTO usuarios (nomeCompleto, email, senha) 
@@ -28,10 +25,7 @@ class UserModel {
         }
     }
 
-    /**
-     * FUNÇÃO DE LOGIN E PERFIL
-     * Busca um usuário pelo email.
-     */
+  
     public function findByEmail($email) {
         try {
             $sql = "SELECT * FROM usuarios WHERE email = :email LIMIT 1";
@@ -45,10 +39,7 @@ class UserModel {
         }
     }
 
-    /**
-     * FUNÇÃO DE PERFIL
-     * Busca um usuário pelo seu ID.
-     */
+ 
     public function findById($id) {
         try {
             $sql = "SELECT * FROM usuarios WHERE id = :id LIMIT 1";
@@ -62,10 +53,7 @@ class UserModel {
         }
     }
 
-    /**
-     * FUNÇÃO DE PERFIL
-     * Atualiza os dados de um usuário no banco.
-     */
+  
     public function update($id, $data) {
         try {
             $sql = "UPDATE usuarios SET 

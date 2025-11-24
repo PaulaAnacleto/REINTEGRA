@@ -6,8 +6,7 @@ class FeedbackModel {
     private $conn;
 
     public function __construct() {
-        // Pega a conexão do 'Connection.php'
-        // CORRIGIDO: Connection::getDb()
+ 
         $this->conn = Connection::getDb();
     }
 

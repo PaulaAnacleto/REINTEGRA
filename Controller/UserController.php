@@ -2,14 +2,12 @@
 session_start();
 require_once __DIR__ . '/../Model/UserModel.php';
 
-// Define o tipo de resposta como JSON para o JavaScript
+
 header('Content-Type: application/json');
 
 $userModel = new UserModel();
 $method = $_SERVER["REQUEST_METHOD"];
 
-// --- AÇÃO: BUSCAR DADOS DO PERFIL (GET) ---
-// (Usado pelo perfil.js quando a página de Perfil carrega)
 if ($method == "GET") {
     if (!isset($_SESSION['id_usuario'])) {
         echo json_encode(['success' => false, 'message' => 'Usuário não autenticado.']);
@@ -27,11 +25,8 @@ if ($method == "GET") {
     exit;
 }
 
-// --- AÇÕES: LOGIN, CADASTRO, UPDATE (POST) ---
-// (Usado por cadastro.js, login.js e perfil.js)
 if ($method == "POST") {
     
-    // Pega a 'action' que o JavaScript envia para sabermos o que fazer
     $action = $_POST['action'] ?? '';
 
     switch ($action) {
@@ -53,7 +48,7 @@ if ($method == "POST") {
             }
             
             // --- VALIDAÇÃO DE SENHA ATUALIZADA ---
-            // (Regex para: min 8 chars, 1 maiúscula, 1 minúscula, 1 número)
+           
             if (!preg_match('/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d@$!%*?&]{8,}$/', $senha)) {
                  echo json_encode(['success' => false, 'message' => 'Senha inválida. Deve ter 8+ caracteres, 1 maiúscula, 1 minúscula e 1 número.']);
                  exit;

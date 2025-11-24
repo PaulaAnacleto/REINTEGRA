@@ -1,22 +1,14 @@
 describe('Teste da Landing Page - Reintegra', () => {
 
-  // Antes de cada teste, visita a página principal
   beforeEach(() => {
-    // Ajuste o cy.visit() para o caminho correto do seu arquivo.
-    // Se estiver rodando um servidor local, use 'http://localhost:PORTA'
     cy.visit('/index.php');
   });
 
-  /**
-   * Teste 1: Verifica o carregamento básico e o título da página
-   */
+
   it('Deve carregar a página e ter o título correto', () => {
     cy.title().should('eq', 'Reintegra - Reintegrando sua vida por completo');
   });
 
-  /**
-   * Teste 2: Verifica os elementos da Barra de Navegação (Navbar)
-   */
   it('Deve exibir a navbar com o logo e os links corretos', () => {
     // Verifica o logo
     cy.get('.navbar-brand').should('be.visible');

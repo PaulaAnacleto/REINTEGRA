@@ -1,6 +1,6 @@
 <?php
 function gerarDicaIA($prompt) {
-    $apiKey = "AIzaSyBfx8Md_szeGCxTkAD-jD2RhF4jgFiQbx8"; // substitua pela sua chave
+    $apiKey = "AIzaSyBfx8Md_szeGCxTkAD-jD2RhF4jgFiQbx8"; 
 
     $url = "https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent?key=" . $apiKey;
 
