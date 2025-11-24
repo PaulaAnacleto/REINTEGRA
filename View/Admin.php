@@ -205,7 +205,7 @@ try {
                       <td class="p-3"><?php echo $start->format('d/m/Y H:i'); ?></td>
                       <td class="text-end p-3">
                     <a href="Admin.php?action=editar&id=<?php echo $event->getId(); ?>" class="btn btn-sm btn-outline-secondary me-2">
-                          <i class="bi bi-pencil"></i>
+                        <i class="bi bi-pencil"></i>
                     </a>
                         <a href="Admin.php?action=excluir&id=<?php echo $event->getId(); ?>" class="btn btn-sm btn-outline-danger" onclick="return confirm('Tem certeza que você deseja exluir?');">
                           <i class="bi bi-trash"></i>
