@@ -123,7 +123,7 @@
 
 <script>
     // As variáveis são as mesmas
-    const API_KEY = 'AIzaSyA8apmAyaF0c5mD2QONxV2PtHA5dJ18l6Y';
+    const API_KEY = 'AIzaSyAbEyUcmwl7Co5_y0BmPT4eWXY0WdGCjUs';
     const CALENDAR_ID = 'e9d55ddc0008700992e8636c307d0a940e9c6153ef8b1c59feee97b0530926ec@group.calendar.google.com';
     const timeMin = new Date().toISOString(); 
     const url = `https://www.googleapis.com/calendar/v3/calendars/${CALENDAR_ID}/events?key=${API_KEY}&timeMin=${timeMin}&orderBy=startTime&singleEvents=true`;

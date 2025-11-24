@@ -174,6 +174,8 @@ try {
 
                   <div class="col-md-7">
         <h2 class="mb-4">Próximos Eventos</h2>
+
+        
                 
                 <?php if ($mensagem_sucesso): ?>
                     <div class="alert alert-success"><?php echo $mensagem_sucesso; ?></div>
@@ -181,6 +183,10 @@ try {
                 <?php if ($mensagem_erro): ?>
                     <div class="alert alert-danger"><?php echo $mensagem_erro; ?></div>
                 <?php endif; ?>
+
+                <a href="Agendador.php" target="_blank" class="btn btn-outline-primary btn-sm">
+                    <i class="bi bi-eye-fill me-1"></i> Visualizar Página Pública
+                </a>
                 
         <div class="card shadow-sm">
           <div class="card-body p-0">
