@@ -1,7 +1,6 @@
 <?php
 
 require_once __DIR__ . '/../Config/configuration.php';
-
 class Connection {
     
     private static $pdo; // Guarda a instância da conexão
@@ -19,4 +18,3 @@ class Connection {
         return self::$pdo;
     }
 }
-?>
